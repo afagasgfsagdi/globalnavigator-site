@@ -745,8 +745,15 @@
     };
     terrainImage.src='assets/earth-blue-marble.jpg';
     const pivot=new THREE.Group(),spinner=new THREE.Group();scene.add(pivot);pivot.add(spinner);spinner.rotation.set(.08,-1.92,.18);
-    const earth=new THREE.Mesh(new THREE.SphereGeometry(.507,128,96),new THREE.MeshBasicMaterial({map:earthTexture,color:0xffffff,transparent:true,opacity:.84,alphaTest:.015,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending}));
+    const earth=new THREE.Mesh(new THREE.SphereGeometry(.507,128,96),new THREE.MeshBasicMaterial({map:earthTexture,color:0xffffff,transparent:true,opacity:.94,alphaTest:.015,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending}));
     earth.frustumCulled=false;earth.renderOrder=2;earth.visible=false;spinner.add(earth);
+    const atmosphereMaterial=new THREE.ShaderMaterial({
+      vertexShader:`varying vec3 vAtmosphereNormal;varying vec3 vAtmospherePosition;void main(){vec4 worldPosition=modelMatrix*vec4(position,1.0);vAtmosphereNormal=normalize(mat3(modelMatrix)*normal);vAtmospherePosition=worldPosition.xyz;gl_Position=projectionMatrix*viewMatrix*worldPosition;}`,
+      fragmentShader:`varying vec3 vAtmosphereNormal;varying vec3 vAtmospherePosition;void main(){vec3 viewDirection=normalize(cameraPosition-vAtmospherePosition);float rim=1.0-max(dot(normalize(vAtmosphereNormal),viewDirection),0.0);float glow=pow(rim,3.2);gl_FragColor=vec4(vec3(.12,.56,1.0),glow*.62);\n#include <colorspace_fragment>}`,
+      transparent:true,blending:THREE.AdditiveBlending,depthTest:true,depthWrite:false,side:THREE.FrontSide
+    });
+    const atmosphere=new THREE.Mesh(new THREE.SphereGeometry(.523,128,96),atmosphereMaterial);
+    atmosphere.frustumCulled=false;atmosphere.renderOrder=2.5;atmosphere.visible=false;spinner.add(atmosphere);
     const rtOptions={type:THREE.HalfFloatType,minFilter:THREE.LinearFilter,magFilter:THREE.LinearFilter,depthBuffer:true,stencilBuffer:false};
     const rtBack=new THREE.WebGLRenderTarget(1,1,rtOptions),rtFront=new THREE.WebGLRenderTarget(1,1,rtOptions);
     const glassUniforms=(backside,target)=>({uTexture:{value:target.texture},uResolution:{value:new THREE.Vector2(1,1)},uIorR:{value:1.15},uIorY:{value:1.16},uIorG:{value:1.18},uIorC:{value:1.22},uIorB:{value:1.22},uIorP:{value:1.22},uRefractPower:{value:backside?.22:.3},uChromatic:{value:.5},uSaturation:{value:1.08},uShininess:{value:90},uDiffuseness:{value:.02},uFresnelPower:{value:5},uLight:{value:new THREE.Vector3(-1,1,1)},uBackside:{value:backside?1:0}});
@@ -813,8 +820,8 @@
     });
     const cityGeometry = new THREE.BufferGeometry();
     cityGeometry.setAttribute('position', new THREE.BufferAttribute(cityPositions, 3));
-    const cityMaterial = new THREE.PointsMaterial({
-        color: 0xffcb78, size: 0.024, transparent: true, opacity: 1.0,
+      const cityMaterial = new THREE.PointsMaterial({
+        color: 0xffd391, size: 0.029, transparent: true, opacity: 1.0,
       blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true
     });
     const cityLights = new THREE.Points(cityGeometry, cityMaterial);
@@ -999,7 +1006,7 @@
       const dw=Math.max(1,Math.round(width*dpr)), dh=Math.max(1,Math.round(height*dpr));
       rtBack.setSize(dw,dh);rtFront.setSize(dw,dh);backMat.uniforms.uResolution.value.set(dw,dh);frontMat.uniforms.uResolution.value.set(dw,dh);
       headlineCanvas.width=dw; headlineCanvas.height=dh; drawSpaceBackground();
-      const visH=2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*10, visW=visH*camera.aspect; const sx=mobile?.68:portrait?.72:.68, sy=mobile?.60:portrait?.50:.50; const px=Math.min(height*(mobile?.30:portrait?.40:.54),width*(mobile?.32:portrait?.48:.60));
+      const visH=2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*10, visW=visH*camera.aspect; const sx=mobile?.68:portrait?.72:.71, sy=mobile?.60:portrait?.50:.46; const px=Math.min(height*(mobile?.30:portrait?.40:.72),width*(mobile?.32:portrait?.48:.60));
       pivot.position.set((sx-.5)*visW,(.5-sy)*visH,0); const scale=(px/height)*visH; pivot.scale.setScalar(scale);
     };
     const waitForFonts=Promise.race([Promise.all([document.fonts.load('800 100px Poppins'),document.fonts.ready]),new Promise(resolve=>setTimeout(resolve,2500))]);
@@ -1107,7 +1114,7 @@
       renderer.setRenderTarget(rtBack);renderer.autoClear=true;renderer.render(bgScene,bgCamera);
       renderer.setRenderTarget(rtFront);renderer.autoClear=true;renderer.render(bgScene,bgCamera);renderer.autoClear=false;renderer.clearDepth();glassSphere.material=backMat;renderer.render(scene,camera);
       renderer.setRenderTarget(null);renderer.autoClear=true;renderer.render(bgScene,bgCamera);renderer.autoClear=false;renderer.clearDepth();glassSphere.material=frontMat;renderer.render(scene,camera);
-      glassSphere.visible=false;earth.visible=true;grid.visible=true;renderer.render(scene,camera);glassSphere.visible=true;earth.visible=false;grid.visible=false;renderer.autoClear=true;
+      glassSphere.visible=false;earth.visible=true;atmosphere.visible=true;grid.visible=true;renderer.render(scene,camera);glassSphere.visible=true;earth.visible=false;atmosphere.visible=false;grid.visible=false;renderer.autoClear=true;
     };
     requestAnimationFrame(frame);
   </script>
