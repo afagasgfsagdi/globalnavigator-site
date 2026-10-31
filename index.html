@@ -295,9 +295,7 @@
     .arrow { width:40px;height:40px;border-color:rgba(236,247,255,.86);background:rgba(3,12,22,.42);backdrop-filter:blur(8px) }
     .trade-vehicle { position:absolute;z-index:1;width:44px;height:40px;display:block;object-fit:contain;pointer-events:none;opacity:.88;filter:brightness(0) invert(1) drop-shadow(0 0 8px rgba(143,234,255,.9));animation-duration:9s;animation-timing-function:ease-in-out;animation-iteration-count:infinite }
     .trade-vehicle-plane { left:84%;top:22%;animation-name:vehicle-glide-plane }
-    .trade-vehicle-ship { left:48%;top:58%;width:50px;height:40px;animation-name:vehicle-glide-ship;animation-duration:11s }
     @keyframes vehicle-glide-plane { 0%,100% { transform:translate3d(0,0,0) rotate(-8deg) } 50% { transform:translate3d(10px,-8px,0) rotate(-3deg) } }
-    @keyframes vehicle-glide-ship { 0%,100% { transform:translate3d(0,0,0) rotate(0deg) } 50% { transform:translate3d(-8px,5px,0) rotate(-3deg) } }
     .world-page { padding-top:clamp(112px,14vh,156px);background:#030911 }
     .world-heading h1 { font-size:clamp(32px,4.2vw,48px);font-weight:550;letter-spacing:-.045em }
     .world-heading p { font-size:14px }
@@ -339,7 +337,6 @@
       .arrow svg { width:15px;height:15px }
       .trade-vehicle { width:30px;height:27px;opacity:.74 }
       .trade-vehicle-plane { left:auto;right:8%;top:34% }
-      .trade-vehicle-ship { left:43%;top:61%;width:34px;height:28px }
       .world-page { padding-top:100px }
     }
     @media (prefers-reduced-motion:reduce) { .hero-topic,.hero-action { transition:none }.trade-vehicle { animation:none } }
@@ -518,7 +515,6 @@
         <button class="arrow" id="next" aria-label="向右旋转" data-i18n-label="rotate_right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
       <img class="trade-vehicle trade-vehicle-plane" src="assets/plane.svg" alt="" aria-hidden="true">
-      <img class="trade-vehicle trade-vehicle-ship" src="assets/ship.svg" alt="" aria-hidden="true">
       <section class="trade-pulse hero-trade-pulse" aria-label="全球贸易速览"><div class="trade-pulse-label" id="trade-pulse-label">全球贸易速览</div><div class="trade-pulse-copy"><a class="trade-pulse-headline" id="trade-pulse-headline" target="_blank" rel="noopener noreferrer" aria-live="polite">正在连接新闻源…</a><span class="trade-pulse-caption" id="trade-pulse-caption">GDELT 最新新闻</span></div><div class="trade-pulse-meta"><span id="trade-pulse-source">GDELT</span><time id="trade-pulse-time">—</time></div></section>
       <div class="loader" id="loader" role="status" aria-live="polite" data-i18n="loader">正在准备地球</div>
     </div>
@@ -874,6 +870,52 @@
       routeDots.push({ mesh: dot, offset: idx * 0.12 });
     });
 
+    // ===== 球面海上货轮 =====
+    const shipGroup = new THREE.Group();
+    shipGroup.visible = false;
+    spinner.add(shipGroup);
+    const shipHullShape = new THREE.Shape();
+    shipHullShape.moveTo(-0.025, -0.007);
+    shipHullShape.lineTo(0.017, -0.007);
+    shipHullShape.lineTo(0.026, -0.002);
+    shipHullShape.lineTo(0.03, 0);
+    shipHullShape.lineTo(0.026, 0.002);
+    shipHullShape.lineTo(0.017, 0.007);
+    shipHullShape.lineTo(-0.025, 0.007);
+    shipHullShape.lineTo(-0.03, 0);
+    shipHullShape.closePath();
+    const shipHullGeometry = new THREE.ShapeGeometry(shipHullShape);
+    const shipHullMaterial = new THREE.MeshBasicMaterial({ color:0x9ceeff, transparent:true, opacity:.98, side:THREE.DoubleSide, depthTest:true, depthWrite:false, blending:THREE.AdditiveBlending });
+    const shipGlowMaterial = new THREE.MeshBasicMaterial({ color:0x42cfff, transparent:true, opacity:.3, side:THREE.DoubleSide, depthTest:true, depthWrite:false, blending:THREE.AdditiveBlending });
+    const shipCargoMaterial = new THREE.MeshBasicMaterial({ color:0xffc878, transparent:true, opacity:.96, side:THREE.DoubleSide, depthTest:true, depthWrite:false, blending:THREE.AdditiveBlending });
+    const shipCargoGeometry = new THREE.PlaneGeometry(.008,.0055);
+    const greatCircleTrack = (waypoints, radius=.516) => {
+      const anchors=waypoints.map(([lat,lon])=>latLonToVec3(lat,lon,1).normalize()), points=[];
+      for(let segment=0;segment<anchors.length-1;segment++){
+        const start=anchors[segment],end=anchors[segment+1],dot=THREE.MathUtils.clamp(start.dot(end),-1,1),angle=Math.acos(dot),sinAngle=Math.sin(angle),steps=Math.max(10,Math.ceil(angle/(Math.PI/72)));
+        for(let step=segment===0?0:1;step<=steps;step++){
+          const t=step/steps;
+          const point=sinAngle>.0001
+            ? start.clone().multiplyScalar(Math.sin((1-t)*angle)/sinAngle).addScaledVector(end,Math.sin(t*angle)/sinAngle)
+            : start.clone().lerp(end,t);
+          points.push(point.normalize().multiplyScalar(radius));
+        }
+      }
+      return points;
+    };
+    const shipTracks = [
+      { waypoints:[[27,124],[24,132],[25,145],[30,160],[38,175],[42,-170],[38,-155],[34,-140],[33,-126]], offset:.12 },
+      { waypoints:[[1,104],[0,94],[5,82],[10,70],[15,61],[21,57]], offset:.46 },
+      { waypoints:[[52,5],[53,-10],[52,-25],[48,-40],[44,-53],[40,-66]], offset:.79 }
+    ].map(({waypoints,offset})=>{
+      const group=new THREE.Group();
+      const glow=new THREE.Mesh(shipHullGeometry,shipGlowMaterial);glow.position.z=.001;glow.scale.set(1.55,1.7,1);group.add(glow);
+      const hull=new THREE.Mesh(shipHullGeometry,shipHullMaterial);hull.position.z=.002;group.add(hull);
+      [-.008,.002].forEach((x,index)=>{const cargo=new THREE.Mesh(shipCargoGeometry,shipCargoMaterial);cargo.position.set(x,index===0?-.0018:.0018,.0035);group.add(cargo);});
+      group.renderOrder=5;shipGroup.add(group);
+      return { group, points:greatCircleTrack(waypoints), offset };
+    });
+
     // ===== 大洲点击检测 =====
     const raycaster = new THREE.Raycaster();
     const pointerNDC = new THREE.Vector2();
@@ -936,6 +978,7 @@
     loaderLabel.classList.add('done');
     cityLights.visible = true;
     routeGroup.visible = true;
+    shipGroup.visible = true;
 
     let lastTime=performance.now(), velocityX=0, velocityY=0, lastRelease=0, remainingYaw=0, dragging=false, pointerX=0, pointerY=0;
     const yAxis=new THREE.Vector3(0,1,0), xAxis=new THREE.Vector3(1,0,0), q=new THREE.Quaternion();
@@ -1012,6 +1055,14 @@
         dot.mesh.position.copy(pos);
         const scale = 0.65 + Math.sin(t * Math.PI) * 1.05;
         dot.mesh.scale.setScalar(scale);
+      });
+      shipTracks.forEach(({group,points,offset})=>{
+        const phase=((now*.000017+offset*2)%2+2)%2,direction=phase<=1?1:-1,progress=phase<=1?phase:2-phase,index=Math.min(points.length-2,Math.floor(progress*(points.length-1))),mix=progress*(points.length-1)-index;
+        const position=points[index].clone().lerp(points[index+1],mix).normalize().multiplyScalar(.516);
+        const previous=points[Math.max(0,index-1)],next=points[Math.min(points.length-1,index+2)];
+        const normal=position.clone().normalize(),forward=next.clone().sub(previous).multiplyScalar(direction).projectOnPlane(normal).normalize(),side=normal.clone().cross(forward).normalize();
+        group.position.copy(position);
+        group.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(forward,side,normal));
       });
       renderer.setRenderTarget(rtBack);renderer.autoClear=true;renderer.render(bgScene,bgCamera);
       renderer.setRenderTarget(rtFront);renderer.autoClear=true;renderer.render(bgScene,bgCamera);renderer.autoClear=false;renderer.clearDepth();glassSphere.material=backMat;renderer.render(scene,camera);
