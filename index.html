@@ -397,6 +397,11 @@
     .news-module-head { gap:6px }
     .news-module-index { font-size:9px;font-weight:600;letter-spacing:.14em }
     .news-module-head h2 { font-size:clamp(18px,1.75vw,23px);font-weight:560;text-shadow:0 2px 12px rgba(0,0,0,.5) }
+    .news-module-head h2 { display:flex;align-items:center;gap:9px }
+    .news-topic-icon { width:18px;height:18px;flex:none;filter:brightness(0) saturate(100%) invert(78%) sepia(54%) saturate(508%) hue-rotate(145deg) brightness(105%) contrast(98%);opacity:.95;transition:transform .3s ease,filter .3s ease }
+    .news-module-tariff .news-topic-icon { filter:brightness(0) saturate(100%) invert(80%) sepia(67%) saturate(726%) hue-rotate(338deg) brightness(103%) contrast(101%) }
+    .news-module-supply .news-topic-icon { filter:brightness(0) saturate(100%) invert(82%) sepia(43%) saturate(492%) hue-rotate(106deg) brightness(100%) contrast(99%) }
+    .news-module.is-active .news-topic-icon { transform:translateY(-1px) scale(1.08) }
     .news-module-count { width:auto;max-width:100%;padding:0;border:0;border-radius:0;background:transparent;color:rgba(244,248,251,.78);font-size:11px;line-height:1.55 }
     .news-module-stories { margin-top:auto }
     .news-empty-state { min-height:0;display:block;padding:5px 0 0;border:0;border-radius:0;background:transparent }
@@ -1273,9 +1278,9 @@
       }, 200);
     };
     const categories = [
-      { id:'policy', titleKey:'policy', subtitleKey:'policy_subtitle', image:'assets/trade-policy.png', query:'(tariff OR tariffs OR "trade policy" OR "trade agreement" OR "trade deal" OR "export control" OR sanctions OR WTO)', keywords:['trade policy','trade deal','trade agreement','trade pact','international trade','export control','贸易政策','贸易协定','贸易协议','出口管制','制裁'] },
-      { id:'tariff', titleKey:'tariff', subtitleKey:'tariff_subtitle', image:'assets/tariff-inspection.png', query:'(tariff OR tariffs OR customs OR "anti-dumping" OR countervailing OR duty OR duties)', keywords:['tariff','duties','customs','anti-dumping','countervailing','关税','反倾销','反补贴'] },
-      { id:'supply', titleKey:'supply', subtitleKey:'supply_subtitle', image:'assets/supply-chain.png', query:'("supply chain" OR logistics OR shipping OR "port congestion" OR freight OR maritime)', keywords:['supply chain','logistics','shipping','port congestion','供应链','物流','航运','港口'] }
+      { id:'policy', titleKey:'policy', subtitleKey:'policy_subtitle', image:'assets/trade-policy.png', icon:'assets/file-lines.svg', query:'(tariff OR tariffs OR "trade policy" OR "trade agreement" OR "trade deal" OR "export control" OR sanctions OR WTO)', keywords:['trade policy','trade deal','trade agreement','trade pact','international trade','export control','贸易政策','贸易协定','贸易协议','出口管制','制裁'] },
+      { id:'tariff', titleKey:'tariff', subtitleKey:'tariff_subtitle', image:'assets/tariff-inspection.png', icon:'assets/cube.svg', query:'(tariff OR tariffs OR customs OR "anti-dumping" OR countervailing OR duty OR duties)', keywords:['tariff','duties','customs','anti-dumping','countervailing','关税','反倾销','反补贴'] },
+      { id:'supply', titleKey:'supply', subtitleKey:'supply_subtitle', image:'assets/supply-chain.png', icon:'assets/ship.svg', query:'("supply chain" OR logistics OR shipping OR "port congestion" OR freight OR maritime)', keywords:['supply chain','logistics','shipping','port congestion','供应链','物流','航运','港口'] }
     ];
     const mapRegions = [
       { id:'north-america', zh:'北美洲', en:'North America', countries:['United States','United States of America','Canada','Mexico'] },
@@ -1488,7 +1493,12 @@
         number.className = 'news-module-index';
         number.textContent = `0${index + 1} / ${window.siteT('news_topic_word')}`;
         const title = document.createElement('h2');
-        title.textContent = categoryTitle;
+        const icon = document.createElement('img');
+        icon.className = 'news-topic-icon';
+        icon.src = category.icon;
+        icon.alt = '';
+        icon.setAttribute('aria-hidden', 'true');
+        title.append(icon, document.createTextNode(categoryTitle));
         const subtitle = document.createElement('span');
         subtitle.className = 'news-module-count';
         subtitle.textContent = related.length ? `${related.length} ${window.siteT('news_count')} · ${categorySubtitle}` : `${window.siteT('news_empty_count')} · ${categorySubtitle}`;
