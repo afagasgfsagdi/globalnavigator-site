@@ -663,6 +663,7 @@
   <script type="module">
     import * as THREE from 'three';
     const canvas = document.querySelector('#scene');
+    const unlitEarthPreview = new URLSearchParams(window.location.search).get('globe') === 'unlit';
     const loaderLabel = document.querySelector('#loader');
     const renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:false, powerPreference:'high-performance' });
     renderer.setClearColor(0x000000, 1);
@@ -727,7 +728,7 @@
       for(let i=0;i<nightData.length;i+=4){const luminance=nightData[i]*.2126+nightData[i+1]*.7152+nightData[i+2]*.0722;let light=Math.max(0,Math.min(1,(luminance-24)/96));light=Math.pow(light,1.2);nightData[i]=255;nightData[i+1]=174;nightData[i+2]=82;nightData[i+3]=Math.round(light*255*2.2);}
       nightContext.putImageData(nightPixels,0,0);
       nightContext.globalCompositeOperation='destination-in';nightContext.fill(landPath,'evenodd');
-      earthContext.save();earthContext.globalCompositeOperation='screen';earthContext.globalAlpha=.58;earthContext.filter='blur(4px)';earthContext.drawImage(nightCanvas,0,0);earthContext.filter='none';earthContext.globalAlpha=.98;earthContext.drawImage(nightCanvas,0,0);earthContext.restore();
+      if(!unlitEarthPreview){earthContext.save();earthContext.globalCompositeOperation='screen';earthContext.globalAlpha=.58;earthContext.filter='blur(4px)';earthContext.drawImage(nightCanvas,0,0);earthContext.filter='none';earthContext.globalAlpha=.98;earthContext.drawImage(nightCanvas,0,0);earthContext.restore();}
       earthContext.strokeStyle='rgba(113,181,224,.56)';earthContext.lineWidth=2.5;earthContext.stroke(landPath);earthContext.strokeStyle='rgba(220,242,255,.56)';earthContext.lineWidth=1.15;earthContext.stroke(landPath);
       earthTexture.needsUpdate=true;
     };
@@ -756,18 +757,18 @@
     atmosphere.frustumCulled=false;atmosphere.renderOrder=2.5;atmosphere.visible=false;spinner.add(atmosphere);
     const rtOptions={type:THREE.HalfFloatType,minFilter:THREE.LinearFilter,magFilter:THREE.LinearFilter,depthBuffer:true,stencilBuffer:false};
     const rtBack=new THREE.WebGLRenderTarget(1,1,rtOptions),rtFront=new THREE.WebGLRenderTarget(1,1,rtOptions);
-    const glassUniforms=(backside,target)=>({uTexture:{value:target.texture},uResolution:{value:new THREE.Vector2(1,1)},uIorR:{value:1.15},uIorY:{value:1.16},uIorG:{value:1.18},uIorC:{value:1.22},uIorB:{value:1.22},uIorP:{value:1.22},uRefractPower:{value:backside?.22:.3},uChromatic:{value:.5},uSaturation:{value:1.08},uShininess:{value:90},uDiffuseness:{value:.02},uFresnelPower:{value:5},uLight:{value:new THREE.Vector3(-1,1,1)},uBackside:{value:backside?1:0}});
+    const glassUniforms=(backside,target)=>({uTexture:{value:target.texture},uResolution:{value:new THREE.Vector2(1,1)},uIorR:{value:1.15},uIorY:{value:1.16},uIorG:{value:1.18},uIorC:{value:1.22},uIorB:{value:1.22},uIorP:{value:1.22},uRefractPower:{value:backside?.22:.3},uChromatic:{value:.5},uSaturation:{value:1.08},uShininess:{value:90},uDiffuseness:{value:.02},uFresnelPower:{value:5},uSpecularStrength:{value:unlitEarthPreview?0:1},uFresnelStrength:{value:unlitEarthPreview?0:1},uLight:{value:new THREE.Vector3(-1,1,1)},uBackside:{value:backside?1:0}});
     const glassVertex=`varying vec3 vNormal; varying vec3 vEye; void main(){vec4 worldPos=modelMatrix*vec4(position,1.0);vec4 mvPos=viewMatrix*worldPos;gl_Position=projectionMatrix*mvPos;vNormal=normalize(normalMatrix*normal);vEye=normalize(mvPos.xyz);}`;
     const glassFragment=`
       uniform sampler2D uTexture; uniform vec2 uResolution;
-      uniform float uIorR,uIorY,uIorG,uIorC,uIorB,uIorP,uRefractPower,uChromatic,uSaturation,uShininess,uDiffuseness,uFresnelPower,uBackside;
+      uniform float uIorR,uIorY,uIorG,uIorC,uIorB,uIorP,uRefractPower,uChromatic,uSaturation,uShininess,uDiffuseness,uFresnelPower,uSpecularStrength,uFresnelStrength,uBackside;
       uniform vec3 uLight; varying vec3 vNormal; varying vec3 vEye;
       float specularLight(vec3 normal,vec3 eye,vec3 light,float shininess,float diffuseness){vec3 lightVector=normalize(-light);vec3 viewVector=normalize(-eye);vec3 halfVector=normalize(lightVector+viewVector);return pow(max(dot(normal,halfVector),0.0),shininess)+max(0.0,dot(normal,lightVector))*diffuseness;}
       void main(){vec2 uv=gl_FragCoord.xy/uResolution;vec3 n=normalize(vNormal);if(uBackside>0.5)n=-n;vec3 eye=normalize(vEye);vec3 color=vec3(0.0);const int LOOP=16;
         for(int i=0;i<LOOP;i++){float slide=float(i)/float(LOOP)*0.045;vec2 refrR=refract(eye,n,1.0/uIorR).xy;vec2 refrY=refract(eye,n,1.0/uIorY).xy;vec2 refrG=refract(eye,n,1.0/uIorG).xy;vec2 refrC=refract(eye,n,1.0/uIorC).xy;vec2 refrB=refract(eye,n,1.0/uIorB).xy;vec2 refrP=refract(eye,n,1.0/uIorP).xy;
           vec3 texR=texture2D(uTexture,uv+refrR*(uRefractPower+slide)*uChromatic).rgb;vec3 texY=texture2D(uTexture,uv+refrY*(uRefractPower+slide)*uChromatic).rgb;vec3 texG=texture2D(uTexture,uv+refrG*(uRefractPower+slide*2.0)*uChromatic).rgb;vec3 texC=texture2D(uTexture,uv+refrC*(uRefractPower+slide*2.5)*uChromatic).rgb;vec3 texB=texture2D(uTexture,uv+refrB*(uRefractPower+slide*3.0)*uChromatic).rgb;vec3 texP=texture2D(uTexture,uv+refrP*(uRefractPower+slide)*uChromatic).rgb;
           float r=texR.r*.5;float y=(texY.r*2.0+texY.g*2.0-texY.b)/6.0;float g=texG.g*.5;float c=(texC.g*2.0+texC.b*2.0-texC.r)/6.0;float b=texB.b*.5;float p=(texP.b*2.0+texP.r*2.0-texP.g)/6.0;color+=vec3(r+(2.0*p+2.0*y-c)/3.0,g+(2.0*y+2.0*c-p)/3.0,b+(2.0*c+2.0*p-y)/3.0);}
-        color/=float(LOOP);float luma=dot(color,vec3(.2125,.7154,.0721));color=mix(vec3(luma),color,uSaturation);color=mix(color,vec3(color.r*.68,color.g*.86,min(1.0,color.b*1.32+.12)),.32);float spec=specularLight(n,eye,uLight,uShininess,uDiffuseness);spec+=.6*specularLight(n,eye,vec3(1.0,1.0,-1.0),uShininess*.6,uDiffuseness*.5);color+=vec3(spec*(uBackside>.5?.35:1.0));float fresnel=pow(1.0+dot(eye,n),uFresnelPower);color=mix(color,vec3(1.0),fresnel*(uBackside>.5?.25:.55));color+=vec3(.004,.005,.007);gl_FragColor=vec4(color,1.0);\n#include <colorspace_fragment>\n}`;
+        color/=float(LOOP);float luma=dot(color,vec3(.2125,.7154,.0721));color=mix(vec3(luma),color,uSaturation);color=mix(color,vec3(color.r*.68,color.g*.86,min(1.0,color.b*1.32+.12)),.32);float spec=specularLight(n,eye,uLight,uShininess,uDiffuseness);spec+=.6*specularLight(n,eye,vec3(1.0,1.0,-1.0),uShininess*.6,uDiffuseness*.5);color+=vec3(spec*(uBackside>.5?.35:1.0)*uSpecularStrength);float fresnel=pow(1.0+dot(eye,n),uFresnelPower);color=mix(color,vec3(1.0),fresnel*(uBackside>.5?.25:.55)*uFresnelStrength);color+=vec3(.004,.005,.007);gl_FragColor=vec4(color,1.0);\n#include <colorspace_fragment>\n}`;
     const backMat=new THREE.ShaderMaterial({uniforms:glassUniforms(true,rtBack),vertexShader:glassVertex,fragmentShader:glassFragment,side:THREE.BackSide,depthTest:true,depthWrite:true});
     const frontMat=new THREE.ShaderMaterial({uniforms:glassUniforms(false,rtFront),vertexShader:glassVertex,fragmentShader:glassFragment,side:THREE.FrontSide,depthTest:true,depthWrite:true});
     const glassSphere=new THREE.Mesh(new THREE.SphereGeometry(.5,128,96),frontMat);
@@ -1014,7 +1015,7 @@
     window.addEventListener('resize',resize,{passive:true});
     resize(); await waitForFonts; resize();
     loaderLabel.classList.add('done');
-    cityLights.visible = true;
+    cityLights.visible = !unlitEarthPreview;
     routeGroup.visible = true;
     shipGroup.visible = true;
     flightGroup.visible = true;
@@ -1114,7 +1115,7 @@
       renderer.setRenderTarget(rtBack);renderer.autoClear=true;renderer.render(bgScene,bgCamera);
       renderer.setRenderTarget(rtFront);renderer.autoClear=true;renderer.render(bgScene,bgCamera);renderer.autoClear=false;renderer.clearDepth();glassSphere.material=backMat;renderer.render(scene,camera);
       renderer.setRenderTarget(null);renderer.autoClear=true;renderer.render(bgScene,bgCamera);renderer.autoClear=false;renderer.clearDepth();glassSphere.material=frontMat;renderer.render(scene,camera);
-      glassSphere.visible=false;earth.visible=true;atmosphere.visible=true;grid.visible=true;renderer.render(scene,camera);glassSphere.visible=true;earth.visible=false;atmosphere.visible=false;grid.visible=false;renderer.autoClear=true;
+      glassSphere.visible=false;earth.visible=true;atmosphere.visible=!unlitEarthPreview;grid.visible=!unlitEarthPreview;renderer.render(scene,camera);glassSphere.visible=true;earth.visible=false;atmosphere.visible=false;grid.visible=false;renderer.autoClear=true;
     };
     requestAnimationFrame(frame);
   </script>
