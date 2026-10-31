@@ -911,7 +911,7 @@
       const glow=new THREE.Mesh(shipHullGeometry,shipGlowMaterial);glow.position.z=.001;glow.scale.set(1.55,1.7,1);group.add(glow);
       const hull=new THREE.Mesh(shipHullGeometry,shipHullMaterial);hull.position.z=.002;group.add(hull);
       [-.008,.002].forEach((x,index)=>{const cargo=new THREE.Mesh(shipCargoGeometry,shipCargoMaterial);cargo.position.set(x,index===0?-.0018:.0018,.0035);group.add(cargo);});
-      group.renderOrder=5;shipGroup.add(group);
+      group.scale.setScalar(1.28);group.renderOrder=5;shipGroup.add(group);
       return { group, points:greatCircleTrack(waypoints), routeFlow, offset };
     });
 
@@ -937,7 +937,7 @@
       const curve=new THREE.QuadraticBezierCurve3(start,control,end),line=new THREE.Line(new THREE.BufferGeometry().setFromPoints(curve.getPoints(80)),flightLineMaterial);
       line.computeLineDistances();line.renderOrder=4;flightGroup.add(line);
       const aircraft=new THREE.Group(),planeGlow=new THREE.Mesh(flightPlaneGeometry,flightGlowMaterial),plane=new THREE.Mesh(flightPlaneGeometry,flightPlaneMaterial);
-      planeGlow.scale.set(1.7,1.7,1);planeGlow.position.z=.001;plane.position.z=.002;aircraft.add(planeGlow,plane);aircraft.renderOrder=6;flightGroup.add(aircraft);
+      planeGlow.scale.set(1.7,1.7,1);planeGlow.position.z=.001;plane.position.z=.002;aircraft.add(planeGlow,plane);aircraft.scale.setScalar(1.24);aircraft.renderOrder=6;flightGroup.add(aircraft);
       const airports=[from,to].map((airport,index)=>{
         const marker=new THREE.Group(),lat=airport[0],lon=airport[1],position=latLonToVec3(lat,lon,.512),normal=position.clone().normalize(),east=new THREE.Vector3(0,1,0).cross(normal).normalize(),north=normal.clone().cross(east).normalize();
         marker.position.copy(position);marker.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(east,north,normal));
