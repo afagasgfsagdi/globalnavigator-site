@@ -798,7 +798,7 @@
     const cityGeometry = new THREE.BufferGeometry();
     cityGeometry.setAttribute('position', new THREE.BufferAttribute(cityPositions, 3));
     const cityMaterial = new THREE.PointsMaterial({
-        color: 0xffe0b0, size: 0.017, transparent: true, opacity: 0.96,
+        color: 0xffcb78, size: 0.024, transparent: true, opacity: 1.0,
       blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true
     });
     const cityLights = new THREE.Points(cityGeometry, cityMaterial);
