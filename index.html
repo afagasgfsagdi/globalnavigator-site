@@ -715,7 +715,7 @@
     window.globalNavigatorLandRings=originalContinents;
     const landPath=new Path2D();
     originalContinents.forEach(ring=>{const coords=ring.map(mapPoint);if(!coords.length)return;landPath.moveTo(coords[0][0],coords[0][1]);for(let i=1;i<coords.length;i++)landPath.lineTo(coords[i][0],coords[i][1]);landPath.closePath();});
-    earthContext.fillStyle='rgba(151,186,161,.78)';earthContext.fill(landPath,'evenodd');earthContext.strokeStyle='rgba(113,181,224,.48)';earthContext.lineWidth=3;earthContext.stroke(landPath);earthContext.strokeStyle='rgba(220,242,255,.72)';earthContext.lineWidth=1.35;earthContext.stroke(landPath);
+    earthContext.fillStyle='rgba(38,75,98,.82)';earthContext.fill(landPath,'evenodd');earthContext.strokeStyle='rgba(113,181,224,.56)';earthContext.lineWidth=2.5;earthContext.stroke(landPath);earthContext.strokeStyle='rgba(220,242,255,.56)';earthContext.lineWidth=1.15;earthContext.stroke(landPath);
     const earthTexture=new THREE.CanvasTexture(earthCanvas);earthTexture.colorSpace=THREE.SRGBColorSpace;earthTexture.minFilter=THREE.LinearMipmapLinearFilter;earthTexture.magFilter=THREE.LinearFilter;earthTexture.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());
     const terrainImage=new Image(),nightLightsImage=new Image();
     let terrainReady=false;
@@ -728,7 +728,7 @@
       nightContext.putImageData(nightPixels,0,0);
       nightContext.globalCompositeOperation='destination-in';nightContext.fill(landPath,'evenodd');
       earthContext.save();earthContext.globalCompositeOperation='screen';earthContext.globalAlpha=.58;earthContext.filter='blur(4px)';earthContext.drawImage(nightCanvas,0,0);earthContext.filter='none';earthContext.globalAlpha=.98;earthContext.drawImage(nightCanvas,0,0);earthContext.restore();
-      earthContext.strokeStyle='rgba(113,181,224,.48)';earthContext.lineWidth=3;earthContext.stroke(landPath);earthContext.strokeStyle='rgba(220,242,255,.72)';earthContext.lineWidth=1.35;earthContext.stroke(landPath);
+      earthContext.strokeStyle='rgba(113,181,224,.56)';earthContext.lineWidth=2.5;earthContext.stroke(landPath);earthContext.strokeStyle='rgba(220,242,255,.56)';earthContext.lineWidth=1.15;earthContext.stroke(landPath);
       earthTexture.needsUpdate=true;
     };
     nightLightsImage.onload=applyNightLights;
@@ -736,11 +736,11 @@
     terrainImage.onload=()=>{
       const reliefCanvas=document.createElement('canvas');reliefCanvas.width=earthCanvas.width;reliefCanvas.height=earthCanvas.height;
       const reliefContext=reliefCanvas.getContext('2d');
-      reliefContext.filter='saturate(1.08) contrast(1.16) brightness(.9)';
+      reliefContext.filter='saturate(.82) contrast(1.28) brightness(.62)';
       reliefContext.drawImage(terrainImage,0,0,reliefCanvas.width,reliefCanvas.height);
       reliefContext.filter='none';reliefContext.globalCompositeOperation='destination-in';reliefContext.fill(landPath,'evenodd');
-      earthContext.save();earthContext.globalAlpha=.78;earthContext.drawImage(reliefCanvas,0,0);earthContext.restore();
-      earthContext.strokeStyle='rgba(113,181,224,.48)';earthContext.lineWidth=3;earthContext.stroke(landPath);earthContext.strokeStyle='rgba(220,242,255,.72)';earthContext.lineWidth=1.35;earthContext.stroke(landPath);
+      earthContext.save();earthContext.globalAlpha=.86;earthContext.drawImage(reliefCanvas,0,0);earthContext.restore();
+      earthContext.strokeStyle='rgba(113,181,224,.56)';earthContext.lineWidth=2.5;earthContext.stroke(landPath);earthContext.strokeStyle='rgba(220,242,255,.56)';earthContext.lineWidth=1.15;earthContext.stroke(landPath);
       terrainReady=true;earthTexture.needsUpdate=true;applyNightLights();
     };
     terrainImage.src='assets/earth-blue-marble.jpg';
@@ -749,7 +749,7 @@
     earth.frustumCulled=false;earth.renderOrder=2;earth.visible=false;spinner.add(earth);
     const atmosphereMaterial=new THREE.ShaderMaterial({
       vertexShader:`varying vec3 vAtmosphereNormal;varying vec3 vAtmospherePosition;void main(){vec4 worldPosition=modelMatrix*vec4(position,1.0);vAtmosphereNormal=normalize(mat3(modelMatrix)*normal);vAtmospherePosition=worldPosition.xyz;gl_Position=projectionMatrix*viewMatrix*worldPosition;}`,
-      fragmentShader:`varying vec3 vAtmosphereNormal;varying vec3 vAtmospherePosition;void main(){vec3 viewDirection=normalize(cameraPosition-vAtmospherePosition);float rim=1.0-max(dot(normalize(vAtmosphereNormal),viewDirection),0.0);float glow=pow(rim,3.2);gl_FragColor=vec4(vec3(.12,.56,1.0),glow*.62);\n#include <colorspace_fragment>}`,
+      fragmentShader:`varying vec3 vAtmosphereNormal;varying vec3 vAtmospherePosition;void main(){vec3 viewDirection=normalize(cameraPosition-vAtmospherePosition);float rim=1.0-max(dot(normalize(vAtmosphereNormal),viewDirection),0.0);float glow=pow(rim,3.2);gl_FragColor=vec4(vec3(.12,.62,1.0),glow*.82);\n#include <colorspace_fragment>}`,
       transparent:true,blending:THREE.AdditiveBlending,depthTest:true,depthWrite:false,side:THREE.FrontSide
     });
     const atmosphere=new THREE.Mesh(new THREE.SphereGeometry(.523,128,96),atmosphereMaterial);
