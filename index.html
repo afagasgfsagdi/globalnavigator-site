@@ -1006,7 +1006,7 @@
       const dw=Math.max(1,Math.round(width*dpr)), dh=Math.max(1,Math.round(height*dpr));
       rtBack.setSize(dw,dh);rtFront.setSize(dw,dh);backMat.uniforms.uResolution.value.set(dw,dh);frontMat.uniforms.uResolution.value.set(dw,dh);
       headlineCanvas.width=dw; headlineCanvas.height=dh; drawSpaceBackground();
-      const visH=2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*10, visW=visH*camera.aspect; const sx=mobile?.68:portrait?.72:.71, sy=mobile?.60:portrait?.50:.46; const px=Math.min(height*(mobile?.30:portrait?.40:.72),width*(mobile?.32:portrait?.48:.60));
+      const visH=2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*10, visW=visH*camera.aspect; const sx=mobile?.68:portrait?.72:(width<1180?.77:.71), sy=mobile?.60:portrait?.50:.46; const px=Math.min(height*(mobile?.42:portrait?.48:.72),width*(mobile?.55:portrait?.48:.60));
       pivot.position.set((sx-.5)*visW,(.5-sy)*visH,0); const scale=(px/height)*visH; pivot.scale.setScalar(scale);
     };
     const waitForFonts=Promise.race([Promise.all([document.fonts.load('800 100px Poppins'),document.fonts.ready]),new Promise(resolve=>setTimeout(resolve,2500))]);
