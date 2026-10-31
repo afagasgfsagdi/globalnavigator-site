@@ -820,14 +820,14 @@
       const points = curve.getPoints(64);
       const lineGeo = new THREE.BufferGeometry().setFromPoints(points);
       const lineMat = new THREE.LineBasicMaterial({
-        color: 0x66e8ff, transparent: true, opacity: 0.48,
+        color: 0x82efff, transparent: true, opacity: 0.66,
         blending: THREE.AdditiveBlending, depthWrite: false
       });
       const line = new THREE.Line(lineGeo, lineMat);
       routeGroup.add(line);
-      const dotGeo = new THREE.SphereGeometry(0.008, 8, 8);
+      const dotGeo = new THREE.SphereGeometry(0.011, 10, 8);
       const dotMat = new THREE.MeshBasicMaterial({
-        color: 0xaef4ff, transparent: true, opacity: 1.0,
+        color: 0xe9fbff, transparent: true, opacity: 1.0,
         blending: THREE.AdditiveBlending, depthWrite: false
       });
       const dot = new THREE.Mesh(dotGeo, dotMat);
@@ -972,7 +972,7 @@
         const t = ((now * 0.00015 + dot.offset) % 1 + 1) % 1;
         const pos = routeCurves[idx].getPoint(t);
         dot.mesh.position.copy(pos);
-        const scale = 0.6 + Math.sin(t * Math.PI) * 0.8;
+        const scale = 0.65 + Math.sin(t * Math.PI) * 1.05;
         dot.mesh.scale.setScalar(scale);
       });
       renderer.setRenderTarget(rtBack);renderer.autoClear=true;renderer.render(bgScene,bgCamera);
