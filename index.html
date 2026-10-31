@@ -290,6 +290,11 @@
     .tagline,.cta-row { display:none }
     .arrows { z-index:3;top:17%;left:auto;right:var(--pad-x);transform:none }
     .arrow { width:40px;height:40px;border-color:rgba(236,247,255,.86);background:rgba(3,12,22,.42);backdrop-filter:blur(8px) }
+    .trade-vehicle { position:absolute;z-index:1;width:44px;height:40px;display:block;object-fit:contain;pointer-events:none;opacity:.88;filter:brightness(0) invert(1) drop-shadow(0 0 8px rgba(143,234,255,.9));animation-duration:9s;animation-timing-function:ease-in-out;animation-iteration-count:infinite }
+    .trade-vehicle-plane { left:84%;top:22%;animation-name:vehicle-glide-plane }
+    .trade-vehicle-ship { left:48%;top:58%;width:50px;height:40px;animation-name:vehicle-glide-ship;animation-duration:11s }
+    @keyframes vehicle-glide-plane { 0%,100% { transform:translate3d(0,0,0) rotate(-8deg) } 50% { transform:translate3d(10px,-8px,0) rotate(-3deg) } }
+    @keyframes vehicle-glide-ship { 0%,100% { transform:translate3d(0,0,0) rotate(0deg) } 50% { transform:translate3d(-8px,5px,0) rotate(-3deg) } }
     .world-page { padding-top:clamp(112px,14vh,156px);background:#030911 }
     .world-heading h1 { font-size:clamp(32px,4.2vw,48px);font-weight:550;letter-spacing:-.045em }
     .world-heading p { font-size:14px }
@@ -329,9 +334,12 @@
       .arrows { top:12%;right:18px;gap:9px }
       .arrow { width:33px;height:33px }
       .arrow svg { width:15px;height:15px }
+      .trade-vehicle { width:30px;height:27px;opacity:.74 }
+      .trade-vehicle-plane { left:auto;right:8%;top:34% }
+      .trade-vehicle-ship { left:43%;top:61%;width:34px;height:28px }
       .world-page { padding-top:100px }
     }
-    @media (prefers-reduced-motion:reduce) { .hero-topic,.hero-action { transition:none } }
+    @media (prefers-reduced-motion:reduce) { .hero-topic,.hero-action { transition:none }.trade-vehicle { animation:none } }
     @media (min-width:681px) and (max-width:980px) {
       .hero-copy { top:clamp(155px,18vh,190px);width:min(390px,45vw) }
       .hero-title { font-size:clamp(38px,5.3vw,48px) }
@@ -493,6 +501,8 @@
         <button class="arrow" id="prev" aria-label="向左旋转" data-i18n-label="rotate_left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
         <button class="arrow" id="next" aria-label="向右旋转" data-i18n-label="rotate_right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
+      <img class="trade-vehicle trade-vehicle-plane" src="assets/plane.svg" alt="" aria-hidden="true">
+      <img class="trade-vehicle trade-vehicle-ship" src="assets/ship.svg" alt="" aria-hidden="true">
       <div class="hero-topic-rail" aria-label="出海贸易情报">
         <a class="hero-topic" href="#world-page"><img class="hero-topic-art" src="assets/trade-policy.png" alt="" loading="eager"><span class="hero-topic-copy"><small class="hero-topic-index" data-lang-zh="01 / 全球贸易" data-lang-en="01 / TRADE INTELLIGENCE">01 / TRADE INTELLIGENCE</small><strong data-lang-zh="贸易政策" data-lang-en="Trade policy">贸易政策</strong><span data-lang-zh="规则与市场准入" data-lang-en="Rules and market access">规则与市场准入</span></span></a>
         <a class="hero-topic" href="#world-page"><img class="hero-topic-art" src="assets/tariff-inspection.png" alt="" loading="eager"><span class="hero-topic-copy"><small class="hero-topic-index" data-lang-zh="02 / 市场信号" data-lang-en="02 / MARKET SIGNALS">02 / MARKET SIGNALS</small><strong data-lang-zh="关税动态" data-lang-en="Tariff signals">关税动态</strong><span data-lang-zh="进出口与关税变化" data-lang-en="Import, export and tariff changes">进出口与关税变化</span></span></a>
