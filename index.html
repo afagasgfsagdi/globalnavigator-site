@@ -889,7 +889,7 @@
     const shipGlowMaterial = new THREE.MeshBasicMaterial({ color:0x42cfff, transparent:true, opacity:.3, side:THREE.DoubleSide, depthTest:true, depthWrite:false, blending:THREE.AdditiveBlending });
     const shipCargoMaterial = new THREE.MeshBasicMaterial({ color:0xffc878, transparent:true, opacity:.96, side:THREE.DoubleSide, depthTest:true, depthWrite:false, blending:THREE.AdditiveBlending });
     const shipCargoGeometry = new THREE.PlaneGeometry(.008,.0055);
-    const greatCircleTrack = (waypoints, radius=.516) => {
+    const greatCircleTrack = (waypoints, radius=.511) => {
       const anchors=waypoints.map(([lat,lon])=>latLonToVec3(lat,lon,1).normalize()), points=[];
       for(let segment=0;segment<anchors.length-1;segment++){
         const start=anchors[segment],end=anchors[segment+1],dot=THREE.MathUtils.clamp(start.dot(end),-1,1),angle=Math.acos(dot),sinAngle=Math.sin(angle),steps=Math.max(10,Math.ceil(angle/(Math.PI/72)));
@@ -1058,7 +1058,7 @@
       });
       shipTracks.forEach(({group,points,offset})=>{
         const phase=((now*.000017+offset*2)%2+2)%2,direction=phase<=1?1:-1,progress=phase<=1?phase:2-phase,index=Math.min(points.length-2,Math.floor(progress*(points.length-1))),mix=progress*(points.length-1)-index;
-        const position=points[index].clone().lerp(points[index+1],mix).normalize().multiplyScalar(.516);
+        const position=points[index].clone().lerp(points[index+1],mix).normalize().multiplyScalar(.511);
         const previous=points[Math.max(0,index-1)],next=points[Math.min(points.length-1,index+2)];
         const normal=position.clone().normalize(),forward=next.clone().sub(previous).multiplyScalar(direction).projectOnPlane(normal).normalize(),side=normal.clone().cross(forward).normalize();
         group.position.copy(position);
