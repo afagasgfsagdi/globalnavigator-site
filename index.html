@@ -728,7 +728,7 @@
       for(let i=0;i<nightData.length;i+=4){const luminance=nightData[i]*.2126+nightData[i+1]*.7152+nightData[i+2]*.0722;let light=Math.max(0,Math.min(1,(luminance-24)/96));light=Math.pow(light,1.2);nightData[i]=255;nightData[i+1]=174;nightData[i+2]=82;nightData[i+3]=Math.round(light*255*2.2);}
       nightContext.putImageData(nightPixels,0,0);
       nightContext.globalCompositeOperation='destination-in';nightContext.fill(landPath,'evenodd');
-      if(!unlitEarthPreview){earthContext.save();earthContext.globalCompositeOperation='screen';earthContext.globalAlpha=.58;earthContext.filter='blur(4px)';earthContext.drawImage(nightCanvas,0,0);earthContext.filter='none';earthContext.globalAlpha=.98;earthContext.drawImage(nightCanvas,0,0);earthContext.restore();}
+      if(!unlitEarthPreview){earthContext.save();earthContext.globalCompositeOperation='screen';earthContext.globalAlpha=.42;earthContext.filter='blur(4px)';earthContext.drawImage(nightCanvas,0,0);earthContext.filter='none';earthContext.globalAlpha=.98;earthContext.drawImage(nightCanvas,0,0);earthContext.restore();}
       earthContext.strokeStyle='rgba(113,181,224,.56)';earthContext.lineWidth=2.5;earthContext.stroke(landPath);earthContext.strokeStyle='rgba(220,242,255,.56)';earthContext.lineWidth=1.15;earthContext.stroke(landPath);
       earthTexture.needsUpdate=true;
     };
@@ -737,7 +737,7 @@
     terrainImage.onload=()=>{
       const reliefCanvas=document.createElement('canvas');reliefCanvas.width=earthCanvas.width;reliefCanvas.height=earthCanvas.height;
       const reliefContext=reliefCanvas.getContext('2d');
-      reliefContext.filter='saturate(.82) contrast(1.28) brightness(.62)';
+      reliefContext.filter='saturate(.78) contrast(1.3) brightness(.46)';
       reliefContext.drawImage(terrainImage,0,0,reliefCanvas.width,reliefCanvas.height);
       reliefContext.filter='none';reliefContext.globalCompositeOperation='destination-in';reliefContext.fill(landPath,'evenodd');
       earthContext.save();earthContext.globalAlpha=.86;earthContext.drawImage(reliefCanvas,0,0);earthContext.restore();
@@ -757,7 +757,7 @@
     atmosphere.frustumCulled=false;atmosphere.renderOrder=2.5;atmosphere.visible=false;spinner.add(atmosphere);
     const rtOptions={type:THREE.HalfFloatType,minFilter:THREE.LinearFilter,magFilter:THREE.LinearFilter,depthBuffer:true,stencilBuffer:false};
     const rtBack=new THREE.WebGLRenderTarget(1,1,rtOptions),rtFront=new THREE.WebGLRenderTarget(1,1,rtOptions);
-    const glassUniforms=(backside,target)=>({uTexture:{value:target.texture},uResolution:{value:new THREE.Vector2(1,1)},uIorR:{value:1.15},uIorY:{value:1.16},uIorG:{value:1.18},uIorC:{value:1.22},uIorB:{value:1.22},uIorP:{value:1.22},uRefractPower:{value:backside?.22:.3},uChromatic:{value:.5},uSaturation:{value:1.08},uShininess:{value:90},uDiffuseness:{value:.02},uFresnelPower:{value:5},uSpecularStrength:{value:unlitEarthPreview?0:1},uFresnelStrength:{value:unlitEarthPreview?0:1},uLight:{value:new THREE.Vector3(-1,1,1)},uBackside:{value:backside?1:0}});
+    const glassUniforms=(backside,target)=>({uTexture:{value:target.texture},uResolution:{value:new THREE.Vector2(1,1)},uIorR:{value:1.15},uIorY:{value:1.16},uIorG:{value:1.18},uIorC:{value:1.22},uIorB:{value:1.22},uIorP:{value:1.22},uRefractPower:{value:backside?.22:.3},uChromatic:{value:.5},uSaturation:{value:1.08},uShininess:{value:90},uDiffuseness:{value:.02},uFresnelPower:{value:5},uSpecularStrength:{value:unlitEarthPreview?0:.78},uFresnelStrength:{value:unlitEarthPreview?0:.9},uLight:{value:new THREE.Vector3(-1,1,1)},uBackside:{value:backside?1:0}});
     const glassVertex=`varying vec3 vNormal; varying vec3 vEye; void main(){vec4 worldPos=modelMatrix*vec4(position,1.0);vec4 mvPos=viewMatrix*worldPos;gl_Position=projectionMatrix*mvPos;vNormal=normalize(normalMatrix*normal);vEye=normalize(mvPos.xyz);}`;
     const glassFragment=`
       uniform sampler2D uTexture; uniform vec2 uResolution;
