@@ -1502,7 +1502,7 @@
         openTopic.setAttribute('aria-label', `${window.siteT('topic_open')}: ${categoryTitle}`);
         openTopic.title = `${window.siteT('topic_open')}: ${categoryTitle}`;
         openTopic.addEventListener('click', () => showTopicPage(category));
-        if (!related.length && !newsUnavailable) {
+        if (!related.length) {
           const empty = document.createElement('div');
           empty.className = 'news-empty-state';
           const message = document.createElement('p');
