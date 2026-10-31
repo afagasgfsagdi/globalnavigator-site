@@ -293,9 +293,6 @@
     .tagline,.cta-row { display:none }
     .arrows { z-index:3;top:17%;left:auto;right:var(--pad-x);transform:none }
     .arrow { width:40px;height:40px;border-color:rgba(236,247,255,.86);background:rgba(3,12,22,.42);backdrop-filter:blur(8px) }
-    .trade-vehicle { position:absolute;z-index:1;width:44px;height:40px;display:block;object-fit:contain;pointer-events:none;opacity:.88;filter:brightness(0) invert(1) drop-shadow(0 0 8px rgba(143,234,255,.9));animation-duration:9s;animation-timing-function:ease-in-out;animation-iteration-count:infinite }
-    .trade-vehicle-plane { left:84%;top:22%;animation-name:vehicle-glide-plane }
-    @keyframes vehicle-glide-plane { 0%,100% { transform:translate3d(0,0,0) rotate(-8deg) } 50% { transform:translate3d(10px,-8px,0) rotate(-3deg) } }
     .world-page { padding-top:clamp(112px,14vh,156px);background:#030911 }
     .world-heading h1 { font-size:clamp(32px,4.2vw,48px);font-weight:550;letter-spacing:-.045em }
     .world-heading p { font-size:14px }
@@ -335,11 +332,9 @@
       .arrows { top:12%;right:18px;gap:9px }
       .arrow { width:33px;height:33px }
       .arrow svg { width:15px;height:15px }
-      .trade-vehicle { width:30px;height:27px;opacity:.74 }
-      .trade-vehicle-plane { left:auto;right:8%;top:34% }
       .world-page { padding-top:100px }
     }
-    @media (prefers-reduced-motion:reduce) { .hero-topic,.hero-action { transition:none }.trade-vehicle { animation:none } }
+    @media (prefers-reduced-motion:reduce) { .hero-topic,.hero-action { transition:none } }
     @media (min-width:681px) and (max-width:980px) {
       .hero-copy { top:clamp(155px,18vh,190px);width:min(390px,45vw) }
       .hero-title { font-size:clamp(38px,5.3vw,48px) }
@@ -514,7 +509,6 @@
         <button class="arrow" id="prev" aria-label="向左旋转" data-i18n-label="rotate_left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
         <button class="arrow" id="next" aria-label="向右旋转" data-i18n-label="rotate_right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
-      <img class="trade-vehicle trade-vehicle-plane" src="assets/plane.svg" alt="" aria-hidden="true">
       <section class="trade-pulse hero-trade-pulse" aria-label="全球贸易速览"><div class="trade-pulse-label" id="trade-pulse-label">全球贸易速览</div><div class="trade-pulse-copy"><a class="trade-pulse-headline" id="trade-pulse-headline" target="_blank" rel="noopener noreferrer" aria-live="polite">正在连接新闻源…</a><span class="trade-pulse-caption" id="trade-pulse-caption">GDELT 最新新闻</span></div><div class="trade-pulse-meta"><span id="trade-pulse-source">GDELT</span><time id="trade-pulse-time">—</time></div></section>
       <div class="loader" id="loader" role="status" aria-live="polite" data-i18n="loader">正在准备地球</div>
     </div>
@@ -916,6 +910,38 @@
       return { group, points:greatCircleTrack(waypoints), offset };
     });
 
+    // ===== 内陆航班：暖金色空中弧线与起降点 =====
+    const flightGroup=new THREE.Group();flightGroup.visible=false;spinner.add(flightGroup);
+    const flightLineMaterial=new THREE.LineDashedMaterial({color:0xffd18b,transparent:true,opacity:.58,dashSize:.012,gapSize:.01,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
+    const flightPlaneShape=new THREE.Shape();
+    flightPlaneShape.moveTo(.024,0);flightPlaneShape.lineTo(.004,.003);flightPlaneShape.lineTo(-.002,.018);flightPlaneShape.lineTo(-.007,.018);flightPlaneShape.lineTo(-.005,.003);flightPlaneShape.lineTo(-.021,.007);flightPlaneShape.lineTo(-.025,.005);flightPlaneShape.lineTo(-.014,0);flightPlaneShape.lineTo(-.025,-.005);flightPlaneShape.lineTo(-.021,-.007);flightPlaneShape.lineTo(-.005,-.003);flightPlaneShape.lineTo(-.007,-.018);flightPlaneShape.lineTo(-.002,-.018);flightPlaneShape.lineTo(.004,-.003);flightPlaneShape.closePath();
+    const flightPlaneGeometry=new THREE.ShapeGeometry(flightPlaneShape);
+    const flightPlaneMaterial=new THREE.MeshBasicMaterial({color:0xffefc2,side:THREE.DoubleSide,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
+    const flightGlowMaterial=new THREE.MeshBasicMaterial({color:0xffb54a,transparent:true,opacity:.42,side:THREE.DoubleSide,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
+    const airportRingGeometry=new THREE.RingGeometry(.007,.0095,28);
+    const airportRingMaterial=new THREE.MeshBasicMaterial({color:0xffc878,transparent:true,opacity:.75,side:THREE.DoubleSide,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
+    const airportDotGeometry=new THREE.SphereGeometry(.003,8,6);
+    const airportDotMaterial=new THREE.MeshBasicMaterial({color:0xfff0c8,transparent:true,opacity:.95,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
+    const flightSchedules=[
+      { from:[39.9,116.4],to:[30.6,104.1],offset:.08 }, // 北京—成都
+      { from:[48.9,2.3],to:[41.9,12.5],offset:.41 },    // 巴黎—罗马
+      { from:[34,-118.2],to:[19.4,-99.1],offset:.73 }   // 洛杉矶—墨西哥城
+    ];
+    const flightTracks=flightSchedules.map(({from,to,offset})=>{
+      const start=latLonToVec3(from[0],from[1],.512),end=latLonToVec3(to[0],to[1],.512),control=start.clone().add(end).normalize().multiplyScalar(.625);
+      const curve=new THREE.QuadraticBezierCurve3(start,control,end),line=new THREE.Line(new THREE.BufferGeometry().setFromPoints(curve.getPoints(80)),flightLineMaterial);
+      line.computeLineDistances();line.renderOrder=4;flightGroup.add(line);
+      const aircraft=new THREE.Group(),planeGlow=new THREE.Mesh(flightPlaneGeometry,flightGlowMaterial),plane=new THREE.Mesh(flightPlaneGeometry,flightPlaneMaterial);
+      planeGlow.scale.set(1.7,1.7,1);planeGlow.position.z=.001;plane.position.z=.002;aircraft.add(planeGlow,plane);aircraft.renderOrder=6;flightGroup.add(aircraft);
+      const airports=[from,to].map((airport,index)=>{
+        const marker=new THREE.Group(),lat=airport[0],lon=airport[1],position=latLonToVec3(lat,lon,.512),normal=position.clone().normalize(),east=new THREE.Vector3(0,1,0).cross(normal).normalize(),north=normal.clone().cross(east).normalize();
+        marker.position.copy(position);marker.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(east,north,normal));
+        const ring=new THREE.Mesh(airportRingGeometry,airportRingMaterial.clone()),dot=new THREE.Mesh(airportDotGeometry,airportDotMaterial);ring.position.z=.001;dot.position.z=.002;marker.add(ring,dot);flightGroup.add(marker);
+        return {ring,offset:index*.5+offset};
+      });
+      return {curve,line,aircraft,airports,offset};
+    });
+
     // ===== 大洲点击检测 =====
     const raycaster = new THREE.Raycaster();
     const pointerNDC = new THREE.Vector2();
@@ -979,6 +1005,7 @@
     cityLights.visible = true;
     routeGroup.visible = true;
     shipGroup.visible = true;
+    flightGroup.visible = true;
 
     let lastTime=performance.now(), velocityX=0, velocityY=0, lastRelease=0, remainingYaw=0, dragging=false, pointerX=0, pointerY=0;
     const yAxis=new THREE.Vector3(0,1,0), xAxis=new THREE.Vector3(1,0,0), q=new THREE.Quaternion();
@@ -1063,6 +1090,13 @@
         const normal=position.clone().normalize(),forward=next.clone().sub(previous).multiplyScalar(direction).projectOnPlane(normal).normalize(),side=normal.clone().cross(forward).normalize();
         group.position.copy(position);
         group.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(forward,side,normal));
+      });
+      flightTracks.forEach(({curve,line,aircraft,airports,offset})=>{
+        const phase=((now*.000025+offset*2)%2+2)%2,direction=phase<=1?1:-1,progress=phase<=1?phase:2-phase;
+        const position=curve.getPoint(progress),normal=position.clone().normalize(),forward=curve.getTangent(progress).multiplyScalar(direction).projectOnPlane(normal).normalize(),side=normal.clone().cross(forward).normalize();
+        aircraft.position.copy(position);aircraft.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(forward,side,normal));
+        line.material.dashOffset=-now*.000018;
+        airports.forEach(({ring,offset:airportOffset})=>{const pulse=((now*.0007+airportOffset)%1+1)%1;ring.scale.setScalar(.75+pulse*1.65);ring.material.opacity=(1-pulse)*.7;});
       });
       renderer.setRenderTarget(rtBack);renderer.autoClear=true;renderer.render(bgScene,bgCamera);
       renderer.setRenderTarget(rtFront);renderer.autoClear=true;renderer.render(bgScene,bgCamera);renderer.autoClear=false;renderer.clearDepth();glassSphere.material=backMat;renderer.render(scene,camera);
