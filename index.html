@@ -266,7 +266,7 @@
     @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important;transition-duration:.01ms!important }.login-fragment,.main-page.is-revealing,.main-page.is-revealing .main-topbar,.main-page.is-revealing .agent-sidebar,.main-page.is-revealing .agent-chat { animation-duration:.01ms!important } }
     /* Ocean Trade Atlas redesign */
     :root { --pad-x:clamp(24px,6.25vw,90px);--trade-cyan:#8feaff;--trade-amber:#ffc878 }
-    .hero { min-height:760px;background:#020711 }
+    .hero { height:min(100svh,900px);min-height:660px;background:#020711 }
     #scene { z-index:0 }
     .hero .ui { z-index:2 }
     .hero-copy { position:absolute;top:clamp(152px,19vh,216px);left:var(--pad-x);width:min(540px,42vw);text-align:left;pointer-events:none }
@@ -484,10 +484,10 @@
     <canvas id="scene" aria-label="可旋转的玻璃地球，拖动即可旋转。" data-i18n-label="earth_canvas"></canvas>
     <div class="ui">
       <div class="hero-copy">
-        <p class="hero-eyebrow" data-lang-zh="世界探索 · 国际贸易" data-lang-en="WORLD EXPLORATION · TRADE">世界探索 · 国际贸易</p>
-        <h1 class="hero-title"><span data-lang-zh="发现全球市场" data-lang-en="Discover global markets">发现全球市场</span><br><span class="hero-title-accent" data-lang-zh="开启出海新机遇" data-lang-en="Unlock overseas growth">开启出海新机遇</span></h1>
-        <p class="hero-description" data-lang-zh="汇集全球贸易政策、关税与供应链资讯，助力中国企业链接世界，发现更多市场。" data-lang-en="Global trade policy, tariff and supply-chain intelligence to help companies reach new markets.">汇集全球贸易政策、关税与供应链资讯，助力中国企业链接世界，发现更多市场。</p>
-        <a class="hero-action" href="#world-page"><span data-lang-zh="开始探索全球市场" data-lang-en="Explore global markets">开始探索全球市场</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+        <p class="hero-eyebrow" data-lang-zh="OCEAN TRADE ATLAS" data-lang-en="OCEAN TRADE ATLAS">OCEAN TRADE ATLAS</p>
+        <h1 class="hero-title"><span data-lang-zh="发现全球市场" data-lang-en="Discover global markets">发现全球市场</span><br><span class="hero-title-accent" data-lang-zh="连接无限商机" data-lang-en="Connect to new opportunities">连接无限商机</span></h1>
+        <p class="hero-description" data-lang-zh="汇集全球贸易政策、关税与供应链资讯，助力中国企业出海，把握世界市场新机遇。" data-lang-en="Trade policy, tariff and supply-chain intelligence to help Chinese businesses reach new markets.">汇集全球贸易政策、关税与供应链资讯，助力中国企业出海，把握世界市场新机遇。</p>
+        <a class="hero-action" href="#world-page"><span data-lang-zh="开始探索世界市场" data-lang-en="Explore global markets">开始探索世界市场</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
       </div>
       <div class="arrows" aria-label="旋转玻璃地球" data-i18n-label="earth_controls">
         <button class="arrow" id="prev" aria-label="向左旋转" data-i18n-label="rotate_left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
@@ -704,10 +704,10 @@
     window.globalNavigatorLandRings=originalContinents;
     const landPath=new Path2D();
     originalContinents.forEach(ring=>{const coords=ring.map(mapPoint);if(!coords.length)return;landPath.moveTo(coords[0][0],coords[0][1]);for(let i=1;i<coords.length;i++)landPath.lineTo(coords[i][0],coords[i][1]);landPath.closePath();});
-    earthContext.fillStyle='rgba(165,218,255,.62)';earthContext.fill(landPath,'evenodd');earthContext.strokeStyle='rgba(255,255,255,.92)';earthContext.lineWidth=4;earthContext.stroke(landPath);
+    earthContext.fillStyle='rgba(165,218,255,.76)';earthContext.fill(landPath,'evenodd');earthContext.strokeStyle='rgba(255,255,255,.96)';earthContext.lineWidth=4;earthContext.stroke(landPath);
     const earthTexture=new THREE.CanvasTexture(earthCanvas);earthTexture.colorSpace=THREE.SRGBColorSpace;earthTexture.minFilter=THREE.LinearMipmapLinearFilter;earthTexture.magFilter=THREE.LinearFilter;earthTexture.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());
-    const pivot=new THREE.Group(),spinner=new THREE.Group();scene.add(pivot);pivot.add(spinner);spinner.rotation.set(-.42,.62,.18);
-    const earth=new THREE.Mesh(new THREE.SphereGeometry(.507,128,96),new THREE.MeshBasicMaterial({map:earthTexture,color:12049663,transparent:true,opacity:.72,alphaTest:.015,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending}));
+    const pivot=new THREE.Group(),spinner=new THREE.Group();scene.add(pivot);pivot.add(spinner);spinner.rotation.set(-.42,-1.92,.18);
+    const earth=new THREE.Mesh(new THREE.SphereGeometry(.507,128,96),new THREE.MeshBasicMaterial({map:earthTexture,color:12049663,transparent:true,opacity:.84,alphaTest:.015,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending}));
     earth.frustumCulled=false;earth.renderOrder=2;earth.visible=false;spinner.add(earth);
     const rtOptions={type:THREE.HalfFloatType,minFilter:THREE.LinearFilter,magFilter:THREE.LinearFilter,depthBuffer:true,stencilBuffer:false};
     const rtBack=new THREE.WebGLRenderTarget(1,1,rtOptions),rtFront=new THREE.WebGLRenderTarget(1,1,rtOptions);
@@ -776,7 +776,7 @@
     const cityGeometry = new THREE.BufferGeometry();
     cityGeometry.setAttribute('position', new THREE.BufferAttribute(cityPositions, 3));
     const cityMaterial = new THREE.PointsMaterial({
-      color: 0xffe0b0, size: 0.012, transparent: true, opacity: 0.9,
+        color: 0xffe0b0, size: 0.017, transparent: true, opacity: 0.96,
       blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true
     });
     const cityLights = new THREE.Points(cityGeometry, cityMaterial);
@@ -810,7 +810,7 @@
       const points = curve.getPoints(64);
       const lineGeo = new THREE.BufferGeometry().setFromPoints(points);
       const lineMat = new THREE.LineBasicMaterial({
-        color: 0x66e8ff, transparent: true, opacity: 0.28,
+        color: 0x66e8ff, transparent: true, opacity: 0.48,
         blending: THREE.AdditiveBlending, depthWrite: false
       });
       const line = new THREE.Line(lineGeo, lineMat);
@@ -878,7 +878,7 @@
       const dw=Math.max(1,Math.round(width*dpr)), dh=Math.max(1,Math.round(height*dpr));
       rtBack.setSize(dw,dh);rtFront.setSize(dw,dh);backMat.uniforms.uResolution.value.set(dw,dh);frontMat.uniforms.uResolution.value.set(dw,dh);
       headlineCanvas.width=dw; headlineCanvas.height=dh; drawSpaceBackground();
-      const visH=2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*10, visW=visH*camera.aspect; const sx=mobile?.68:portrait?.70:.68, sy=mobile?.60:portrait?.51:.46; const px=Math.min(height*(mobile?.30:portrait?.40:.58),width*(mobile?.32:portrait?.48:.42));
+      const visH=2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*10, visW=visH*camera.aspect; const sx=mobile?.68:portrait?.70:.64, sy=mobile?.60:portrait?.34:.32; const px=Math.min(height*(mobile?.30:portrait?.44:.72),width*(mobile?.32:portrait?.52:.64));
       pivot.position.set((sx-.5)*visW,(.5-sy)*visH,0); const scale=(px/height)*visH; pivot.scale.setScalar(scale);
     };
     const waitForFonts=Promise.race([Promise.all([document.fonts.load('800 100px Poppins'),document.fonts.ready]),new Promise(resolve=>setTimeout(resolve,2500))]);
@@ -956,7 +956,7 @@
     const frame=now=>{
       requestAnimationFrame(frame); const dt=Math.min(.05,Math.max(.001,(now-lastTime)/1000));lastTime=now;const frames=dt*60;
       if(remainingYaw){const step=remainingYaw*Math.min(1,.09*frames);rotateWorld(yAxis,step);remainingYaw-=step;if(Math.abs(remainingYaw)<.0005)remainingYaw=0;}
-      if(!dragging){rotateWorld(yAxis,velocityX*frames);rotateWorld(xAxis,velocityY*frames);const damp=Math.pow(.94,frames);velocityX*=damp;velocityY*=damp;if(Math.abs(velocityX)+Math.abs(velocityY)<.00002)velocityX=velocityY=0;const driftStart=lastRelease?lastRelease+600:0;const blend=driftStart?THREE.MathUtils.clamp((now-driftStart)/1000,0,1):1;rotateWorld(yAxis,.0035*frames*blend);rotateWorld(xAxis,.0012*frames*blend);}
+      if(!dragging){rotateWorld(yAxis,velocityX*frames);rotateWorld(xAxis,velocityY*frames);const damp=Math.pow(.94,frames);velocityX*=damp;velocityY*=damp;if(Math.abs(velocityX)+Math.abs(velocityY)<.00002)velocityX=velocityY=0;const driftStart=lastRelease?lastRelease+600:0;const blend=driftStart?THREE.MathUtils.clamp((now-driftStart)/1000,0,1):1;rotateWorld(yAxis,.0008*frames*blend);rotateWorld(xAxis,.00025*frames*blend);}
       // 贸易航线光点动画
       routeDots.forEach((dot, idx) => {
         const t = ((now * 0.00015 + dot.offset) % 1 + 1) % 1;
@@ -1480,7 +1480,7 @@
         openTopic.setAttribute('aria-label', `${window.siteT('topic_open')}: ${categoryTitle}`);
         openTopic.title = `${window.siteT('topic_open')}: ${categoryTitle}`;
         openTopic.addEventListener('click', () => showTopicPage(category));
-        if (!related.length) {
+        if (!related.length && !newsUnavailable) {
           const empty = document.createElement('div');
           empty.className = 'news-empty-state';
           const message = document.createElement('p');
