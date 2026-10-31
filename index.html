@@ -715,22 +715,22 @@
     window.globalNavigatorLandRings=originalContinents;
     const landPath=new Path2D();
     originalContinents.forEach(ring=>{const coords=ring.map(mapPoint);if(!coords.length)return;landPath.moveTo(coords[0][0],coords[0][1]);for(let i=1;i<coords.length;i++)landPath.lineTo(coords[i][0],coords[i][1]);landPath.closePath();});
-    earthContext.fillStyle='rgba(165,218,255,.76)';earthContext.fill(landPath,'evenodd');earthContext.strokeStyle='rgba(255,255,255,.96)';earthContext.lineWidth=4;earthContext.stroke(landPath);
+    earthContext.fillStyle='rgba(151,186,161,.78)';earthContext.fill(landPath,'evenodd');earthContext.strokeStyle='rgba(255,255,255,.96)';earthContext.lineWidth=4;earthContext.stroke(landPath);
     const earthTexture=new THREE.CanvasTexture(earthCanvas);earthTexture.colorSpace=THREE.SRGBColorSpace;earthTexture.minFilter=THREE.LinearMipmapLinearFilter;earthTexture.magFilter=THREE.LinearFilter;earthTexture.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());
     const terrainImage=new Image();
     terrainImage.onload=()=>{
       const reliefCanvas=document.createElement('canvas');reliefCanvas.width=earthCanvas.width;reliefCanvas.height=earthCanvas.height;
       const reliefContext=reliefCanvas.getContext('2d');
-      reliefContext.filter='saturate(.78) contrast(1.12) brightness(1.08)';
+      reliefContext.filter='saturate(1.08) contrast(1.16) brightness(1.06)';
       reliefContext.drawImage(terrainImage,0,0,reliefCanvas.width,reliefCanvas.height);
       reliefContext.filter='none';reliefContext.globalCompositeOperation='destination-in';reliefContext.fill(landPath,'evenodd');
-      earthContext.save();earthContext.globalAlpha=.74;earthContext.drawImage(reliefCanvas,0,0);earthContext.restore();
+      earthContext.save();earthContext.globalAlpha=.84;earthContext.drawImage(reliefCanvas,0,0);earthContext.restore();
       earthContext.strokeStyle='rgba(255,255,255,.96)';earthContext.lineWidth=4;earthContext.stroke(landPath);
       earthTexture.needsUpdate=true;
     };
     terrainImage.src='assets/earth-blue-marble.jpg';
     const pivot=new THREE.Group(),spinner=new THREE.Group();scene.add(pivot);pivot.add(spinner);spinner.rotation.set(.08,-1.92,.18);
-    const earth=new THREE.Mesh(new THREE.SphereGeometry(.507,128,96),new THREE.MeshBasicMaterial({map:earthTexture,color:12049663,transparent:true,opacity:.84,alphaTest:.015,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending}));
+    const earth=new THREE.Mesh(new THREE.SphereGeometry(.507,128,96),new THREE.MeshBasicMaterial({map:earthTexture,color:0xffffff,transparent:true,opacity:.84,alphaTest:.015,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending}));
     earth.frustumCulled=false;earth.renderOrder=2;earth.visible=false;spinner.add(earth);
     const rtOptions={type:THREE.HalfFloatType,minFilter:THREE.LinearFilter,magFilter:THREE.LinearFilter,depthBuffer:true,stencilBuffer:false};
     const rtBack=new THREE.WebGLRenderTarget(1,1,rtOptions),rtFront=new THREE.WebGLRenderTarget(1,1,rtOptions);
@@ -901,7 +901,7 @@
       const dw=Math.max(1,Math.round(width*dpr)), dh=Math.max(1,Math.round(height*dpr));
       rtBack.setSize(dw,dh);rtFront.setSize(dw,dh);backMat.uniforms.uResolution.value.set(dw,dh);frontMat.uniforms.uResolution.value.set(dw,dh);
       headlineCanvas.width=dw; headlineCanvas.height=dh; drawSpaceBackground();
-      const visH=2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*10, visW=visH*camera.aspect; const sx=mobile?.68:portrait?.75:.66, sy=mobile?.60:portrait?.44:.47; const px=Math.min(height*(mobile?.30:portrait?.44:.74),width*(mobile?.32:portrait?.52:.60));
+      const visH=2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*10, visW=visH*camera.aspect; const sx=mobile?.68:portrait?.75:.66, sy=mobile?.60:portrait?.44:.50; const px=Math.min(height*(mobile?.30:portrait?.44:.74),width*(mobile?.32:portrait?.52:.60));
       pivot.position.set((sx-.5)*visW,(.5-sy)*visH,0); const scale=(px/height)*visH; pivot.scale.setScalar(scale);
     };
     const waitForFonts=Promise.race([Promise.all([document.fonts.load('800 100px Poppins'),document.fonts.ready]),new Promise(resolve=>setTimeout(resolve,2500))]);
