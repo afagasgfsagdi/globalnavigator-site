@@ -729,10 +729,10 @@
       const nightCanvas=document.createElement('canvas');nightCanvas.width=earthCanvas.width;nightCanvas.height=earthCanvas.height;
       const nightContext=nightCanvas.getContext('2d');nightContext.drawImage(nightLightsImage,0,0,nightCanvas.width,nightCanvas.height);
       const nightPixels=nightContext.getImageData(0,0,nightCanvas.width,nightCanvas.height),nightData=nightPixels.data;
-      for(let i=0;i<nightData.length;i+=4){const luminance=nightData[i]*.2126+nightData[i+1]*.7152+nightData[i+2]*.0722;let light=Math.max(0,Math.min(1,(luminance-24)/96));light=Math.pow(light,1.2);nightData[i]=255;nightData[i+1]=194;nightData[i+2]=116;nightData[i+3]=Math.round(light*255*2.2);}
+      for(let i=0;i<nightData.length;i+=4){const luminance=nightData[i]*.2126+nightData[i+1]*.7152+nightData[i+2]*.0722;let light=Math.max(0,Math.min(1,(luminance-24)/96));light=Math.pow(light,1.2);nightData[i]=255;nightData[i+1]=174;nightData[i+2]=82;nightData[i+3]=Math.round(light*255*2.2);}
       nightContext.putImageData(nightPixels,0,0);
       nightContext.globalCompositeOperation='destination-in';nightContext.fill(landPath,'evenodd');
-      earthContext.save();earthContext.globalCompositeOperation='screen';earthContext.globalAlpha=.48;earthContext.filter='blur(4px)';earthContext.drawImage(nightCanvas,0,0);earthContext.filter='none';earthContext.globalAlpha=.98;earthContext.drawImage(nightCanvas,0,0);earthContext.restore();
+      earthContext.save();earthContext.globalCompositeOperation='screen';earthContext.globalAlpha=.58;earthContext.filter='blur(4px)';earthContext.drawImage(nightCanvas,0,0);earthContext.filter='none';earthContext.globalAlpha=.98;earthContext.drawImage(nightCanvas,0,0);earthContext.restore();
       earthContext.strokeStyle='rgba(113,181,224,.48)';earthContext.lineWidth=3;earthContext.stroke(landPath);earthContext.strokeStyle='rgba(220,242,255,.72)';earthContext.lineWidth=1.35;earthContext.stroke(landPath);
       earthTexture.needsUpdate=true;
     };
