@@ -923,9 +923,9 @@
     const airportDotGeometry=new THREE.SphereGeometry(.003,8,6);
     const airportDotMaterial=new THREE.MeshBasicMaterial({color:0xfff0c8,transparent:true,opacity:.95,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
     const flightSchedules=[
-      { from:[39.9,116.4],to:[30.6,104.1],offset:.08 }, // 北京—成都
-      { from:[48.9,2.3],to:[41.9,12.5],offset:.41 },    // 巴黎—罗马
-      { from:[34,-118.2],to:[19.4,-99.1],offset:.73 }   // 洛杉矶—墨西哥城
+      { from:[39.9,116.4],to:[55.75,37.62],offset:.08 }, // 北京—莫斯科
+      { from:[48.9,2.3],to:[41.01,28.98],offset:.41 },   // 巴黎—伊斯坦布尔
+      { from:[34,-118.2],to:[41.88,-87.63],offset:.73 } // 洛杉矶—芝加哥
     ];
     const flightTracks=flightSchedules.map(({from,to,offset})=>{
       const start=latLonToVec3(from[0],from[1],.512),end=latLonToVec3(to[0],to[1],.512),control=start.clone().add(end).normalize().multiplyScalar(.625);
