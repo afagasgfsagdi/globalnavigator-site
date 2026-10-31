@@ -883,6 +883,8 @@
     const shipGlowMaterial = new THREE.MeshBasicMaterial({ color:0x42cfff, transparent:true, opacity:.3, side:THREE.DoubleSide, depthTest:true, depthWrite:false, blending:THREE.AdditiveBlending });
     const shipCargoMaterial = new THREE.MeshBasicMaterial({ color:0xffc878, transparent:true, opacity:.96, side:THREE.DoubleSide, depthTest:true, depthWrite:false, blending:THREE.AdditiveBlending });
     const shipCargoGeometry = new THREE.PlaneGeometry(.008,.0055);
+    const shipRouteBaseMaterial = new THREE.LineBasicMaterial({ color:0x38aeca, transparent:true, opacity:.38, depthTest:true, depthWrite:false, blending:THREE.AdditiveBlending });
+    const shipRouteFlowMaterial = new THREE.LineDashedMaterial({ color:0x82e8ff, transparent:true, opacity:.68, dashSize:.008, gapSize:.006, depthTest:true, depthWrite:false, blending:THREE.AdditiveBlending });
     const greatCircleTrack = (waypoints, radius=.511) => {
       const anchors=waypoints.map(([lat,lon])=>latLonToVec3(lat,lon,1).normalize()), points=[];
       for(let segment=0;segment<anchors.length-1;segment++){
@@ -902,12 +904,15 @@
       { waypoints:[[1,104],[0,94],[5,82],[10,70],[15,61],[21,57]], offset:.46 },
       { waypoints:[[52,5],[53,-10],[52,-25],[48,-40],[44,-53],[40,-66]], offset:.79 }
     ].map(({waypoints,offset})=>{
+      const points=greatCircleTrack(waypoints,.513),routeGeometry=new THREE.BufferGeometry().setFromPoints(points);
+      const routeBase=new THREE.Line(routeGeometry,shipRouteBaseMaterial),routeFlow=new THREE.Line(routeGeometry,shipRouteFlowMaterial.clone());
+      routeFlow.computeLineDistances();routeBase.renderOrder=3;routeFlow.renderOrder=4;shipGroup.add(routeBase,routeFlow);
       const group=new THREE.Group();
       const glow=new THREE.Mesh(shipHullGeometry,shipGlowMaterial);glow.position.z=.001;glow.scale.set(1.55,1.7,1);group.add(glow);
       const hull=new THREE.Mesh(shipHullGeometry,shipHullMaterial);hull.position.z=.002;group.add(hull);
       [-.008,.002].forEach((x,index)=>{const cargo=new THREE.Mesh(shipCargoGeometry,shipCargoMaterial);cargo.position.set(x,index===0?-.0018:.0018,.0035);group.add(cargo);});
       group.renderOrder=5;shipGroup.add(group);
-      return { group, points:greatCircleTrack(waypoints), offset };
+      return { group, points:greatCircleTrack(waypoints), routeFlow, offset };
     });
 
     // ===== 内陆航班：暖金色空中弧线与起降点 =====
@@ -923,9 +928,9 @@
     const airportDotGeometry=new THREE.SphereGeometry(.003,8,6);
     const airportDotMaterial=new THREE.MeshBasicMaterial({color:0xfff0c8,transparent:true,opacity:.95,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
     const flightSchedules=[
-      { from:[39.9,116.4],to:[55.75,37.62],offset:.08 }, // 北京—莫斯科
-      { from:[48.9,2.3],to:[41.01,28.98],offset:.41 },   // 巴黎—伊斯坦布尔
-      { from:[34,-118.2],to:[41.88,-87.63],offset:.73 } // 洛杉矶—芝加哥
+      { from:[35.68,139.69],to:[47.45,-122.31],offset:.08 }, // 东京—西雅图，跨北太平洋
+      { from:[38.77,-9.13],to:[-8.13,-34.92],offset:.41 },   // 里斯本—累西腓，跨大西洋
+      { from:[-33.97,18.6],to:[-31.94,115.97],offset:.73 } // 开普敦—珀斯，跨印度洋
     ];
     const flightTracks=flightSchedules.map(({from,to,offset})=>{
       const start=latLonToVec3(from[0],from[1],.512),end=latLonToVec3(to[0],to[1],.512),control=start.clone().add(end).normalize().multiplyScalar(.625);
@@ -1083,7 +1088,8 @@
         const scale = 0.65 + Math.sin(t * Math.PI) * 1.05;
         dot.mesh.scale.setScalar(scale);
       });
-      shipTracks.forEach(({group,points,offset})=>{
+      shipTracks.forEach(({group,points,routeFlow,offset})=>{
+        routeFlow.material.dashOffset=-now*.000012;
         const phase=((now*.000017+offset*2)%2+2)%2,direction=phase<=1?1:-1,progress=phase<=1?phase:2-phase,index=Math.min(points.length-2,Math.floor(progress*(points.length-1))),mix=progress*(points.length-1)-index;
         const position=points[index].clone().lerp(points[index+1],mix).normalize().multiplyScalar(.511);
         const previous=points[Math.max(0,index-1)],next=points[Math.min(points.length-1,index+2)];
