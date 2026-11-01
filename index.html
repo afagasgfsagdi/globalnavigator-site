@@ -279,6 +279,20 @@
     .hero-action { min-height:52px;display:inline-flex;align-items:center;gap:18px;padding:0 22px;border:1px solid rgba(215,244,255,.9);border-radius:999px;background:#edfaff;color:#07131e;text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.01em;pointer-events:auto;box-shadow:0 7px 30px rgba(89,202,255,.16);transition:transform .22s ease,background .22s ease,box-shadow .22s ease }
     .hero-action:hover,.hero-action:focus-visible { transform:translateY(-2px);background:#fff;box-shadow:0 10px 34px rgba(89,202,255,.3);outline:none }
     .hero-action svg { width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round }
+    .hero-journey { width:min(330px,100%);margin-top:23px;padding:14px 15px 13px;border:1px solid rgba(151,211,244,.25);border-radius:14px;background:linear-gradient(120deg,rgba(7,23,37,.78),rgba(5,15,26,.62));box-shadow:inset 0 1px 0 rgba(232,248,255,.07),0 16px 36px rgba(0,0,0,.2);backdrop-filter:blur(15px) saturate(120%);-webkit-backdrop-filter:blur(15px) saturate(120%);pointer-events:auto;animation:hero-journey-in .7s .12s both }
+    .hero-journey-head { display:flex;align-items:center;justify-content:space-between;gap:12px;color:rgba(222,239,250,.68);font-size:9px;font-weight:600;letter-spacing:.16em }
+    .hero-journey-head span:last-child { color:rgba(147,217,241,.5);font-size:8px;letter-spacing:.12em }
+    .hero-journey-steps { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:13px 0 0;padding:0;list-style:none }
+    .hero-journey-step { position:relative;min-width:0;display:grid;align-content:start;gap:5px;padding:0 10px }
+    .hero-journey-step:first-child { padding-left:0 }
+    .hero-journey-step:last-child { padding-right:0 }
+    .hero-journey-step + .hero-journey-step { border-left:1px solid rgba(164,211,238,.16) }
+    .hero-journey-step > span { color:#83d7ef;font-size:9px;font-weight:600;letter-spacing:.1em }
+    .hero-journey-step:nth-child(2) > span { color:#f0c58b }
+    .hero-journey-step:nth-child(3) > span { color:#9fe5d6 }
+    .hero-journey-step strong { color:rgba(247,250,253,.92);font-size:12px;font-weight:550;line-height:1.35;white-space:nowrap }
+    .hero-journey-step small { color:rgba(222,234,243,.52);font-size:9px;line-height:1.45;white-space:nowrap }
+    @keyframes hero-journey-in { from { opacity:0;transform:translateY(9px) } to { opacity:1;transform:translateY(0) } }
     .hero-topic-rail { position:absolute;left:var(--pad-x);right:var(--pad-x);bottom:clamp(24px,5.3vh,58px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;pointer-events:auto }
     .hero .trade-pulse { position:absolute;left:var(--pad-x);right:var(--pad-x);bottom:clamp(24px,5.3vh,58px);z-index:3;min-height:72px;pointer-events:auto }
     .hero-topic { min-width:0;min-height:126px;display:grid;grid-template-columns:minmax(104px,132px) minmax(0,1fr);align-items:center;gap:17px;padding:10px;border:1px solid rgba(140,207,255,.48);border-radius:15px;background:rgba(5,18,31,.78);color:#fff;text-decoration:none;box-shadow:inset 0 1px 0 rgba(226,246,255,.08),0 16px 38px rgba(0,0,0,.22);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:border-color .24s ease,transform .24s ease,background .24s ease }
@@ -322,6 +336,11 @@
       .hero-title { max-width:460px;font-size:clamp(34px,9vw,46px) }
       .hero-description { max-width:370px;margin:13px 0 17px;font-size:12px;line-height:1.65 }
       .hero-action { min-height:44px;padding:0 17px;font-size:12px }
+      .hero-journey { margin-top:17px;padding:12px 12px 11px;border-radius:12px }
+      .hero-journey-steps { margin-top:11px }
+      .hero-journey-step { gap:4px;padding:0 7px }
+      .hero-journey-step strong { font-size:11px }
+      .hero-journey-step small { font-size:8px }
       .hero-topic-rail { left:18px;right:18px;bottom:16px;grid-template-columns:1fr;gap:7px }
       .hero-topic { min-height:66px;grid-template-columns:72px minmax(0,1fr);gap:11px;padding:5px 9px }
       .hero-topic-art { height:54px;border-radius:7px }
@@ -334,7 +353,7 @@
       .arrow svg { width:15px;height:15px }
       .world-page { padding-top:100px }
     }
-    @media (prefers-reduced-motion:reduce) { .hero-topic,.hero-action { transition:none } }
+    @media (prefers-reduced-motion:reduce) { .hero-topic,.hero-action { transition:none }.hero-journey { animation:none } }
     @media (min-width:681px) and (max-width:980px) {
       .hero-copy { top:clamp(155px,18vh,190px);width:min(390px,45vw) }
       .hero-title { font-size:clamp(38px,5.3vw,48px) }
@@ -342,6 +361,20 @@
       .news-module { min-height:268px;padding:17px 14px;gap:13px }
       .news-empty-state { grid-template-columns:minmax(0,1fr) 62px;gap:8px;padding:9px }
       .news-empty-state img { width:62px;height:72px }
+    }
+    @media (min-width:681px) and (max-height:700px) {
+      .hero-copy { top:126px }
+      .hero-journey { margin-top:14px;padding:10px 12px 9px }
+      .hero-journey-steps { margin-top:8px }
+      .hero-journey-step small { display:none }
+    }
+    @media (min-width:981px) and (max-height:760px) {
+      html[lang="en"] .hero-copy { top:116px }
+      html[lang="en"] .hero-title { font-size:clamp(36px,3.5vw,46px) }
+      html[lang="en"] .hero-description { margin-top:14px;margin-bottom:19px }
+      html[lang="en"] .hero-journey { margin-top:14px;padding:10px 12px 9px }
+      html[lang="en"] .hero-journey-steps { margin-top:8px }
+      html[lang="en"] .hero-journey-step small { display:none }
     }
     @media (max-width:680px) {
       .news-module { min-height:210px }
@@ -504,6 +537,14 @@
         <h1 class="hero-title"><span data-lang-zh="发现全球市场" data-lang-en="Discover global markets">发现全球市场</span><br><span class="hero-title-accent" data-lang-zh="连接无限商机" data-lang-en="Connect to new opportunities">连接无限商机</span></h1>
         <p class="hero-description" data-lang-zh="汇集全球贸易政策、关税与供应链资讯，助力中国企业出海，把握世界市场新机遇。" data-lang-en="Trade policy, tariff and supply-chain intelligence to help Chinese businesses reach new markets.">汇集全球贸易政策、关税与供应链资讯，助力中国企业出海，把握世界市场新机遇。</p>
         <a class="hero-action" href="#world-page"><span data-lang-zh="开始探索世界市场" data-lang-en="Explore global markets">开始探索世界市场</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+        <section class="hero-journey" aria-labelledby="hero-journey-title">
+          <div class="hero-journey-head"><span id="hero-journey-title" data-lang-zh="出海决策路径" data-lang-en="MARKET ENTRY PATH">出海决策路径</span><span data-lang-zh="从洞察到行动" data-lang-en="INSIGHT TO ACTION">从洞察到行动</span></div>
+          <ol class="hero-journey-steps">
+            <li class="hero-journey-step"><span>01</span><strong data-lang-zh="发现市场" data-lang-en="Find Markets">发现市场</strong><small data-lang-zh="机会与趋势" data-lang-en="Signals & opportunities">机会与趋势</small></li>
+            <li class="hero-journey-step"><span>02</span><strong data-lang-zh="看懂规则" data-lang-en="Read the Rules">看懂规则</strong><small data-lang-zh="政策与准入" data-lang-en="Policy & access">政策与准入</small></li>
+            <li class="hero-journey-step"><span>03</span><strong data-lang-zh="AI制定方案" data-lang-en="Plan with AI">AI制定方案</strong><small data-lang-zh="行动建议" data-lang-en="Action plan">行动建议</small></li>
+          </ol>
+        </section>
       </div>
       <div class="arrows" aria-label="旋转玻璃地球" data-i18n-label="earth_controls">
         <button class="arrow" id="prev" aria-label="向左旋转" data-i18n-label="rotate_left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
