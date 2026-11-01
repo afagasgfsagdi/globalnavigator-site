@@ -276,7 +276,7 @@
     .hero-title { max-width:650px;margin:0;color:#f6f8fb;font-size:clamp(40px,4.5vw,68px);font-weight:650;letter-spacing:-.055em;line-height:1.1;text-wrap:balance;text-shadow:0 3px 28px rgba(0,0,0,.5) }
     .hero-title-accent { color:#a8eaff }
     .hero-description { max-width:430px;margin:19px 0 26px;color:rgba(235,242,249,.72);font-size:15px;line-height:1.85;letter-spacing:.01em }
-    .hero-action { min-height:52px;display:inline-flex;align-items:center;gap:18px;padding:0 22px;border:1px solid rgba(215,244,255,.9);border-radius:999px;background:#edfaff;color:#07131e;text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.01em;pointer-events:auto;box-shadow:0 7px 30px rgba(89,202,255,.16);transition:transform .22s ease,background .22s ease,box-shadow .22s ease }
+    .hero-action { min-height:52px;display:inline-flex;align-items:center;gap:18px;padding:0 22px;border:1px solid rgba(215,244,255,.9);border-radius:999px;background:#edfaff;color:#07131e;text-decoration:none;font-family:inherit;font-size:14px;font-weight:600;letter-spacing:.01em;pointer-events:auto;cursor:pointer;box-shadow:0 7px 30px rgba(89,202,255,.16);transition:transform .22s ease,background .22s ease,box-shadow .22s ease }
     .hero-action:hover,.hero-action:focus-visible { transform:translateY(-2px);background:#fff;box-shadow:0 10px 34px rgba(89,202,255,.3);outline:none }
     .hero-action svg { width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round }
     .hero-journey { width:min(440px,100%);margin-top:26px;padding:0;border:0;border-radius:0;background:none;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;pointer-events:auto;animation:hero-journey-in .7s .12s both }
@@ -549,7 +549,7 @@
         <p class="hero-eyebrow" data-lang-zh="OCEAN TRADE ATLAS" data-lang-en="OCEAN TRADE ATLAS">OCEAN TRADE ATLAS</p>
         <h1 class="hero-title"><span data-lang-zh="发现全球市场" data-lang-en="Discover global markets">发现全球市场</span><br><span class="hero-title-accent" data-lang-zh="连接无限商机" data-lang-en="Connect to new opportunities">连接无限商机</span></h1>
         <p class="hero-description" data-lang-zh="汇集全球贸易政策、关税与供应链资讯，助力中国企业出海，把握世界市场新机遇。" data-lang-en="Trade policy, tariff and supply-chain intelligence to help Chinese businesses reach new markets.">汇集全球贸易政策、关税与供应链资讯，助力中国企业出海，把握世界市场新机遇。</p>
-        <a class="hero-action" href="#world-page"><span data-lang-zh="开始探索世界市场" data-lang-en="Explore global markets">开始探索世界市场</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+        <button class="hero-action" id="hero-agent-entry" type="button"><span data-lang-zh="进入智能体" data-lang-en="Open AI Agent">进入智能体</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
         <section class="hero-journey" aria-labelledby="hero-stat-label">
           <div class="hero-journey-head">
             <div class="hero-stat-head"><div class="hero-stat-value"><strong class="hero-stat-number" data-count-target="269890" aria-label="269,890 hundred-million yuan">269,890</strong><span class="hero-stat-unit" data-lang-zh="亿元" data-lang-en="trillion yuan">亿元</span></div><div class="hero-stat-growth"><strong>+6.1%</strong><span data-lang-zh="同比增长" data-lang-en="year over year">同比增长</span></div></div>
@@ -1187,6 +1187,7 @@
     document.querySelector('#home-nav').addEventListener('click',event=>{event.preventDefault();showHomePage();});
     document.querySelector('.logo').addEventListener('click',event=>{event.preventDefault();showHomePage();});
     document.querySelector('.nav-cta').addEventListener('click',openLogin);
+    document.querySelector('#hero-agent-entry').addEventListener('click',openLogin);
     document.querySelector('#world-start-exploring').addEventListener('click',openLogin);
     document.querySelector('#login-back').addEventListener('click',()=>{loginLayer.hidden=true;loginLayer.classList.remove('is-opening');loginLayer.setAttribute('aria-hidden','true');worldPage.classList.remove('is-leaving');loginForm.reset();if(loginError) loginError.textContent='';const returnTarget=loginReturnFocus?.isConnected?loginReturnFocus:document.querySelector('.nav-cta');loginReturnFocus=null;window.__globalNavigatorAgentEntryTrigger=null;returnTarget.focus({preventScroll:true});});
     
