@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Refresh GlobalNavigator's public MOFCOM policy and Customs trade data feed."""
 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 from urllib.parse import urlencode, urljoin
 from urllib.error import HTTPError
@@ -277,7 +277,7 @@ def regional_rss_items(previous_items):
                     "pubDate": pub_date,
                     "category": global_category(title),
                 })
-                if len(fetched[region]) >= 45:
+                if len(fetched[region]) >= 90:
                     break
         except Exception as error:
             print(f"Regional RSS {region} request failed: {error}")
@@ -288,12 +288,29 @@ def regional_rss_items(previous_items):
     for item in previous_global:
         cached_by_region[item["continent"]].append(item)
     combined = []
+    cutoff = datetime.now(timezone.utc) - timedelta(days=90)
     for region in GLOBAL_REGIONS:
         fresh = fetched[region]
         cached = cached_by_region[region]
-        # Keep the last known stories if a public feed is temporarily empty or incomplete.
-        selected = fresh if len(fresh) >= 4 or not cached else fresh + [item for item in cached if item.get("link") not in {entry.get("link") for entry in fresh}]
-        combined.extend(selected[:45])
+        # Merge recent cached stories so a short RSS response does not shrink the archive.
+        seen = set()
+        selected = []
+        for item in fresh + cached:
+            link = item.get("link")
+            if not link or link in seen:
+                continue
+            try:
+                published = datetime.fromisoformat(item.get("pubDate", "").replace("Z", "+00:00"))
+                if published.tzinfo is None:
+                    published = published.replace(tzinfo=timezone.utc)
+            except ValueError:
+                continue
+            if published < cutoff:
+                continue
+            seen.add(link)
+            selected.append(item)
+        selected.sort(key=lambda item: item["pubDate"], reverse=True)
+        combined.extend(selected[:90])
     return combined
 
 
