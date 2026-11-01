@@ -888,14 +888,14 @@
     const shipRouteFlowMaterial = new THREE.LineDashedMaterial({color:0x82e8ff,transparent:true,opacity:.68,dashSize:.008,gapSize:.006,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
     const orientShip = new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(new THREE.Vector3(0,1,0),new THREE.Vector3(0,0,1),new THREE.Vector3(1,0,0)));
     const orientPlane = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),Math.PI/2);
-    const orientSatellite = new THREE.Quaternion();
+    const orientSatellite = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),Math.PI/2);
     const addModelInstance = (gltf,parent,targetLength,axis,orientation,renderOrder,uniformTint=null) => {
       const object=gltf.scene.clone(true),bounds=new THREE.Box3().setFromObject(object),size=bounds.getSize(new THREE.Vector3()),center=bounds.getCenter(new THREE.Vector3());
       object.position.sub(center);
       object.traverse(child=>{if(!child.isMesh)return;child.renderOrder=renderOrder;child.material=Array.isArray(child.material)?child.material.map(m=>m.clone()):child.material.clone();const materials=Array.isArray(child.material)?child.material:[child.material];materials.forEach(material=>{material.transparent=false;material.opacity=1;material.alphaTest=0;material.depthWrite=true;if("transmission" in material)material.transmission=0;if(uniformTint!==null){material.map=null;material.color.set(uniformTint);}if(material.isMeshStandardMaterial||material.isMeshPhysicalMaterial){material.roughness=Math.min(.52,Math.max(.34,material.roughness||.4));material.metalness=Math.min(.24,material.metalness||0);material.flatShading=false;material.emissive=new THREE.Color(0x06111c);material.emissiveIntensity=.055;}material.needsUpdate=true;});});
       const wrapper=new THREE.Group();wrapper.quaternion.copy(orientation);wrapper.scale.setScalar(targetLength/Math.max(size[axis],.0001));wrapper.position.z=targetLength*.12;wrapper.add(object);parent.add(wrapper);return wrapper;
     };
-    satelliteModelPromise.then(gltf=>routeDots.forEach(dot=>{const satellite=new THREE.Group();satellite.renderOrder=7;routeGroup.add(satellite);addModelInstance(gltf,satellite,.052,'x',orientSatellite,7);dot.satellite=satellite;dot.mesh.visible=false;})).catch(error=>console.error('Satellite model failed to load',error));
+    satelliteModelPromise.then(gltf=>routeDots.forEach(dot=>{const satellite=new THREE.Group();satellite.renderOrder=7;routeGroup.add(satellite);addModelInstance(gltf,satellite,.06,'x',orientSatellite,7);dot.satellite=satellite;dot.mesh.visible=false;})).catch(error=>console.error('Satellite model failed to load',error));
     const greatCircleTrack = (waypoints, radius=.528) => {
       const anchors=waypoints.map(([lat,lon])=>latLonToVec3(lat,lon,1).normalize()), points=[];
       for(let segment=0;segment<anchors.length-1;segment++){
