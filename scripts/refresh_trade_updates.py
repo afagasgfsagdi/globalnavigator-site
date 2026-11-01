@@ -129,9 +129,18 @@ def customs_items():
 def main():
     items = policy_items() + customs_items()
     items.sort(key=lambda item: item["pubDate"], reverse=True)
+    previous = {}
+    if OUTPUT.exists():
+        try:
+            previous = json.loads(OUTPUT.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            previous = {}
+    updated_at = datetime.now(timezone.utc).isoformat()
+    if previous.get("items") == items and previous.get("updatedAt"):
+        updated_at = previous["updatedAt"]
     result = {
         "source": "商务部政策发布 · 海关总署统计",
-        "updatedAt": datetime.now(timezone.utc).isoformat(),
+        "updatedAt": updated_at,
         "items": items,
     }
     OUTPUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
