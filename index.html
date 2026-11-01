@@ -885,7 +885,7 @@
     const flightModelPromise = new Promise((resolve,reject)=>globeModelLoader.load('./assets/globe/A350_nologo.glb',gltf=>resolve(gltf),undefined,reject));
     const satelliteModelPromise = new Promise((resolve,reject)=>satelliteLoader.load('./assets/globe/icesat-satellite.glb',gltf=>resolve(gltf),undefined,reject));
     const shipRouteBaseMaterial = new THREE.LineBasicMaterial({color:0x38aeca,transparent:true,opacity:.38,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
-    const shipRouteFlowMaterial = new THREE.LineDashedMaterial({color:0x82e8ff,transparent:true,opacity:.68,dashSize:.008,gapSize:.006,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
+    const shipRouteFlowMaterial = new THREE.LineDashedMaterial({color:0x82e8ff,transparent:true,opacity:.68,dashSize:.024,gapSize:.012,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
     const orientShip = new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(new THREE.Vector3(0,1,0),new THREE.Vector3(0,0,1),new THREE.Vector3(1,0,0)));
     const orientPlane = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),Math.PI/2);
     const orientSatellite = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),Math.PI/2);
@@ -899,7 +899,7 @@
     const greatCircleTrack = (waypoints, radius=.528) => {
       const anchors=waypoints.map(([lat,lon])=>latLonToVec3(lat,lon,1).normalize()), points=[];
       for(let segment=0;segment<anchors.length-1;segment++){
-        const start=anchors[segment],end=anchors[segment+1],dot=THREE.MathUtils.clamp(start.dot(end),-1,1),angle=Math.acos(dot),sinAngle=Math.sin(angle),steps=Math.max(10,Math.ceil(angle/(Math.PI/72)));
+        const start=anchors[segment],end=anchors[segment+1],dot=THREE.MathUtils.clamp(start.dot(end),-1,1),angle=Math.acos(dot),sinAngle=Math.sin(angle),steps=Math.max(10,Math.ceil(angle/(Math.PI/144)));
         for(let step=segment===0?0:1;step<=steps;step++){
           const t=step/steps;
           const point=sinAngle>.0001
@@ -1091,7 +1091,7 @@
       if(!dragging){rotateWorld(yAxis,velocityX*frames);rotateWorld(xAxis,velocityY*frames);const damp=Math.pow(.94,frames);velocityX*=damp;velocityY*=damp;if(Math.abs(velocityX)+Math.abs(velocityY)<.00002)velocityX=velocityY=0;const driftStart=lastRelease?lastRelease+600:0;const blend=driftStart?THREE.MathUtils.clamp((now-driftStart)/1000,0,1):1;rotateWorld(yAxis,.0008*frames*blend);rotateWorld(xAxis,.00025*frames*blend);}
       // 贸易航线光点动画
       routeDots.forEach((dot, idx) => {
-        const t = ((now * 0.00015 + dot.offset) % 1 + 1) % 1;
+        const t = ((now * 0.00009 + dot.offset) % 1 + 1) % 1;
         const pos = routeCurves[idx].getPoint(t);
         dot.mesh.position.copy(pos);
         const scale = 0.65 + Math.sin(t * Math.PI) * 1.05;
