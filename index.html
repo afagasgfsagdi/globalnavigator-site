@@ -659,6 +659,26 @@
       }));
       window.dispatchEvent(new Event('site-language-change'));
     })();
+    const heroAgentEntry=document.querySelector('.hero-action');
+    heroAgentEntry?.addEventListener('click',event=>{
+      event.preventDefault();
+      window.__globalNavigatorAgentEntryTrigger=event.currentTarget;
+      const layer=document.querySelector('#login-layer');
+      layer.inert=false;layer.hidden=false;layer.classList.add('is-opening');layer.setAttribute('aria-hidden','false');
+      document.querySelector('#login-submit')?.focus();
+    });
+    document.querySelector('#login-form')?.addEventListener('submit',event=>{
+      event.preventDefault();
+      window.__globalNavigatorAgentEntryPending=true;
+      window.__globalNavigatorEnterAgent?.();
+    });
+    document.querySelector('#login-back')?.addEventListener('click',()=>{
+      if(typeof window.__globalNavigatorEnterAgent==='function')return;
+      const layer=document.querySelector('#login-layer');
+      layer.hidden=true;layer.setAttribute('aria-hidden','true');layer.classList.remove('is-opening');
+      (window.__globalNavigatorAgentEntryTrigger||heroAgentEntry)?.focus({preventScroll:true});
+      window.__globalNavigatorAgentEntryTrigger=null;
+    });
   </script>
 <script type="module">
     import * as THREE from 'three';
@@ -1031,7 +1051,7 @@
     const requestTurn=direction=>{ remainingYaw+=direction*Math.PI/2; velocityX=velocityY=0;lastRelease=performance.now(); };
     document.querySelector('#prev').addEventListener('click',()=>requestTurn(-1));document.querySelector('#next').addEventListener('click',()=>requestTurn(1));
     const hero=document.querySelector('.hero'),loginLayer=document.querySelector('#login-layer'),loginCard=document.querySelector('.login-card'),loginForm=document.querySelector('#login-form'),loginError=document.querySelector('#login-error'),mainPage=document.querySelector('#main-page'),worldPage=document.querySelector('#world-page'),topicPage=document.querySelector('#topic-page');
-    let loginReturnFocus=null;
+    let loginReturnFocus=window.__globalNavigatorAgentEntryTrigger||null;
     const openLogin=event=>{event.preventDefault();loginReturnFocus=event.currentTarget;const worldBounds=worldPage.getBoundingClientRect();if(event.currentTarget.id==='world-start-exploring'||(worldBounds.top<window.innerHeight*.65&&worldBounds.bottom>window.innerHeight*.35))worldPage.classList.add('is-leaving');loginLayer.classList.add('is-opening');loginLayer.inert=false;loginLayer.hidden=false;loginLayer.setAttribute('aria-hidden','false');if(loginError) loginError.textContent='';document.querySelector('#login-submit').focus();};
     const showWorldPage=()=>{loginLayer.hidden=true;loginLayer.classList.remove('is-opening');loginLayer.setAttribute('aria-hidden','true');mainPage.hidden=true;topicPage.hidden=true;hero.hidden=false;worldPage.hidden=false;worldPage.classList.remove('is-leaving');history.replaceState(null,'','#world-page');worldPage.scrollIntoView({behavior:'smooth',block:'start'});window.dispatchEvent(new Event('world-page-open'));};
     const showHomePage=()=>{mainPage.hidden=true;mainPage.setAttribute('aria-hidden','true');mainPage.classList.remove('entering','is-revealing');topicPage.hidden=true;hero.hidden=false;worldPage.classList.remove('is-leaving');history.replaceState(null,'','#hero');window.scrollTo({top:0,behavior:'smooth'});requestAnimationFrame(()=>resize());};
@@ -1076,15 +1096,15 @@
         setTimeout(()=>{shatterLayer.remove();mainPage.classList.remove('is-revealing');},reducedMotion?100:1500);
       },reducedMotion?50:420);
     };
-    document.querySelector('.hero-action').addEventListener('click',openLogin);
+    window.__globalNavigatorEnterAgent=()=>{window.__globalNavigatorAgentEntryPending=false;hero.hidden=true;enterMainPage();};
+    if(window.__globalNavigatorAgentEntryPending)window.__globalNavigatorEnterAgent();
     document.querySelector('#explore-nav').addEventListener('click',event=>{event.preventDefault();showWorldPage();});
     document.querySelector('#home-nav').addEventListener('click',event=>{event.preventDefault();showHomePage();});
     document.querySelector('.logo').addEventListener('click',event=>{event.preventDefault();showHomePage();});
     document.querySelector('.nav-cta').addEventListener('click',openLogin);
     document.querySelector('#world-start-exploring').addEventListener('click',openLogin);
-    document.querySelector('#login-back').addEventListener('click',()=>{loginLayer.hidden=true;loginLayer.classList.remove('is-opening');loginLayer.setAttribute('aria-hidden','true');worldPage.classList.remove('is-leaving');loginForm.reset();if(loginError) loginError.textContent='';const returnTarget=loginReturnFocus?.isConnected?loginReturnFocus:document.querySelector('.nav-cta');loginReturnFocus=null;returnTarget.focus({preventScroll:true});});
+    document.querySelector('#login-back').addEventListener('click',()=>{loginLayer.hidden=true;loginLayer.classList.remove('is-opening');loginLayer.setAttribute('aria-hidden','true');worldPage.classList.remove('is-leaving');loginForm.reset();if(loginError) loginError.textContent='';const returnTarget=loginReturnFocus?.isConnected?loginReturnFocus:document.querySelector('.nav-cta');loginReturnFocus=null;window.__globalNavigatorAgentEntryTrigger=null;returnTarget.focus({preventScroll:true});});
     
-    loginForm.addEventListener('submit',event=>{event.preventDefault();hero.hidden=true;enterMainPage();});
     document.querySelector('#main-return').addEventListener('click',()=>{mainPage.hidden=true;mainPage.setAttribute('aria-hidden','true');mainPage.classList.remove('entering','is-revealing');hero.hidden=false;worldPage.classList.remove('is-leaving');loginForm.reset();history.replaceState(null,'','#hero');window.scrollTo({top:0,behavior:'smooth'});requestAnimationFrame(()=>resize());});
     const frame=now=>{
       requestAnimationFrame(frame); const dt=Math.min(.05,Math.max(.001,(now-lastTime)/1000));lastTime=now;const frames=dt*60;
