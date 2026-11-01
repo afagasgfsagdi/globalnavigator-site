@@ -1676,7 +1676,10 @@
         const categoryTitle = window.siteT(category.titleKey);
         const categorySubtitle = window.siteT(category.subtitleKey);
         module.setAttribute('aria-label', categoryTitle);
-        const related = visibleNewsItems().filter(item => categoryMatches(item, category)).slice(0, 4);
+        const matchingItems = visibleNewsItems()
+          .filter(item => categoryMatches(item, category))
+          .sort((a,b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
+        const related = matchingItems.slice(0, 4);
         const head = document.createElement('header');
         head.className = 'news-module-head';
         const number = document.createElement('span');
@@ -1691,7 +1694,7 @@
         title.append(icon, document.createTextNode(categoryTitle));
         const subtitle = document.createElement('span');
         subtitle.className = 'news-module-count';
-        subtitle.textContent = related.length ? `${related.length} ${window.siteT('news_count')} · ${categorySubtitle}` : `${window.siteT('news_empty_count')} · ${categorySubtitle}`;
+        subtitle.textContent = matchingItems.length ? `${matchingItems.length} ${window.siteT('news_count')} · ${categorySubtitle}` : `${window.siteT('news_empty_count')} · ${categorySubtitle}`;
         head.append(number, title, subtitle);
         const stories = document.createElement('div');
         stories.className = 'news-module-stories';
@@ -1706,7 +1709,11 @@
           const empty = document.createElement('div');
           empty.className = 'news-empty-state';
           const message = document.createElement('p');
-          message.textContent = newsUnavailable ? window.siteT('news_unavailable') : isLoading ? window.siteT('news_fetching') : newsItems.length ? window.siteT('news_no_matches') : window.siteT('news_enter');
+          const selectedRegion = selectedRegionData();
+          const noMatchMessage = selectedRegion
+            ? (window.siteLanguage === 'en' ? `No ${categoryTitle} stories for ${selectedRegion.en} yet.` : `暂无${selectedRegion.zh}${categoryTitle}相关新闻。`)
+            : window.siteT('news_no_matches');
+          message.textContent = newsUnavailable ? window.siteT('news_unavailable') : isLoading ? window.siteT('news_fetching') : newsItems.length ? noMatchMessage : window.siteT('news_enter');
           const art = document.createElement('img');
           art.src = category.image;
           art.alt = '';
