@@ -884,10 +884,10 @@
     const shipRouteFlowMaterial = new THREE.LineDashedMaterial({color:0x82e8ff,transparent:true,opacity:.68,dashSize:.008,gapSize:.006,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
     const orientShip = new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(new THREE.Vector3(0,1,0),new THREE.Vector3(0,0,1),new THREE.Vector3(1,0,0)));
     const orientPlane = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),Math.PI/2);
-    const addModelInstance = (gltf,parent,targetLength,axis,orientation,renderOrder) => {
+    const addModelInstance = (gltf,parent,targetLength,axis,orientation,renderOrder,uniformTint=null) => {
       const object=gltf.scene.clone(true),bounds=new THREE.Box3().setFromObject(object),size=bounds.getSize(new THREE.Vector3()),center=bounds.getCenter(new THREE.Vector3());
       object.position.sub(center);
-      object.traverse(child=>{if(!child.isMesh)return;child.renderOrder=renderOrder;child.material=Array.isArray(child.material)?child.material.map(m=>m.clone()):child.material.clone();const materials=Array.isArray(child.material)?child.material:[child.material];materials.forEach(material=>{material.transparent=false;material.opacity=1;material.alphaTest=0;material.depthWrite=true;if("transmission" in material)material.transmission=0;if(material.isMeshStandardMaterial||material.isMeshPhysicalMaterial){material.roughness=Math.min(.52,Math.max(.34,material.roughness||.4));material.metalness=Math.min(.24,material.metalness||0);material.flatShading=false;material.emissive=new THREE.Color(0x06111c);material.emissiveIntensity=.055;}material.needsUpdate=true;});});
+      object.traverse(child=>{if(!child.isMesh)return;child.renderOrder=renderOrder;child.material=Array.isArray(child.material)?child.material.map(m=>m.clone()):child.material.clone();const materials=Array.isArray(child.material)?child.material:[child.material];materials.forEach(material=>{material.transparent=false;material.opacity=1;material.alphaTest=0;material.depthWrite=true;if("transmission" in material)material.transmission=0;if(uniformTint!==null){material.map=null;material.color.set(uniformTint);}if(material.isMeshStandardMaterial||material.isMeshPhysicalMaterial){material.roughness=Math.min(.52,Math.max(.34,material.roughness||.4));material.metalness=Math.min(.24,material.metalness||0);material.flatShading=false;material.emissive=new THREE.Color(0x06111c);material.emissiveIntensity=.055;}material.needsUpdate=true;});});
       const wrapper=new THREE.Group();wrapper.quaternion.copy(orientation);wrapper.scale.setScalar(targetLength/Math.max(size[axis],.0001));wrapper.position.z=targetLength*.12;wrapper.add(object);parent.add(wrapper);return wrapper;
     };
     const greatCircleTrack = (waypoints, radius=.528) => {
@@ -915,7 +915,7 @@
       const group=new THREE.Group();group.renderOrder=6;shipGroup.add(group);
       return { group, points:greatCircleTrack(waypoints), routeFlow, offset };
     });
-    shipModelPromise.then(gltf=>shipTracks.forEach(track=>addModelInstance(gltf,track.group,.16,'z',orientShip,6))).catch(error=>console.error('Cargo ship model failed to load',error));
+    shipModelPromise.then(gltf=>shipTracks.forEach(track=>addModelInstance(gltf,track.group,.12,'z',orientShip,6,0xa3b5c1))).catch(error=>console.error('Cargo ship model failed to load',error));
 
     // ===== 内陆航班：暖金色空中弧线与起降点 =====
     const flightGroup=new THREE.Group();flightGroup.visible=false;spinner.add(flightGroup);
@@ -948,7 +948,7 @@
       });
       return {curve,line,aircraft,airports,offset};
     });
-    flightModelPromise.then(gltf=>flightTracks.forEach(track=>addModelInstance(gltf,track.aircraft,.15,'x',orientPlane,7))).catch(error=>console.error('Airliner model failed to load',error));
+    flightModelPromise.then(gltf=>flightTracks.forEach(track=>addModelInstance(gltf,track.aircraft,.118,'x',orientPlane,7))).catch(error=>console.error('Airliner model failed to load',error));
 
     // ===== 大洲点击检测 =====
     const raycaster = new THREE.Raycaster();
