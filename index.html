@@ -663,6 +663,7 @@
   <script type="module">
     import * as THREE from 'three';
     import { GLTFLoader } from './assets/three-addons/loaders/GLTFLoader.js';
+    import { MeshoptDecoder } from './assets/three-addons/libs/meshopt_decoder.module.js';
     const canvas = document.querySelector('#scene');
     const unlitEarthPreview = new URLSearchParams(window.location.search).get('globe') === 'unlit';
     const loaderLabel = document.querySelector('#loader');
@@ -878,9 +879,11 @@
     shipGroup.visible = false;
     spinner.add(shipGroup);
     const globeModelLoader = new GLTFLoader();
+    const satelliteLoader = new GLTFLoader();
+    satelliteLoader.setMeshoptDecoder(MeshoptDecoder);
     const shipModelPromise = new Promise((resolve,reject)=>globeModelLoader.load('./assets/globe/ship-cargo-b.glb',gltf=>resolve(gltf),undefined,reject));
     const flightModelPromise = new Promise((resolve,reject)=>globeModelLoader.load('./assets/globe/A350_nologo.glb',gltf=>resolve(gltf),undefined,reject));
-    const satelliteModelPromise = new Promise((resolve,reject)=>globeModelLoader.load('./assets/globe/icesat-satellite.glb',gltf=>resolve(gltf),undefined,reject));
+    const satelliteModelPromise = new Promise((resolve,reject)=>satelliteLoader.load('./assets/globe/icesat-satellite.glb',gltf=>resolve(gltf),undefined,reject));
     const shipRouteBaseMaterial = new THREE.LineBasicMaterial({color:0x38aeca,transparent:true,opacity:.38,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
     const shipRouteFlowMaterial = new THREE.LineDashedMaterial({color:0x82e8ff,transparent:true,opacity:.68,dashSize:.008,gapSize:.006,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
     const orientShip = new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(new THREE.Vector3(0,1,0),new THREE.Vector3(0,0,1),new THREE.Vector3(1,0,0)));
