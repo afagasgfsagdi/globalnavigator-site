@@ -5,3 +5,6 @@
 - `earth-blue-marble.jpg`: NASA Blue Marble satellite/topography texture, distributed by three-globe. Source: https://github.com/vasturiano/three-globe/tree/master/example/img. Credit: Reto Stöckli / NASA Earth Observatory (NASA public-domain imagery).
 - `earth-at-night.jpg`: NASA/GSFC Earth-at-night city-light map, re-encoded from the 2048×1024 PNG for web delivery. Source: https://svs.gsfc.nasa.gov/2916 and https://svs.gsfc.nasa.gov/vis/a000000/a002900/a002916/earthatnight-2048.png. Credit: Craig Mayhew and Robert Simmon (NASA/GSFC), DMSP-OLS data.
 
+- `globe/ship-cargo-b.glb` and `globe/Textures/colormap.png`: Kenney Watercraft Kit, model served by Flockbay, CC0 1.0. Source: https://flockbay.com/assets/ship-cargo-b/. Used as a scaled, reoriented 3D globe marker.
+- `globe/A350_nologo.glb`: amvlab Aircraft Models, CC BY 4.0. Source: https://github.com/amvlab/aircraft-models. Adapted by scaling, centering, and reorienting the aircraft for the animated globe route; no logo variant. Credit: amvlab. License: https://creativecommons.org/licenses/by/4.0/.
+- `three-addons/loaders/GLTFLoader.js` and `three-addons/utils/BufferGeometryUtils.js`: Three.js r169 add-on modules, MIT License. Source: https://github.com/mrdoob/three.js/tree/r169/examples/jsm.
