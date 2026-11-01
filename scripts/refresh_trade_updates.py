@@ -252,7 +252,8 @@ def regional_rss_items(previous_items):
     fetched = {region: [] for region in GLOBAL_REGIONS}
     for region, (market, edition, terms) in REGIONAL_RSS.items():
         params = urlencode({
-            "q": f"{terms} when:30d",
+            # 1/2/3 month archive filters need a 90-day source snapshot.
+            "q": f"{terms} when:90d",
             "hl": "en-US",
             "gl": market,
             "ceid": edition,
@@ -276,7 +277,7 @@ def regional_rss_items(previous_items):
                     "pubDate": pub_date,
                     "category": global_category(title),
                 })
-                if len(fetched[region]) >= 18:
+                if len(fetched[region]) >= 45:
                     break
         except Exception as error:
             print(f"Regional RSS {region} request failed: {error}")
@@ -292,7 +293,7 @@ def regional_rss_items(previous_items):
         cached = cached_by_region[region]
         # Keep the last known stories if a public feed is temporarily empty or incomplete.
         selected = fresh if len(fresh) >= 4 or not cached else fresh + [item for item in cached if item.get("link") not in {entry.get("link") for entry in fresh}]
-        combined.extend(selected[:18])
+        combined.extend(selected[:45])
     return combined
 
 
