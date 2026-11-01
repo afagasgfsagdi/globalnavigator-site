@@ -190,9 +190,7 @@
     .news-section-title { margin:0;color:rgba(255,255,255,.84);font-size:13px;font-weight:500;letter-spacing:.04em }
     .news-hint { color:rgba(255,255,255,.43);font-size:11px }
     .news-list { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;min-height:0;align-content:stretch;transition:grid-template-columns .65s cubic-bezier(.2,.75,.2,1) }
-    .news-list.has-active[data-active="policy"] { grid-template-columns:1.75fr 1fr 1fr }
-    .news-list.has-active[data-active="tariff"] { grid-template-columns:1fr 1.75fr 1fr }
-    .news-list.has-active[data-active="supply"] { grid-template-columns:1fr 1fr 1.75fr }
+    .news-list.has-active[data-active] { grid-template-columns:repeat(3,minmax(0,1fr)) }
     .news-module { position:relative;min-width:0;min-height:280px;padding:20px 18px;display:flex;flex-direction:column;gap:15px;overflow:hidden;border:1px solid rgba(255,255,255,.19);border-radius:17px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.022));box-shadow:inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(18px) saturate(135%);-webkit-backdrop-filter:blur(18px) saturate(135%);transition:transform .55s cubic-bezier(.2,.75,.2,1),border-color .45s ease,background .45s ease,opacity .45s ease,box-shadow .45s ease }
     .world-page.is-active .news-module { animation:news-card-in .72s cubic-bezier(.16,1,.3,1) both }
     .world-page.is-active .news-module:nth-child(2) { animation-delay:.12s }.world-page.is-active .news-module:nth-child(3) { animation-delay:.24s }
@@ -436,9 +434,7 @@
     .trade-pulse-caption { color:rgba(228,240,248,.52);font-size:10px }
     .trade-pulse-meta { gap:10px;color:rgba(228,240,248,.5);font-size:9px }
     .news-list,.news-list.has-active[data-active] { grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;min-height:190px;align-content:stretch;transition:grid-template-columns .62s cubic-bezier(.22,.8,.2,1) }
-    .news-list.has-active[data-active="policy"] { grid-template-columns:1.75fr 1fr 1fr }
-    .news-list.has-active[data-active="tariff"] { grid-template-columns:1fr 1.75fr 1fr }
-    .news-list.has-active[data-active="supply"] { grid-template-columns:1fr 1fr 1.75fr }
+    .news-list.has-active[data-active] { grid-template-columns:repeat(3,minmax(0,1fr)) }
     .news-module { min-height:190px;padding:20px 19px 15px;gap:12px;border-color:rgba(198,222,239,.4);border-radius:12px;background-color:rgba(4,12,19,.7);background-image:linear-gradient(90deg,rgba(3,10,17,.9),rgba(3,10,17,.57) 54%,rgba(3,10,17,.12)),linear-gradient(0deg,rgba(3,10,17,.46),transparent 68%),var(--module-image);background-size:cover;background-position:center;box-shadow:0 14px 34px rgba(0,0,0,.22),inset 0 1px 0 rgba(235,246,255,.1);backdrop-filter:none;-webkit-backdrop-filter:none;transition:min-height .52s cubic-bezier(.22,.8,.2,1),transform .52s cubic-bezier(.22,.8,.2,1),border-color .4s ease,background-color .4s ease,opacity .4s ease,box-shadow .4s ease }
     .news-module::before { top:12px;left:16px;right:16px;height:1px;opacity:.45 }
     .news-list.has-active .news-module:not(.is-active) { opacity:.78 }
@@ -500,6 +496,8 @@
       .world-heading-tools { width:100% }
       .world-heading-actions { flex-direction:row }
     }
+    @media (max-width:680px) { .news-topic-open { width:44px;height:44px;right:10px;bottom:10px } }
+    @media (prefers-reduced-motion:reduce) { .news-module,.news-story,.news-topic-open { transition:none!important } }
     .topic-page { position:relative;z-index:1;isolation:isolate;min-height:100vh;min-height:100svh;padding:clamp(104px,12vh,132px) clamp(24px,4.2vw,64px) 54px;background:#030a11;color:#fff }
     .topic-page::before,.topic-page::after { content:'';position:absolute;inset:0;z-index:-1;pointer-events:none }
     .topic-page::before { opacity:.42;background:linear-gradient(90deg,rgba(2,8,14,.94),rgba(2,8,14,.75) 58%,rgba(2,8,14,.64)),url("assets/supply-chain.png") center 48%/cover no-repeat }
@@ -630,8 +628,8 @@
           page_title:'GlobalNavigator — Explore New Worlds', earth_canvas:'Rotating glass globe. Drag to rotate.', hero_title:'Explore New Worlds', earth_controls:'Rotate the glass globe', rotate_left:'Rotate left', rotate_right:'Rotate right', hero_tagline:'Enable Global Trade<br>Expand<br><strong>Into More Markets</strong>', loader:'Preparing the Earth', home_logo:'GlobalNavigator home', main_navigation:'Main navigation', home_nav:'Home', explore_nav:'World Advisory', start_exploring:'Start Exploring', back:'Back', login_intro:'No sign-in is required for this demo. Continue to open the agent.', account:'Username', password:'Password', show_password:'Show password', hide_password:'Hide password', login_submit:'Enter demo', login_error:'Incorrect username or password. Please try again.', signed_in:'Contest demo visitor', return_home:'Return Home', agent_workflow:'AI agent workflow', workspace:'Workspace', agent_name:'GlobalNavigator Agent', agent_type:'AI Agent · Dify', agent_workflow_label:'Agent Workflow', workflow_input:'Product Brief', workflow_input_desc:'Product details, markets, and business context', workflow_search:'Private Query & Live Search', workflow_search_desc:'Minimize the query; search public market sources', workflow_market:'Market Research', workflow_market_desc:'Analyze each market and mark source status', workflow_content:'Content Production', workflow_content_desc:'Localize marketing copy by language and use case', workflow_compliance:'Compliance Review', workflow_compliance_desc:'Check claims, culture, and market-entry risks', workflow_decision:'Decision & Report', workflow_decision_desc:'Summarize entry recommendations and generate Word', agent_chat:'AI agent chat', agent_tagline:'Your AI exploration assistant', dify_waiting:'Waiting for Dify publish', agent_footer:'Powered by Dify · Global market research and export decision assistant', news_eyebrow:'WORLD EXPLORATION · TRADE', news_title:'Global Trade News', news_description:'MOFCOM trade policy and Customs trade statistics', news_connecting:'Connecting to news source…', news_hint:'Hover or focus a topic to expand related stories', refresh_news:'Refresh', refresh_cooldown:'Refresh in {seconds}s', refresh_loading:'Refreshing…', news_loading:'Loading global trade news…', news_footer:'Sources: MOFCOM policy notices and Customs trade statistics · Updated about every 30 minutes · Open official records', news_updating:'Updating…', news_unavailable:'News source is temporarily unavailable. Select “Refresh” to try again.', news_fetching:'Loading related stories…', news_no_matches:'No stories match this topic in the current feed.', news_enter:'Live news loads when you open this section.', news_updated:'Official trade data · Updated', news_failed_cached:'Refresh failed; showing previously loaded stories', news_failed:'Could not connect to the news source', story_fallback:'Untitled story', open_original:'Open the original article for details.', official_trade_source:'MOFCOM / Customs', official_trade_no_results:'No official trade updates are available', policy:'Trade Policy', policy_subtitle:'Rules · Agreements · Market Access', tariff:'Tariffs', tariff_subtitle:'Tariffs · Imports & Exports · Trade Remedies', supply:'Global Supply Chains', supply_subtitle:'Supply Chains · Logistics · Shipping', news_count:'related stories', news_empty_count:'No related stories', news_topic_word:'GLOBAL TRADE', dify_setup_title:'Connect your AI agent', dify_wait_message:'The Dify workflow is not published yet. After publishing, open Access Point → Web App → Embed into website, copy the official iframe URL, and add it to meta[name="dify-embed-url"] in the page head. Never put an API key in browser code.', dify_wait_badge:'Waiting for Dify publish', dify_url_http:'The Dify embed URL must use HTTP or HTTPS.', dify_url_https:'An HTTPS website must connect to an HTTPS Dify URL.', dify_configured_note:'The Dify embed link is configured. Send a product brief to verify the full workflow.', dify_configured_badge:'Dify embed configured', dify_error:'The Dify app did not load. Check publish status, embed URL, HTTPS, and network access.', chat_title:'GlobalNavigator Agent', chat_subtitle:'Global market research and strategy assistant', chat_started:'Start chatting', chat_placeholder:'Share product details, target markets, and languages…', chat_close:'Close', chat_welcome:'Hello, I’m the GlobalNavigator agent. Share product specifications, target countries and languages, plus known prices, costs, customer segments, channels, and pilot plan. Unknown items can be marked TBD. I will work through research, localization, compliance screening, and market-entry decisions.'
         }
       };
-      Object.assign(messages.zh,{topic_open:'查看主题新闻',topic_back:'返回国际贸易动态',topic_kicker:'主题新闻档案',topic_1m:'近一个月',topic_2m:'近两个月',topic_3m:'近三个月',topic_refresh:'重新检索',topic_results_heading:'按时间排列的相关新闻',topic_loading:'正在整理官方来源的近三个月贸易信息…',topic_partial:'部分时间段暂时无法获取，以下为已取得的新闻。',topic_empty:'此时间范围内暂无相关新闻。',topic_error:'暂时无法获取相关新闻，请点击重新检索。',topic_retry:'重新检索',topic_prev:'上一页',topic_next:'下一页',topic_page_count:'第 {page} / {pages} 页 · {count} 条',topic_source_note:'来源：商务部政策公告与海关总署月度统计 · 按时间从新到旧 · 统计按所属月份展示',topic_no_date:'时间未知',topic_range_label:'新闻时间范围',topic_pagination_label:'新闻分页'});
-      Object.assign(messages.en,{topic_open:'View topic news',topic_back:'Back to trade news',topic_kicker:'TOPIC NEWS ARCHIVE',topic_1m:'1 month',topic_2m:'2 months',topic_3m:'3 months',topic_refresh:'Search again',topic_results_heading:'Related stories by date',topic_loading:'Loading official trade updates from the past three months…',topic_partial:'Some date ranges could not be reached. Showing the articles retrieved.',topic_empty:'No related stories in this date range.',topic_error:'Could not retrieve related stories. Select Search again to retry.',topic_retry:'Search again',topic_prev:'Previous',topic_next:'Next',topic_page_count:'Page {page} of {pages} · {count} stories',topic_source_note:'Sources: MOFCOM notices and Customs monthly statistics · Newest first; statistics are dated by reporting month',topic_no_date:'Date unavailable',topic_range_label:'News date range',topic_pagination_label:'News pagination'});
+      Object.assign(messages.zh,{topic_open:'查看主题新闻',topic_back:'返回国际贸易动态',topic_kicker:'主题新闻档案',topic_1m:'近一个月',topic_2m:'近两个月',topic_3m:'近三个月',topic_refresh:'重新检索',topic_results_heading:'按时间排列的相关新闻',topic_loading:'正在整理官方来源的近三个月贸易信息…',topic_partial:'部分时间段暂时无法获取，以下为已取得的新闻。',topic_empty:'此时间范围内暂无相关新闻。',topic_error:'暂时无法获取相关新闻，请点击重新检索。',topic_retry:'重新检索',topic_prev:'上一页',topic_next:'下一页',topic_page_count:'第 {page} / {pages} 页 · {count} 条',topic_source_note:'来源：商务部公告、海关总署统计及 Google News 聚合的国际媒体新闻 · 显示原文标题 · 按时间从新到旧',topic_no_date:'时间未知',topic_range_label:'新闻时间范围',topic_pagination_label:'新闻分页'});
+      Object.assign(messages.en,{topic_open:'View topic news',topic_back:'Back to trade news',topic_kicker:'TOPIC NEWS ARCHIVE',topic_1m:'1 month',topic_2m:'2 months',topic_3m:'3 months',topic_refresh:'Search again',topic_results_heading:'Related stories by date',topic_loading:'Loading official trade updates from the past three months…',topic_partial:'Some date ranges could not be reached. Showing the articles retrieved.',topic_empty:'No related stories in this date range.',topic_error:'Could not retrieve related stories. Select Search again to retry.',topic_retry:'Search again',topic_prev:'Previous',topic_next:'Next',topic_page_count:'Page {page} of {pages} · {count} stories',topic_source_note:'Sources: MOFCOM notices, Customs statistics, and international publishers via Google News · Original headlines · Newest first',topic_no_date:'Date unavailable',topic_range_label:'News date range',topic_pagination_label:'News pagination'});
       const currentLanguage = () => window.siteLanguage || 'zh';
       window.siteT = key => messages[currentLanguage()][key] ?? messages.zh[key] ?? key;
       window.addEventListener('site-language-change', () => {
@@ -1301,6 +1299,7 @@
     const topicPageSize = 20;
     const topicCache = new Map();
     let activeTopic = null;
+    let activeTopicRegion = null;
     let activeTopicRange = '3m';
     let activeTopicPage = 1;
     let topicRequestToken = 0;
@@ -1343,19 +1342,23 @@
       }
       return windows;
     };
-    const loadTopicItems = async category => {
-      const key = `${category.id}:3m`;
+    const topicCacheKey = (category, regionId = null) => category.id + ':3m:' + (regionId || 'all');
+    const isMarketReportHeadline = item => /\bmarket\b.{0,90}\b(size|forecast|trends|report|analysis)\b|\bsize,?\s*trends?\s*(?:and|&)\s*forecast\b|\btop\s+\d+\s+.{0,40}\bmanufacturers?\b/i.test(item.title || '');
+    const loadTopicItems = async (category, regionId = activeTopicRegion) => {
+      const key = topicCacheKey(category, regionId);
       if (topicCache.has(key)) return topicCache.get(key);
-      const token = topicRequestToken;
-      if (token !== topicRequestToken) return null;
-      const items = newsItems.filter(item => categoryMatches(item, category)).sort((a,b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
+      const region = mapRegions.find(item => item.id === regionId);
+      const regionalItems = region ? newsItems.filter(item => item.continent
+        ? String(item.continent).toLocaleLowerCase().replaceAll('_','-') === region.id
+        : region.countries.some(country => (item.sourceCountry || '').toLocaleLowerCase().includes(country.toLocaleLowerCase()))) : newsItems;
+      const items = regionalItems.filter(item => categoryMatches(item, category) && !isMarketReportHeadline(item)).sort((a,b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
       const result = { items, failedWindows:0 };
       topicCache.set(key, result);
       return result;
     };
     const renderTopicResults = () => {
       if (!activeTopic) return;
-      const cached = topicCache.get(`${activeTopic.id}:3m`);
+      const cached = topicCache.get(topicCacheKey(activeTopic, activeTopicRegion));
       if (!cached) return;
       const { start } = getTopicWindow(activeTopicRange);
       const filtered = cached.items.filter(item => {
@@ -1408,23 +1411,26 @@
       document.querySelector('#topic-prev').disabled = activeTopicPage <= 1;
       document.querySelector('#topic-next').disabled = activeTopicPage >= totalPages;
     };
-    const showTopicPage = async (category, { pushHistory = true } = {}) => {
+    const showTopicPage = async (category, { pushHistory = true, regionId = selectedRegion } = {}) => {
       if (!category) return;
       activeTopic = category; activeTopicRange='3m'; activeTopicPage=1;
+      activeTopicRegion = mapRegions.some(item => item.id === regionId) ? regionId : null;
+      selectedRegion = activeTopicRegion;
+      updateMapSelection();
       topicRangeButtons.forEach(button => button.setAttribute('aria-pressed',String(button.dataset.topicRange === activeTopicRange)));
       topicTitle.textContent = window.siteT(category.titleKey);
       topicDescription.textContent = window.siteT(category.subtitleKey);
       topicPage.hidden=false; worldPage.hidden=true; document.querySelector('#hero').hidden=true;
-      if (pushHistory) history.pushState({topic:category.id},'',`#topic-${category.id}`);
+      if (pushHistory) history.pushState({topic:category.id,region:activeTopicRegion},'','#topic-' + category.id + (activeTopicRegion ? '?region=' + activeTopicRegion : ''));
       window.scrollTo({top:0,behavior:'smooth'});
-      const cached = topicCache.get(`${category.id}:3m`);
+      const cached = topicCache.get(topicCacheKey(category, activeTopicRegion));
       if (cached) { renderTopicResults(); topicResults.setAttribute('aria-busy','false'); return; }
       const token = ++topicRequestToken;
       topicResults.setAttribute('aria-busy','true');
       topicStatus.textContent=window.siteT('topic_loading');
       const loading=document.createElement('div');loading.className='topic-state';loading.textContent=window.siteT('topic_loading');topicResults.replaceChildren(loading);
       try {
-        const result = await loadTopicItems(category);
+        const result = await loadTopicItems(category, activeTopicRegion);
         if (!result || token !== topicRequestToken || activeTopic?.id !== category.id) return;
         if (!result.items.length && result.failedWindows) throw new Error('No articles returned');
         renderTopicResults();
@@ -1434,12 +1440,12 @@
         topicStatus.textContent='';
         const failure=document.createElement('div');failure.className='topic-state';
         const wrap=document.createElement('div');const message=document.createElement('p');message.textContent=window.siteT('topic_error');
-        const retry=document.createElement('button');retry.type='button';retry.className='topic-refresh';retry.textContent=window.siteT('topic_retry');retry.addEventListener('click',()=>{topicCache.delete(`${category.id}:3m`);showTopicPage(category,{pushHistory:false});});
+        const retry=document.createElement('button');retry.type='button';retry.className='topic-refresh';retry.textContent=window.siteT('topic_retry');retry.addEventListener('click',()=>{topicCache.delete(topicCacheKey(category,activeTopicRegion));showTopicPage(category,{pushHistory:false,regionId:activeTopicRegion});});
         wrap.append(message,retry);failure.append(wrap);topicResults.replaceChildren(failure);
       } finally { if(token === topicRequestToken) topicResults.setAttribute('aria-busy','false'); }
     };
     const returnToWorld = ({ replace = true } = {}) => {
-      topicRequestToken++; activeTopic=null; topicPage.hidden=true; document.querySelector('#hero').hidden=false; worldPage.hidden=false;
+      topicRequestToken++; activeTopic=null; activeTopicRegion=null; topicPage.hidden=true; document.querySelector('#hero').hidden=false; worldPage.hidden=false;
       if (replace) history.replaceState(null,'','#world-page');
       worldPage.scrollIntoView({behavior:'smooth',block:'start'});
       window.dispatchEvent(new Event('world-page-open'));
@@ -1447,8 +1453,8 @@
     document.querySelector('#topic-back').addEventListener('click',()=>returnToWorld());
     document.querySelector('#topic-refresh').addEventListener('click',()=>{
       if(!activeTopic)return;
-      topicCache.delete(`${activeTopic.id}:3m`);
-      showTopicPage(activeTopic,{pushHistory:false});
+      topicCache.delete(topicCacheKey(activeTopic,activeTopicRegion));
+      showTopicPage(activeTopic,{pushHistory:false,regionId:activeTopicRegion});
     });
     topicRangeButtons.forEach(button=>button.addEventListener('click',()=>{
       activeTopicRange=button.dataset.topicRange;activeTopicPage=1;
@@ -1458,10 +1464,10 @@
     document.querySelector('#topic-prev').addEventListener('click',()=>{if(activeTopicPage>1){activeTopicPage--;renderTopicResults();}});
     document.querySelector('#topic-next').addEventListener('click',()=>{activeTopicPage++;renderTopicResults();});
     window.addEventListener('popstate',()=>{
-      const match=location.hash.match(/^#topic-(policy|tariff|supply)$/);
-      if(match){showTopicPage(categories.find(category=>category.id===match[1]),{pushHistory:false});return;}
+      const match=location.hash.match(/^#topic-(policy|tariff|supply)(?:\?region=([a-z-]+))?$/);
+      if(match){showTopicPage(categories.find(category=>category.id===match[1]),{pushHistory:false,regionId:match[2] || null});return;}
       if(location.hash==='#hero'){
-        topicRequestToken++;activeTopic=null;topicPage.hidden=true;worldPage.hidden=false;document.querySelector('#hero').hidden=false;window.scrollTo({top:0,behavior:'smooth'});return;
+        topicRequestToken++;activeTopic=null;activeTopicRegion=null;topicPage.hidden=true;worldPage.hidden=false;document.querySelector('#hero').hidden=false;window.scrollTo({top:0,behavior:'smooth'});return;
       }
       if(topicPage && !topicPage.hidden) returnToWorld({replace:false});
     });
@@ -1469,7 +1475,7 @@
       if(!activeTopic)return;
       topicTitle.textContent=window.siteT(activeTopic.titleKey);
       topicDescription.textContent=window.siteT(activeTopic.subtitleKey);
-      if(topicCache.has(`${activeTopic.id}:3m`))renderTopicResults();
+      if(topicCache.has(topicCacheKey(activeTopic,activeTopicRegion)))renderTopicResults();
       else if(topicResults.getAttribute('aria-busy')==='true')topicStatus.textContent=window.siteT('topic_loading');
     });
     const updateRefreshButton = () => {
@@ -1539,7 +1545,7 @@
       const region = selectedRegionData();
       if (!region) return newsItems;
       return newsItems.filter(item => item.continent
-        ? item.continent === region.id
+        ? String(item.continent).toLocaleLowerCase().replaceAll('_','-') === region.id
         : region.countries.some(country => (item.sourceCountry || '').toLocaleLowerCase().includes(country.toLocaleLowerCase())));
     };
     const updateMapLabels = () => {
@@ -1677,7 +1683,7 @@
         const categorySubtitle = window.siteT(category.subtitleKey);
         module.setAttribute('aria-label', categoryTitle);
         const matchingItems = visibleNewsItems()
-          .filter(item => categoryMatches(item, category))
+          .filter(item => categoryMatches(item, category) && !isMarketReportHeadline(item))
           .sort((a,b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
         const related = matchingItems.slice(0, 4);
         const head = document.createElement('header');
@@ -1786,6 +1792,7 @@
         newsItems = payload.items
           .filter(item => item && item.title && item.link && item.pubDate)
           .map(item => ({ ...item, description:item.description || '', author:item.author || window.siteT('official_trade_source') }));
+        topicCache.clear();
         if (!newsItems.length) throw new Error(window.siteT('official_trade_no_results'));
         newsUnavailable = false;
         lastUpdatedAt = payload.updatedAt ? new Date(payload.updatedAt) : new Date();
@@ -1843,8 +1850,8 @@
       transitionObserver.observe(document.querySelector('#world-page'));
     }
     setInterval(() => { if (isNewsVisible) loadNews(); }, 15 * 60 * 1000);
-    const initialTopic=location.hash.match(/^#topic-(policy|tariff|supply)$/);
-    if(initialTopic) showTopicPage(categories.find(category=>category.id===initialTopic[1]),{pushHistory:false});
+    const initialTopic=location.hash.match(/^#topic-(policy|tariff|supply)(?:\?region=([a-z-]+))?$/);
+    if(initialTopic) showTopicPage(categories.find(category=>category.id===initialTopic[1]),{pushHistory:false,regionId:initialTopic[2] || null});
   </script>
 </body>
 </html>
