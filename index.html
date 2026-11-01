@@ -1198,11 +1198,29 @@
     let activeTopicPage = 1;
     let topicRequestToken = 0;
     const gdeltQuery = '(tariff OR tariffs OR "trade policy" OR "trade agreement" OR "international trade" OR "supply chain" OR logistics OR shipping)';
-    let newsItems = [];
+    const newsCacheKey = 'globalNavigatorGdeltNewsV1';
+    const newsBackoffKey = 'globalNavigatorGdeltRetryAfter';
+    const newsCacheMaxAge = 7 * 24 * 60 * 60 * 1000;
+    let gdeltRequestQueue = Promise.resolve();
+    let lastGdeltRequestAt = 0;
+    const waitForGdeltSlot = async () => {
+      const remaining = 5200 - (Date.now() - lastGdeltRequestAt);
+      if (remaining > 0) await new Promise(resolve => setTimeout(resolve, remaining));
+      lastGdeltRequestAt = Date.now();
+    };
+    const readNewsCache = () => {
+      try {
+        const cached = JSON.parse(localStorage.getItem(newsCacheKey) || 'null');
+        if (!cached || !Array.isArray(cached.articles) || !cached.fetchedAt || Date.now() - cached.fetchedAt > newsCacheMaxAge) return null;
+        return cached;
+      } catch { return null; }
+    };
+    const cachedNews = readNewsCache();
+    let newsItems = cachedNews?.articles || [];
     let isLoading = false;
     let isNewsVisible = false;
     let newsUnavailable = false;
-    let lastUpdatedAt = null;
+    let lastUpdatedAt = cachedNews?.fetchedAt ? new Date(cachedNews.fetchedAt) : null;
     let refreshCooldownUntil = 0;
     let refreshCooldownTimer = null;
     const topicDateStamp = date => `${date.getUTCFullYear()}${String(date.getUTCMonth()+1).padStart(2,'0')}${String(date.getUTCDate()).padStart(2,'0')}000000`;
@@ -1535,40 +1553,41 @@
       const [, year, month, day, hour, minute, second] = match;
       return new Date(Date.UTC(+year, +month - 1, +day, +hour, +minute, +second)).toISOString();
     };
-    const fetchGdeltJsonp = ({ query = gdeltQuery, maxRecords = 50, startDateTime, endDateTime } = {}) => new Promise((resolve, reject) => {
-      const callback = `globalNavigatorGdelt_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+    const fetchGdeltJsonp = ({ query = gdeltQuery, maxRecords = 30, startDateTime, endDateTime } = {}) => {
       const endpoint = new URL('https://api.gdeltproject.org/api/v2/doc/doc');
       endpoint.searchParams.set('query', query);
       endpoint.searchParams.set('mode', 'ArtList');
-      endpoint.searchParams.set('format', 'jsonp');
-      endpoint.searchParams.set('callback', callback);
+      endpoint.searchParams.set('format', 'json');
       endpoint.searchParams.set('maxrecords', String(maxRecords));
       endpoint.searchParams.set('sort', 'DateDesc');
       if (startDateTime && endDateTime) {
         endpoint.searchParams.set('startdatetime', startDateTime);
         endpoint.searchParams.set('enddatetime', endDateTime);
       } else endpoint.searchParams.set('timespan', '7d');
-      const script = document.createElement('script');
-      let settled = false;
-      const cleanup = () => {
-        clearTimeout(timeout);
-        script.remove();
-        delete window[callback];
+      const request = async () => {
+        await waitForGdeltSlot();
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 30000);
+        try {
+          const response = await fetch(endpoint, { mode:'cors', cache:'no-store', signal:controller.signal });
+          if (!response.ok) {
+            const detail = (await response.text()).slice(0, 180).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+            const error = new Error(`GDELT 请求失败（${response.status}）${detail ? `：${detail}` : ''}`);
+            error.retryAfter = Number(response.headers.get('Retry-After')) * 1000 || 0;
+            throw error;
+          }
+          const payload = await response.json();
+          if (!payload || !Array.isArray(payload.articles)) throw new Error(payload?.message || payload?.error || 'GDELT 返回了无法识别的数据');
+          return payload;
+        } catch (error) {
+          if (error.name === 'AbortError') throw new Error('GDELT 新闻源响应超时');
+          throw error;
+        } finally { clearTimeout(timeout); }
       };
-      const finish = (handler, value) => {
-        if (settled) return;
-        settled = true;
-        cleanup();
-        handler(value);
-      };
-      const timeout = setTimeout(() => finish(reject, new Error('GDELT 新闻源响应超时')), 18000);
-      window[callback] = payload => finish(resolve, payload);
-      script.async = true;
-      script.referrerPolicy = 'no-referrer';
-      script.onerror = () => finish(reject, new Error('无法连接 GDELT 新闻源'));
-      script.src = endpoint.toString();
-      document.head.appendChild(script);
-    });
+      const queued = gdeltRequestQueue.then(request, request);
+      gdeltRequestQueue = queued.catch(() => {});
+      return queued;
+    };
     const plainText = markup => new DOMParser().parseFromString(markup || '', 'text/html').body.textContent.replace(/\s+/g, ' ').trim();
     let moduleLeaveTimer = null;
     const setActiveModule = (module, category) => {
@@ -1693,6 +1712,22 @@
     };
     const loadNews = async ({ manual = false } = {}) => {
       if (isLoading || Date.now() < refreshCooldownUntil) return;
+      if (!manual && newsItems.length && lastUpdatedAt && Date.now() - lastUpdatedAt.getTime() < 15 * 60 * 1000) {
+        newsUnavailable = false;
+        renderNews();
+        updated.dataset.state = 'live';
+        updated.textContent = `${window.siteT('news_updated')} ${new Intl.DateTimeFormat(window.siteLanguage === 'en' ? 'en-US' : 'zh-CN', { hour:'2-digit', minute:'2-digit', second:'2-digit' }).format(lastUpdatedAt)}`;
+        return;
+      }
+      let retryAfter = 0;
+      try { retryAfter = Number(localStorage.getItem(newsBackoffKey)) || 0; } catch {}
+      if (Date.now() < retryAfter) {
+        newsUnavailable = true;
+        renderNews();
+        updated.dataset.state = 'error';
+        updated.textContent = newsItems.length ? window.siteT('news_failed_cached') : window.siteT('news_failed');
+        return;
+      }
       if (manual) startRefreshCooldown();
       isLoading = true;
       newsUnavailable = false;
@@ -1717,11 +1752,17 @@
         if (!newsItems.length) throw new Error(window.siteT('gdelt_no_matches'));
         newsUnavailable = false;
         lastUpdatedAt = new Date();
+        try { localStorage.setItem(newsCacheKey, JSON.stringify({ articles:newsItems, fetchedAt:lastUpdatedAt.getTime() })); } catch {}
+        try { localStorage.removeItem(newsBackoffKey); } catch {}
         renderNews();
         updated.dataset.state = 'live';
         updated.textContent = `${window.siteT('news_updated')} ${new Intl.DateTimeFormat(window.siteLanguage === 'en' ? 'en-US' : 'zh-CN', { hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(lastUpdatedAt)}`;
       } catch (error) {
         console.error('International trade news fetch failed:', error);
+        if (error.message.includes('429')) {
+          const backoff = Math.max(error.retryAfter || 0, 60000);
+          try { localStorage.setItem(newsBackoffKey, String(Date.now() + backoff)); } catch {}
+        }
         newsUnavailable = true;
         if (newsItems.length) {
           renderNews();
