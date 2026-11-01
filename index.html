@@ -880,16 +880,19 @@
     const globeModelLoader = new GLTFLoader();
     const shipModelPromise = new Promise((resolve,reject)=>globeModelLoader.load('./assets/globe/ship-cargo-b.glb',gltf=>resolve(gltf),undefined,reject));
     const flightModelPromise = new Promise((resolve,reject)=>globeModelLoader.load('./assets/globe/A350_nologo.glb',gltf=>resolve(gltf),undefined,reject));
+    const satelliteModelPromise = new Promise((resolve,reject)=>globeModelLoader.load('./assets/globe/icesat-satellite.glb',gltf=>resolve(gltf),undefined,reject));
     const shipRouteBaseMaterial = new THREE.LineBasicMaterial({color:0x38aeca,transparent:true,opacity:.38,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
     const shipRouteFlowMaterial = new THREE.LineDashedMaterial({color:0x82e8ff,transparent:true,opacity:.68,dashSize:.008,gapSize:.006,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
     const orientShip = new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(new THREE.Vector3(0,1,0),new THREE.Vector3(0,0,1),new THREE.Vector3(1,0,0)));
     const orientPlane = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),Math.PI/2);
+    const orientSatellite = new THREE.Quaternion();
     const addModelInstance = (gltf,parent,targetLength,axis,orientation,renderOrder,uniformTint=null) => {
       const object=gltf.scene.clone(true),bounds=new THREE.Box3().setFromObject(object),size=bounds.getSize(new THREE.Vector3()),center=bounds.getCenter(new THREE.Vector3());
       object.position.sub(center);
       object.traverse(child=>{if(!child.isMesh)return;child.renderOrder=renderOrder;child.material=Array.isArray(child.material)?child.material.map(m=>m.clone()):child.material.clone();const materials=Array.isArray(child.material)?child.material:[child.material];materials.forEach(material=>{material.transparent=false;material.opacity=1;material.alphaTest=0;material.depthWrite=true;if("transmission" in material)material.transmission=0;if(uniformTint!==null){material.map=null;material.color.set(uniformTint);}if(material.isMeshStandardMaterial||material.isMeshPhysicalMaterial){material.roughness=Math.min(.52,Math.max(.34,material.roughness||.4));material.metalness=Math.min(.24,material.metalness||0);material.flatShading=false;material.emissive=new THREE.Color(0x06111c);material.emissiveIntensity=.055;}material.needsUpdate=true;});});
       const wrapper=new THREE.Group();wrapper.quaternion.copy(orientation);wrapper.scale.setScalar(targetLength/Math.max(size[axis],.0001));wrapper.position.z=targetLength*.12;wrapper.add(object);parent.add(wrapper);return wrapper;
     };
+    satelliteModelPromise.then(gltf=>routeDots.forEach(dot=>{const satellite=new THREE.Group();satellite.renderOrder=7;routeGroup.add(satellite);addModelInstance(gltf,satellite,.052,'x',orientSatellite,7);dot.satellite=satellite;dot.mesh.visible=false;})).catch(error=>console.error('Satellite model failed to load',error));
     const greatCircleTrack = (waypoints, radius=.528) => {
       const anchors=waypoints.map(([lat,lon])=>latLonToVec3(lat,lon,1).normalize()), points=[];
       for(let segment=0;segment<anchors.length-1;segment++){
@@ -915,7 +918,7 @@
       const group=new THREE.Group();group.renderOrder=6;shipGroup.add(group);
       return { group, points:greatCircleTrack(waypoints), routeFlow, offset };
     });
-    shipModelPromise.then(gltf=>shipTracks.forEach(track=>addModelInstance(gltf,track.group,.12,'z',orientShip,6,0xa3b5c1))).catch(error=>console.error('Cargo ship model failed to load',error));
+    shipModelPromise.then(gltf=>shipTracks.forEach(track=>addModelInstance(gltf,track.group,.105,'z',orientShip,6,0xa3b5c1))).catch(error=>console.error('Cargo ship model failed to load',error));
 
     // ===== 内陆航班：暖金色空中弧线与起降点 =====
     const flightGroup=new THREE.Group();flightGroup.visible=false;spinner.add(flightGroup);
@@ -1090,6 +1093,7 @@
         dot.mesh.position.copy(pos);
         const scale = 0.65 + Math.sin(t * Math.PI) * 1.05;
         dot.mesh.scale.setScalar(scale);
+        if(dot.satellite){const normal=pos.clone().normalize(),forward=routeCurves[idx].getTangent(t).projectOnPlane(normal).normalize(),side=normal.clone().cross(forward).normalize();dot.satellite.position.copy(pos);dot.satellite.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(forward,side,normal));}
       });
       shipTracks.forEach(({group,points,routeFlow,offset})=>{
         routeFlow.material.dashOffset=-now*.000012;
