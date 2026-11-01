@@ -887,8 +887,8 @@
     const addModelInstance = (gltf,parent,targetLength,axis,orientation,renderOrder) => {
       const object=gltf.scene.clone(true),bounds=new THREE.Box3().setFromObject(object),size=bounds.getSize(new THREE.Vector3()),center=bounds.getCenter(new THREE.Vector3());
       object.position.sub(center);
-      object.traverse(child=>{if(!child.isMesh)return;child.renderOrder=renderOrder;child.material=Array.isArray(child.material)?child.material.map(m=>m.clone()):child.material.clone();const materials=Array.isArray(child.material)?child.material:[child.material];materials.forEach(material=>{material.depthWrite=false;if(material.isMeshStandardMaterial||material.isMeshPhysicalMaterial){material.roughness=Math.max(.28,material.roughness||.4);material.metalness=Math.min(.42,material.metalness||0);material.emissive=new THREE.Color(0x071a25);material.emissiveIntensity=.14;}material.needsUpdate=true;});});
-      const wrapper=new THREE.Group();wrapper.quaternion.copy(orientation);wrapper.scale.setScalar(targetLength/Math.max(size[axis],.0001));wrapper.add(object);parent.add(wrapper);return wrapper;
+      object.traverse(child=>{if(!child.isMesh)return;child.renderOrder=renderOrder;child.material=Array.isArray(child.material)?child.material.map(m=>m.clone()):child.material.clone();const materials=Array.isArray(child.material)?child.material:[child.material];materials.forEach(material=>{material.depthWrite=false;if(material.isMeshStandardMaterial||material.isMeshPhysicalMaterial){material.roughness=Math.min(.52,Math.max(.34,material.roughness||.4));material.metalness=Math.min(.24,material.metalness||0);material.flatShading=false;material.emissive=new THREE.Color(0x06111c);material.emissiveIntensity=.055;}material.needsUpdate=true;});});
+      const wrapper=new THREE.Group();wrapper.quaternion.copy(orientation);wrapper.scale.setScalar(targetLength/Math.max(size[axis],.0001));wrapper.position.z=targetLength*.12;wrapper.add(object);parent.add(wrapper);return wrapper;
     };
     const greatCircleTrack = (waypoints, radius=.528) => {
       const anchors=waypoints.map(([lat,lon])=>latLonToVec3(lat,lon,1).normalize()), points=[];
@@ -915,16 +915,17 @@
       const group=new THREE.Group();group.renderOrder=6;shipGroup.add(group);
       return { group, points:greatCircleTrack(waypoints), routeFlow, offset };
     });
-    shipModelPromise.then(gltf=>shipTracks.forEach(track=>addModelInstance(gltf,track.group,.095,'z',orientShip,6))).catch(error=>console.error('Cargo ship model failed to load',error));
+    shipModelPromise.then(gltf=>shipTracks.forEach(track=>addModelInstance(gltf,track.group,.16,'z',orientShip,6))).catch(error=>console.error('Cargo ship model failed to load',error));
 
     // ===== 内陆航班：暖金色空中弧线与起降点 =====
     const flightGroup=new THREE.Group();flightGroup.visible=false;spinner.add(flightGroup);
     const flightLineMaterial=new THREE.LineDashedMaterial({color:0xffd18b,transparent:true,opacity:.58,dashSize:.012,gapSize:.01,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
     const flightPlaneMaterial=new THREE.MeshStandardMaterial({color:0xf4f7fb,metalness:.34,roughness:.32,emissive:0x142b36,emissiveIntensity:.16,depthTest:true,depthWrite:false});
     const flightGlowMaterial=new THREE.MeshBasicMaterial({color:0xffb54a,transparent:true,opacity:.24,side:THREE.DoubleSide,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
-    const flightAmbient=new THREE.HemisphereLight(0xb9ddff,0x182334,2.25);scene.add(flightAmbient);
-    const flightKey=new THREE.DirectionalLight(0xeaf7ff,2.0);flightKey.position.set(-2.5,3.5,4.5);scene.add(flightKey);
-    const flightWarm=new THREE.PointLight(0xffc477,18,3.2,2);flightWarm.position.set(1.8,.75,2.1);scene.add(flightWarm);
+    const flightAmbient=new THREE.HemisphereLight(0xb9ddff,0x182334,1.25);scene.add(flightAmbient);
+    const flightKey=new THREE.DirectionalLight(0xeaf7ff,2.6);flightKey.position.set(-2.5,3.5,4.5);scene.add(flightKey);
+    const flightWarm=new THREE.PointLight(0xffc477,9,3.2,2);flightWarm.position.set(1.8,.75,2.1);scene.add(flightWarm);
+    const flightRim=new THREE.DirectionalLight(0x73caff,1.4);flightRim.position.set(3,-1,3.5);scene.add(flightRim);
     const airportRingGeometry=new THREE.RingGeometry(.007,.0095,28);
     const airportRingMaterial=new THREE.MeshBasicMaterial({color:0xffc878,transparent:true,opacity:.75,side:THREE.DoubleSide,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending});
     const airportDotGeometry=new THREE.SphereGeometry(.003,8,6);
@@ -947,7 +948,7 @@
       });
       return {curve,line,aircraft,airports,offset};
     });
-    flightModelPromise.then(gltf=>flightTracks.forEach(track=>addModelInstance(gltf,track.aircraft,.102,'x',orientPlane,7))).catch(error=>console.error('Airliner model failed to load',error));
+    flightModelPromise.then(gltf=>flightTracks.forEach(track=>addModelInstance(gltf,track.aircraft,.15,'x',orientPlane,7))).catch(error=>console.error('Airliner model failed to load',error));
 
     // ===== 大洲点击检测 =====
     const raycaster = new THREE.Raycaster();
