@@ -1076,6 +1076,7 @@
         setTimeout(()=>{shatterLayer.remove();mainPage.classList.remove('is-revealing');},reducedMotion?100:1500);
       },reducedMotion?50:420);
     };
+    document.querySelector('.hero-action').addEventListener('click',openLogin);
     document.querySelector('#explore-nav').addEventListener('click',event=>{event.preventDefault();showWorldPage();});
     document.querySelector('#home-nav').addEventListener('click',event=>{event.preventDefault();showHomePage();});
     document.querySelector('.logo').addEventListener('click',event=>{event.preventDefault();showHomePage();});
