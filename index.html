@@ -1537,7 +1537,9 @@
     const visibleNewsItems = () => {
       const region = selectedRegionData();
       if (!region) return newsItems;
-      return newsItems.filter(item => region.countries.some(country => (item.sourceCountry || '').toLocaleLowerCase().includes(country.toLocaleLowerCase())));
+      return newsItems.filter(item => item.continent
+        ? item.continent === region.id
+        : region.countries.some(country => (item.sourceCountry || '').toLocaleLowerCase().includes(country.toLocaleLowerCase())));
     };
     const updateMapLabels = () => {
       const english = window.siteLanguage === 'en';
