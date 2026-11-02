@@ -88,23 +88,21 @@
     .login-error { min-height:18px;margin:0;color:#ff8585;font-size:13px }
     .login-submit,.main-return { height:46px;border:1px solid rgba(255,255,255,.75);border-radius:7px;background:rgba(255,255,255,.88);color:#000;font:inherit;cursor:pointer;box-shadow:0 5px 18px rgba(255,255,255,.08);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px) }
     .login-submit:hover,.main-return:hover { background:rgba(255,255,255,.98) }
-    .main-page { position:fixed;inset:0;z-index:6;display:flex;flex-direction:column;gap:24px;padding:clamp(20px,4vw,52px);overflow:auto;background:radial-gradient(ellipse at 72% 12%,rgba(74,119,155,.2),transparent 40%),radial-gradient(ellipse at 15% 90%,rgba(77,92,131,.15),transparent 36%),#05070a;color:#fff;text-align:left }
+    .main-page { position:fixed;inset:0;z-index:6;display:flex;flex-direction:column;gap:clamp(14px,2vh,22px);padding:clamp(16px,3vw,34px);overflow:auto;background:radial-gradient(ellipse at 72% 12%,rgba(74,119,155,.18),transparent 40%),radial-gradient(ellipse at 15% 90%,rgba(77,92,131,.12),transparent 36%),#05070a;color:#fff;text-align:left }
     .main-page.entering { opacity:0;filter:blur(13px);transform:scale(.985);pointer-events:none }
     .main-page.is-revealing { animation:mainPageReveal 1.35s cubic-bezier(.2,.72,.24,1) both }
-    .main-page.is-revealing .main-topbar,.main-page.is-revealing .agent-sidebar,.main-page.is-revealing .agent-chat { animation:mainPanelReveal .8s cubic-bezier(.2,.72,.24,1) both }
+    .main-page.is-revealing .main-topbar,.main-page.is-revealing .agent-chat { animation:mainPanelReveal .8s cubic-bezier(.2,.72,.24,1) both }
     .main-page.is-revealing .main-topbar { animation-delay:.08s }
-    .main-page.is-revealing .agent-sidebar { animation-delay:.22s }
-    .main-page.is-revealing .agent-chat { animation-delay:.34s }
+    .main-page.is-revealing .agent-chat { animation-delay:.2s }
     @keyframes mainPageReveal { from { opacity:0;filter:blur(14px);transform:scale(.985) } to { opacity:1;filter:blur(0);transform:scale(1) } }
     @keyframes mainPanelReveal { from { opacity:0;transform:translateY(18px) } to { opacity:1;transform:translateY(0) } }
-    .main-topbar { width:min(100%,1440px);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px }
-    .agent-brand { display:flex;align-items:center;gap:12px;font-size:15px;letter-spacing:.01em }
-    .agent-brand-mark { width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.25);border-radius:50%;background:rgba(255,255,255,.08);font-size:12px;font-weight:600;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px) }
-    .main-top-actions { display:flex;align-items:center;gap:16px }
-    .agent-account { color:rgba(255,255,255,.65);font-size:13px }
+    .main-topbar { width:min(100%,1200px);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px }
+    .agent-brand { display:flex;align-items:center;gap:11px;font-size:14px;letter-spacing:.01em }
+    .agent-brand-mark { width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.22);border-radius:50%;background:rgba(255,255,255,.06);font-size:11px;font-weight:600 }
+    .main-top-actions { display:flex;align-items:center;gap:12px }
     .main-return { height:38px;margin:0;padding:0 15px;border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;font-size:13px }
     .main-return:hover { background:rgba(255,255,255,.17) }
-    .agent-layout { width:min(100%,1440px);min-height:0;flex:1;margin:0 auto;display:grid;grid-template-columns:minmax(250px,310px) minmax(0,1fr);gap:18px }
+    .agent-layout { width:min(100%,1200px);min-height:0;flex:1;margin:0 auto;display:flex }
     .glass-panel { border:1px solid rgba(255,255,255,.16);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.035) 54%,rgba(255,255,255,.065));box-shadow:0 22px 70px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.12);backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%) }
     .agent-sidebar { padding:22px;display:flex;flex-direction:column;gap:24px }
     .agent-section-label { margin:0 0 12px;color:rgba(255,255,255,.48);font-size:11px;letter-spacing:.16em;text-transform:uppercase }
@@ -121,15 +119,50 @@
     .workflow-copy strong { padding-top:2px;font-size:12px;font-weight:500 }
     .workflow-copy small { margin-top:4px;color:rgba(255,255,255,.48);font-size:11px;line-height:1.5 }
     .connect-note { margin-top:auto;padding:13px;border:1px solid rgba(255,255,255,.13);border-radius:11px;background:rgba(0,0,0,.13);color:rgba(255,255,255,.58);font-size:11px;line-height:1.65 }
-    .agent-chat { min-height:580px;display:flex;flex-direction:column;overflow:hidden }
-    .agent-chat-head { min-height:76px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(255,255,255,.12) }
+    .agent-chat { width:100%;min-height:0;display:flex;flex-direction:column;overflow:hidden;border-color:rgba(172,211,239,.18);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025) 54%,rgba(255,255,255,.045));box-shadow:0 24px 70px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.08) }
+    .agent-chat-head { min-height:72px;padding:16px clamp(16px,2.4vw,28px);display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(255,255,255,.11) }
     .agent-chat-title { display:flex;align-items:center;gap:12px }
-    .agent-chat-title h1 { margin:0;font-size:16px;font-weight:500 }
+    .agent-chat-title h1 { margin:0;font-size:16px;font-weight:500;letter-spacing:.01em }
     .agent-chat-title p { margin:4px 0 0;color:rgba(255,255,255,.48);font-size:11px }
-    .connection-state { display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid rgba(255,255,255,.15);border-radius:99px;background:rgba(255,255,255,.055);color:rgba(255,255,255,.65);font-size:11px;white-space:nowrap }
-    .connection-state::before { content:'';width:7px;height:7px;border-radius:50%;background:#f0ba69;box-shadow:0 0 10px rgba(240,186,105,.45) }
-    .agent-chat-body { flex:1;min-height:0;display:grid;place-items:stretch;padding:18px }
-    .dify-chat-host { width:100%;height:100%;min-height:520px;overflow:hidden;border:1px solid rgba(255,255,255,.13);border-radius:12px;background:#fff }
+    .connection-state { display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid rgba(255,255,255,.13);border-radius:99px;background:rgba(255,255,255,.04);color:rgba(255,255,255,.62);font-size:11px;white-space:nowrap }
+    .connection-state::before { content:'';width:6px;height:6px;border-radius:50%;background:#7ee3b5;box-shadow:0 0 9px rgba(126,227,181,.42) }
+    .agent-chat-body { flex:1;min-height:0;display:flex;padding:clamp(10px,1.5vw,16px) }
+    .agent-conversation { width:min(100%,960px);height:100%;min-height:480px;margin:auto;display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(160,205,231,.17);border-radius:18px;background:linear-gradient(160deg,rgba(12,27,39,.94),rgba(4,11,19,.96));box-shadow:0 24px 80px rgba(0,0,0,.22) }
+    .agent-chat-scroll { flex:1;min-height:0;overflow:auto;padding:clamp(20px,4vw,42px) clamp(16px,5vw,56px);scroll-behavior:smooth }
+    .agent-welcome { width:min(100%,700px);margin:clamp(4px,4vh,38px) auto 28px;text-align:center }
+    .agent-welcome-mark { width:42px;height:42px;margin:0 auto 18px;display:grid;place-items:center;border:1px solid rgba(126,227,181,.22);border-radius:14px;background:rgba(126,227,181,.07);color:#a4f1d6;font-size:20px }
+    .agent-welcome-kicker { margin:0 0 10px;color:#8edecb;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase }
+    .agent-welcome h2 { margin:0;color:#f2f7fb;font-size:clamp(22px,3vw,30px);font-weight:550;letter-spacing:-.035em }
+    .agent-welcome-copy { max-width:520px;margin:12px auto 0;color:rgba(222,234,242,.58);font-size:13px;line-height:1.8 }
+    .agent-prompt-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:28px auto 0;text-align:left }
+    .agent-prompt { min-height:58px;padding:13px 15px;border:1px solid rgba(164,199,219,.15);border-radius:12px;background:rgba(255,255,255,.025);color:rgba(232,241,248,.76);font:inherit;font-size:12px;line-height:1.5;text-align:left;cursor:pointer;transition:border-color .2s,background .2s,transform .2s }
+    .agent-prompt:hover,.agent-prompt:focus-visible { transform:translateY(-1px);border-color:rgba(126,227,181,.42);background:rgba(126,227,181,.055);outline:none }
+    .agent-messages { width:min(100%,760px);margin:0 auto;display:flex;flex-direction:column;gap:18px }
+    .agent-message { max-width:min(88%,680px);display:flex;flex-direction:column;gap:6px;animation:agent-message-in .24s ease-out both }
+    .agent-message.user { align-self:flex-end;align-items:flex-end }
+    .agent-message.assistant { align-self:flex-start;align-items:flex-start }
+    .agent-message-label { color:rgba(215,230,240,.42);font-size:10px;letter-spacing:.04em }
+    .agent-message-content { padding:12px 16px;border:1px solid rgba(169,205,225,.11);border-radius:15px;background:rgba(255,255,255,.045);color:rgba(239,246,251,.9);font-size:13px;line-height:1.8;overflow-wrap:anywhere;white-space:pre-wrap }
+    .agent-message.user .agent-message-content { border-color:rgba(122,213,190,.2);border-bottom-right-radius:5px;background:rgba(67,145,133,.15) }
+    .agent-message.assistant .agent-message-content { border-bottom-left-radius:5px }
+    .agent-message-content a { color:#a6e6da;text-decoration:underline;text-underline-offset:3px }
+    .agent-attachment { max-width:100%;padding:8px 11px;border:1px solid rgba(126,227,181,.2);border-radius:9px;background:rgba(126,227,181,.06);color:#b9f0df;font-size:11px;text-decoration:none }
+    .agent-attachment:hover { border-color:rgba(126,227,181,.45);background:rgba(126,227,181,.1) }
+    .agent-message.error .agent-message-content { border-color:rgba(255,145,145,.24);color:#ffb4b4 }
+    .agent-message-pending::after { content:' ';display:inline-block;width:5px;height:5px;margin-left:5px;border-radius:50%;background:#96e5cc;box-shadow:0 0 10px rgba(126,227,181,.45);animation:agent-pulse 1s ease-in-out infinite alternate }
+    .agent-chat-scroll[data-has-messages="true"] .agent-welcome { display:none }
+    .agent-config-note { min-height:30px;padding:5px 18px;color:rgba(207,224,235,.43);font-size:10px;line-height:1.5;text-align:center }
+    .agent-composer { width:min(100% - 28px,800px);margin:0 auto 16px;padding:8px 8px 8px 15px;display:flex;align-items:flex-end;gap:10px;border:1px solid rgba(181,214,232,.2);border-radius:16px;background:rgba(10,20,29,.94);box-shadow:0 12px 35px rgba(0,0,0,.2);transition:border-color .2s,box-shadow .2s }
+    .agent-composer:focus-within { border-color:rgba(126,227,181,.48);box-shadow:0 0 0 3px rgba(126,227,181,.06),0 12px 35px rgba(0,0,0,.2) }
+    .agent-composer textarea { flex:1;min-height:42px;max-height:150px;resize:none;border:0;outline:0;background:transparent;color:#edf5f8;font:inherit;font-size:13px;line-height:1.6;padding:10px 0 }
+    .agent-composer textarea::placeholder { color:rgba(216,230,240,.38) }
+    .agent-send { flex:none;width:40px;height:40px;display:grid;place-items:center;border:0;border-radius:12px;background:#d9f6f0;color:#09231f;cursor:pointer;transition:transform .18s,background .18s }
+    .agent-send:hover { transform:translateY(-1px);background:#a7e9d9 }
+    .agent-send:disabled { opacity:.45;cursor:wait;transform:none }
+    .agent-send svg { width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round }
+    @keyframes agent-message-in { from { opacity:0;transform:translateY(5px) } to { opacity:1;transform:translateY(0) } }
+    @keyframes agent-pulse { to { opacity:.3;transform:scale(.75) } }
+    @media(max-width:620px) { .agent-prompt-grid { grid-template-columns:1fr;gap:8px;margin-top:22px }.agent-prompt { min-height:48px }.agent-message { max-width:96% }.agent-composer { width:calc(100% - 20px);margin-bottom:10px } }
     .dify-chat-setup { width:min(100%,620px);margin:auto;padding:clamp(24px,5vw,48px);border:1px dashed rgba(255,255,255,.24);border-radius:18px;background:rgba(0,0,0,.12);text-align:center }
     .dify-chat-setup h2 { margin:0 0 10px;font-size:20px;font-weight:500 }
     .dify-chat-setup p { margin:0;color:rgba(255,255,255,.6);font-size:13px;line-height:1.8 }
@@ -139,7 +172,7 @@
     .agent-embed-slot h2 { margin:0 0 10px;font-size:20px;font-weight:500 }
     .agent-embed-slot p { max-width:430px;margin:0 auto;color:rgba(255,255,255,.56);font-size:13px;line-height:1.8 }
     .embed-hint { display:inline-flex;margin-top:21px;padding:8px 11px;border:1px solid rgba(255,255,255,.14);border-radius:8px;background:rgba(255,255,255,.055);color:rgba(255,255,255,.67);font-size:11px }
-    .agent-chat-foot { padding:17px 24px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.4);font-size:11px;text-align:center }
+    .agent-chat-foot { padding:12px 18px;border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);font-size:11px;text-align:center;letter-spacing:.02em }
     .world-page { position:relative;z-index:1;isolation:isolate;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;gap:24px;padding:clamp(100px,12vh,140px) clamp(20px,4vw,52px) 64px;background:#000;color:#fff;text-align:left }
     .world-page::before,.world-page::after { content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background-repeat:repeat }
     .world-page::before { opacity:.38;background-image:radial-gradient(1px 1px at 24px 38px,rgba(230,241,255,.9) 55%,transparent 100%),radial-gradient(1.5px 1.5px at 118px 92px,rgba(174,211,255,.8) 55%,transparent 100%),radial-gradient(1px 1px at 205px 164px,rgba(255,255,255,.78) 55%,transparent 100%),radial-gradient(1px 1px at 312px 52px,rgba(209,229,255,.82) 55%,transparent 100%),radial-gradient(1.5px 1.5px at 403px 214px,rgba(255,255,255,.72) 55%,transparent 100%),radial-gradient(1px 1px at 516px 134px,rgba(185,217,255,.78) 55%,transparent 100%),radial-gradient(1px 1px at 587px 274px,rgba(255,255,255,.75) 55%,transparent 100%);background-size:680px 560px;animation:world-star-drift 240s linear infinite }
@@ -192,9 +225,6 @@
     .news-section-title { margin:0;color:rgba(255,255,255,.84);font-size:13px;font-weight:500;letter-spacing:.04em }
     .news-hint { color:rgba(255,255,255,.43);font-size:11px }
     .news-list { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;min-height:0;align-content:stretch;transition:grid-template-columns .65s cubic-bezier(.2,.75,.2,1) }
-    .news-list.has-active[data-active="policy"] { grid-template-columns:1.7fr 1fr 1fr }
-    .news-list.has-active[data-active="tariff"] { grid-template-columns:1fr 1.7fr 1fr }
-    .news-list.has-active[data-active="supply"] { grid-template-columns:1fr 1fr 1.7fr }
     .news-module { position:relative;min-width:0;min-height:280px;padding:20px 18px;display:flex;flex-direction:column;gap:15px;overflow:hidden;border:1px solid rgba(255,255,255,.19);border-radius:17px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.022));box-shadow:inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(18px) saturate(135%);-webkit-backdrop-filter:blur(18px) saturate(135%);transition:transform .55s cubic-bezier(.2,.75,.2,1),border-color .45s ease,background .45s ease,opacity .45s ease,box-shadow .45s ease }
     .world-page.is-active .news-module { animation:news-card-in .72s cubic-bezier(.16,1,.3,1) both }
     .world-page.is-active .news-module:nth-child(2) { animation-delay:.12s }.world-page.is-active .news-module:nth-child(3) { animation-delay:.24s }
@@ -247,7 +277,7 @@
      @keyframes world-star-drift-far { from { background-position:0 0 } to { background-position:880px 720px } }
      @keyframes map-hub-pulse { 0% { opacity:.8;transform:scale(.55) } 72%,100% { opacity:0;transform:scale(2.5) } }
      @keyframes map-route-flow { to { stroke-dashoffset:-56 } }
-    @media (max-width:820px) { .main-page { gap:16px;padding:18px }.agent-layout { grid-template-columns:1fr }.agent-sidebar { display:none }.agent-chat { min-height:calc(100svh - 100px) }.agent-chat-body { padding:18px }.agent-chat-head { padding:15px 17px } }
+    @media (max-width:820px) { .main-page { gap:16px;padding:18px }.agent-layout { grid-template-columns:1fr }.agent-sidebar { display:none }.agent-chat { min-height:0 }.agent-chat-body { padding:18px }.agent-chat-head { padding:15px 17px } }
     @media (max-width:720px) { .world-page { gap:18px;padding:90px 18px 28px }.world-content { gap:15px }.world-heading { align-items:flex-start;flex-direction:column }.world-heading-tools { width:100%;grid-template-columns:minmax(0,1fr) 190px;gap:12px }.world-heading-actions { width:100%;justify-content:space-between;flex-wrap:wrap;gap:10px }.world-map-card { width:190px }.world-map { height:70px }.trade-pulse { grid-template-columns:1fr auto;gap:9px 14px;padding:14px 16px }.trade-pulse-label { grid-column:1/-1 }.trade-pulse-label::before { height:18px }.trade-pulse-meta { align-self:end }.news-section-head { align-items:flex-start;flex-direction:column;gap:5px }.news-list,.news-list.has-active[data-active] { grid-template-columns:1fr;min-height:0 }.news-module { min-height:210px }.news-module-head h2 { font-size:20px }.world-bridge { grid-template-columns:42px minmax(0,1fr);gap:12px;padding:16px }.world-bridge-mark { width:40px;height:40px }.world-bridge-cta { grid-column:2;justify-self:start;height:38px } }
     @media (max-width:420px) { .world-heading-tools { grid-template-columns:1fr;gap:12px }.world-heading-actions { width:100%;align-items:center;flex-direction:row;justify-content:space-between;gap:10px }.world-map-card { width:100%;padding:9px 11px }.world-map { height:72px }.trade-pulse { grid-template-columns:1fr;gap:10px }.trade-pulse-label { grid-column:auto }.trade-pulse-meta { justify-content:space-between }.world-bridge { grid-template-columns:1fr;gap:12px }.world-bridge-mark { display:none }.world-bridge-cta { grid-column:auto } }
     @media (prefers-reduced-motion:reduce) { .world-page::before,.world-page::after,.news-meta::before,.trade-pulse::after,.trade-pulse-copy,.trade-pulse-meta,.news-module,.world-title-copy,.world-map-routes { animation:none!important;transition:none!important }.world-title-copy { opacity:1;translate:0 0;filter:none }.login-layer.is-opening { animation-duration:.01ms!important } }
@@ -267,7 +297,7 @@
     }
     @media (max-width:420px) { .nav-link,.nav-cta,.logo { font-size:11px }.logo-mark { width:21px;height:30px }.nav-actions { gap:9px }.nav-brand-controls { gap:6px }.language-trigger { min-width:74px;padding:0 8px;font-size:10px }.language-option { font-size:10px } }
     @media (max-width:360px) { .nav { left:12px;right:12px }.logo { gap:4px;font-size:9px }.logo-mark { width:17px;height:25px }.nav-actions { gap:6px }.nav-link,.nav-cta { font-size:9px }.language-trigger { height:28px;min-width:68px;gap:7px;padding:0 7px;font-size:9px }.language-menu { width:142px }.language-option { min-height:36px;padding:0 8px;font-size:9px } }
-    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important;transition-duration:.01ms!important }.login-fragment,.main-page.is-revealing,.main-page.is-revealing .main-topbar,.main-page.is-revealing .agent-sidebar,.main-page.is-revealing .agent-chat { animation-duration:.01ms!important } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important;transition-duration:.01ms!important }.login-fragment,.main-page.is-revealing,.main-page.is-revealing .main-topbar,.main-page.is-revealing .agent-chat { animation-duration:.01ms!important } }
     /* Ocean Trade Atlas redesign */
     :root { --pad-x:clamp(24px,6.25vw,90px);--trade-cyan:#8feaff;--trade-amber:#ffc878 }
     .hero { height:min(100svh,900px);min-height:660px;background:#020711 }
@@ -545,25 +575,9 @@
     @media(max-width:620px) { .topic-page { padding:94px 16px 30px }.topic-back { margin-bottom:23px }.topic-page-tools { align-items:flex-start;flex-direction:column }.topic-ranges { width:100%;justify-content:space-between }.topic-range { flex:1;padding:0 8px }.topic-refresh { align-self:flex-end }.topic-results-panel { padding:17px 14px }.topic-story { grid-template-columns:1fr;gap:6px;padding:15px 3px }.topic-story time { font-size:10px }.topic-story h3 { font-size:14px }.topic-results-heading { align-items:flex-start;flex-direction:column }.topic-status { text-align:left } }
     @keyframes topic-stars-drift { from { transform:translate3d(-.45%,.2%,0) scale(1.02) } to { transform:translate3d(.45%,-.2%,0) scale(1.06) } }
     @media(prefers-reduced-motion:reduce) { .topic-page::before,.topic-page-content { animation:none!important } }
-  
-    /* Minimal, full-width agent workspace */
-    .main-page { gap:clamp(14px,2vh,22px);padding:clamp(16px,3vw,34px);overflow:auto }
-    .main-topbar,.agent-layout { width:min(100%,1200px) }
-    .main-page.is-revealing .agent-chat { animation-delay:.2s }
-    .agent-sidebar { display:none!important }
-    .agent-layout { display:flex;grid-template-columns:minmax(0,1fr);gap:0 }
-    .agent-chat { width:100%;min-height:0;flex:1;border-color:rgba(172,211,239,.18);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025) 54%,rgba(255,255,255,.045));box-shadow:0 24px 70px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.08) }
-    .agent-chat-head { min-height:72px;padding:16px clamp(16px,2.4vw,28px);border-bottom-color:rgba(255,255,255,.11) }
-    .agent-chat-title h1 { letter-spacing:.01em }
-    .connection-state { padding:7px 10px;border-color:rgba(255,255,255,.13);background:rgba(255,255,255,.04);color:rgba(255,255,255,.62) }
-    .connection-state::before { width:6px;height:6px;background:#7ee3b5;box-shadow:0 0 9px rgba(126,227,181,.42) }
-    .agent-chat-body { display:flex;padding:clamp(10px,1.5vw,16px) }
-    .dify-chat-host { min-height:480px;border-color:rgba(255,255,255,.12);background:#f4f6f8 }
-    .agent-chat-foot { padding:12px 18px;border-top-color:rgba(255,255,255,.1);color:rgba(255,255,255,.5);letter-spacing:.02em }
-    @media(max-width:820px) { .agent-layout { display:flex }.agent-chat { min-height:0;flex:1 }.agent-chat-body { padding:10px } }
   </style>
   <!-- Dify embed URL is filled from Access Point after the app is published. Never put API keys in this page. -->
-  <meta name="dify-embed-url" content="https://udify.app/chatbot/WrU8JT3uBJbeT2xb">
+  <meta name="dify-api-proxy" content="">
 </head>
 <body>
   <main class="hero" id="hero">
@@ -616,7 +630,7 @@
     <div class="agent-layout">
       <section class="agent-chat glass-panel" aria-label="智能体对话区" data-i18n-label="agent_chat">
         <header class="agent-chat-head"><div class="agent-chat-title"><span class="agent-active-icon" aria-hidden="true">✦</span><div><h1 id="main-title" tabindex="-1" data-i18n="agent_name">出海市场助手</h1><p data-i18n="agent_tagline">市场研究 · 合规评估 · 行动建议</p></div></div><span class="connection-state" id="agent-connection-state" data-i18n="dify_waiting">正在连接智能服务</span></header>
-        <div class="agent-chat-body"><div class="dify-chat-host" id="dify-chat" aria-label="环球导航智能体对话" data-i18n-label="agent_chat"></div></div>
+        <div class="agent-chat-body"><section class="agent-conversation" aria-label="环球导航智能体对话" data-i18n-label="agent_chat"><div class="agent-chat-scroll" id="agent-chat-scroll"><div class="agent-welcome" id="agent-welcome"><div class="agent-welcome-mark" aria-hidden="true">✦</div><p class="agent-welcome-kicker" data-i18n="agent_welcome_kicker">GLOBAL NAVIGATOR · AI</p><h2 data-i18n="agent_welcome_title">让出海决策更清晰</h2><p class="agent-welcome-copy" data-i18n="agent_welcome_copy">描述你的产品与目标市场，开始一场聚焦市场机会、准入规则与行动建议的对话。</p><div class="agent-prompt-grid"><button class="agent-prompt" type="button" data-prompt-key="agent_prompt_market" data-i18n="agent_prompt_market">帮我分析产品适合进入哪些海外市场</button><button class="agent-prompt" type="button" data-prompt-key="agent_prompt_compliance" data-i18n="agent_prompt_compliance">梳理目标市场的准入与合规要求</button><button class="agent-prompt" type="button" data-prompt-key="agent_prompt_localize" data-i18n="agent_prompt_localize">为我的产品制定本地化营销方向</button><button class="agent-prompt" type="button" data-prompt-key="agent_prompt_compare" data-i18n="agent_prompt_compare">比较不同市场的机会与风险</button></div></div><div class="agent-messages" id="agent-messages" aria-live="polite"></div></div><div class="agent-config-note" id="agent-config-note" role="status" data-i18n="agent_proxy_needed">自定义对话界面已就绪，安全服务端接入后即可开始对话。</div><form class="agent-composer" id="agent-composer"><textarea id="agent-input" rows="1" aria-label="发送消息" data-i18n-placeholder="chat_placeholder" placeholder="描述产品和目标市场…" required></textarea><button class="agent-send" id="agent-send" type="submit" aria-label="发送" data-i18n-label="chat_send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-5 16-3-7-8-1Z"/><path d="m12 13 8-9"/></svg></button></form></section></div>
         <footer class="agent-chat-foot" data-i18n="agent_footer">智能服务由 Dify 提供</footer>
       </section>
     </div>
@@ -643,14 +657,14 @@
     (() => {
       const messages = {
         zh: {
-          page_title:'环球导航 — 探索新世界', earth_canvas:'可旋转的玻璃地球，拖动即可旋转。', hero_title:'探索新世界', earth_controls:'旋转玻璃地球', rotate_left:'向左旋转', rotate_right:'向右旋转', hero_tagline:'开启全球贸易<br>开拓<br><strong>更多市场</strong>', loader:'正在准备地球', home_logo:'GlobalNavigator 首页', main_navigation:'主导航', home_nav:'首页', explore_nav:'世界资讯', start_exploring:'开始探索', back:'返回', login_intro:'比赛体验无需登录，继续即可打开智能体。', account:'账号', password:'密码', show_password:'显示密码', hide_password:'隐藏密码', login_submit:'进入演示', login_error:'账号或密码错误，请重试。', signed_in:'竞赛演示访客', return_home:'返回首页', agent_workflow:'智能体工作流架构', workspace:'工作空间', agent_name:'出海市场助手', agent_type:'AI 智能体 · Dify', agent_workflow_label:'智能体工作流', workflow_input:'产品资料输入', workflow_input_desc:'产品参数、目标市场与经营条件', workflow_search:'隐私过滤与实时检索', workflow_search_desc:'提取最小检索词，只搜索公开市场信息', workflow_market:'市场调研', workflow_market_desc:'逐市场分析，标注来源核验状态', workflow_content:'内容生产', workflow_content_desc:'生成符合语言与场景的营销文案', workflow_compliance:'合规检查', workflow_compliance_desc:'检查广告表达、文化与准入风险', workflow_decision:'业务决策与报告', workflow_decision_desc:'汇总市场进入建议并生成 Word', agent_chat:'智能体对话区', agent_tagline:'市场研究 · 合规评估 · 行动建议', dify_waiting:'正在连接智能服务', agent_footer:'智能服务由 Dify 提供', news_eyebrow:'世界探索 · 国际贸易', news_title:'国际贸易动态', news_description:'汇集商务部贸易政策与海关总署贸易统计', news_connecting:'正在连接新闻源…', news_hint:'悬停或聚焦主题模块，展开相关新闻', refresh_news:'立即刷新', refresh_cooldown:'{seconds} 秒后可刷新', refresh_loading:'正在刷新…', news_loading:'正在加载国际贸易新闻…', news_footer:'来源：商务部政策公告与海关总署贸易统计 · 数据约每 30 分钟更新 · 点击查看官方原文', news_updating:'正在更新…', news_unavailable:'新闻源暂时不可用，请点击“立即刷新”重试。', news_fetching:'正在获取相关新闻…', news_no_matches:'当前新闻源没有匹配到此主题。', news_enter:'进入此区域后将自动获取实时新闻。', news_updated:'官方数据 · 更新于', news_failed_cached:'刷新失败，显示上次获取的新闻', news_failed:'新闻源连接失败', story_fallback:'未命名新闻', open_original:'打开原文查看新闻详情。', official_trade_source:'商务部政策 / 海关统计', official_trade_no_results:'官方贸易信息暂不可用', policy:'贸易政策', policy_subtitle:'规则 · 协定 · 市场准入', tariff:'关税动态', tariff_subtitle:'关税 · 进出口 · 贸易救济', supply:'全球供应链', supply_subtitle:'供应链 · 物流 · 航运', news_count:'条相关资讯', news_empty_count:'暂无相关资讯', news_topic_word:'全球贸易', dify_setup_title:'智能体接入准备中', dify_wait_message:'Dify 工作流尚未发布。发布后在“访问入口 → Web 应用 → 嵌入网站”复制官方 iframe 地址，并填写页面 head 中 meta[name="dify-embed-url"] 的 content。请勿把 API 密钥放在网页代码中。', dify_wait_badge:'等待 Dify 发布', dify_url_http:'Dify 嵌入地址必须使用 HTTP 或 HTTPS。', dify_url_https:'HTTPS 网站必须连接 HTTPS 的 Dify 地址。', dify_configured_note:'智能服务已连接', dify_configured_badge:'智能服务在线', dify_error:'智能服务暂时无法加载，请检查网络后重试。', dify_error_badge:'服务暂不可用', chat_title:'环球导航智能体', chat_subtitle:'海外市场调研与决策助手', chat_started:'开始对话', chat_placeholder:'请粘贴商品资料，并注明目标国家和目标语言…', chat_close:'关闭', chat_welcome:'你好，我是环球导航智能体。请提供产品名称与参数、目标国家/语言，以及已知售价成本、客户、渠道和试点计划；缺少项可写待确认。我将依次完成市场调研、内容本地化、合规筛查和出海决策。'
+          page_title:'环球导航 — 探索新世界', earth_canvas:'可旋转的玻璃地球，拖动即可旋转。', hero_title:'探索新世界', earth_controls:'旋转玻璃地球', rotate_left:'向左旋转', rotate_right:'向右旋转', hero_tagline:'开启全球贸易<br>开拓<br><strong>更多市场</strong>', loader:'正在准备地球', home_logo:'GlobalNavigator 首页', main_navigation:'主导航', home_nav:'首页', explore_nav:'世界资讯', start_exploring:'开始探索', back:'返回', login_intro:'比赛体验无需登录，继续即可打开智能体。', account:'账号', password:'密码', show_password:'显示密码', hide_password:'隐藏密码', login_submit:'进入演示', login_error:'账号或密码错误，请重试。', signed_in:'竞赛演示访客', return_home:'返回首页', agent_workflow:'智能体工作流架构', workspace:'工作空间', agent_name:'出海市场助手', agent_welcome_kicker:'GLOBAL NAVIGATOR · AI', agent_welcome_title:'让出海决策更清晰', agent_welcome_copy:'描述你的产品与目标市场，开始一场聚焦市场机会、准入规则与行动建议的对话。', agent_prompt_market:'帮我分析产品适合进入哪些海外市场', agent_prompt_compliance:'梳理目标市场的准入与合规要求', agent_prompt_localize:'为我的产品制定本地化营销方向', agent_prompt_compare:'比较不同市场的机会与风险', agent_you:'你', agent_assistant:'环球导航智能体', agent_empty_reply:'暂时没有收到回复，请重试。', agent_request_error:'暂时无法连接智能服务。', agent_proxy_needed:'自定义对话界面已就绪，安全服务端接入后即可开始 Dify 对话。', agent_proxy_ready:'智能服务由 Dify 提供', agent_proxy_status:'等待服务端接入', chat_send:'发送', agent_type:'AI 智能体 · Dify', agent_workflow_label:'智能体工作流', workflow_input:'产品资料输入', workflow_input_desc:'产品参数、目标市场与经营条件', workflow_search:'隐私过滤与实时检索', workflow_search_desc:'提取最小检索词，只搜索公开市场信息', workflow_market:'市场调研', workflow_market_desc:'逐市场分析，标注来源核验状态', workflow_content:'内容生产', workflow_content_desc:'生成符合语言与场景的营销文案', workflow_compliance:'合规检查', workflow_compliance_desc:'检查广告表达、文化与准入风险', workflow_decision:'业务决策与报告', workflow_decision_desc:'汇总市场进入建议并生成 Word', agent_chat:'智能体对话区', agent_tagline:'市场研究 · 合规评估 · 行动建议', dify_waiting:'正在连接智能服务', agent_footer:'智能服务由 Dify 提供', news_eyebrow:'世界探索 · 国际贸易', news_title:'国际贸易动态', news_description:'汇集商务部贸易政策与海关总署贸易统计', news_connecting:'正在连接新闻源…', news_hint:'悬停或聚焦主题模块，展开相关新闻', refresh_news:'立即刷新', refresh_cooldown:'{seconds} 秒后可刷新', refresh_loading:'正在刷新…', news_loading:'正在加载国际贸易新闻…', news_footer:'来源：商务部政策公告与海关总署贸易统计 · 数据约每 30 分钟更新 · 点击查看官方原文', news_updating:'正在更新…', news_unavailable:'新闻源暂时不可用，请点击“立即刷新”重试。', news_fetching:'正在获取相关新闻…', news_no_matches:'当前新闻源没有匹配到此主题。', news_enter:'进入此区域后将自动获取实时新闻。', news_updated:'官方数据 · 更新于', news_failed_cached:'刷新失败，显示上次获取的新闻', news_failed:'新闻源连接失败', story_fallback:'未命名新闻', open_original:'打开原文查看新闻详情。', official_trade_source:'商务部政策 / 海关统计', official_trade_no_results:'官方贸易信息暂不可用', policy:'贸易政策', policy_subtitle:'规则 · 协定 · 市场准入', tariff:'关税动态', tariff_subtitle:'关税 · 进出口 · 贸易救济', supply:'全球供应链', supply_subtitle:'供应链 · 物流 · 航运', news_count:'条相关资讯', news_empty_count:'暂无相关资讯', news_topic_word:'全球贸易', dify_setup_title:'智能体接入准备中', dify_wait_message:'Dify 工作流尚未发布。发布后在“访问入口 → Web 应用 → 嵌入网站”复制官方 iframe 地址，并填写页面 head 中 meta[name="dify-embed-url"] 的 content。请勿把 API 密钥放在网页代码中。', dify_wait_badge:'等待 Dify 发布', dify_url_http:'Dify 嵌入地址必须使用 HTTP 或 HTTPS。', dify_url_https:'HTTPS 网站必须连接 HTTPS 的 Dify 地址。', dify_configured_note:'智能服务已连接', dify_configured_badge:'智能服务在线', dify_error:'智能服务暂时无法加载，请检查网络后重试。', dify_error_badge:'服务暂不可用', chat_title:'环球导航智能体', chat_subtitle:'海外市场调研与决策助手', chat_started:'开始对话', chat_placeholder:'请粘贴商品资料，并注明目标国家和目标语言…', chat_close:'关闭', chat_welcome:'你好，我是环球导航智能体。请提供产品名称与参数、目标国家/语言，以及已知售价成本、客户、渠道和试点计划；缺少项可写待确认。我将依次完成市场调研、内容本地化、合规筛查和出海决策。'
         },
         en: {
-          page_title:'GlobalNavigator — Explore New Worlds', earth_canvas:'Rotating glass globe. Drag to rotate.', hero_title:'Explore New Worlds', earth_controls:'Rotate the glass globe', rotate_left:'Rotate left', rotate_right:'Rotate right', hero_tagline:'Enable Global Trade<br>Expand<br><strong>Into More Markets</strong>', loader:'Preparing the Earth', home_logo:'GlobalNavigator home', main_navigation:'Main navigation', home_nav:'Home', explore_nav:'World Advisory', start_exploring:'Start Exploring', back:'Back', login_intro:'No sign-in is required for this demo. Continue to open the agent.', account:'Username', password:'Password', show_password:'Show password', hide_password:'Hide password', login_submit:'Enter demo', login_error:'Incorrect username or password. Please try again.', signed_in:'Contest demo visitor', return_home:'Return Home', agent_workflow:'AI agent workflow', workspace:'Workspace', agent_name:'Export Market Assistant', agent_type:'AI Agent · Dify', agent_workflow_label:'Agent Workflow', workflow_input:'Product Brief', workflow_input_desc:'Product details, markets, and business context', workflow_search:'Private Query & Live Search', workflow_search_desc:'Minimize the query; search public market sources', workflow_market:'Market Research', workflow_market_desc:'Analyze each market and mark source status', workflow_content:'Content Production', workflow_content_desc:'Localize marketing copy by language and use case', workflow_compliance:'Compliance Review', workflow_compliance_desc:'Check claims, culture, and market-entry risks', workflow_decision:'Decision & Report', workflow_decision_desc:'Summarize entry recommendations and generate Word', agent_chat:'AI agent chat', agent_tagline:'Market research · Compliance review · Action plan', dify_waiting:'Connecting to AI service', agent_footer:'AI service provided by Dify', news_eyebrow:'WORLD EXPLORATION · TRADE', news_title:'Global Trade News', news_description:'MOFCOM trade policy and Customs trade statistics', news_connecting:'Connecting to news source…', news_hint:'Hover or focus a topic to expand related stories', refresh_news:'Refresh', refresh_cooldown:'Refresh in {seconds}s', refresh_loading:'Refreshing…', news_loading:'Loading global trade news…', news_footer:'Sources: MOFCOM policy notices and Customs trade statistics · Updated about every 30 minutes · Open official records', news_updating:'Updating…', news_unavailable:'News source is temporarily unavailable. Select “Refresh” to try again.', news_fetching:'Loading related stories…', news_no_matches:'No stories match this topic in the current feed.', news_enter:'Live news loads when you open this section.', news_updated:'Official trade data · Updated', news_failed_cached:'Refresh failed; showing previously loaded stories', news_failed:'Could not connect to the news source', story_fallback:'Untitled story', open_original:'Open the original article for details.', official_trade_source:'MOFCOM / Customs', official_trade_no_results:'No official trade updates are available', policy:'Trade Policy', policy_subtitle:'Rules · Agreements · Market Access', tariff:'Tariffs', tariff_subtitle:'Tariffs · Imports & Exports · Trade Remedies', supply:'Global Supply Chains', supply_subtitle:'Supply Chains · Logistics · Shipping', news_count:'related stories', news_empty_count:'No related stories', news_topic_word:'GLOBAL TRADE', dify_setup_title:'Connect your AI agent', dify_wait_message:'The Dify workflow is not published yet. After publishing, open Access Point → Web App → Embed into website, copy the official iframe URL, and add it to meta[name="dify-embed-url"] in the page head. Never put an API key in browser code.', dify_wait_badge:'Waiting for Dify publish', dify_url_http:'The Dify embed URL must use HTTP or HTTPS.', dify_url_https:'An HTTPS website must connect to an HTTPS Dify URL.', dify_configured_note:'AI service connected', dify_configured_badge:'AI service online', dify_error:'The AI service is unavailable. Check your connection and try again.', chat_title:'GlobalNavigator Agent', chat_subtitle:'Global market research and strategy assistant', chat_started:'Start chatting', chat_placeholder:'Share product details, target markets, and languages…', chat_close:'Close', chat_welcome:'Hello, I’m the GlobalNavigator agent. Share product specifications, target countries and languages, plus known prices, costs, customer segments, channels, and pilot plan. Unknown items can be marked TBD. I will work through research, localization, compliance screening, and market-entry decisions.'
+          page_title:'GlobalNavigator — Explore New Worlds', earth_canvas:'Rotating glass globe. Drag to rotate.', hero_title:'Explore New Worlds', earth_controls:'Rotate the glass globe', rotate_left:'Rotate left', rotate_right:'Rotate right', hero_tagline:'Enable Global Trade<br>Expand<br><strong>Into More Markets</strong>', loader:'Preparing the Earth', home_logo:'GlobalNavigator home', main_navigation:'Main navigation', home_nav:'Home', explore_nav:'World Advisory', start_exploring:'Start Exploring', back:'Back', login_intro:'No sign-in is required for this demo. Continue to open the agent.', account:'Username', password:'Password', show_password:'Show password', hide_password:'Hide password', login_submit:'Enter demo', login_error:'Incorrect username or password. Please try again.', signed_in:'Contest demo visitor', return_home:'Return Home', agent_workflow:'AI agent workflow', workspace:'Workspace', agent_name:'Export Market Assistant', agent_welcome_kicker:'GLOBAL NAVIGATOR · AI', agent_welcome_title:'Make global decisions clearer', agent_welcome_copy:'Share your product and target market to explore opportunities, market access, and practical next steps.', agent_prompt_market:'Find promising overseas markets for my product', agent_prompt_compliance:'Review market access and compliance requirements', agent_prompt_localize:'Suggest a localized marketing direction', agent_prompt_compare:'Compare opportunities and risks across markets', agent_you:'You', agent_assistant:'GlobalNavigator assistant', agent_empty_reply:'No response received. Please try again.', agent_request_error:'Could not connect to the AI service.', agent_proxy_needed:'The custom chat is ready. Connect a secure server endpoint to start a Dify conversation.', agent_proxy_ready:'AI service provided by Dify', agent_proxy_status:'Waiting for server connection', chat_send:'Send', agent_type:'AI Agent · Dify', agent_workflow_label:'Agent Workflow', workflow_input:'Product Brief', workflow_input_desc:'Product details, markets, and business context', workflow_search:'Private Query & Live Search', workflow_search_desc:'Minimize the query; search public market sources', workflow_market:'Market Research', workflow_market_desc:'Analyze each market and mark source status', workflow_content:'Content Production', workflow_content_desc:'Localize marketing copy by language and use case', workflow_compliance:'Compliance Review', workflow_compliance_desc:'Check claims, culture, and market-entry risks', workflow_decision:'Decision & Report', workflow_decision_desc:'Summarize entry recommendations and generate Word', agent_chat:'AI agent chat', agent_tagline:'Market research · Compliance review · Action plan', dify_waiting:'Connecting to AI service', agent_footer:'AI service provided by Dify', news_eyebrow:'WORLD EXPLORATION · TRADE', news_title:'Global Trade News', news_description:'MOFCOM trade policy and Customs trade statistics', news_connecting:'Connecting to news source…', news_hint:'Hover or focus a topic to expand related stories', refresh_news:'Refresh', refresh_cooldown:'Refresh in {seconds}s', refresh_loading:'Refreshing…', news_loading:'Loading global trade news…', news_footer:'Sources: MOFCOM policy notices and Customs trade statistics · Updated about every 30 minutes · Open official records', news_updating:'Updating…', news_unavailable:'News source is temporarily unavailable. Select “Refresh” to try again.', news_fetching:'Loading related stories…', news_no_matches:'No stories match this topic in the current feed.', news_enter:'Live news loads when you open this section.', news_updated:'Official trade data · Updated', news_failed_cached:'Refresh failed; showing previously loaded stories', news_failed:'Could not connect to the news source', story_fallback:'Untitled story', open_original:'Open the original article for details.', official_trade_source:'MOFCOM / Customs', official_trade_no_results:'No official trade updates are available', policy:'Trade Policy', policy_subtitle:'Rules · Agreements · Market Access', tariff:'Tariffs', tariff_subtitle:'Tariffs · Imports & Exports · Trade Remedies', supply:'Global Supply Chains', supply_subtitle:'Supply Chains · Logistics · Shipping', news_count:'related stories', news_empty_count:'No related stories', news_topic_word:'GLOBAL TRADE', dify_setup_title:'Connect your AI agent', dify_wait_message:'The Dify workflow is not published yet. After publishing, open Access Point → Web App → Embed into website, copy the official iframe URL, and add it to meta[name="dify-embed-url"] in the page head. Never put an API key in browser code.', dify_wait_badge:'Waiting for Dify publish', dify_url_http:'The Dify embed URL must use HTTP or HTTPS.', dify_url_https:'An HTTPS website must connect to an HTTPS Dify URL.', dify_configured_note:'AI service connected', dify_configured_badge:'AI service online', dify_error:'The AI service is unavailable. Check your connection and try again.', chat_title:'GlobalNavigator Agent', chat_subtitle:'Global market research and strategy assistant', chat_started:'Start chatting', chat_placeholder:'Share product details, target markets, and languages…', chat_close:'Close', chat_welcome:'Hello, I’m the GlobalNavigator agent. Share product specifications, target countries and languages, plus known prices, costs, customer segments, channels, and pilot plan. Unknown items can be marked TBD. I will work through research, localization, compliance screening, and market-entry decisions.'
         }
       };
-      Object.assign(messages.zh,{topic_open:'查看主题新闻',topic_back:'返回国际贸易动态',topic_kicker:'主题新闻档案',topic_1m:'近一个月',topic_2m:'近两个月',topic_3m:'近三个月',topic_refresh:'重新检索',topic_results_heading:'按时间排列的相关新闻',topic_loading:'正在整理官方来源的近三个月贸易信息…',topic_partial:'部分时间段暂时无法获取，以下为已取得的新闻。',topic_empty:'此时间范围内暂无相关新闻。',topic_error:'暂时无法获取相关新闻，请点击重新检索。',topic_retry:'重新检索',topic_prev:'上一页',topic_next:'下一页',topic_page_count:'第 {page} / {pages} 页 · {count} 条',topic_source_note:'来源：商务部公告、海关总署统计及 Google News 聚合的国际媒体新闻 · 显示原文标题 · 按时间从新到旧',topic_no_date:'时间未知',topic_range_label:'新闻时间范围',topic_pagination_label:'新闻分页'});
-      Object.assign(messages.en,{topic_open:'View topic news',topic_back:'Back to trade news',topic_kicker:'TOPIC NEWS ARCHIVE',topic_1m:'1 month',topic_2m:'2 months',topic_3m:'3 months',topic_refresh:'Search again',topic_results_heading:'Related stories by date',topic_loading:'Loading official trade updates from the past three months…',topic_partial:'Some date ranges could not be reached. Showing the articles retrieved.',topic_empty:'No related stories in this date range.',topic_error:'Could not retrieve related stories. Select Search again to retry.',topic_retry:'Search again',topic_prev:'Previous',topic_next:'Next',topic_page_count:'Page {page} of {pages} · {count} stories',topic_source_note:'Sources: MOFCOM notices, Customs statistics, and international publishers via Google News · Original headlines · Newest first',topic_no_date:'Date unavailable',topic_range_label:'News date range',topic_pagination_label:'News pagination'});
+      Object.assign(messages.zh,{topic_open:'查看主题新闻',topic_back:'返回国际贸易动态',topic_kicker:'主题新闻档案',topic_1m:'近一个月',topic_2m:'近两个月',topic_3m:'近三个月',topic_refresh:'重新检索',topic_results_heading:'按时间排列的相关新闻',topic_loading:'正在整理近三个月的相关贸易资讯…',topic_partial:'部分时间段暂时无法获取，以下为已取得的新闻。',topic_empty:'此时间范围内暂无相关新闻。',topic_error:'暂时无法获取相关新闻，请点击重新检索。',topic_retry:'重新检索',topic_prev:'上一页',topic_next:'下一页',topic_page_count:'第 {page} / {pages} 页 · {count} 条',topic_source_note:'来源：商务部公告、海关总署统计及 Google News 聚合的国际媒体新闻 · 显示原文标题 · 按时间从新到旧',topic_no_date:'时间未知',topic_range_label:'新闻时间范围',topic_pagination_label:'新闻分页'});
+      Object.assign(messages.en,{topic_open:'View topic news',topic_back:'Back to trade news',topic_kicker:'TOPIC NEWS ARCHIVE',topic_1m:'1 month',topic_2m:'2 months',topic_3m:'3 months',topic_refresh:'Search again',topic_results_heading:'Related stories by date',topic_loading:'Loading related trade stories from the past three months…',topic_partial:'Some date ranges could not be reached. Showing the articles retrieved.',topic_empty:'No related stories in this date range.',topic_error:'Could not retrieve related stories. Select Search again to retry.',topic_retry:'Search again',topic_prev:'Previous',topic_next:'Next',topic_page_count:'Page {page} of {pages} · {count} stories',topic_source_note:'Sources: MOFCOM notices, Customs statistics, and international publishers via Google News · Original headlines · Newest first',topic_no_date:'Date unavailable',topic_range_label:'News date range',topic_pagination_label:'News pagination'});
       const currentLanguage = () => window.siteLanguage || 'zh';
       window.siteT = key => messages[currentLanguage()][key] ?? messages.zh[key] ?? key;
       window.addEventListener('site-language-change', () => {
@@ -660,6 +674,7 @@
         document.querySelectorAll('[data-i18n]').forEach(element => { element.textContent = window.siteT(element.dataset.i18n); });
         document.querySelectorAll('[data-i18n-html]').forEach(element => { element.innerHTML = window.siteT(element.dataset.i18nHtml); });
         document.querySelectorAll('[data-i18n-label]').forEach(element => { element.setAttribute('aria-label', window.siteT(element.dataset.i18nLabel)); });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => { element.setAttribute('placeholder', window.siteT(element.dataset.i18nPlaceholder)); });
         document.querySelectorAll('[data-lang-zh][data-lang-en]').forEach(element => { element.textContent = lang === 'zh' ? element.dataset.langZh : element.dataset.langEn; });
         const loginError = document.querySelector('#login-error');
         if (loginError?.textContent.trim()) loginError.textContent = window.siteT('login_error');
@@ -1249,51 +1264,55 @@
     };
     requestAnimationFrame(frame);
   </script>
-<script type="module">
-    // Only a published Dify web-app iframe URL belongs here; API keys stay server-side.
-    const embedUrl = document.querySelector('meta[name="dify-embed-url"]')?.content.trim();
-    const host = document.querySelector('#dify-chat');
-    const note = document.querySelector('#agent-connect-note');
+  <script type="module">
+    // The browser calls a same-origin server proxy. Keep the Dify app key in that server's secret store.
+    const proxyUrl = document.querySelector('meta[name="dify-api-proxy"]')?.content.trim() || '';
+    const input = document.querySelector('#agent-input');
+    const composer = document.querySelector('#agent-composer');
+    const sendButton = document.querySelector('#agent-send');
+    const messages = document.querySelector('#agent-messages');
+    const scrollArea = document.querySelector('#agent-chat-scroll');
+    const configNote = document.querySelector('#agent-config-note');
     const badge = document.querySelector('#agent-connection-state');
-    const showSetup = (message) => {
-      const panel = document.createElement('div');
-      panel.className = 'dify-chat-setup';
-      panel.innerHTML = '<div class="agent-orbit" aria-hidden="true">✦</div><h2></h2><p></p>';
-      panel.querySelector('h2').textContent = window.siteT('dify_setup_title');
-      panel.querySelector('p').textContent = message;
-      host.replaceChildren(panel);
+    const userIdKey = 'globalNavigatorDifyUserV1';
+    let conversationId = '';
+    let isSending = false;
+    let userId = sessionStorage.getItem(userIdKey);
+    if (!userId) { userId = `gn-${crypto.randomUUID()}`; sessionStorage.setItem(userIdKey,userId); }
+    const t = (key) => window.siteT?.(key) || key;
+    const updateConnection = () => {
+      const connected = Boolean(proxyUrl);
+      badge.textContent = t(connected ? 'dify_configured_badge' : 'agent_proxy_status');
+      configNote.textContent = t(connected ? 'agent_proxy_ready' : 'agent_proxy_needed');
     };
-    const initializeChat = () => {
-      if (!embedUrl) {
-        const message = window.siteT('dify_wait_message');
-        if (note) note.textContent = message;
-        badge.textContent = window.siteT('dify_wait_badge');
-        showSetup(message);
-        return;
-      }
-      try {
-        const endpoint = new URL(embedUrl);
-        if (!['http:', 'https:'].includes(endpoint.protocol)) throw new Error(window.siteT('dify_url_http'));
-        if (location.protocol === 'https:' && endpoint.protocol !== 'https:') throw new Error(window.siteT('dify_url_https'));
-        if (!/(^|\.)udify\.app$/.test(endpoint.hostname) && endpoint.hostname !== 'cloud.dify.ai') throw new Error(window.siteT('dify_url_http'));
-        const frame = document.createElement('iframe');
-        frame.src = endpoint.toString();
-        frame.title = window.siteT('agent_chat');
-        frame.loading = 'lazy';
-        frame.referrerPolicy = 'strict-origin-when-cross-origin';
-        frame.allow = 'clipboard-write';
-        frame.style.cssText = 'width:100%;height:100%;min-height:520px;border:0;border-radius:12px;background:#fff';
-        host.replaceChildren(frame);
-        if (note) note.textContent = window.siteT('dify_configured_note');
-        badge.textContent = window.siteT('dify_configured_badge');
-      } catch (error) {
-        if (note) note.textContent = error.message || window.siteT('dify_error');
-        badge.textContent = window.siteT('dify_error_badge');
-        showSetup(note.textContent);
-      }
+    const appendMessage = (role,text,{error=false,pending=false}={}) => {
+      const article = document.createElement('article'); article.className=`agent-message ${role}${error?' error':''}`;
+      const label=document.createElement('span');label.className='agent-message-label';label.textContent=t(role==='user'?'agent_you':'agent_assistant');
+      const body=document.createElement('div');body.className=`agent-message-content${pending?' agent-message-pending':''}`;body.textContent=text;
+      article.append(label,body);messages.append(article);scrollArea.dataset.hasMessages='true';scrollArea.scrollTop=scrollArea.scrollHeight;
+      return {article,body};
     };
-    initializeChat();
-    window.addEventListener('site-language-change', initializeChat);
+    const consumeStream = async (response, target) => {
+      if (!response.ok) { const detail=await response.text().catch(()=> ''); throw new Error(detail || `HTTP ${response.status}`); }
+      if (!response.body) throw new Error('No response stream');
+      const reader=response.body.getReader(),decoder=new TextDecoder();let buffer='';
+      while(true){const {value,done}=await reader.read();if(done)break;buffer+=decoder.decode(value,{stream:true});const events=buffer.split(/\r?\n\r?\n/);buffer=events.pop()||'';for(const block of events){for(const line of block.split(/\r?\n/)){if(!line.startsWith('data:'))continue;const raw=line.slice(5).trim();if(!raw||raw==='[DONE]')continue;let data;try{data=JSON.parse(raw)}catch{continue}if(data.event==='message'||data.event==='agent_message'){target.body.textContent+=data.answer||'';if(data.conversation_id)conversationId=data.conversation_id;scrollArea.scrollTop=scrollArea.scrollHeight}else if(data.event==='message_file'&&data.url){try{const fileUrl=new URL(data.url);if(fileUrl.protocol==='https:'){const link=document.createElement('a');link.className='agent-attachment';link.href=fileUrl.href;link.target='_blank';link.rel='noopener noreferrer';link.textContent=`↧ ${data.filename||data.name||t('agent_download')}`;target.article.append(link)}}catch{}}else if(data.event==='message_end'&&data.conversation_id){conversationId=data.conversation_id}else if(data.event==='error'){throw new Error(data.message||data.code||'Dify error')}}}}
+      if(!target.body.textContent.trim())target.body.textContent=t('agent_empty_reply');
+      const markdown=target.body.textContent,linkPattern=/\[([^\]]+)\]\((https:\/\/[^\s)]+)\)/g,fragment=document.createDocumentFragment();let cursor=0,match;
+      while((match=linkPattern.exec(markdown))){fragment.append(document.createTextNode(markdown.slice(cursor,match.index)));try{const url=new URL(match[2]);if(url.protocol==='https:'){const link=document.createElement('a');link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';link.textContent=match[1];fragment.append(link)}else fragment.append(document.createTextNode(match[0]))}catch{fragment.append(document.createTextNode(match[0]))}cursor=linkPattern.lastIndex}
+      fragment.append(document.createTextNode(markdown.slice(cursor)));target.body.replaceChildren(fragment);
+    };
+    const send = async (text) => {
+      if (!text || isSending) return;
+      if (!proxyUrl) { appendMessage('assistant',t('agent_proxy_needed'),{error:true}); return; }
+      appendMessage('user',text);const reply=appendMessage('assistant','',{pending:true});isSending=true;sendButton.disabled=true;input.disabled=true;updateConnection();
+      try{const response=await fetch(proxyUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:text,conversation_id:conversationId,inputs:{},response_mode:'streaming',user:userId})});reply.body.classList.remove('agent-message-pending');await consumeStream(response,reply)}catch(error){reply.article.classList.add('error');reply.body.classList.remove('agent-message-pending');reply.body.textContent=`${t('agent_request_error')} ${error.message||''}`.trim()}finally{isSending=false;sendButton.disabled=false;input.disabled=false;input.focus();updateConnection()}
+    };
+    composer.addEventListener('submit',(event)=>{event.preventDefault();const text=input.value.trim();if(!text)return;input.value='';input.style.height='auto';send(text)});
+    input.addEventListener('input',()=>{input.style.height='auto';input.style.height=`${Math.min(input.scrollHeight,150)}px`});
+    input.addEventListener('keydown',(event)=>{if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();composer.requestSubmit()}});
+    document.querySelectorAll('.agent-prompt').forEach(button=>button.addEventListener('click',()=>{const key=button.dataset.promptKey;input.value=t(key);input.focus();input.style.height='auto';input.style.height=`${Math.min(input.scrollHeight,150)}px`}));
+    window.addEventListener('site-language-change',updateConnection);updateConnection();
   </script>
   <script type="module">
     const worldPage = document.querySelector('#world-page');
@@ -1364,11 +1383,13 @@
       }
       return windows;
     };
-    const topicCacheKey = (category, regionId = null) => category.id + ':3m:' + (regionId || 'all');
+    const topicCacheKey = (category, regionId = null) => `${category.id}:3m:${regionId || 'all'}`;
     const isMarketReportHeadline = item => /\bmarket\b.{0,90}\b(size|forecast|trends|report|analysis)\b|\bsize,?\s*trends?\s*(?:and|&)\s*forecast\b|\btop\s+\d+\s+.{0,40}\bmanufacturers?\b/i.test(item.title || '');
     const loadTopicItems = async (category, regionId = activeTopicRegion) => {
       const key = topicCacheKey(category, regionId);
       if (topicCache.has(key)) return topicCache.get(key);
+      const token = topicRequestToken;
+      if (token !== topicRequestToken) return null;
       const region = mapRegions.find(item => item.id === regionId);
       const regionalItems = region ? newsItems.filter(item => item.continent
         ? String(item.continent).toLocaleLowerCase().replaceAll('_','-') === region.id
@@ -1443,7 +1464,7 @@
       topicTitle.textContent = window.siteT(category.titleKey);
       topicDescription.textContent = window.siteT(category.subtitleKey);
       topicPage.hidden=false; worldPage.hidden=true; document.querySelector('#hero').hidden=true;
-      if (pushHistory) history.pushState({topic:category.id,region:activeTopicRegion},'','#topic-' + category.id + (activeTopicRegion ? '?region=' + activeTopicRegion : ''));
+      if (pushHistory) history.pushState({topic:category.id,region:activeTopicRegion},'',`#topic-${category.id}${activeTopicRegion ? `?region=${activeTopicRegion}` : ''}`);
       window.scrollTo({top:0,behavior:'smooth'});
       const cached = topicCache.get(topicCacheKey(category, activeTopicRegion));
       if (cached) { renderTopicResults(); topicResults.setAttribute('aria-busy','false'); return; }
@@ -1452,7 +1473,7 @@
       topicStatus.textContent=window.siteT('topic_loading');
       const loading=document.createElement('div');loading.className='topic-state';loading.textContent=window.siteT('topic_loading');topicResults.replaceChildren(loading);
       try {
-        const result = await loadTopicItems(category, activeTopicRegion);
+        const result = await loadTopicItems(category);
         if (!result || token !== topicRequestToken || activeTopic?.id !== category.id) return;
         if (!result.items.length && result.failedWindows) throw new Error('No articles returned');
         renderTopicResults();
@@ -1567,7 +1588,7 @@
       const region = selectedRegionData();
       if (!region) return newsItems;
       return newsItems.filter(item => item.continent
-        ? String(item.continent).toLocaleLowerCase().replaceAll('_','-') === region.id
+        ? item.continent === region.id
         : region.countries.some(country => (item.sourceCountry || '').toLocaleLowerCase().includes(country.toLocaleLowerCase())));
     };
     const updateMapLabels = () => {
@@ -1915,6 +1936,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
