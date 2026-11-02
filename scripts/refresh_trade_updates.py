@@ -321,9 +321,23 @@ def main():
             previous = json.loads(OUTPUT.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
             previous = {}
-    official_items = policy_items() + customs_items()
-    international_items = regional_rss_items(previous.get("items", []))
-    items = official_items + international_items
+    previous_items = previous.get("items", [])
+    cached_policy = [item for item in previous_items if item.get("author") == "商务部" and not item.get("continent")]
+    cached_customs = [item for item in previous_items if "海关总署" in item.get("author", "") and not item.get("continent")]
+    try:
+        fresh_policy = policy_items()
+    except Exception as error:
+        print(f"MOFCOM policy refresh failed; keeping the previous policy snapshot: {error}")
+        fresh_policy = cached_policy
+    try:
+        fresh_customs = customs_items()
+    except Exception as error:
+        print(f"Customs statistics refresh failed; keeping the previous statistics snapshot: {error}")
+        fresh_customs = cached_customs
+    international_items = regional_rss_items(previous_items)
+    items = fresh_policy + fresh_customs + international_items
+    if not items:
+        raise RuntimeError("All trade sources failed and no previous items are available")
     items.sort(key=lambda item: item["pubDate"], reverse=True)
     updated_at = datetime.now(timezone.utc).isoformat()
     if previous.get("items") == items and previous.get("updatedAt"):
