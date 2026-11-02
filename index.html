@@ -176,6 +176,20 @@
     @keyframes agent-pulse { to { opacity:.3;transform:scale(.75) } }
     @media(max-width:620px) { .main-page { gap:12px;padding:14px }.main-topbar { min-height:38px }.agent-layout { min-height:calc(100svh - 82px) }.agent-chat { min-height:calc(100svh - 82px) }.agent-chat-head { min-height:68px;padding:12px 14px }.agent-chat-body { padding:0 }.agent-chat-scroll { padding:26px 17px 20px }.agent-welcome { margin:14px auto 26px }.agent-welcome-mark { width:40px;height:40px;margin-bottom:17px }.agent-welcome h2 { font-size:29px }.agent-welcome-copy { font-size:13px }.agent-prompt-grid { grid-template-columns:1fr;gap:8px;margin-top:23px }.agent-prompt { min-height:53px;padding:11px 12px }.agent-message { max-width:98% }.agent-composer { width:calc(100% - 24px);margin-bottom:12px;padding-left:14px }.agent-config-note { padding:4px 8px }.agent-chat-foot { display:none } }
     .agent-chat-foot { display:none }
+    .agent-avatar-stage { position:absolute;z-index:2;left:max(0px,calc(50% - 580px));top:50%;width:158px;height:196px;transform:translateY(-50%);pointer-events:none;display:grid;place-items:center;isolation:isolate;transition:width .42s ease,height .42s ease,top .42s ease,left .42s ease,transform .42s ease,opacity .32s ease }
+    .agent-avatar-stage::before { content:"";position:absolute;z-index:-1;inset:15% 3%;border-radius:50%;background:radial-gradient(ellipse,rgba(87,205,222,.19),rgba(44,125,155,.1) 43%,transparent 72%);filter:blur(13px);animation:agent-avatar-aura 5.5s ease-in-out infinite alternate }
+    .agent-avatar-stage canvas { display:block;width:100%;height:100%;outline:0 }
+    .agent-avatar-credit { position:absolute;left:50%;bottom:3px;transform:translateX(-50%);width:max-content;color:rgba(176,205,219,.42);font-size:8px;letter-spacing:.025em;text-decoration:none;pointer-events:auto;opacity:0;transition:opacity .2s }
+    .agent-avatar-stage:hover .agent-avatar-credit,.agent-avatar-credit:focus-visible { opacity:1 }
+    .agent-avatar-stage.is-compact { position:relative;inset:auto;width:42px;height:48px;transform:none;flex:none;margin-right:1px }
+    .agent-avatar-stage.is-compact::before { inset:12%;filter:blur(8px);opacity:.65 }
+    .agent-avatar-stage.is-compact .agent-avatar-credit { display:none }
+    .agent-chat-title:has(.agent-avatar-stage) .agent-active-icon { display:none }
+    @keyframes agent-avatar-aura { from { transform:scale(.86);opacity:.55 } to { transform:scale(1.08);opacity:.9 } }
+    @media(max-width:1060px) {
+      .agent-avatar-stage { top:24px;left:50%;width:104px;height:116px;transform:translateX(-50%) }
+      .agent-chat-scroll { padding-top:142px }
+    }
     .dify-chat-setup { width:min(100%,620px);margin:auto;padding:clamp(24px,5vw,48px);border:1px dashed rgba(255,255,255,.24);border-radius:18px;background:rgba(0,0,0,.12);text-align:center }
     .dify-chat-setup h2 { margin:0 0 10px;font-size:20px;font-weight:500 }
     .dify-chat-setup p { margin:0;color:rgba(255,255,255,.6);font-size:13px;line-height:1.8 }
@@ -646,6 +660,9 @@
       .agent-chat { min-height:calc(100svh - 66px) }
       .agent-chat-head { min-height:42px;padding:0 0 8px }
       .agent-chat-scroll { padding:18px 8px 20px }
+      .agent-chat-scroll { padding-top:138px }
+      .agent-avatar-stage { top:23px;width:92px;height:104px }
+      .agent-avatar-credit { display:none }
       .agent-welcome { margin:auto }
       .agent-welcome-kicker { margin-bottom:13px;font-size:10px }
       .agent-welcome h2 { font-size:clamp(32px,9vw,42px) }
@@ -713,6 +730,7 @@
     </header>
     <div class="agent-layout">
       <section class="agent-chat glass-panel" aria-label="智能体对话区" data-i18n-label="agent_chat">
+        <aside class="agent-avatar-stage" id="agent-avatar-stage" aria-label="GlobalNavigator 三维智能体形象"><canvas id="agent-avatar-canvas" role="img" aria-label="正在加载三维智能体形象"></canvas><a class="agent-avatar-credit" href="https://github.com/mrdoob/three.js/tree/dev/examples/models/gltf/RobotExpressive" target="_blank" rel="noopener noreferrer" aria-label="3D 形象来源与许可：Tomás Laulhé，CC0">3D 形象 · Tomás Laulhé · CC0</a></aside>
         <header class="agent-chat-head"><div class="agent-chat-title"><span class="agent-active-icon" aria-hidden="true">✦</span><div><h1 id="main-title" tabindex="-1" data-i18n="agent_name">出海市场助手</h1><p data-i18n="agent_tagline">市场研究 · 合规评估 · 行动建议</p></div></div><span class="connection-state" id="agent-connection-state" data-i18n="dify_waiting">正在连接智能服务</span></header>
         <div class="agent-chat-body"><section class="agent-conversation" aria-label="环球导航智能体对话" data-i18n-label="agent_chat"><div class="agent-chat-scroll" id="agent-chat-scroll"><div class="agent-welcome" id="agent-welcome"><div class="agent-welcome-mark" aria-hidden="true">✦</div><p class="agent-welcome-kicker" data-i18n="agent_welcome_kicker">GLOBAL NAVIGATOR · AI</p><h2 data-i18n="agent_welcome_title">让出海决策更清晰</h2><p class="agent-welcome-copy" data-i18n="agent_welcome_copy">告诉我你的产品和目标市场，我会帮你梳理机会、准入规则与下一步行动。</p><form class="agent-composer" id="agent-composer"><textarea id="agent-input" rows="1" aria-label="发送消息" data-i18n-placeholder="chat_placeholder" placeholder="问点什么，一起探索…" required></textarea><button class="agent-send" id="agent-send" type="submit" aria-label="发送" data-i18n-label="chat_send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-5 16-3-7-8-1Z"/><path d="m12 13 8-9"/></svg></button></form><div class="agent-config-note" id="agent-config-note" role="status" data-i18n="agent_proxy_needed">智能服务由 Dify 提供</div><div class="agent-prompt-grid"><button class="agent-prompt" type="button" data-prompt-key="agent_prompt_market" data-i18n="agent_prompt_market">帮我分析产品适合进入哪些海外市场</button><button class="agent-prompt" type="button" data-prompt-key="agent_prompt_compliance" data-i18n="agent_prompt_compliance">梳理目标市场的准入与合规要求</button><button class="agent-prompt" type="button" data-prompt-key="agent_prompt_localize" data-i18n="agent_prompt_localize">为我的产品制定本地化营销方向</button><button class="agent-prompt" type="button" data-prompt-key="agent_prompt_compare" data-i18n="agent_prompt_compare">比较不同市场的机会与风险</button></div></div><div class="agent-messages" id="agent-messages" aria-live="polite"></div></div></section></div>
         <footer class="agent-chat-foot" data-i18n="agent_footer">智能服务由 Dify 提供</footer>
@@ -1374,7 +1392,7 @@
       const article = document.createElement('article'); article.className=`agent-message ${role}${error?' error':''}`;
       const label=document.createElement('span');label.className='agent-message-label';label.textContent=t(role==='user'?'agent_you':'agent_assistant');
       const body=document.createElement('div');body.className=`agent-message-content${role==='assistant'?' agent-answer-content':''}${pending?' agent-message-pending':''}`;body.textContent=text;
-      article.append(label,body);messages.append(article);if(scrollArea.dataset.hasMessages!=='true'){document.querySelector('.agent-conversation').append(composer,configNote);scrollArea.dataset.hasMessages='true'}scrollArea.scrollTop=scrollArea.scrollHeight;
+      article.append(label,body);messages.append(article);if(scrollArea.dataset.hasMessages!=='true'){document.querySelector('.agent-conversation').append(composer,configNote);const avatar=document.querySelector('#agent-avatar-stage');if(avatar){avatar.classList.add('is-compact');document.querySelector('.agent-chat-title')?.prepend(avatar)}scrollArea.dataset.hasMessages='true'}scrollArea.scrollTop=scrollArea.scrollHeight;
       return {article,body};
     };
     const consumeStream = async (response, target) => {
@@ -1426,6 +1444,40 @@
     input.addEventListener('keydown',(event)=>{if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();composer.requestSubmit()}});
     document.querySelectorAll('.agent-prompt').forEach(button=>button.addEventListener('click',()=>{const key=button.dataset.promptKey;input.value=t(key);input.focus();input.style.height='auto';input.style.height=`${Math.min(input.scrollHeight,150)}px`}));
     window.addEventListener('site-language-change',updateConnection);updateConnection();
+  </script>
+  <script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from './assets/three-addons/loaders/GLTFLoader.js';
+    const stage=document.querySelector('#agent-avatar-stage'),canvas=document.querySelector('#agent-avatar-canvas');
+    if(stage&&canvas){
+      const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'low-power'});
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.5));
+      renderer.outputColorSpace=THREE.SRGBColorSpace;
+      renderer.toneMapping=THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure=1.12;
+      const scene=new THREE.Scene();
+      const camera=new THREE.PerspectiveCamera(28,1,.1,30);camera.position.set(0,.06,3.35);
+      scene.add(new THREE.HemisphereLight(0xc6eeff,0x182330,2.1));
+      const key=new THREE.DirectionalLight(0xf1fbff,3.1);key.position.set(-2.6,3.4,4);scene.add(key);
+      const fill=new THREE.PointLight(0x54d5e7,10,8,2);fill.position.set(2,1.2,2.6);scene.add(fill);
+      const rim=new THREE.DirectionalLight(0x348db4,2);rim.position.set(2,-1,1);scene.add(rim);
+      const modelRoot=new THREE.Group();scene.add(modelRoot);
+      let mixer=null,model=null,lastTime=0,elapsed=0;
+      const resize=()=>{const w=Math.max(1,stage.clientWidth),h=Math.max(1,stage.clientHeight);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()};
+      new ResizeObserver(resize).observe(stage);resize();
+      new GLTFLoader().load('./assets/agent/RobotExpressive.glb',gltf=>{
+        model=gltf.scene;
+        const bounds=new THREE.Box3().setFromObject(model),size=bounds.getSize(new THREE.Vector3()),center=bounds.getCenter(new THREE.Vector3());
+        const fitScale=1.36/Math.max(size.y,.001);model.scale.setScalar(fitScale);model.position.copy(center).multiplyScalar(-fitScale);
+        model.traverse(object=>{if(!object.isMesh)return;object.castShadow=false;object.receiveShadow=false;const mats=Array.isArray(object.material)?object.material:[object.material];mats.forEach(mat=>{if(mat.isMeshStandardMaterial||mat.isMeshPhysicalMaterial){mat.roughness=Math.max(.34,mat.roughness||0);mat.envMapIntensity=.62;mat.needsUpdate=true}})});
+        modelRoot.add(model);
+        if(gltf.animations.length){const idle=gltf.animations.find(clip=>/idle|stand/i.test(clip.name))||gltf.animations[0];mixer=new THREE.AnimationMixer(model);mixer.clipAction(idle).play()}
+        canvas.setAttribute('aria-label','GlobalNavigator 三维智能体形象');
+      },undefined,error=>{console.error('3D agent avatar failed to load:',error);stage.hidden=true});
+      const page=document.querySelector('#main-page');
+      const tick=now=>{requestAnimationFrame(tick);if(document.hidden||page?.hidden){lastTime=0;return}const delta=lastTime?Math.min((now-lastTime)/1000,.05):0;lastTime=now;elapsed+=delta;if(mixer)mixer.update(delta);if(modelRoot.children.length)modelRoot.rotation.y=Math.sin(elapsed*.48)*.2;renderer.render(scene,camera)};
+      requestAnimationFrame(tick);
+    }
   </script>
   <script type="module">
     const worldPage = document.querySelector('#world-page');
