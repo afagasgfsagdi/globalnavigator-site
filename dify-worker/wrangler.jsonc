@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
+  "name": "globalnavigator-dify-proxy",
+  "main": "worker.js",
+  "compatibility_date": "2026-11-02",
+  "secrets": {
+    "required": ["DIFY_API_KEY"]
+  },
+  "ratelimits": [
+    {
+      "name": "CHAT_RATE_LIMITER",
+      "namespace_id": "84210011",
+      "simple": {
+        "limit": 12,
+        "period": 60
+      }
+    }
+  ]
+}
+
