@@ -612,8 +612,8 @@
     .agent-welcome-kicker { margin:0 0 17px;color:#8ed9e8;font-size:11px;font-weight:600;letter-spacing:.24em }
     .agent-welcome h2 { color:#f4f8fb;font-size:clamp(34px,5vw,54px);font-weight:500;letter-spacing:-.055em;line-height:1.12 }
     .agent-welcome-copy { max-width:640px;margin:16px auto 0;color:rgba(207,224,235,.72);font-size:15px;line-height:1.8 }
-    .agent-composer { width:min(100%,850px);min-height:126px;margin:30px auto 0;padding:16px 15px 13px 22px;align-items:flex-end;gap:14px;border:1px solid rgba(183,214,231,.2);border-radius:24px;background:rgba(9,21,32,.86);box-shadow:0 18px 54px rgba(0,0,0,.24),inset 0 1px 0 rgba(242,249,252,.07);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:border-color .22s,box-shadow .22s }
-    .agent-composer:focus-within { border-color:rgba(112,208,225,.48);box-shadow:0 0 0 3px rgba(87,190,213,.08),0 18px 54px rgba(0,0,0,.25),inset 0 1px 0 rgba(242,249,252,.09) }
+    .agent-composer { --composer-surface:linear-gradient(145deg,rgba(13,31,44,.92),rgba(6,17,27,.92));--composer-edge:linear-gradient(132deg,rgba(222,248,255,.72) 0%,rgba(117,193,212,.32) 24%,rgba(231,250,255,.14) 53%,rgba(95,176,198,.5) 82%,rgba(217,246,253,.42) 100%);width:min(100%,850px);min-height:126px;margin:30px auto 0;padding:16px 15px 13px 22px;align-items:flex-end;gap:14px;border:1px solid transparent;border-radius:24px;background:var(--composer-surface) padding-box,var(--composer-edge) border-box;box-shadow:0 18px 54px rgba(0,0,0,.24),inset 0 1px 0 rgba(245,252,255,.14),inset 1px 0 0 rgba(235,250,255,.045),inset 0 -1px 0 rgba(68,139,160,.18);backdrop-filter:blur(16px) saturate(125%);-webkit-backdrop-filter:blur(16px) saturate(125%);transition:box-shadow .22s,background .22s }
+    .agent-composer:focus-within { --composer-edge:linear-gradient(132deg,rgba(231,250,255,.9) 0%,rgba(127,213,231,.55) 28%,rgba(231,250,255,.22) 53%,rgba(119,213,231,.72) 82%,rgba(231,250,255,.68) 100%);box-shadow:0 0 0 3px rgba(87,190,213,.09),0 18px 54px rgba(0,0,0,.25),inset 0 1px 0 rgba(250,255,255,.18),inset 1px 0 0 rgba(235,250,255,.06),inset 0 -1px 0 rgba(68,139,160,.22) }
     .agent-composer textarea { min-height:78px;padding:7px 0;color:#edf5f8;font-size:15px;line-height:1.7 }
     .agent-composer textarea::placeholder { color:rgba(188,207,220,.58) }
     .agent-send { width:42px;height:42px;border:0;border-radius:50%;background:#66c9dc;color:#06202b;box-shadow:0 5px 20px rgba(64,179,204,.2) }
@@ -650,7 +650,7 @@
       .agent-welcome-kicker { margin-bottom:13px;font-size:10px }
       .agent-welcome h2 { font-size:clamp(32px,9vw,42px) }
       .agent-welcome-copy { margin-top:12px;font-size:13px }
-      .agent-composer { width:100%;min-height:112px;margin-top:23px;padding:13px 12px 11px 16px;border-radius:20px }
+      .agent-composer { min-height:112px;margin-top:23px;padding:13px 12px 11px 16px;border-radius:20px }
       .agent-composer textarea { min-height:68px;font-size:14px }
       .agent-prompt-grid { gap:7px;margin-top:15px }
       .agent-prompt { min-height:34px;padding:7px 10px;font-size:11px }
