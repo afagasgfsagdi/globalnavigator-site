@@ -125,7 +125,8 @@
     .agent-chat-title h1 { margin:0;font-size:16px;font-weight:500;letter-spacing:.01em }
     .agent-chat-title p { margin:4px 0 0;color:rgba(255,255,255,.48);font-size:11px }
     .connection-state { display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid rgba(255,255,255,.13);border-radius:99px;background:rgba(255,255,255,.04);color:rgba(255,255,255,.62);font-size:11px;white-space:nowrap }
-    .connection-state::before { content:'';width:6px;height:6px;border-radius:50%;background:#7ee3b5;box-shadow:0 0 9px rgba(126,227,181,.42) }
+    .connection-state::before { content:'';width:6px;height:6px;border-radius:50%;background:#f0ba69;box-shadow:0 0 9px rgba(240,186,105,.34) }
+    .connection-state.is-online::before { background:#7ee3b5;box-shadow:0 0 9px rgba(126,227,181,.42) }
     .agent-chat-body { flex:1;min-height:0;display:flex;padding:clamp(10px,1.5vw,16px) }
     .agent-conversation { width:min(100%,960px);height:100%;min-height:480px;margin:auto;display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(160,205,231,.17);border-radius:18px;background:linear-gradient(160deg,rgba(12,27,39,.94),rgba(4,11,19,.96));box-shadow:0 24px 80px rgba(0,0,0,.22) }
     .agent-chat-scroll { flex:1;min-height:0;overflow:auto;padding:clamp(20px,4vw,42px) clamp(16px,5vw,56px);scroll-behavior:smooth }
@@ -1283,6 +1284,7 @@
     const updateConnection = () => {
       const connected = Boolean(proxyUrl);
       badge.textContent = t(connected ? 'dify_configured_badge' : 'agent_proxy_status');
+      badge.classList.toggle('is-online',connected);
       configNote.textContent = t(connected ? 'agent_proxy_ready' : 'agent_proxy_needed');
     };
     const appendMessage = (role,text,{error=false,pending=false}={}) => {
