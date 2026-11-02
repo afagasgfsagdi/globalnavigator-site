@@ -1614,7 +1614,7 @@
         .filter(item => item?.title && item?.link && item?.pubDate)
         .sort((a,b) => (new Date(b.pubDate).getTime() || 0) - (new Date(a.pubDate).getTime() || 0))
         .filter(item => {
-          const headline = (item.title || '').split(/\\s+-\\s+/)[0].toLocaleLowerCase().replace(/[^a-z0-9\\u4e00-\\u9fff]/g,'');
+          const headline = (item.title || '').split(/\s+-\s+/)[0].toLocaleLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]/g,'');
           if (!headline || seen.has(headline)) return false;
           seen.add(headline);
           return true;
