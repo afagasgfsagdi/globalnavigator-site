@@ -505,10 +505,10 @@
     }
     @media (max-width:680px) { .news-topic-open { width:44px;height:44px;right:10px;bottom:10px } }
     @media (prefers-reduced-motion:reduce) { .news-module,.news-story,.news-topic-open { transition:none!important } }
-    .topic-page { position:relative;z-index:1;isolation:isolate;min-height:100vh;min-height:100svh;padding:clamp(104px,12vh,132px) clamp(24px,4.2vw,64px) 54px;background:#030a11;color:#fff }
+    .topic-page { position:relative;z-index:1;isolation:isolate;min-height:100vh;min-height:100svh;padding:clamp(104px,12vh,132px) clamp(24px,4.2vw,64px) 54px;background:#020711;color:#fff }
     .topic-page::before,.topic-page::after { content:'';position:absolute;inset:0;z-index:-1;pointer-events:none }
-    .topic-page::before { opacity:.42;background:linear-gradient(90deg,rgba(2,8,14,.94),rgba(2,8,14,.75) 58%,rgba(2,8,14,.64)),url("assets/supply-chain.png") center 48%/cover no-repeat }
-    .topic-page::after { background:radial-gradient(700px 420px at 78% 18%,rgba(38,99,136,.16),transparent 72%),linear-gradient(180deg,rgba(2,8,14,.16),rgba(2,8,14,.58)) }
+    .topic-page::before { inset:-3%;opacity:.48;background:url("assets/hero-starfield.png") center center/cover no-repeat;animation:topic-stars-drift 190s ease-in-out infinite alternate }
+    .topic-page::after { opacity:.58;background-image:linear-gradient(180deg,rgba(2,8,14,.34),rgba(2,8,14,.24) 42%,rgba(2,8,14,.72)),radial-gradient(ellipse 760px 520px at 77% 17%,rgba(57,147,204,.2),transparent 74%),url("assets/supply-chain.png");background-position:center,center,center 48%;background-size:100% 100%,100% 100%,cover;background-repeat:no-repeat }
     .topic-page-content { width:min(100%,1160px);margin:0 auto;animation:news-heading-in .55s ease both }
     .topic-back { display:inline-flex;align-items:center;gap:10px;margin:0 0 28px;padding:9px 13px;border:1px solid rgba(205,230,255,.22);border-radius:999px;background:rgba(8,20,30,.68);color:rgba(239,247,255,.82);font:inherit;font-size:12px;cursor:pointer;transition:background .2s,border-color .2s,transform .2s }
     .topic-back:hover,.topic-back:focus-visible { transform:translateX(-2px);border-color:rgba(164,225,255,.58);background:rgba(24,48,66,.88);outline:none }
@@ -541,7 +541,8 @@
     .topic-page-count { color:rgba(226,239,249,.56);font-size:11px;font-variant-numeric:tabular-nums }
     .topic-source-note { margin:18px 0 0;color:rgba(218,233,244,.36);font-size:10px;line-height:1.7;text-align:center }
     @media(max-width:620px) { .topic-page { padding:94px 16px 30px }.topic-back { margin-bottom:23px }.topic-page-tools { align-items:flex-start;flex-direction:column }.topic-ranges { width:100%;justify-content:space-between }.topic-range { flex:1;padding:0 8px }.topic-refresh { align-self:flex-end }.topic-results-panel { padding:17px 14px }.topic-story { grid-template-columns:1fr;gap:6px;padding:15px 3px }.topic-story time { font-size:10px }.topic-story h3 { font-size:14px }.topic-results-heading { align-items:flex-start;flex-direction:column }.topic-status { text-align:left } }
-    @media(prefers-reduced-motion:reduce) { .topic-page-content { animation:none } }
+    @keyframes topic-stars-drift { from { transform:translate3d(-.45%,.2%,0) scale(1.02) } to { transform:translate3d(.45%,-.2%,0) scale(1.06) } }
+    @media(prefers-reduced-motion:reduce) { .topic-page::before,.topic-page-content { animation:none!important } }
   </style>
   <!-- Dify embed URL is filled from Access Point after the app is published. Never put API keys in this page. -->
   <meta name="dify-embed-url" content="">
