@@ -181,10 +181,10 @@
     .agent-avatar-stage canvas { display:block;width:100%;height:100%;outline:0 }
     .agent-avatar-credit { position:absolute;left:50%;bottom:3px;transform:translateX(-50%);width:max-content;color:rgba(176,205,219,.42);font-size:8px;letter-spacing:.025em;text-decoration:none;pointer-events:auto;opacity:0;transition:opacity .2s }
     .agent-avatar-stage:hover .agent-avatar-credit,.agent-avatar-credit:focus-visible { opacity:1 }
-    .agent-avatar-stage.is-compact { position:relative;inset:auto;width:42px;height:48px;transform:none;flex:none;margin-right:1px }
-    .agent-avatar-stage.is-compact::before { inset:12%;filter:blur(8px);opacity:.65 }
-    .agent-avatar-stage.is-compact .agent-avatar-credit { display:none }
-    .agent-chat-title:has(.agent-avatar-stage) .agent-active-icon { display:none }
+    .agent-chat-scroll[data-has-messages="true"] { padding-right:clamp(126px,18vw,190px) }
+    .agent-avatar-stage.is-chat-buddy { top:auto;left:auto;right:12px;bottom:170px;width:clamp(108px,14vw,148px);height:clamp(138px,20vw,190px);transform:none;opacity:1 }
+    .agent-avatar-stage.is-chat-buddy::before { inset:12% 1%;background:radial-gradient(ellipse,rgba(87,205,222,.24),rgba(44,125,155,.13) 46%,transparent 74%);filter:blur(14px) }
+    .agent-avatar-stage.is-chat-buddy .agent-avatar-credit { display:none }
     @keyframes agent-avatar-aura { from { transform:scale(.86);opacity:.55 } to { transform:scale(1.08);opacity:.9 } }
     @media(max-width:1060px) {
       .agent-avatar-stage { top:24px;left:50%;width:104px;height:116px;transform:translateX(-50%) }
@@ -663,6 +663,8 @@
       .agent-chat-scroll { padding-top:138px }
       .agent-avatar-stage { top:23px;width:92px;height:104px }
       .agent-avatar-credit { display:none }
+      .agent-chat-scroll[data-has-messages="true"] { padding-right:104px }
+      .agent-avatar-stage.is-chat-buddy { right:7px;bottom:144px;width:88px;height:116px }
       .agent-welcome { margin:auto }
       .agent-welcome-kicker { margin-bottom:13px;font-size:10px }
       .agent-welcome h2 { font-size:clamp(32px,9vw,42px) }
@@ -1392,7 +1394,7 @@
       const article = document.createElement('article'); article.className=`agent-message ${role}${error?' error':''}`;
       const label=document.createElement('span');label.className='agent-message-label';label.textContent=t(role==='user'?'agent_you':'agent_assistant');
       const body=document.createElement('div');body.className=`agent-message-content${role==='assistant'?' agent-answer-content':''}${pending?' agent-message-pending':''}`;body.textContent=text;
-      article.append(label,body);messages.append(article);if(scrollArea.dataset.hasMessages!=='true'){document.querySelector('.agent-conversation').append(composer,configNote);const avatar=document.querySelector('#agent-avatar-stage');if(avatar){avatar.classList.add('is-compact');document.querySelector('.agent-chat-title')?.prepend(avatar)}scrollArea.dataset.hasMessages='true'}scrollArea.scrollTop=scrollArea.scrollHeight;
+      article.append(label,body);messages.append(article);if(scrollArea.dataset.hasMessages!=='true'){document.querySelector('.agent-conversation').append(composer,configNote);scrollArea.dataset.hasMessages='true';const avatar=document.querySelector('#agent-avatar-stage');if(avatar){avatar.classList.remove('is-compact');avatar.classList.add('is-chat-buddy');document.querySelector('.agent-chat')?.append(avatar)}window.playAgentAvatarGreeting?.()}scrollArea.scrollTop=scrollArea.scrollHeight;
       return {article,body};
     };
     const consumeStream = async (response, target) => {
@@ -1462,7 +1464,10 @@
       const fill=new THREE.PointLight(0x54d5e7,10,8,2);fill.position.set(2,1.2,2.6);scene.add(fill);
       const rim=new THREE.DirectionalLight(0x348db4,2);rim.position.set(2,-1,1);scene.add(rim);
       const modelRoot=new THREE.Group();scene.add(modelRoot);
-      let mixer=null,model=null,lastTime=0,elapsed=0;
+      let mixer=null,model=null,lastTime=0,elapsed=0,avatarIdleAction=null,avatarGreetingAction=null,greetingRequested=false;
+      const restoreAvatarIdle=event=>{if(event?.action!==avatarGreetingAction)return;mixer?.removeEventListener('finished',restoreAvatarIdle);avatarGreetingAction.fadeOut(.22);avatarIdleAction?.reset().fadeIn(.22).play()};
+      const playAvatarGreeting=()=>{if(!mixer||!avatarGreetingAction){greetingRequested=true;return}greetingRequested=false;mixer.removeEventListener('finished',restoreAvatarIdle);avatarIdleAction?.fadeOut(.18);avatarGreetingAction.setLoop(THREE.LoopOnce,1);avatarGreetingAction.clampWhenFinished=true;avatarGreetingAction.reset().setEffectiveTimeScale(1).setEffectiveWeight(1).fadeIn(.18).play();mixer.addEventListener('finished',restoreAvatarIdle)};
+      window.playAgentAvatarGreeting=playAvatarGreeting;
       const resize=()=>{const w=Math.max(1,stage.clientWidth),h=Math.max(1,stage.clientHeight);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()};
       new ResizeObserver(resize).observe(stage);resize();
       new GLTFLoader().load('./assets/agent/RobotExpressive.glb',gltf=>{
@@ -1471,7 +1476,7 @@
         const fitScale=1.36/Math.max(size.y,.001);model.scale.setScalar(fitScale);model.position.copy(center).multiplyScalar(-fitScale);
         model.traverse(object=>{if(!object.isMesh)return;object.castShadow=false;object.receiveShadow=false;const mats=Array.isArray(object.material)?object.material:[object.material];mats.forEach(mat=>{if(mat.isMeshStandardMaterial||mat.isMeshPhysicalMaterial){mat.roughness=Math.max(.34,mat.roughness||0);mat.envMapIntensity=.62;mat.needsUpdate=true}})});
         modelRoot.add(model);
-        if(gltf.animations.length){const idle=gltf.animations.find(clip=>/idle|stand/i.test(clip.name))||gltf.animations[0];mixer=new THREE.AnimationMixer(model);mixer.clipAction(idle).play()}
+        if(gltf.animations.length){const idle=gltf.animations.find(clip=>/^idle$/i.test(clip.name))||gltf.animations[0];mixer=new THREE.AnimationMixer(model);gltf.animations.forEach(clip=>{const action=mixer.clipAction(clip);if(/^wave$/i.test(clip.name))avatarGreetingAction=action});avatarIdleAction=mixer.clipAction(idle);avatarIdleAction.play();if(greetingRequested)playAvatarGreeting()}
         canvas.setAttribute('aria-label','GlobalNavigator 三维智能体形象');
       },undefined,error=>{console.error('3D agent avatar failed to load:',error);stage.hidden=true});
       const page=document.querySelector('#main-page');
