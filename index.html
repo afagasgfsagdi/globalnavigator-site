@@ -965,7 +965,7 @@
     window.globalNavigatorLandRings=originalContinents;
     const landPath=new Path2D();
     originalContinents.forEach(ring=>{const coords=ring.map(mapPoint);if(!coords.length)return;landPath.moveTo(coords[0][0],coords[0][1]);for(let i=1;i<coords.length;i++)landPath.lineTo(coords[i][0],coords[i][1]);landPath.closePath();});
-    earthContext.fillStyle='rgba(38,75,98,.82)';earthContext.fill(landPath,'evenodd');earthContext.strokeStyle='rgba(113,181,224,.56)';earthContext.lineWidth=2.5;earthContext.stroke(landPath);earthContext.strokeStyle='rgba(220,242,255,.56)';earthContext.lineWidth=1.15;earthContext.stroke(landPath);
+    earthContext.fillStyle='rgba(43,82,108,.94)';earthContext.fill(landPath,'evenodd');earthContext.strokeStyle='rgba(120,194,239,.72)';earthContext.lineWidth=2.5;earthContext.stroke(landPath);earthContext.strokeStyle='rgba(233,247,255,.70)';earthContext.lineWidth=1.15;earthContext.stroke(landPath);
     const earthTexture=new THREE.CanvasTexture(earthCanvas);earthTexture.colorSpace=THREE.SRGBColorSpace;earthTexture.minFilter=THREE.LinearMipmapLinearFilter;earthTexture.magFilter=THREE.LinearFilter;earthTexture.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());
     const terrainImage=new Image(),nightLightsImage=new Image();
     let terrainReady=false;
@@ -974,11 +974,11 @@
       const nightCanvas=document.createElement('canvas');nightCanvas.width=earthCanvas.width;nightCanvas.height=earthCanvas.height;
       const nightContext=nightCanvas.getContext('2d');nightContext.drawImage(nightLightsImage,0,0,nightCanvas.width,nightCanvas.height);
       const nightPixels=nightContext.getImageData(0,0,nightCanvas.width,nightCanvas.height),nightData=nightPixels.data;
-      for(let i=0;i<nightData.length;i+=4){const luminance=nightData[i]*.2126+nightData[i+1]*.7152+nightData[i+2]*.0722;let light=Math.max(0,Math.min(1,(luminance-24)/96));light=Math.pow(light,1.2);nightData[i]=255;nightData[i+1]=174;nightData[i+2]=82;nightData[i+3]=Math.round(light*255*2.2);}
+      for(let i=0;i<nightData.length;i+=4){const luminance=nightData[i]*.2126+nightData[i+1]*.7152+nightData[i+2]*.0722;let light=Math.max(0,Math.min(1,(luminance-18)/80));light=Math.pow(light,.92);nightData[i]=255;nightData[i+1]=190;nightData[i+2]=103;nightData[i+3]=Math.round(light*255*2.8);}
       nightContext.putImageData(nightPixels,0,0);
       nightContext.globalCompositeOperation='destination-in';nightContext.fill(landPath,'evenodd');
-      if(!unlitEarthPreview){earthContext.save();earthContext.globalCompositeOperation='screen';earthContext.globalAlpha=.42;earthContext.filter='blur(4px)';earthContext.drawImage(nightCanvas,0,0);earthContext.filter='none';earthContext.globalAlpha=.98;earthContext.drawImage(nightCanvas,0,0);earthContext.restore();}
-      earthContext.strokeStyle='rgba(113,181,224,.56)';earthContext.lineWidth=2.5;earthContext.stroke(landPath);earthContext.strokeStyle='rgba(220,242,255,.56)';earthContext.lineWidth=1.15;earthContext.stroke(landPath);
+      if(!unlitEarthPreview){earthContext.save();earthContext.globalCompositeOperation='screen';earthContext.globalAlpha=.62;earthContext.filter='blur(5px)';earthContext.drawImage(nightCanvas,0,0);earthContext.filter='none';earthContext.globalAlpha=1;earthContext.drawImage(nightCanvas,0,0);earthContext.restore();}
+      earthContext.strokeStyle='rgba(120,194,239,.72)';earthContext.lineWidth=2.5;earthContext.stroke(landPath);earthContext.strokeStyle='rgba(233,247,255,.70)';earthContext.lineWidth=1.15;earthContext.stroke(landPath);
       earthTexture.needsUpdate=true;
     };
     nightLightsImage.onload=applyNightLights;
@@ -986,11 +986,11 @@
     terrainImage.onload=()=>{
       const reliefCanvas=document.createElement('canvas');reliefCanvas.width=earthCanvas.width;reliefCanvas.height=earthCanvas.height;
       const reliefContext=reliefCanvas.getContext('2d');
-      reliefContext.filter='saturate(.78) contrast(1.3) brightness(.46)';
+      reliefContext.filter='saturate(.92) contrast(1.42) brightness(.56)';
       reliefContext.drawImage(terrainImage,0,0,reliefCanvas.width,reliefCanvas.height);
       reliefContext.filter='none';reliefContext.globalCompositeOperation='destination-in';reliefContext.fill(landPath,'evenodd');
-      earthContext.save();earthContext.globalAlpha=.86;earthContext.drawImage(reliefCanvas,0,0);earthContext.restore();
-      earthContext.strokeStyle='rgba(113,181,224,.56)';earthContext.lineWidth=2.5;earthContext.stroke(landPath);earthContext.strokeStyle='rgba(220,242,255,.56)';earthContext.lineWidth=1.15;earthContext.stroke(landPath);
+      earthContext.save();earthContext.globalAlpha=.90;earthContext.drawImage(reliefCanvas,0,0);earthContext.restore();
+      earthContext.strokeStyle='rgba(120,194,239,.72)';earthContext.lineWidth=2.5;earthContext.stroke(landPath);earthContext.strokeStyle='rgba(233,247,255,.70)';earthContext.lineWidth=1.15;earthContext.stroke(landPath);
       terrainReady=true;earthTexture.needsUpdate=true;applyNightLights();
     };
     terrainImage.src='assets/earth-blue-marble.jpg';
@@ -1071,7 +1071,7 @@
     const cityGeometry = new THREE.BufferGeometry();
     cityGeometry.setAttribute('position', new THREE.BufferAttribute(cityPositions, 3));
       const cityMaterial = new THREE.PointsMaterial({
-        color: 0xffd391, size: 0.029, transparent: true, opacity: 1.0,
+        color: 0xffc16b, size: 0.036, transparent: true, opacity: 1.0,
       blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true
     });
     const cityLights = new THREE.Points(cityGeometry, cityMaterial);
