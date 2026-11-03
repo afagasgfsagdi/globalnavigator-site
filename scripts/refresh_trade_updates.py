@@ -1,5 +1,41 @@
+--
+name: Refresh official trade updates
+
+on:
+  schedule:
+    - cron: '17,47 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Refresh China News Service, MOFCOM and Customs sources
+        run: python scripts/refresh_trade_updates.py
+      - name: Commit feed when changed
+        run: |
+          if git diff --quiet -- trade-updates.json; then
+            echo "Official trade feed is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add trade-updates.json
+          git commit -m "Refresh official trade updates"
+          git push
+
+---SCRIPT---
 #!/usr/bin/env python3
-"""Refresh GlobalNavigator's public MOFCOM policy and Customs trade data feed."""
+"""Refresh public China trade policy, Customs statistics, and news sources."""
 
 from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
@@ -67,16 +103,6 @@ GLOBAL_REGIONS = {
         "names": {"australia", "new zealand", "fiji", "papua new guinea"},
     },
 }
-
-REGIONAL_RSS = {
-    "north-america": ("US", "US:en", "United States Canada Mexico trade tariff export import"),
-    "south-america": ("BR", "BR:en", "Brazil Argentina Chile Colombia trade tariff export import"),
-    "europe": ("GB", "GB:en", "European Union UK Germany France trade tariff export import"),
-    "africa": ("ZA", "ZA:en", "Africa South Africa Nigeria Kenya trade tariff export import"),
-    "asia": ("SG", "SG:en", "China Japan India ASEAN trade tariff export import"),
-    "oceania": ("AU", "AU:en", "Australia New Zealand Pacific trade tariff export import"),
-}
-
 
 def get(url, data=None, content_type=None):
     headers = {"User-Agent": "GlobalNavigator/1.0 (public trade information display)"}
@@ -344,4 +370,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
