@@ -181,8 +181,8 @@
     .agent-avatar-stage canvas { display:block;width:100%;height:100%;outline:0 }
     .agent-avatar-credit { position:absolute;left:50%;bottom:3px;transform:translateX(-50%);width:max-content;color:rgba(176,205,219,.42);font-size:8px;letter-spacing:.025em;text-decoration:none;pointer-events:auto;opacity:0;transition:opacity .2s }
     .agent-avatar-stage:hover .agent-avatar-credit,.agent-avatar-credit:focus-visible { opacity:1 }
-    .agent-chat-scroll[data-has-messages="true"] { padding-right:clamp(178px,24vw,230px) }
-    .agent-avatar-stage.is-chat-buddy { top:auto;left:auto;right:6px;bottom:170px;width:clamp(148px,20vw,170px);height:clamp(176px,25vw,210px);transform:none;opacity:1;pointer-events:auto;cursor:pointer }
+    .agent-chat-scroll[data-has-messages="true"] { padding-right:clamp(220px,27vw,270px) }
+    .agent-avatar-stage.is-chat-buddy { top:auto;left:auto;right:6px;bottom:170px;width:clamp(198px,24vw,236px);height:clamp(184px,24vw,210px);transform:none;opacity:1;pointer-events:auto;cursor:pointer }
     .agent-avatar-stage.is-chat-buddy canvas { cursor:pointer }
     .agent-avatar-stage.is-chat-buddy::before { inset:12% 1%;background:radial-gradient(ellipse,rgba(87,205,222,.28),rgba(44,125,155,.15) 46%,transparent 74%);filter:blur(14px) }
     .agent-avatar-stage.is-chat-buddy::after { content:attr(data-dance-label);position:absolute;right:50%;bottom:4px;transform:translate(50%,5px);padding:5px 9px;border:1px solid rgba(167,230,240,.2);border-radius:999px;background:rgba(7,22,32,.86);color:rgba(224,245,249,.9);font-size:10px;letter-spacing:.02em;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s }
@@ -667,8 +667,8 @@
       .agent-chat-scroll { padding-top:138px }
       .agent-avatar-stage { top:23px;width:92px;height:104px }
       .agent-avatar-credit { display:none }
-      .agent-chat-scroll[data-has-messages="true"] { padding-right:124px }
-      .agent-avatar-stage.is-chat-buddy { right:2px;bottom:144px;width:clamp(102px,30vw,126px);height:clamp(136px,40vw,164px) }
+      .agent-chat-scroll[data-has-messages="true"] { padding-right:clamp(170px,45vw,190px) }
+      .agent-avatar-stage.is-chat-buddy { right:2px;bottom:144px;width:clamp(150px,45vw,180px);height:clamp(134px,38vw,154px) }
       .agent-welcome { margin:auto }
       .agent-welcome-kicker { margin-bottom:13px;font-size:10px }
       .agent-welcome h2 { font-size:clamp(32px,9vw,42px) }
@@ -1468,12 +1468,12 @@
       const fill=new THREE.PointLight(0x54d5e7,10,8,2);fill.position.set(2,1.2,2.6);scene.add(fill);
       const rim=new THREE.DirectionalLight(0x348db4,2);rim.position.set(2,-1,1);scene.add(rim);
       const modelRoot=new THREE.Group();scene.add(modelRoot);
-      let mixer=null,model=null,lastTime=0,elapsed=0,avatarIdleAction=null,avatarGreetingAction=null,avatarDanceAction=null,activeAvatarAction=null,greetingRequested=false,danceRequested=false;
+      let mixer=null,model=null,lastTime=0,elapsed=0,avatarIdleAction=null,avatarGreetingAction=null,avatarDanceAction=null,activeAvatarAction=null,greetingRequested=false,danceRequested=false,avatarCameraTargetZ=3.35;
       const setAvatarDanceLabel=key=>{const label=window.siteT?.(key)||'点击机器人跳舞';stage.setAttribute('aria-label',label);stage.setAttribute('title',label);stage.dataset.danceLabel=label};
-      const restoreAvatarIdle=event=>{if(event?.action!==activeAvatarAction)return;mixer?.removeEventListener('finished',restoreAvatarIdle);activeAvatarAction?.fadeOut(.22);activeAvatarAction=null;stage.classList.remove('is-dancing');setAvatarDanceLabel('agent_avatar_dance');avatarIdleAction?.reset().fadeIn(.22).play()};
+      const restoreAvatarIdle=event=>{if(event?.action!==activeAvatarAction)return;mixer?.removeEventListener('finished',restoreAvatarIdle);activeAvatarAction?.fadeOut(.22);activeAvatarAction=null;stage.classList.remove('is-dancing');avatarCameraTargetZ=3.35;setAvatarDanceLabel('agent_avatar_dance');avatarIdleAction?.reset().fadeIn(.22).play()};
       const playAvatarAction=(action,repetitions=1)=>{if(!mixer||!action)return false;mixer.removeEventListener('finished',restoreAvatarIdle);activeAvatarAction?.fadeOut(.16);activeAvatarAction=action;avatarIdleAction?.fadeOut(.18);action.setLoop(repetitions>1?THREE.LoopRepeat:THREE.LoopOnce,repetitions);action.clampWhenFinished=true;action.reset().setEffectiveTimeScale(1).setEffectiveWeight(1).fadeIn(.18).play();mixer.addEventListener('finished',restoreAvatarIdle);return true};
       const playAvatarGreeting=()=>{if(!mixer||!avatarGreetingAction){greetingRequested=true;return}greetingRequested=false;stage.classList.remove('is-dancing');playAvatarAction(avatarGreetingAction,1)};
-      const playAvatarDance=()=>{if(!stage.classList.contains('is-chat-buddy'))return;if(!mixer||!avatarDanceAction){danceRequested=true;return}danceRequested=false;stage.classList.add('is-dancing');setAvatarDanceLabel('agent_avatar_dancing');playAvatarAction(avatarDanceAction,2)};
+      const playAvatarDance=()=>{if(!stage.classList.contains('is-chat-buddy'))return;if(!mixer||!avatarDanceAction){danceRequested=true;return}danceRequested=false;stage.classList.add('is-dancing');avatarCameraTargetZ=4.05;setAvatarDanceLabel('agent_avatar_dancing');playAvatarAction(avatarDanceAction,2)};
       stage.addEventListener('click',event=>{if(event.target.closest('a'))return;playAvatarDance()});
       stage.addEventListener('keydown',event=>{if((event.key==='Enter'||event.key===' ')&&stage.classList.contains('is-chat-buddy')){event.preventDefault();playAvatarDance()}});
       window.addEventListener('site-language-change',()=>{if(stage.classList.contains('is-chat-buddy'))setAvatarDanceLabel(stage.classList.contains('is-dancing')?'agent_avatar_dancing':'agent_avatar_dance')});
@@ -1490,7 +1490,7 @@
         canvas.setAttribute('aria-label','GlobalNavigator 三维智能体形象');
       },undefined,error=>{console.error('3D agent avatar failed to load:',error);stage.hidden=true});
       const page=document.querySelector('#main-page');
-      const tick=now=>{requestAnimationFrame(tick);if(document.hidden||page?.hidden){lastTime=0;return}const delta=lastTime?Math.min((now-lastTime)/1000,.05):0;lastTime=now;elapsed+=delta;if(mixer)mixer.update(delta);if(modelRoot.children.length)modelRoot.rotation.y=Math.sin(elapsed*.48)*.2;renderer.render(scene,camera)};
+      const tick=now=>{requestAnimationFrame(tick);if(document.hidden||page?.hidden){lastTime=0;return}const delta=lastTime?Math.min((now-lastTime)/1000,.05):0;lastTime=now;elapsed+=delta;if(mixer)mixer.update(delta);camera.position.z+=(avatarCameraTargetZ-camera.position.z)*(1-Math.exp(-delta*5));if(modelRoot.children.length)modelRoot.rotation.y=Math.sin(elapsed*.48)*.2;renderer.render(scene,camera)};
       requestAnimationFrame(tick);
     }
   </script>
