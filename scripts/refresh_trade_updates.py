@@ -1,39 +1,3 @@
---
-name: Refresh official trade updates
-
-on:
-  schedule:
-    - cron: '17,47 * * * *'
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
-jobs:
-  refresh:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-      - name: Refresh China News Service, MOFCOM and Customs sources
-        run: python scripts/refresh_trade_updates.py
-      - name: Commit feed when changed
-        run: |
-          if git diff --quiet -- trade-updates.json; then
-            echo "Official trade feed is unchanged."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add trade-updates.json
-          git commit -m "Refresh official trade updates"
-          git push
-
----SCRIPT---
 #!/usr/bin/env python3
 """Refresh public China trade policy, Customs statistics, and news sources."""
 
@@ -60,21 +24,38 @@ CHINANEWS_FEEDS = {
     "belt-road": ("中国新闻网·一带一路", "https://www.chinanews.com.cn/rss/ydyl.xml"),
     "asean": ("中国新闻网·中国—东盟商贸", "https://www.chinanews.com.cn/rss/aseaninfo.xml"),
 }
+CGTN_FEEDS = {
+    "cgtn-world": ("CGTN·World", "https://www.cgtn.com/subscribe/rss/section/world.xml"),
+    "cgtn-business": ("CGTN·Business", "https://www.cgtn.com/subscribe/rss/section/business.xml"),
+}
+CGTN_REGION_PAGES = {
+    "africa": ("africa", "https://www.cgtn.com/africa"),
+    "europe": ("europe", "https://www.cgtn.com/europe"),
+    "americas": ("americas", "https://www.cgtn.com/america"),
+    "asia-pacific": ("asia-pacific", "https://www.cgtn.com/world/asia-pacific.html"),
+}
+ALLOWED_NEWS_DOMAINS = ("chinanews.com.cn", "cgtn.com")
 
 TRADE_TERMS = (
     "贸易", "关税", "出口", "进口", "外贸", "供应链", "航运", "港口", "物流", "海关",
     "自贸", "贸易协定", "贸易谈判", "贸易壁垒", "贸易救济", "反倾销", "反补贴", "市场准入",
-    "跨境电商", "产业链", "货运", "集装箱", "关税", "tariff", "trade", "export", "import",
-    "customs", "supply chain", "shipping", "logistics", "port", "freight", "cargo",
+    "跨境电商", "产业链", "货运", "集装箱", "商业", "商务", "投资", "市场", "企业", "产业",
+    "制造", "经济", "金融", "能源", "农业", "采购", "贸易额", "生产", "消费", "融资",
+    "tariff", "trade", "export", "import", "customs", "supply chain", "shipping", "logistics",
+    "port", "freight", "cargo", "business", "market", "investment", "economy", "economic",
+    "company", "companies", "industry", "manufacturing", "commodity", "commercial", "retail",
+    "energy", "financial", "finance", "trade ties", "trade war", "trade deal", "trade talks",
+    "agreement", "sanction", "oil", "gas", "automotive", "consumer", "production", "sales",
+    "supplier", "agriculture", "mining", "resource", "investor", "growth", "bank", "factory",
 )
 
 REGION_TERMS = {
-    "north-america": ("美国", "加拿大", "墨西哥", "北美", "united states", "u.s.", "usa", "canada", "mexico", "north america"),
-    "south-america": ("巴西", "阿根廷", "智利", "哥伦比亚", "秘鲁", "乌拉圭", "厄瓜多尔", "委内瑞拉", "南美", "拉美", "brazil", "argentina", "chile", "colombia", "peru", "south america", "latin america"),
-    "europe": ("欧盟", "欧洲", "英国", "法国", "德国", "意大利", "西班牙", "荷兰", "比利时", "瑞士", "瑞典", "挪威", "波兰", "葡萄牙", "爱尔兰", "乌克兰", "罗马尼亚", "united kingdom", "france", "germany", "italy", "spain", "netherlands", "european union", "europe"),
-    "africa": ("非洲", "南非", "尼日利亚", "埃及", "肯尼亚", "加纳", "摩洛哥", "埃塞俄比亚", "坦桑尼亚", "阿尔及利亚", "乌干达", "塞内加尔", "卢旺达", "赞比亚", "south africa", "nigeria", "egypt", "kenya", "africa"),
-    "asia": ("亚洲", "中国", "日本", "印度", "韩国", "新加坡", "东盟", "印度尼西亚", "马来西亚", "泰国", "越南", "菲律宾", "巴基斯坦", "孟加拉国", "阿联酋", "沙特", "以色列", "土耳其", "asia", "china", "japan", "india", "south korea", "asean", "singapore", "vietnam", "indonesia"),
-    "oceania": ("大洋洲", "澳大利亚", "新西兰", "斐济", "巴布亚新几内亚", "oceania", "australia", "new zealand", "fiji"),
+    "north-america": ("美国", "加拿大", "墨西哥", "北美", "united states", "u.s.", "usa", "american", "canada", "canadian", "mexico", "mexican", "north america", "washington", "new york", "toronto", "ottawa"),
+    "south-america": ("巴西", "阿根廷", "智利", "哥伦比亚", "秘鲁", "乌拉圭", "厄瓜多尔", "委内瑞拉", "巴拿马", "玻利维亚", "巴拉圭", "南美", "拉美", "latin america", "south america", "brazil", "brazilian", "argentina", "argentine", "chile", "chilean", "colombia", "colombian", "peru", "peruvian", "uruguay", "ecuador", "venezuela", "panama", "paraguay", "bolivia"),
+    "europe": ("欧盟", "欧洲", "英国", "法国", "德国", "意大利", "西班牙", "荷兰", "比利时", "瑞士", "瑞典", "挪威", "波兰", "葡萄牙", "爱尔兰", "乌克兰", "罗马尼亚", "俄罗斯", "united kingdom", "britain", "british", "france", "french", "germany", "german", "italy", "italian", "spain", "spanish", "netherlands", "dutch", "european union", "europe", "european", "ukraine", "russia", "russian", "switzerland", "swiss", "sweden", "norway", "poland", "portugal", "ireland", "romania"),
+    "africa": ("非洲", "南非", "尼日利亚", "埃及", "肯尼亚", "加纳", "摩洛哥", "埃塞俄比亚", "坦桑尼亚", "阿尔及利亚", "乌干达", "塞内加尔", "卢旺达", "赞比亚", "刚果", "安哥拉", "马里", "south africa", "nigeria", "egypt", "kenya", "ghana", "morocco", "ethiopia", "tanzania", "algeria", "uganda", "senegal", "rwanda", "zambia", "congo", "angola", "mali", "africa", "african"),
+    "asia": ("亚洲", "中国", "日本", "印度", "韩国", "新加坡", "东盟", "印度尼西亚", "马来西亚", "泰国", "越南", "菲律宾", "巴基斯坦", "孟加拉国", "阿联酋", "沙特", "以色列", "土耳其", "伊朗", "卡塔尔", "阿曼", "asia", "asian", "china", "chinese", "japan", "japanese", "india", "indian", "south korea", "korean", "asean", "singapore", "vietnam", "indonesia", "malaysia", "thailand", "philippines", "pakistan", "bangladesh", "uae", "saudi", "israel", "turkey", "iran", "qatar", "oman", "middle east"),
+    "oceania": ("大洋洲", "澳大利亚", "澳洲", "澳中", "悉尼", "墨尔本", "堪培拉", "新西兰", "斐济", "巴布亚新几内亚", "oceania", "australia", "australian", "new zealand", "fiji", "papua new guinea", "sydney", "melbourne", "canberra", "pacific islands"),
 }
 
 GLOBAL_REGIONS = {
@@ -223,6 +204,22 @@ def global_category(title):
     return "policy"
 
 
+def is_trade_story(text):
+    folded = text.casefold()
+    return any(term.casefold() in folded for term in TRADE_TERMS)
+
+
+def allowed_news_link(link):
+    parsed = urlparse(link)
+    host = (parsed.hostname or "").lower()
+    return parsed.scheme == "https" and any(host == domain or host.endswith(f".{domain}") for domain in ALLOWED_NEWS_DOMAINS)
+
+
+def clean_news_link(link):
+    parsed = urlparse(link.strip())
+    return parsed._replace(query="", fragment="").geturl()
+
+
 def rss_text(value):
     return re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", str(value or "")))).strip()
 
@@ -235,18 +232,80 @@ def story_region(text):
     return ""
 
 
+class CGTNPageParser(HTMLParser):
+    """Extract dated CGTN news-card links from its official regional pages."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.items = []
+        self.seen = set()
+
+    def handle_starttag(self, tag, attrs):
+        if tag != "a":
+            return
+        attrs = dict(attrs)
+        link = urljoin("https://www.cgtn.com", attrs.get("href", ""))
+        title = rss_text(attrs.get("data-label", ""))
+        stamp = attrs.get("data-time", "")
+        key = clean_news_link(link)
+        if not title or "/news/" not in urlparse(link).path or not stamp or key in self.seen:
+            return
+        try:
+            pub_date = datetime.fromtimestamp(int(stamp) / 1000, timezone.utc).isoformat()
+        except (ValueError, OverflowError, OSError):
+            return
+        self.seen.add(key)
+        self.items.append({"title": title, "link": key, "pubDate": pub_date})
+
+
+def cgtn_page_region(page_id, title):
+    tagged_region = story_region(title)
+    if page_id in ("africa", "europe"):
+        return page_id
+    if page_id == "asia-pacific":
+        return "oceania" if tagged_region == "oceania" else "asia"
+    if page_id == "americas" and tagged_region in ("north-america", "south-america"):
+        return tagged_region
+    return ""
+
+
 def chinese_news_items(previous_items):
-    """Fetch Chinese News Service RSS items and map trade stories to regions."""
+    """Fetch Chinese News Service and CGTN feeds, plus CGTN regional story pages."""
     previous_global = [
         item for item in previous_items
         if item.get("continent") in GLOBAL_REGIONS
-        and urlparse(item.get("link", "")).hostname
-        and urlparse(item.get("link", "")).hostname.endswith("chinanews.com.cn")
+        and allowed_news_link(item.get("link", ""))
     ]
     fetched = {region: [] for region in GLOBAL_REGIONS}
     fetched_global = []
-    seen = set()
-    for feed_id, (feed_name, feed_url) in CHINANEWS_FEEDS.items():
+    seen_links = set()
+    seen_titles = {}
+
+    def add_story(item, region=""):
+        key = clean_news_link(item.get("link", ""))
+        title_key = item.get("title", "").casefold()
+        if not key or not title_key:
+            return
+        existing = seen_titles.get(title_key)
+        if existing:
+            if region in GLOBAL_REGIONS and existing.get("continent") != region:
+                old_region = existing.get("continent")
+                if old_region in fetched:
+                    fetched[old_region] = [row for row in fetched[old_region] if row is not existing]
+                existing["continent"] = region
+                fetched[region].append(existing)
+            return
+        if key in seen_links:
+            return
+        seen_links.add(key)
+        seen_titles[title_key] = item
+        item["link"] = key
+        if region in GLOBAL_REGIONS:
+            item["continent"] = region
+            fetched[region].append(item)
+        fetched_global.append(item)
+
+    for feed_id, (feed_name, feed_url) in {**CHINANEWS_FEEDS, **CGTN_FEEDS}.items():
         try:
             root = ElementTree.fromstring(get(feed_url))
             for row in root.findall(".//item"):
@@ -255,43 +314,64 @@ def chinese_news_items(previous_items):
                 link = row.findtext("link", "").strip()
                 source = rss_text(row.findtext("source", ""))
                 raw_date = row.findtext("pubDate", "").strip()
-                host = urlparse(link).hostname or ""
-                if not title or not link.startswith("https://") or not host.endswith("chinanews.com.cn") or not raw_date or link in seen:
+                if not title or not allowed_news_link(link) or not raw_date:
                     continue
-                if not any(term.casefold() in f"{title} {description}".casefold() for term in TRADE_TERMS):
+                if not is_trade_story(f"{title} {description}"):
                     continue
                 try:
                     pub_date = parsedate_to_datetime(raw_date).isoformat()
                 except (TypeError, ValueError, OverflowError):
                     continue
-                seen.add(link)
                 region = story_region(f"{title} {description}")
+                source_name = "CGTN" if feed_id in CGTN_FEEDS else "中国新闻网"
                 item = {
                     "title": title,
-                    "description": description or f"{feed_name}发布的国际贸易相关资讯。打开原文查看详情。",
+                    "description": description or f"{feed_name}发布的国际市场与贸易资讯。打开原文查看详情。",
                     "link": link,
-                    "author": source or "中国新闻网",
-                    "sourceCountry": "中国新闻网",
+                    "author": source or source_name,
+                    "sourceCountry": source_name,
                     "pubDate": pub_date,
                     "category": global_category(f"{title} {description}"),
                 }
-                if region:
-                    item["continent"] = region
-                    fetched[region].append(item)
-                elif feed_id == "asean":
-                    item["continent"] = "asia"
-                    fetched["asia"].append(item)
-                fetched_global.append(item)
+                if feed_id == "asean" and not region:
+                    region = "asia"
+                add_story(item, region)
         except Exception as error:
-            print(f"China News Service RSS {feed_id} request failed: {error}")
-        print(f"China News Service RSS {feed_id}: {len(fetched_global)} matching stories collected")
+            print(f"News RSS {feed_id} request failed: {error}")
+        print(f"News RSS {feed_id}: {len(fetched_global)} matching stories collected")
+        sleep(1)
+
+    cutoff = datetime.now(timezone.utc) - timedelta(days=90)
+    for page_id, (region_hint, page_url) in CGTN_REGION_PAGES.items():
+        try:
+            parser = CGTNPageParser()
+            parser.feed(get(page_url).decode("utf-8", "replace"))
+            page_count = 0
+            for row in parser.items:
+                if not allowed_news_link(row["link"]) or not is_trade_story(row["title"]):
+                    continue
+                published = datetime.fromisoformat(row["pubDate"].replace("Z", "+00:00"))
+                if published < cutoff:
+                    continue
+                region = cgtn_page_region(region_hint, row["title"])
+                item = {
+                    **row,
+                    "description": f"CGTN {region_hint.replace('-', ' ').title()} · International market and trade coverage.",
+                    "author": "CGTN",
+                    "sourceCountry": "CGTN",
+                    "category": global_category(row["title"]),
+                }
+                add_story(item, region)
+                page_count += 1
+            print(f"CGTN regional page {region_hint}: {page_count} recent trade stories collected")
+        except Exception as error:
+            print(f"CGTN regional page {region_hint} request failed: {error}")
         sleep(1)
 
     cached_by_region = {region: [] for region in GLOBAL_REGIONS}
     for item in previous_global:
         cached_by_region[item["continent"]].append(item)
     combined = []
-    cutoff = datetime.now(timezone.utc) - timedelta(days=90)
     for region in GLOBAL_REGIONS:
         fresh = fetched[region]
         cached = cached_by_region[region]
@@ -370,3 +450,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
