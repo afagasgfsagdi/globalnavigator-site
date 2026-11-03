@@ -1,7 +1,36 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-03T22:55:36.117415+00:00",
+  "updatedAt": "2026-11-03T23:48:13.260373+00:00",
   "items": [
+    {
+      "title": "全国放心消费平台正式上线 面向消费者提供哪些功能？",
+      "description": "如今，不论是出门就餐还是购物，不少人都习惯打开地图软件或者本地生活服务软件去搜一搜，看看哪一家性价比高，哪一家符合自己的口味，再看看店家的评分如何。毕竟，大家都想选到能让自己安心消费的商家。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-04/10725710.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-04T07:22:57+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "泰国将进口电动汽车消费税税率上调至35%",
+      "description": "中新社曼谷11月3日电 (王茜 李映民)泰国副总理兼财政部长艾尼迪3日表示，当天召开的内阁会议批准调整进口纯电动汽车(BEV)和增程式电动汽车(REEV)的消费税税率，统一上调至35%，新税率将于2027年1月1日起实施。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-04/10725705.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-04T07:04:54+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "10月份中国仓储指数为49.8%",
+      "description": "中国物流与采购联合会今天发布10月份中国仓储指数。指数低位稍有回升，但仍连续三个月运行在收缩区间，需求基础仍需巩固。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-04/10725701.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-04T06:54:15+08:00",
+      "category": "supply",
+      "continent": "asia"
+    },
     {
       "title": "中国微短剧何以全球“圈粉”",
       "description": "近年来，凭借独特内容优势与成熟产业体系，中国微短剧迅速走红全球，成为数字时代中华文化出海的鲜活载体与传播力量。法国、美国、加拿大等多国影视从业者的创作实践与行业观察表明，中国微短剧立足人类共通情感、深耕本土化创作，为中外文明交流互鉴、全球文化产业创新发展注入了新动能。",
@@ -240,15 +269,6 @@
       "pubDate": "2026-11-03T20:47:24+08:00",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "向海而生 向新而行丨智慧跃迁，从码头自动化到航运服务智慧化的津港实践",
-      "description": "中新网11月3日电(记者 谢艺观)一艘巨轮靠泊，自动化岸桥精准起落，智能运输机器人穿梭于堆场之间。从装卸作业到船舶调度，一套由数据和算法驱动的系统正让港口高效运转。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-03/10725562.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-03T20:21:26+08:00",
-      "category": "supply"
     },
     {
       "title": "2026澳中商业与青年领袖盛典在悉尼举行",
@@ -1752,15 +1772,6 @@
       "title": "Business leaders hopeful China-US Summit eases trade tensions",
       "link": "https://newsus.cgtn.com/news/2026-09-25/Business-leaders-hopeful-China-US-Summit-eases-trade-tensions-1QImwwWuv7y/p.html",
       "pubDate": "2026-09-24T21:30:19+00:00",
-      "description": "CGTN Americas · International market and trade coverage.",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "category": "policy"
-    },
-    {
-      "title": "Chinese exoskeleton maker explores US market",
-      "link": "https://news.cgtn.com/news/2026-09-24/Chinese-exoskeleton-maker-explores-US-market-1QH8nXOlrQA/p.html",
-      "pubDate": "2026-09-24T07:44:20+00:00",
       "description": "CGTN Americas · International market and trade coverage.",
       "author": "CGTN",
       "sourceCountry": "CGTN",
