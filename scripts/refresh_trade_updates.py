@@ -440,7 +440,7 @@ def main():
     if previous.get("items") == items and previous.get("updatedAt"):
         updated_at = previous["updatedAt"]
     result = {
-        "source": "中国新闻网（国际、财经、一带一路、东盟商贸）· 商务部 · 海关总署",
+        "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
         "updatedAt": updated_at,
         "items": items,
     }
