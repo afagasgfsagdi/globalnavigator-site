@@ -1,7 +1,26 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-04T14:41:03.942017+00:00",
+  "updatedAt": "2026-11-04T15:34:49.402815+00:00",
   "items": [
+    {
+      "title": "平陆运河通航满月 沿线用电负荷持续攀升",
+      "description": "中新网南宁11月4日电(王以照 韦露 佘晟)南方电网广西电网公司11月4日介绍，平陆运河通航以来，港口企业用电量同比增长26.5%。1—9月，港口企业用电量同比增长25.0%；重点出口企业用电量达到245.8亿千瓦时，同比增长28.4%。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-04/10726329.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-04T22:56:41+08:00",
+      "category": "supply"
+    },
+    {
+      "title": "星展银行报告：人民币在多个亚洲市场已有较高使用率",
+      "description": "中新社上海11月4日电 (记者 姜煜)星展银行4日发布的《格局重塑：新秩序下的全球资金》报告称，人民币在多个亚洲市场已有较高使用率。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-04/10726319.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-04T22:54:47+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
     {
       "title": "驻韩美军两名士兵涉嫌走私毒品被捕",
       "description": "韩国海关部门4日通报，驻韩美军两名士兵因涉嫌利用美国军方邮政系统走私毒品被捕，已被移交韩国检方。调查显示，驻韩美军基地内存在毒品交易和分销迹象。",
@@ -238,24 +257,6 @@
       "pubDate": "2026-11-04T18:34:33+08:00",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "山西闻喜天麻激活“绿色银行” 科技赋能林下经济",
-      "description": "中新网运城11月4日电 (李庭耀 杨秀文 杨一敏)昔日闲置的林下坡地，如今正成为富民增收的“绿色银行”。11月3日至5日，国家中药材产业技术体系2026天麻单品种攻关暨闻喜天麻高质量发展研讨会在山西闻喜举办。来自全国各地的50余名中药材领域专家、科研骨干以“室内专题研讨+田间实地问诊”的模式，破解北方林下天麻种植技术难题，为县域特色中药材产业提质升级注入科创动能。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-04/10726136.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-04T18:32:01+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "高铁未至 开放先行：重庆“煤都”将加快建设南向门户",
-      "description": "中新网重庆11月4日电 (罗永皓)重庆市万盛经济技术开发区将聚焦“开放万盛——重庆南向门户”，建设西部陆海新通道辐射带动先导区，到2030年进出口总额突破10亿元。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-04/10726135.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-04T18:31:13+08:00",
-      "category": "policy"
     },
     {
       "title": "（投资中国）嘉信理财：看好中国财富管理市场长期韧性",
@@ -1670,16 +1671,6 @@
       "continent": "asia"
     },
     {
-      "title": "UBS: Chinese firms are shifting from cost to tech advantages",
-      "description": "China's global expansion is emerging as a key long-term investment theme for the coming years, said Robin Xu, general manager at UBS Securities.",
-      "link": "https://news.cgtn.com/news/2026-10-23/UBS-Chinese-firms-are-shifting-from-cost-to-tech-advantages-1RtIJJzhYgE/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-10-23T11:39:03+00:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
       "title": "France reports world's first human Shamonda virus case infection",
       "link": "https://news.cgtn.com/news/2026-10-23/France-reports-world-s-first-human-Shamonda-virus-case-infection-1Rth0T4fx1m/p.html",
       "pubDate": "2026-10-23T04:47:40+00:00",
@@ -2623,16 +2614,6 @@
       "sourceCountry": "China",
       "pubDate": "2026-08-27T00:00:00+08:00",
       "category": "supply"
-    },
-    {
-      "title": "Japan's import bill rise as yen weakens",
-      "link": "https://news.cgtn.com/news/2026-08-26/Japan-s-import-bill-rise-as-yen-weakens-1PVrWh11PX2/p.html",
-      "pubDate": "2026-08-26T10:41:39+00:00",
-      "description": "CGTN Asia Pacific · International market and trade coverage.",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "category": "supply",
-      "continent": "asia"
     },
     {
       "title": "海关总署 2026年8月进出口统计",
