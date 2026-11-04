@@ -22,7 +22,7 @@ function sendJson(res, status, body, headers = {}) {
 function corsHeaders(origin) {
   return {
     'Access-Control-Allow-Origin': origin,
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Max-Age': '86400',
     'Vary': 'Origin',
@@ -87,7 +87,12 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(204, cors);
     return res.end();
   }
-  if (url.pathname !== '/chat' || req.method !== 'POST') {
+  const humanInputMatch = url.pathname.match(/^\/human-input\/([A-Za-z0-9_-]{8,256})$/);
+  const eventsMatch = url.pathname.match(/^\/events\/([0-9a-f-]{36})$/i);
+  const isChatRequest = url.pathname === '/chat' && req.method === 'POST';
+  const isHumanInputRequest = Boolean(humanInputMatch) && ['GET', 'POST'].includes(req.method);
+  const isEventsRequest = Boolean(eventsMatch) && req.method === 'GET';
+  if (!isChatRequest && !isHumanInputRequest && !isEventsRequest) {
     return sendJson(res, 404, { error: 'Not found' }, cors);
   }
   if (!process.env.DIFY_API_KEY) {
@@ -102,37 +107,64 @@ const server = http.createServer(async (req, res) => {
     return sendJson(res, 429, { error: 'Too many requests. Please wait a minute and try again.' }, cors);
   }
 
-  let input;
-  try {
-    input = await readJsonBody(req);
-  } catch (error) {
-    return sendJson(res, error.status || 400, { error: error.message }, cors);
-  }
-
-  const query = typeof input.query === 'string' ? input.query.trim() : '';
-  const user = typeof input.user === 'string' ? input.user.trim() : '';
-  const conversationId = typeof input.conversation_id === 'string' ? input.conversation_id : '';
-  if (!query || query.length > 10_000 || !/^[a-zA-Z0-9_-]{6,128}$/.test(user) || conversationId.length > 128) {
-    return sendJson(res, 400, { error: 'Invalid chat input' }, cors);
+  let upstreamUrl;
+  let upstreamMethod = req.method;
+  let upstreamBody;
+  if (isChatRequest) {
+    let input;
+    try {
+      input = await readJsonBody(req);
+    } catch (error) {
+      return sendJson(res, error.status || 400, { error: error.message }, cors);
+    }
+    const query = typeof input.query === 'string' ? input.query.trim() : '';
+    const user = typeof input.user === 'string' ? input.user.trim() : '';
+    const conversationId = typeof input.conversation_id === 'string' ? input.conversation_id : '';
+    if (!query || query.length > 10_000 || !/^[a-zA-Z0-9_-]{6,128}$/.test(user) || conversationId.length > 128) {
+      return sendJson(res, 400, { error: 'Invalid chat input' }, cors);
+    }
+    upstreamUrl = 'https://api.dify.ai/v1/chat-messages';
+    upstreamBody = JSON.stringify({
+      inputs: {}, query, response_mode: 'streaming', conversation_id: conversationId, user,
+    });
+  } else if (isHumanInputRequest) {
+    const formToken = humanInputMatch[1];
+    upstreamUrl = `https://api.dify.ai/v1/form/human_input/${encodeURIComponent(formToken)}`;
+    if (req.method === 'POST') {
+      let input;
+      try {
+        input = await readJsonBody(req);
+      } catch (error) {
+        return sendJson(res, error.status || 400, { error: error.message }, cors);
+      }
+      const user = typeof input.user === 'string' ? input.user.trim() : '';
+      const action = typeof input.action === 'string' ? input.action : '';
+      if (!/^[a-zA-Z0-9_-]{6,128}$/.test(user) || !/^[a-zA-Z0-9_-]{1,128}$/.test(action) || !input.inputs || typeof input.inputs !== 'object' || Array.isArray(input.inputs)) {
+        return sendJson(res, 400, { error: 'Invalid human input submission' }, cors);
+      }
+      upstreamBody = JSON.stringify({ inputs: input.inputs, action, user });
+    }
+  } else {
+    const runId = eventsMatch[1];
+    const user = String(url.searchParams.get('user') || '').trim();
+    if (!/^[a-zA-Z0-9_-]{6,128}$/.test(user)) {
+      return sendJson(res, 400, { error: 'Invalid end user' }, cors);
+    }
+    upstreamUrl = `https://api.dify.ai/v1/workflow/${encodeURIComponent(runId)}/events?user=${encodeURIComponent(user)}`;
+    upstreamMethod = 'GET';
   }
 
   let upstream;
   try {
-    upstream = await fetch('https://api.dify.ai/v1/chat-messages', {
-      method: 'POST',
+    upstream = await fetch(upstreamUrl, {
+      method: upstreamMethod,
       headers: {
         Authorization: `Bearer ${process.env.DIFY_API_KEY}`,
         'Content-Type': 'application/json',
-        Accept: 'text/event-stream',
+        Accept: isHumanInputRequest ? 'application/json' : 'text/event-stream',
       },
-      body: JSON.stringify({
-        inputs: {},
-        query,
-        response_mode: 'streaming',
-        conversation_id: conversationId,
-        user,
-      }),
-      signal: AbortSignal.timeout(120_000),
+      ...(upstreamBody ? { body: upstreamBody } : {}),
+      signal: AbortSignal.timeout(600_000),
     });
   } catch (error) {
     const message = error?.name === 'TimeoutError' ? 'Dify API request timed out' : 'Could not reach Dify API';
@@ -154,5 +186,7 @@ const server = http.createServer(async (req, res) => {
 
 server.requestTimeout = 130_000;
 server.headersTimeout = 135_000;
+server.timeout = 610_000;
 server.listen(PORT, '0.0.0.0');
+
 
