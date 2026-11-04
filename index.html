@@ -655,6 +655,11 @@
     .agent-answer-content code { border-color:rgba(166,204,223,.15);background:rgba(255,255,255,.06);color:#a7e3ec }
     .agent-answer-content a { color:#91dceb;text-decoration-color:rgba(145,220,235,.45) }
     .agent-attachment { border-color:rgba(118,211,225,.24);background:rgba(99,195,214,.07);color:#a8e4ed }
+    .agent-human-actions { display:flex;flex-wrap:wrap;gap:10px;margin-top:16px }
+    .agent-human-action { min-height:42px;padding:10px 18px;border:1px solid rgba(115,213,229,.45);border-radius:999px;background:linear-gradient(135deg,#66c7d9,#55b9c9);color:#07212b;font:inherit;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(44,161,181,.18);transition:transform .18s,filter .18s,opacity .18s }
+    .agent-human-action:hover { transform:translateY(-1px);filter:brightness(1.06) }
+    .agent-human-action:disabled { cursor:wait;opacity:.6;transform:none }
+    .agent-human-status { margin-top:12px;color:rgba(198,221,231,.7);font-size:12px }
     .agent-config-note { min-height:26px;padding:5px 12px 0;color:rgba(184,208,220,.56);font-size:11px;letter-spacing:.015em }
     .agent-conversation > .agent-composer { flex:none;margin:12px auto 0 }
     .agent-conversation > .agent-config-note { flex:none }
@@ -1377,6 +1382,12 @@
   <script type="module">
     // The browser calls a same-origin server proxy. Keep the Dify app key in that server's secret store.
     const proxyUrl = document.querySelector('meta[name="dify-api-proxy"]')?.content.trim() || '';
+    const proxyRoute = (path) => {
+      const endpoint = new URL(proxyUrl, location.href);
+      endpoint.pathname = `${endpoint.pathname.replace(/\/chat\/?$/, '').replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
+      endpoint.search = '';
+      return endpoint.toString();
+    };
     const input = document.querySelector('#agent-input');
     const composer = document.querySelector('#agent-composer');
     const sendButton = document.querySelector('#agent-send');
@@ -1387,6 +1398,7 @@
     const userIdKey = 'globalNavigatorDifyUserV1';
     let conversationId = '';
     let isSending = false;
+    let pendingHumanInput = null;
     let userId = sessionStorage.getItem(userIdKey);
     if (!userId) { userId = `gn-${crypto.randomUUID()}`; sessionStorage.setItem(userIdKey,userId); }
     const t = (key) => window.siteT?.(key) || key;
@@ -1403,13 +1415,90 @@
       article.append(label,body);messages.append(article);if(scrollArea.dataset.hasMessages!=='true'){document.querySelector('.agent-conversation').append(composer,configNote);scrollArea.dataset.hasMessages='true';const avatar=document.querySelector('#agent-avatar-stage');if(avatar){avatar.classList.remove('is-compact');avatar.classList.add('is-chat-buddy');avatar.setAttribute('role','button');avatar.setAttribute('tabindex','0');avatar.setAttribute('aria-label',t('agent_avatar_dance'));avatar.setAttribute('title',t('agent_avatar_dance'));avatar.dataset.danceLabel=t('agent_avatar_dance');document.querySelector('.agent-chat')?.append(avatar)}}scrollArea.scrollTop=scrollArea.scrollHeight;
       return {article,body};
     };
-    const consumeStream = async (response, target) => {
+    const fetchHumanInputForm = async (formToken) => {
+      const response = await fetch(proxyRoute(`human-input/${encodeURIComponent(formToken)}`), { headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error((await response.text().catch(() => '')) || `Human input form HTTP ${response.status}`);
+      return response.json();
+    };
+    const setComposerLocked = (locked) => {
+      input.disabled = locked;
+      sendButton.disabled = locked;
+      composer.setAttribute('aria-busy', String(locked));
+    };
+    const renderHumanInput = async (target, event) => {
+      const payload = event.data && typeof event.data === 'object' ? event.data : event;
+      const formToken = payload.form_token || event.form_token;
+      const workflowRunId = event.workflow_run_id || payload.workflow_run_id;
+      if (!formToken || !workflowRunId) throw new Error('Dify 已暂停等待确认，但没有返回表单令牌或运行 ID。');
+      const form = await fetchHumanInputForm(formToken);
+      const actions = Array.isArray(form.user_actions) ? form.user_actions : [];
+      if (!actions.length) throw new Error('Dify 确认表单没有可用操作按钮。');
+      pendingHumanInput = { formToken, workflowRunId, actions };
+      target.body.classList.remove('agent-message-pending');
+      target.body.textContent = form.form_content || payload.form_content || '请确认是否继续生成报告。';
+      renderAgentAnswer(target.body, target.body.textContent);
+      target.article.querySelector('.agent-human-actions')?.remove();
+      const actionGroup = document.createElement('div');
+      actionGroup.className = 'agent-human-actions';
+      actions.forEach((action) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'agent-human-action';
+        button.textContent = action.title || action.id || '确认';
+        button.addEventListener('click', () => submitHumanInput(action, target, button));
+        actionGroup.append(button);
+      });
+      target.article.append(actionGroup);
+      setComposerLocked(true);
+      scrollArea.scrollTop = scrollArea.scrollHeight;
+    };
+    const consumeStream = async (response, target, { resumed = false } = {}) => {
       if (!response.ok) { const detail=await response.text().catch(()=> ''); throw new Error(detail || `HTTP ${response.status}`); }
       if (!response.body) throw new Error('No response stream');
-      const reader=response.body.getReader(),decoder=new TextDecoder();let buffer='';
-      while(true){const {value,done}=await reader.read();if(done)break;buffer+=decoder.decode(value,{stream:true});const events=buffer.split(/\r?\n\r?\n/);buffer=events.pop()||'';for(const block of events){for(const line of block.split(/\r?\n/)){if(!line.startsWith('data:'))continue;const raw=line.slice(5).trim();if(!raw||raw==='[DONE]')continue;let data;try{data=JSON.parse(raw)}catch{continue}if(data.event==='message'||data.event==='agent_message'){target.body.textContent+=data.answer||'';if(data.conversation_id)conversationId=data.conversation_id;scrollArea.scrollTop=scrollArea.scrollHeight}else if(data.event==='message_file'&&data.url){try{const fileUrl=new URL(data.url);if(fileUrl.protocol==='https:'){const link=document.createElement('a');link.className='agent-attachment';link.href=fileUrl.href;link.target='_blank';link.rel='noopener noreferrer';link.textContent=`↧ ${data.filename||data.name||t('agent_download')}`;target.article.append(link)}}catch{}}else if(data.event==='message_end'&&data.conversation_id){conversationId=data.conversation_id}else if(data.event==='error'){throw new Error(data.message||data.code||'Dify error')}}}}
+      const reader=response.body.getReader(),decoder=new TextDecoder();let buffer='',paused=false,resumedText='',messageEventSeen=false;
+      while(true){const {value,done}=await reader.read();if(done)break;buffer+=decoder.decode(value,{stream:true});const events=buffer.split(/\r?\n\r?\n/);buffer=events.pop()||'';for(const block of events){for(const line of block.split(/\r?\n/)){if(!line.startsWith('data:'))continue;const raw=line.slice(5).trim();if(!raw||raw==='[DONE]')continue;let data;try{data=JSON.parse(raw)}catch{continue}if(data.event==='human_input_required'){await renderHumanInput(target,data);paused=true;break}else if(data.event==='message'||data.event==='agent_message'){if(resumed&&!messageEventSeen)target.body.textContent='';messageEventSeen=true;target.body.textContent+=data.answer||'';if(data.conversation_id)conversationId=data.conversation_id;scrollArea.scrollTop=scrollArea.scrollHeight}else if(data.event==='text_chunk'&&resumed){resumedText+=data.data?.text||data.text||''}else if(data.event==='message_file'&&data.url){try{const fileUrl=new URL(data.url);if(fileUrl.protocol==='https:'){const link=document.createElement('a');link.className='agent-attachment';link.href=fileUrl.href;link.target='_blank';link.rel='noopener noreferrer';link.textContent=`↧ ${data.filename||data.name||t('agent_download')}`;target.article.append(link)}}catch{}}else if(data.event==='workflow_finished'&&resumed){const outputs=data.data?.outputs||{};const outputText=outputs.answer||outputs.text||outputs.result||outputs.response;if(outputText&&!messageEventSeen)target.body.textContent=String(outputText);const files=outputs.files;if(Array.isArray(files))files.forEach(file=>{if(file?.url){try{const fileUrl=new URL(file.url);if(fileUrl.protocol==='https:'){const link=document.createElement('a');link.className='agent-attachment';link.href=fileUrl.href;link.target='_blank';link.rel='noopener noreferrer';link.textContent=`↧ ${file.filename||file.name||t('agent_download')}`;target.article.append(link)}}catch{}}})}else if(data.event==='message_end'&&data.conversation_id){conversationId=data.conversation_id}else if(data.event==='error'){throw new Error(data.message||data.code||'Dify error')}}if(paused)break}if(paused)break}
+      if(paused){await reader.cancel().catch(()=>{});return {paused:true};}
+      if(resumed&&!messageEventSeen&&resumedText.trim())target.body.textContent=resumedText.trim();
       if(!target.body.textContent.trim())target.body.textContent=t('agent_empty_reply');
       renderAgentAnswer(target.body,target.body.textContent);
+      return {paused:false};
+    };
+    const submitHumanInput = async (action, target, selectedButton) => {
+      if (!pendingHumanInput || isSending) return;
+      const { formToken, workflowRunId } = pendingHumanInput;
+      const actionGroup = target.article.querySelector('.agent-human-actions');
+      actionGroup?.querySelectorAll('button').forEach(button => button.disabled = true);
+      isSending = true;
+      setComposerLocked(true);
+      target.body.classList.add('agent-message-pending');
+      try {
+        const submitResponse = await fetch(proxyRoute(`human-input/${encodeURIComponent(formToken)}`), {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ inputs: {}, action: action.id, user: userId }),
+        });
+        if (!submitResponse.ok) throw new Error((await submitResponse.text().catch(() => '')) || `Human input submit HTTP ${submitResponse.status}`);
+        const actionLabel = action.title || action.id;
+        appendMessage('user', actionLabel);
+        actionGroup?.remove();
+        target.body.classList.add('agent-message-pending');
+        target.body.textContent = '已确认，正在继续研究并生成报告…';
+        pendingHumanInput = null;
+        const eventsUrl = new URL(proxyRoute(`events/${encodeURIComponent(workflowRunId)}`));
+        eventsUrl.searchParams.set('user', userId);
+        const eventsResponse = await fetch(eventsUrl, { headers: { Accept: 'text/event-stream' } });
+        await consumeStream(eventsResponse, target, { resumed: true });
+      } catch (error) {
+        target.body.classList.remove('agent-message-pending');
+        target.article.classList.add('error');
+        target.body.textContent = `确认已提交，但继续读取报告失败：${error.message||''}`.trim();
+        if (actionGroup) actionGroup.querySelectorAll('button').forEach(button => button.disabled = false);
+      } finally {
+        isSending = false;
+        const awaitingConfirmation = Boolean(pendingHumanInput);
+        setComposerLocked(awaitingConfirmation);
+        updateConnection();
+        scrollArea.scrollTop = scrollArea.scrollHeight;
+      }
     };
     const renderAgentInline = (parent,text) => {
       const pattern=/\[([^\]]+)\]\((https:\/\/[^\s)]+)\)|\*\*([^*]+)\*\*|`([^`]+)`/g;
@@ -1445,7 +1534,7 @@
       if (!text || isSending) return;
       if (!proxyUrl) { appendMessage('assistant',t('agent_proxy_needed'),{error:true}); return; }
       appendMessage('user',text);window.playAgentAvatarNod?.();const reply=appendMessage('assistant','',{pending:true});isSending=true;sendButton.disabled=true;input.disabled=true;updateConnection();
-      try{const response=await fetch(proxyUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:text,conversation_id:conversationId,inputs:{},response_mode:'streaming',user:userId})});reply.body.classList.remove('agent-message-pending');await consumeStream(response,reply)}catch(error){reply.article.classList.add('error');reply.body.classList.remove('agent-message-pending');reply.body.textContent=`${t('agent_request_error')} ${error.message||''}`.trim()}finally{isSending=false;sendButton.disabled=false;input.disabled=false;input.focus();updateConnection()}
+      try{const response=await fetch(proxyUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:text,conversation_id:conversationId,inputs:{},response_mode:'streaming',user:userId})});await consumeStream(response,reply)}catch(error){reply.article.classList.add('error');reply.body.classList.remove('agent-message-pending');reply.body.textContent=`${t('agent_request_error')} ${error.message||''}`.trim()}finally{isSending=false;setComposerLocked(Boolean(pendingHumanInput));if(!pendingHumanInput)input.focus();updateConnection()}
     };
     composer.addEventListener('submit',(event)=>{event.preventDefault();const text=input.value.trim();if(!text)return;input.value='';input.style.height='auto';send(text)});
     input.addEventListener('input',()=>{input.style.height='auto';input.style.height=`${Math.min(input.scrollHeight,150)}px`});
@@ -2120,6 +2209,7 @@
   </script>
 </body>
 </html>
+
 
 
 
