@@ -1,0 +1,13 @@
+{
+  "name": "globalnavigator-dify-relay-scf",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tencent Cloud SCF Web Function relay for the GlobalNavigator Dify app",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
+
