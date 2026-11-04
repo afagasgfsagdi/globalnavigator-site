@@ -1,0 +1,4 @@
+#!/bin/bash
+cd /var/user
+exec node index.js
+
