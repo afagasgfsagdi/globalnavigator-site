@@ -1,7 +1,26 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-05T15:08:53.676425+00:00",
+  "updatedAt": "2026-11-05T17:26:13.246705+00:00",
   "items": [
+    {
+      "title": "（第九届进博会）从“展示窗口”到“创新加速器”：进博会医疗创新孵化专区强力链接全球双循环",
+      "description": "中新网上海11月5日电 (记者 陈静)第九届中国国际进口博览会(下称：进博会)5日启幕，医疗创新孵化专区(下称：专区)因大量“全球首发”与“中国首展”的硬核产品亮相而备受关注。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726967.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T23:48:25+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "邯郸（鸡泽）国际物流产业园十年“织”就出海路",
+      "description": "中新网邯郸11月5日电 题：邯郸(鸡泽)国际物流产业园十年“织”就出海路",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726953.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T23:23:04+08:00",
+      "category": "supply"
+    },
     {
       "title": "向北开放势能持续释放 绥芬河迎来新增长极",
       "description": "中新网绥芬河11月5日电 (田晓慧)依托口岸区位优势与中俄免签政策红利，北疆口岸城市绥芬河前三季度经济运行稳中有进，对外开放动能持续迸发，消费、外贸、交通枢纽各项指标全线向好。",
@@ -226,15 +245,6 @@
       "continent": "africa"
     },
     {
-      "title": "车企年末竞逐东北市场 新能源汽车消费持续升温",
-      "description": "中新网长春11月5日电 (记者 郭佳)第十二届长春汽车交易展览会5日开幕，恰逢年末车市促销季，吸引中外车企携近500台展车参展。记者在现场看到，新能源车型占据参展阵容主流，不少车企将其作为重点展示和推介对象。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726735.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-05T18:00:40+08:00",
-      "category": "policy"
-    },
-    {
       "title": "（第九届进博会）第九届进博会上海市交易团“首单”签约",
       "description": "中新社上海11月5日电 (记者 缪璐 姜煜)第九届中国国际进口博览会(简称“进博会”)5日在上海开幕。当天下午，本届进博会上海市交易团“首日”活动举行，其间首个订单落地上海市青浦区。",
       "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726756.shtml",
@@ -303,6 +313,16 @@
       "pubDate": "2026-11-05T16:45:18+08:00",
       "category": "policy",
       "continent": "asia"
+    },
+    {
+      "title": "Chancellor-led Austrian delegation seeks to boost exports to China",
+      "link": "https://newseu.cgtn.com/news/2026-11-06/Chancellor-led-Austrian-delegation-seeks-to-boost-exports-to-China-1RPAUuDFP4k/p.html",
+      "pubDate": "2026-11-05T16:42:13+00:00",
+      "description": "CGTN Europe · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "supply",
+      "continent": "europe"
     },
     {
       "title": "美媒：马斯克删除呼吁支持共和党的帖文",
@@ -1325,16 +1345,6 @@
       "author": "中国新闻网",
       "sourceCountry": "中国新闻网",
       "pubDate": "2026-11-03T23:54:32+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "泰国（第四届）HSK留学中国与就业展在曼谷举办",
-      "description": "中新网曼谷11月3日电 (王茜 李映民)泰国(第四届)HSK留学中国与就业展3日在曼谷易三仓大学素万那普校区举办。24家中泰知名高校与25家在泰中资企业同场设展，使泰国学生在了解赴华留学信息的同时，可以直接接触企业用人需求。",
-      "link": "https://www.chinanews.com.cn/gj/2026/11-03/10725676.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-03T23:44:37+08:00",
       "category": "policy",
       "continent": "asia"
     },
