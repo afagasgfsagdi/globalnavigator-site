@@ -1,6 +1,6 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-05T18:26:28.682091+00:00",
+  "updatedAt": "2026-11-05T20:29:48.896698+00:00",
   "items": [
     {
       "title": "（第九届进博会）从“展示窗口”到“创新加速器”：进博会医疗创新孵化专区强力链接全球双循环",
@@ -2960,6 +2960,24 @@
       "category": "supply"
     },
     {
+      "title": "商务部关于发布第二批国家加工贸易产业园名单的通知",
+      "description": "商务部外贸政策公告。请查看官方文件原文，核对适用范围与实施时间。",
+      "link": "https://wms.mofcom.gov.cn/zcfb/wmzc/art/2026/art_9cfea59e0ebf4d86bf8566f534ac1d5c.html",
+      "author": "商务部",
+      "sourceCountry": "China",
+      "pubDate": "2026-03-27T00:00:00+08:00",
+      "category": "supply"
+    },
+    {
+      "title": "关于公示2026年尼加拉瓜食糖进口关税配额拟分配企业名单的通知",
+      "description": "商务部外贸政策公告。请查看官方文件原文，核对适用范围与实施时间。",
+      "link": "https://wms.mofcom.gov.cn/zcfb/wmzc/art/2026/art_03f40d42a19d4a4b9d6022e1990b3388.html",
+      "author": "商务部",
+      "sourceCountry": "China",
+      "pubDate": "2026-03-20T00:00:00+08:00",
+      "category": "tariff"
+    },
+    {
       "title": "海关总署 2026年3月进出口统计",
       "description": "进出口总值 5,909.36 亿美元（同比 +12.7%）；出口 3,210.33 亿美元（+2.5%），进口 2,699.04 亿美元（+27.8%）。统计月份：2026年3月。",
       "link": "https://data.mofcom.gov.cn/hwmy/imexmonth.shtml",
@@ -2984,6 +3002,42 @@
       "author": "海关总署统计（商务部数据中心）",
       "sourceCountry": "China",
       "pubDate": "2026-01-01T00:00:00+08:00",
+      "category": "supply"
+    },
+    {
+      "title": "商务部 工业和信息化部 公安部 海关总署关于进一步加强二手车出口管理工作的通知",
+      "description": "商务部外贸政策公告。请查看官方文件原文，核对适用范围与实施时间。",
+      "link": "https://wms.mofcom.gov.cn/zcfb/wmzc/art/2025/art_fba9bd229a2b467b91b303bc05736612.html",
+      "author": "商务部",
+      "sourceCountry": "China",
+      "pubDate": "2025-11-14T00:00:00+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "商务部关于拓展绿色贸易的实施意见",
+      "description": "商务部外贸政策公告。请查看官方文件原文，核对适用范围与实施时间。",
+      "link": "https://wms.mofcom.gov.cn/zcfb/wmzc/art/2025/art_65a91bb52e84415c88149c4f16c34a95.html",
+      "author": "商务部",
+      "sourceCountry": "China",
+      "pubDate": "2025-10-30T00:00:00+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "国务院关于同意在海南全岛和秦皇岛等15个城市（地区）设立跨境电子商务综合试验区的批复",
+      "description": "商务部外贸政策公告。请查看官方文件原文，核对适用范围与实施时间。",
+      "link": "https://wms.mofcom.gov.cn/zcfb/wmzc/art/2025/art_017565ecec4648f18a3d61731a0ca12d.html",
+      "author": "商务部",
+      "sourceCountry": "China",
+      "pubDate": "2025-04-25T00:00:00+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "商务部办公厅 生态环境部办公厅 海关总署办公厅关于开展保税维修有关工作的通知",
+      "description": "商务部外贸政策公告。请查看官方文件原文，核对适用范围与实施时间。",
+      "link": "https://wms.mofcom.gov.cn/zcfb/wmzc/art/2025/art_67e1ea72473e42f4ad18f09885bc5586.html",
+      "author": "商务部",
+      "sourceCountry": "China",
+      "pubDate": "2025-03-28T00:00:00+08:00",
       "category": "supply"
     }
   ]
