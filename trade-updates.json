@@ -1,7 +1,106 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-05T01:52:42.773183+00:00",
+  "updatedAt": "2026-11-05T02:59:51.324373+00:00",
   "items": [
+    {
+      "title": "《企业风险管理有效性评价指南》国家标准发布",
+      "description": "中新网11月5日电 据国家市场监督管理总局网站消息，近日，市场监管总局(国家标准委)批准发布《企业风险管理有效性评价指南》国家标准，从“看历史、看体系、看敞口、看能力、看感受”五个维度交叉验证，让企业风险管理成效可衡量、可比较。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726455.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T10:54:35+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "10月物流业景气指数处于扩张区间 预期向好",
+      "description": "央视网消息(新闻联播)：中国物流与采购联合会发布，10月份中国物流业景气指数为51.2%，保持扩张。其中，七个分项指数处于扩张区间。需求方面，新订单指数为51.5%，环比回升0.3个百分点，区域分化明显，中、西部回升，东部回落。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726458.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T10:51:07+08:00",
+      "category": "supply",
+      "continent": "asia"
+    },
+    {
+      "title": "市场监管总局依法废止《绵羊绒交易技术规范》团体标准",
+      "description": "中新网11月5日电 据国家市场监督管理总局网站消息，近日，市场监管总局依法向中国畜产品流通协会下达废止团体标准决定书，自即日起废止该协会制定发布的《绵羊绒交易技术规范》(T/CAPMA 9—2025)团体标准，并在标准信息公共服务平台上公示。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726452.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T10:48:09+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "第一批新车次列车本月开行 车票将陆续发售、兑现",
+      "description": "中新网11月5日电 据“中国铁路”微信公众号消息，全国铁路列车车次编排改革顺利推进，第一批车次变更即将实施，11月25日0时起始发开行的普速旅客列车、11月24日18时起始发开行的货物列车将正式启用新车次，按照2026版《列车车次编排规定》，普速旅客列车使用Z、N、V字头字母，普速旅游列车使用Y字头字母，货运班列使用B字头字母，采用无字头字母编排方式的其他货物列车、路用列车车次相应进行了优化调整，共涉及客货列车4700余列。变更后，新车次列车的开行区段、运行时刻基本保持不变，第一批实行新车次的列车车票将于11月11日起陆续发售，其中试点预约购票服务的京沪铁路新车次的车票将于11月6日起陆续兑现。动车组列车车次此次变更暂时保持不变，将于12月下旬实施变更。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726447.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T10:34:58+08:00",
+      "category": "supply",
+      "continent": "asia"
+    },
+    {
+      "title": "广交会采购商创新高 中国制造为全球产供链稳定注入确定性",
+      "description": "11月3日，境外采购商在广交会童车玩具展区洽谈。新华社记者 邓华 摄 新华社广州11月4日电(记者詹奕嘉、丁乐)第140届中国进出口商品交易会(广交会)4日闭幕。截至3日，来自219个国家和地区的35.2万名境外采购商到会，较上届增长12.2%，规模再创新高。已有70年历史的“中国第一展”魅力不减，彰显中国坚定不移扩大高水平对外开放，与世界共享发展红利，为全球经济增长和产供链稳定持续注入确定性。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726443.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T10:24:57+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "全球媒体聚焦｜西班牙智库：深圳APEC会议为全球合作提供新契机",
+      "description": "亚太经合组织(APEC)第三十三次领导人非正式会议即将在深圳举行。11月3日，西班牙中国政策观察网刊发智库加利西亚国际研究所创始人、亚洲问题专家胡利奥·里奥斯的署名评论文章《深圳与全球化未来之争》，详细分析了此次会议在全球经济面临地缘政治紧张和保护主义抬头背景下的重要意义，并指出，中国作为东道主，为各方讨论合作、推动开放与共同发展提供了重要契机。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-05/10726438.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T10:18:37+08:00",
+      "category": "policy",
+      "continent": "europe"
+    },
+    {
+      "title": "圈粉全球！国风国潮服饰海外热销 老外专程来抢货",
+      "description": "今年我国服装外贸势头亮眼，尤其是自带东方美学的国潮、新中式服饰在海外市场热度飙升。广交会现场抢单不断，工厂柔性智造火速出货，中国服装靠原创设计和硬核产能加速出海。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726436.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T10:14:37+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "全国今年首批进口曾祖代白羽肉种鸡落户宁夏",
+      "description": "中新网银川11月5日电 (记者 李佩珊)记者4日从银川海关获悉，今年中国首批14953只进口曾祖代白羽肉种鸡经上海浦东国际机场口岸通关入境，历经29小时、2100公里长途运输，目前抵达位于宁夏中卫市的一处种鸡隔离场。这是宁夏首次进口曾祖代种鸡。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726416.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T10:04:46+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "从两大经贸展会读懂“顺差在中国，利益在各方”",
+      "description": "新华社经济随笔丨从两大经贸展会读懂“顺差在中国，利益在各方”",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726424.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T10:04:42+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "多项指标创新高 进博会硕果可期",
+      "description": "11月5日，第九届中国国际进口博览会在国家会展中心(上海)拉开帷幕。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726417.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T10:00:18+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
     {
       "title": "11月5日人民币对美元中间价报6.7156 上调24个基点",
       "description": "中新网11月5日电 据中国外汇交易中心网站消息，中国人民银行授权中国外汇交易中心公布，2026年11月5日银行间外汇市场人民币汇率中间价为1美元对人民币6.7156元，上调24个基点。",
@@ -150,33 +249,6 @@
       "continent": "europe"
     },
     {
-      "title": "数字经济产业合作大会在浙江乌镇举行",
-      "description": "中新网乌镇11月4日电(奚金燕)11月4日，数字经济产业合作大会在浙江乌镇举行。大会签约数字经济领域重点合作项目116个，签约金额超1163亿元，较去年增加12%，涵盖人工智能、智能机器人、低空经济、工业母机等多个核心领域。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-04/10726294.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-04T22:06:35+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "促技术研发走向产业应用 具身智能开发者大会在京举办",
-      "description": "中新网北京11月4日电(记者 陈杭)OpenLET具身智能开发者大会3日在北京举办。政府主管部门、金融资本与场景应用方现场“搭台”，共同支持开发者探索具身智能从技术研发走向产业应用的落地路径。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-04/10726286.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-04T21:58:28+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "世界显示产业创新发展大会成都开幕",
-      "description": "中新社成都11月4日电 (单鹏)2026世界显示产业创新发展大会4日在成都开幕。大会吸引了200余家全球产业链龙头、专精特新“小巨人”企业参与，同期设置新型显示创新成果体验活动，让“AI+显示”的前沿技术“看得见、摸得着、能互动”。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-04/10726273.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-04T21:42:11+08:00",
-      "category": "policy"
-    },
-    {
       "title": "第140届广交会共有35.2万名境外采购商到会",
       "description": "中新社广州11月4日电 (记者 孙秋霞)以“美好生活”为主题的第140届中国进出口商品交易会(广交会)第三期4日在广州闭幕。本届广交会共有来自219个国家和地区的35.2万名境外采购商到会，比上届增长12.2%。",
       "link": "https://www.chinanews.com.cn/cj/2026/11-04/10726274.shtml",
@@ -187,33 +259,6 @@
       "continent": "asia"
     },
     {
-      "title": "湖北建成5G工厂480个 超半数实现智能化升级",
-      "description": "中新社武汉11月4日电 (记者 武一力)湖北省政府新闻办4日召开新闻发布会，湖北省通信管理局一级巡视员梁长岛在会上介绍，该省累计建设5G工厂480个，覆盖41个工业大类，超半数5G工厂实现智能化升级，推动企业平均产能增加24%，运营成本降低18%。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-04/10726272.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-04T21:36:11+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "三季度青海省农食产品出口同比增长11.4%",
-      "description": "中新网西宁11月4日电 (韩晓珍 孙睿)西宁海关4日统计，今年第三季度(7—9月)，青海省农食产品出口总值2.79亿元，同比增长11.4%。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-04/10726255.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-04T21:35:43+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "重庆璧山发布“机遇请柬” 20个重点项目签约总投资134亿元",
-      "description": "中新网重庆11月4日电 (梁钦卿)4日，“机遇璧山·智链未来”璧山区制造业高质量发展机遇发布暨重点项目签约活动举行。重庆璧山亮出制造业“机遇请柬”，集中发布制造业招商、供应链协作配套、人才需求、技术攻关、成果转化、揭榜挂帅六张机会清单。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-04/10726238.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-04T21:08:15+08:00",
-      "category": "supply"
-    },
-    {
       "title": "（投资中国）丹佛斯在天津扩建全球制冷研发测试中心",
       "description": "中新社天津11月4日电 (周亚强 孙翼飞)全球制冷行业龙头丹佛斯4日在天津宣布，启动全球制冷研发测试中心扩建项目，以满足中国及全球市场对制冷、空调和热泵等领域绿色解决方案日益增长的需求。",
       "link": "https://www.chinanews.com.cn/cj/2026/11-04/10726230.shtml",
@@ -222,15 +267,6 @@
       "pubDate": "2026-11-04T20:56:37+08:00",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "近五年香港在北京投资逾410亿美元",
-      "description": "中新社北京11月4日电 (记者 吕少威 张晓曦 刘超)近五年，香港在北京投资超过410亿美元，保持北京第一大外资来源地；北京对香港累计投资超过563亿美元、占北京对外直接投资总量近一半，是北京对外投资的首要目的地。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-04/10726224.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-04T20:54:53+08:00",
-      "category": "policy"
     },
     {
       "title": "（第九届进博会）跨国企业高管看进博：共享中国高水平对外开放舞台",
@@ -1378,36 +1414,6 @@
       "continent": "africa"
     },
     {
-      "title": "China expands foreign business access at the Hainan Free Trade Port",
-      "description": "China has unveiled 16 measures to make it easier for foreign businesses and professionals to operate in the Hainan Free Trade Port (FTP), the world's largest FTP by area, with new policies covering energy trade, medical services and bonded business operations, according to a government circular made public on Thursday.",
-      "link": "https://news.cgtn.com/news/2026-10-29/China-expands-foreign-business-access-at-the-Hainan-Free-Trade-Port-1RDsbRYcgpO/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-10-29T08:36:47+00:00",
-      "category": "supply",
-      "continent": "asia"
-    },
-    {
-      "title": "China expands foreign business access at Hainan free trade port",
-      "description": "China has unveiled 16 measures to make it easier for foreign businesses and professionals to operate in the Hainan Free Trade Port (FTP), the world's largest FTP by area, with new policies covering energy trade, medical services and bonded business operations, according to a government circular made public on Thursday.",
-      "link": "https://news.cgtn.com/news/2026-10-29/China-expands-foreign-business-access-at-Hainan-free-trade-port-1RDnWorjk6A/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-10-29T06:37:22+00:00",
-      "category": "supply",
-      "continent": "asia"
-    },
-    {
-      "title": "China issues 800 bln yuan via financial instruments",
-      "description": "China has completed the issuance of 800 billion yuan ($119 billion) under its 2026 new policy-based financial instruments as of Wednesday, channeling funds to key projects to expand effective investment, according to three policy banks.",
-      "link": "https://news.cgtn.com/news/2026-10-29/China-issues-800-bln-yuan-via-financial-instruments-1RDjKawrULm/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-10-29T06:09:11+00:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
       "title": "商务部公告2026年第53号 公布2027年货物出口配额总量",
       "description": "商务部外贸政策公告。请查看官方文件原文，核对适用范围与实施时间。",
       "link": "https://wms.mofcom.gov.cn/zcfb/wmgl/art/2026/art_058f730367af4fbfaf7f20ad43e9f75d.html",
@@ -1476,16 +1482,6 @@
       "continent": "asia"
     },
     {
-      "title": "Foreign asset managers shift from \"whether\" to \"how\" on China assets",
-      "description": "Global asset managers who gathered at the 2026 Financial Street Forum said Chinese assets are gaining structural appeal, as China doubles down on the high-level opening of its capital markets, with the focus of global capital shifting from \"whether to allocate\" to \"how to allocate well?\"",
-      "link": "https://news.cgtn.com/news/2026-10-27/Foreign-asset-managers-shift-from-whether-to-how-on-China-assets--1RAjagWyXQI/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-10-27T10:45:14+00:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
       "title": "UK sanctions 15 Sudan commanders over El Fasher atrocities",
       "link": "https://newsaf.cgtn.com/news/2026-10-27/UK-sanctions-15-Sudan-commanders-over-El-Fasher-atrocities-1RAjpUX1cGY/p.html",
       "pubDate": "2026-10-27T10:30:50+00:00",
@@ -1494,26 +1490,6 @@
       "sourceCountry": "CGTN",
       "category": "policy",
       "continent": "africa"
-    },
-    {
-      "title": "How China is bringing elderly care closer to home",
-      "description": "China is bringing elderly care closer to home! From community healthcare and in-home services to smart care robots and 24-hour support, cities are making aging in-place easier and more convenient.",
-      "link": "https://news.cgtn.com/news/2026-10-27/How-China-is-bringing-elderly-care-closer-to-home-1RAfYIoMoww/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-10-27T09:43:42+00:00",
-      "category": "supply",
-      "continent": "asia"
-    },
-    {
-      "title": "Sun Life CEO: Global firms' big edge in China's AI boom",
-      "description": "Kevin Strain, president and CEO of Sun Life, told CGTN's Qiu Yu that China is at the forefront of artificial intelligence technology – an incredible advantage for Chinese companies and a great opportunity for global firms in China to learn from and work with.",
-      "link": "https://news.cgtn.com/news/2026-10-27/Sun-Life-CEO-Global-firms-big-edge-in-China-s-AI-boom-1RyPa0IWA24/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-10-27T04:11:10+00:00",
-      "category": "supply",
-      "continent": "asia"
     },
     {
       "title": "China sees steady growth in domestic tourism in first 9 months",
