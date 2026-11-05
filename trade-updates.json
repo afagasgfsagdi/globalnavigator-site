@@ -1,7 +1,65 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-05T13:57:53.600412+00:00",
+  "updatedAt": "2026-11-05T15:08:53.676425+00:00",
   "items": [
+    {
+      "title": "向北开放势能持续释放 绥芬河迎来新增长极",
+      "description": "中新网绥芬河11月5日电 (田晓慧)依托口岸区位优势与中俄免签政策红利，北疆口岸城市绥芬河前三季度经济运行稳中有进，对外开放动能持续迸发，消费、外贸、交通枢纽各项指标全线向好。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726940.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T23:04:01+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "（第九届进博会）前景可期 专家沪上共话金砖国家经贸合作",
+      "description": "中新社上海11月5日电 (记者 郑莹莹)“金砖成员国之间把握机遇、深化合作仍然有相当大的空间。”联合国贸易和发展会议国际贸易与商品司司长卢斯·玛利亚·德拉莫拉(Luz Maria de la Mora)5日在上海说。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726937.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T23:00:38+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "海南自贸港吸引力持续上升 多国客商赴琼寻商机",
+      "description": "中新社海口11月5日电 (记者 王子谦)“海南自贸港在中国开放格局中扮演特殊角色，随着政策落地，大量机遇正在涌现。”瑞典工业仪器制造企业艾力塔集团(Eletta Group)首席执行官谢尔·克里斯特·恩斯特罗姆(Kjell Christer Engstroem)5日告诉中新社记者，他在认真研究自贸港政策后来到海南，“全面考察并进行投资评估”。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726927.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T22:39:45+08:00",
+      "category": "policy",
+      "continent": "europe"
+    },
+    {
+      "title": "（第九届进博会）中国欧盟商会副主席：许多欧洲公司在中国做全球生意",
+      "description": "中新社上海11月5日电 (陶思阅)第九届中国国际进口博览会正在上海举行。中国欧盟商会副主席代开乐(Carlo D’Andrea)5日表示，今年是中国加入世界贸易组织25周年，25年间许多欧洲公司来到中国，继而依托中国布局全球市场，从“在中国做中国的生意”到“在中国做全球生意”。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726923.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T22:36:31+08:00",
+      "category": "policy",
+      "continent": "europe"
+    },
+    {
+      "title": "（第九届进博会）外企高层：进博会让全球创新成果与中国需求更快相遇",
+      "description": "中新网上海11月5日电 (记者 陈静)第九届中国国际进口博览会(简称“进博会”)5日在上海开幕。医疗器械及医药保健展区里，跨国企业把最新获批或全球首展的产品摆在了最显眼的位置，展台前人头攒动。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726916.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T22:25:16+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "（第九届进博会）跨国企业进博会上展示“本土化”成果",
+      "description": "中新网上海11月5日电 (记者 姜煜)医科达5日在其第九届中国国际进口博览会(进博会)展台举行仪式，庆祝其北京工厂第1000台高能医用直线加速器交付。这一里程碑彰显医科达持续深耕中国市场、推进高端放疗装备本土化发展的长期承诺。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726915.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-05T22:23:58+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
     {
       "title": "中国与阿曼签署证券期货监管合作谅解备忘录",
       "description": "中新社北京11月5日电 (记者 陈康亮)据中国证监会5日消息，近日，在两国元首共同见证下，中国证监会主席吴清在北京与阿曼外交大臣巴德尔签署了《中国证监会与阿曼金融服务管理局证券期货监管合作谅解备忘录》。",
@@ -365,6 +423,16 @@
       "pubDate": "2026-11-05T14:57:14+08:00",
       "category": "policy",
       "continent": "asia"
+    },
+    {
+      "title": "Israel's Arab parties working out how to support anti-Netanyahu bloc",
+      "link": "https://newseu.cgtn.com/news/2026-11-05/Israel-s-Arab-parties-working-out-how-to-support-anti-Netanyahu-bloc-1RPk302EnSM/p.html",
+      "pubDate": "2026-11-05T14:15:18+00:00",
+      "description": "CGTN Europe · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "supply",
+      "continent": "europe"
     },
     {
       "title": "（第九届进博会）以金融联通全球 外资银行共赴进博之约",
@@ -1271,16 +1339,6 @@
       "continent": "asia"
     },
     {
-      "title": "纺织业“牵手”广交会探寻科技赋能新路径",
-      "description": "中新网广州11月3日电 (记者 王坚)第140届广交会正在举行。其间，由中国纺织品进出口商会等单位主办的广交会“走进行业”交流会——科技赋能织就产业新图景活动，吸引一众专家学者、企业家代表齐聚一堂，共探以科技赋能锻造供应链韧性、重塑纺织行业国际竞争力的新路径。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-03/10725669.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-03T23:40:45+08:00",
-      "category": "supply",
-      "continent": "asia"
-    },
-    {
       "title": "海南侨乡万宁兴隆咖啡 “买全球、卖全球”",
       "description": "中新网海南万宁11月3日电(记者 符宇群)从南美哥伦比亚采摘装箱，漂洋过海抵达海南万宁兴隆，在现代化工厂完成烘焙深加工，再以“海南制造”身份远销澳大利亚——这是正大(海南)兴隆咖啡产业开发有限公司总经理叶剑眼中，咖啡豆依托自贸港实现加工增值的完整旅程。",
       "link": "https://www.chinanews.com.cn/cj/2026/11-03/10725665.shtml",
@@ -1289,16 +1347,6 @@
       "pubDate": "2026-11-03T23:35:19+08:00",
       "category": "policy",
       "continent": "south-america"
-    },
-    {
-      "title": "浙江海事金融探索迎新突破 落地首笔自贸区船舶授信业务",
-      "description": "中国(浙江)自由贸易试验区内的宁波舟山港梅山集装箱码头。连林怡供图 中新网杭州11月3日电(王逸飞 付一方 连林怡)记者3日从浙江海事部门获悉，近日，由宁波海事局打造的海事金融资源配置中心成功落地首笔自贸区登记船舶授信业务，为中国(浙江)自由贸易试验区注册企业旗下新建远洋渔业冷藏船办理7000余万元的抵押融资，标志着船舶融资服务场景实现新延伸，进一步丰富船舶金融服务供给，更好释放自贸区船舶登记政策红利。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-03/10725661.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-03T23:31:19+08:00",
-      "category": "supply",
-      "continent": "asia"
     },
     {
       "title": "广交会采购商走进“中国皮具之都” 意向成交首破5000万美元",
