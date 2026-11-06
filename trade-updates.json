@@ -1,6 +1,6 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-06T17:02:15.066218+00:00",
+  "updatedAt": "2026-11-06T19:03:33.551799+00:00",
   "items": [
     {
       "title": "泰国拟推五项外籍劳工管理新措施",
@@ -351,6 +351,15 @@
       "pubDate": "2026-11-06T19:00:26+08:00",
       "category": "policy",
       "continent": "africa"
+    },
+    {
+      "title": "Tesla to end Cybertruck production",
+      "link": "https://newsus.cgtn.com/news/2026-11-07/Tesla-to-end-Cybertruck-production-1RRuqLjD5PW/p.html",
+      "pubDate": "2026-11-06T18:04:33+00:00",
+      "description": "CGTN Americas · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "policy"
     },
     {
       "title": "（第九届进博会）第九届进博会主宾国加拿大国家馆开馆",
@@ -2528,15 +2537,6 @@
       "sourceCountry": "CGTN",
       "category": "supply",
       "continent": "europe"
-    },
-    {
-      "title": "SpaceX cargo spacecraft docks with ISS",
-      "link": "https://news.cgtn.com/news/2026-10-16/SpaceX-cargo-spacecraft-docks-with-ISS-1RhojLsL876/p.html",
-      "pubDate": "2026-10-16T00:56:43+00:00",
-      "description": "CGTN Americas · International market and trade coverage.",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "category": "supply"
     },
     {
       "title": "Vermont's tourism sector declines amid US-Canada trade war",
