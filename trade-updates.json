@@ -1,7 +1,26 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-06T00:22:36.421301+00:00",
+  "updatedAt": "2026-11-06T01:53:02.998453+00:00",
   "items": [
+    {
+      "title": "11月6日人民币对美元中间价报6.7168 下调12个基点",
+      "description": "中新网11月6日电 据中国外汇交易中心网站消息，中国人民银行授权中国外汇交易中心公布，2026年11月6日银行间外汇市场人民币汇率中间价为1美元对人民币6.7168元，下调12个基点。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-06/10727038.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-06T09:43:40+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "多地景区密集释放优惠政策 秋假激发秋冬文旅消费新活力",
+      "description": "央视网消息：11月起，全国百余城市中小学陆续开启秋假，带火了秋冬文旅市场，不少家庭已提前规划好出游行程，火车票、机票的预订也同步升温。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-06/10727041.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-06T09:37:58+08:00",
+      "category": "policy"
+    },
     {
       "title": "美国30年期贷款利率降至7.18% 连续三周下降",
       "description": "中新社华盛顿11月5日电(记者 沙晗汀)美国住房金融机构房地美(Freddie Mac)当地时间5日公布数据显示，美国30年期固定抵押贷款平均利率降至7.18%，该数据已连续三周下降。",
@@ -11,6 +30,16 @@
       "pubDate": "2026-11-06T08:04:52+08:00",
       "category": "policy",
       "continent": "north-america"
+    },
+    {
+      "title": "Putin puts Japanese company’s assets under temporary administration",
+      "link": "https://news.cgtn.com/news/2026-11-06/Putin-puts-Japanese-company-s-assets-under-temporary-administration-1RQfgGSnAZ2/p.html",
+      "pubDate": "2026-11-06T00:42:36+00:00",
+      "description": "CGTN Asia Pacific · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "policy",
+      "continent": "asia"
     },
     {
       "title": "（第九届进博会）从“展示窗口”到“创新加速器”：进博会医疗创新孵化专区强力链接全球双循环",
@@ -196,15 +225,6 @@
       "continent": "asia"
     },
     {
-      "title": "新政实施满一年 海南离岛免税购物金额334.5亿元",
-      "description": "中新社海口11月5日电 (记者 王子谦)2025年11月1日海南离岛免税政策优化调整已满一周年。海口海关5日披露，2025年11月至2026年10月，海南离岛免税购物金额、购物人数、购物数量分别为334.5亿元(人民币，下同)、487.9万人次、2764.4万件，同比分别增长13.8%、8.6%、2.4%。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726826.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-05T20:04:07+08:00",
-      "category": "policy"
-    },
-    {
       "title": "世批联主席：中国已成食品流通创新重要中心",
       "description": "中新社天津11月5日电 (记者 周亚强)世界批发市场联合会主席史蒂芬·拉亚尼5日在天津表示，中国已成为食品流通领域创新的重要中心，世批联希望深入了解中国发展成果，加强各市场之间的合作。",
       "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726824.shtml",
@@ -243,24 +263,6 @@
       "pubDate": "2026-11-05T18:31:18+08:00",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "全国首个“电力鸿蒙”兆瓦级液冷超充重卡补能示范站落地昆明",
-      "description": "中新网昆明11月5日电(记者 李嘉娴)记者5日从南方电网云南昆明供电局获悉，全国首个“电力鸿蒙”兆瓦级液冷超充重卡补能示范站近日在云南省昆明市寻甸县正式投产运行。标志着重卡充电站不再只是单一用能终端，而成为兼具绿电消纳、储能调节、车网互动和便民服务的综合能源节点。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726772.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-05T18:27:33+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "广西农博会的新生意经：不靠吆喝靠“点单” 三天做成常年买卖",
-      "description": "中新网南宁11月5日电 (记者 杨陈)一支茉莉冰激凌，1小时卖出近2000个。近期收官的2026广西国际农业博览会(以下称农博会)，爆款商品带火了展馆现场；11.57亿元的订单及意向签约，将三天展会做成了常年买卖，其背后蕴藏着怎样的新生意经？",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726758.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-05T18:13:07+08:00",
-      "category": "policy"
     },
     {
       "title": "第140届广交会达成意向出口成交额267.5亿美元",
@@ -1375,16 +1377,6 @@
       "pubDate": "2026-11-04T01:17:31+00:00",
       "category": "supply",
       "continent": "europe"
-    },
-    {
-      "title": "“京港国际会客厅”在北京揭牌",
-      "description": "中新网北京11月3日电 (记者 杜燕)第二十九届京港洽谈会朝阳专题活动3日在北京举办。活动现场，由北京市朝阳区投资促进服务中心联合将台乡、中国香港(地区)商会、中旅酒店等多方共同打造的“京港国际会客厅”揭牌。该空间将承接政策宣讲、企业路演等各类活动，助力两地企业更好发展。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-03/10725688.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-03T23:54:32+08:00",
-      "category": "policy",
-      "continent": "asia"
     },
     {
       "title": "海南侨乡万宁兴隆咖啡 “买全球、卖全球”",
