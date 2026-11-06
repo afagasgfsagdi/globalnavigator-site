@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="site-auth-locked">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#000000">
   <title>环球导航 — 探索新世界</title>
+  <script>try{if(sessionStorage.getItem('globalNavigatorSiteAuth')==='1')document.documentElement.classList.remove('site-auth-locked')}catch{}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -690,6 +691,20 @@
     }
     @media(max-height:620px) and (min-width:621px) { .agent-chat-scroll { padding-top:8px;padding-bottom:12px }.agent-welcome-kicker { margin-bottom:9px }.agent-welcome-copy { margin-top:9px }.agent-composer { min-height:104px;margin-top:18px }.agent-prompt-grid { margin-top:12px } }
   </style>
+  <style>
+    html.site-auth-locked,html.site-auth-locked body { overflow:hidden!important }
+    html.site-auth-locked body > :not(#login-layer) { visibility:hidden!important;pointer-events:none!important }
+    html.site-auth-locked #login-layer { display:grid!important;position:fixed;inset:0;z-index:2147483000;visibility:visible!important;pointer-events:auto!important;background:radial-gradient(ellipse at 50% 42%,rgba(31,99,130,.26),transparent 48%),rgba(2,7,14,.76) }
+    .login-card { width:min(100%,420px);padding:clamp(26px,6vw,42px);border-color:rgba(160,224,245,.4);border-radius:22px;background:linear-gradient(145deg,rgba(19,40,54,.86),rgba(8,18,29,.76));box-shadow:0 30px 100px rgba(0,0,0,.45),inset 0 1px 0 rgba(222,248,255,.15) }
+    .login-card-head { align-items:center;margin-bottom:10px }
+    .login-card h2 { font-size:clamp(25px,5vw,30px);font-weight:600;letter-spacing:-.03em }
+    .login-intro { margin-bottom:26px;line-height:1.7 }
+    .login-form label { gap:9px }
+    .login-form input { height:50px;border-radius:11px }
+    .login-submit { height:50px;margin-top:2px;border:0;border-radius:999px;background:#eafaff;font-size:14px;font-weight:650 }
+    .login-submit:hover { transform:translateY(-1px);box-shadow:0 8px 28px rgba(93,213,239,.2) }
+    @media(max-width:520px) { .login-layer { padding:20px }.login-card { border-radius:19px } }
+  </style>
   <!-- Dify embed URL is filled from Access Point after the app is published. Never put API keys in this page. -->
   <meta name="dify-api-proxy" content="https://1519601269-hr78yzjbtr.ap-guangzhou.tencentscf.com/chat">
 </head>
@@ -729,10 +744,13 @@
   </header>
   <section class="login-layer" id="login-layer" aria-hidden="true" hidden>
     <div class="login-card" role="dialog" aria-modal="true" aria-labelledby="login-title">
-      <div class="login-card-head"><h2 id="login-title">进入智能体</h2><button class="login-back" id="login-back" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg><span data-i18n="back">返回</span></button></div>
-      <p class="login-intro" data-i18n="login_intro">比赛体验无需登录，继续即可打开智能体。</p>
+      <div class="login-card-head"><h2 id="login-title" data-lang-zh="欢迎登录" data-lang-en="Welcome">欢迎登录</h2></div>
+      <p class="login-intro" data-i18n="login_intro">登录后即可访问 GlobalNavigator 网站。</p>
       <form class="login-form" id="login-form">
-        <button class="login-submit" id="login-submit" type="submit" data-i18n="login_submit">进入演示</button>
+        <label><span data-i18n="account">账号</span><input id="login-account" name="username" type="text" autocomplete="username" required></label>
+        <label><span data-i18n="password">密码</span><div class="password-field"><input id="login-password" name="password" type="password" autocomplete="current-password" required><button class="password-toggle" id="password-toggle" type="button" aria-pressed="false" aria-label="显示密码"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div></label>
+        <p class="login-error" id="login-error" role="alert" aria-live="polite"></p>
+        <button class="login-submit" id="login-submit" type="submit" data-i18n="login_submit">登录</button>
       </form>
     </div>
   </section>
@@ -772,10 +790,10 @@
     (() => {
       const messages = {
         zh: {
-          page_title:'环球导航 — 探索新世界', earth_canvas:'可旋转的玻璃地球，拖动即可旋转。', hero_title:'探索新世界', earth_controls:'旋转玻璃地球', rotate_left:'向左旋转', rotate_right:'向右旋转', hero_tagline:'开启全球贸易<br>开拓<br><strong>更多市场</strong>', loader:'正在准备地球', home_logo:'GlobalNavigator 首页', main_navigation:'主导航', home_nav:'首页', explore_nav:'世界资讯', start_exploring:'开始探索', back:'返回', login_intro:'比赛体验无需登录，继续即可打开智能体。', account:'账号', password:'密码', show_password:'显示密码', hide_password:'隐藏密码', login_submit:'进入演示', login_error:'账号或密码错误，请重试。', signed_in:'竞赛演示访客', return_home:'返回首页', agent_workflow:'智能体工作流架构', workspace:'工作空间', agent_name:'出海市场助手', agent_welcome_kicker:'GLOBALNAVIGATOR · AI', agent_welcome_title:'探索全球市场', agent_welcome_copy:'告诉我你的产品和目标市场，我会帮你梳理机会、准入规则与下一步行动。', agent_prompt_market:'帮我分析产品适合进入哪些海外市场', agent_prompt_compliance:'梳理目标市场的准入与合规要求', agent_prompt_localize:'为我的产品制定本地化营销方向', agent_prompt_compare:'比较不同市场的机会与风险', agent_you:'你', agent_assistant:'环球导航智能体', agent_avatar_dance:'点击机器人跳舞', agent_avatar_dancing:'正在跳舞', agent_empty_reply:'暂时没有收到回复，请重试。', agent_request_error:'暂时无法连接智能服务。', agent_proxy_needed:'自定义对话界面已就绪，安全服务端接入后即可开始 Dify 对话。', agent_proxy_ready:'智能服务由 Dify 提供', agent_proxy_status:'等待服务端接入', chat_send:'发送', agent_type:'AI 智能体 · Dify', agent_workflow_label:'智能体工作流', workflow_input:'产品资料输入', workflow_input_desc:'产品参数、目标市场与经营条件', workflow_search:'隐私过滤与实时检索', workflow_search_desc:'提取最小检索词，只搜索公开市场信息', workflow_market:'市场调研', workflow_market_desc:'逐市场分析，标注来源核验状态', workflow_content:'内容生产', workflow_content_desc:'生成符合语言与场景的营销文案', workflow_compliance:'合规检查', workflow_compliance_desc:'检查广告表达、文化与准入风险', workflow_decision:'业务决策与报告', workflow_decision_desc:'汇总市场进入建议并生成 Word', agent_chat:'智能体对话区', agent_tagline:'市场研究 · 合规评估 · 行动建议', dify_waiting:'正在连接智能服务', agent_footer:'智能服务由 Dify 提供', news_eyebrow:'世界探索 · 国际贸易', news_title:'国际贸易动态', news_description:'汇集中国新闻网与 CGTN 的全球市场资讯、商务部政策与海关总署统计', news_connecting:'正在连接新闻源…', news_hint:'悬停或聚焦主题模块，展开相关新闻', refresh_news:'立即刷新', refresh_cooldown:'{seconds} 秒后可刷新', refresh_loading:'正在刷新…', news_loading:'正在加载国际贸易新闻…', news_footer:'来源：中国新闻网与 CGTN 国际及区域新闻 · 商务部公告 · 海关统计 · 约每 30 分钟更新', news_updating:'正在更新…', news_unavailable:'新闻源暂时不可用，请点击“立即刷新”重试。', news_fetching:'正在获取相关新闻…', news_no_matches:'当前新闻源没有匹配到此主题。', news_enter:'进入此区域后将自动获取实时新闻。', news_updated:'新闻与官方数据 · 更新于', news_failed_cached:'刷新失败，显示上次获取的新闻', news_failed:'新闻源连接失败', story_fallback:'未命名新闻', open_original:'打开原文查看新闻详情。', official_trade_source:'中国新闻网 / CGTN / 商务部 / 海关', official_trade_no_results:'官方贸易信息暂不可用', policy:'贸易政策', policy_subtitle:'规则 · 协定 · 市场准入', tariff:'关税动态', tariff_subtitle:'关税 · 进出口 · 贸易救济', supply:'全球供应链', supply_subtitle:'供应链 · 物流 · 航运', news_count:'条相关资讯', news_empty_count:'暂无相关资讯', news_topic_word:'全球贸易', dify_setup_title:'智能体接入准备中', dify_wait_message:'Dify 工作流尚未发布。发布后在“访问入口 → Web 应用 → 嵌入网站”复制官方 iframe 地址，并填写页面 head 中 meta[name="dify-embed-url"] 的 content。请勿把 API 密钥放在网页代码中。', dify_wait_badge:'等待 Dify 发布', dify_url_http:'Dify 嵌入地址必须使用 HTTP 或 HTTPS。', dify_url_https:'HTTPS 网站必须连接 HTTPS 的 Dify 地址。', dify_configured_note:'智能服务已连接', dify_configured_badge:'智能服务在线', dify_error:'智能服务暂时无法加载，请检查网络后重试。', dify_error_badge:'服务暂不可用', chat_title:'环球导航智能体', chat_subtitle:'海外市场调研与决策助手', chat_started:'开始对话', chat_placeholder:'问点什么，一起探索…', chat_close:'关闭', chat_welcome:'你好，我是环球导航智能体。请提供产品名称与参数、目标国家/语言，以及已知售价成本、客户、渠道和试点计划；缺少项可写待确认。我将依次完成市场调研、内容本地化、合规筛查和出海决策。'
+          page_title:'环球导航 — 探索新世界', earth_canvas:'可旋转的玻璃地球，拖动即可旋转。', hero_title:'探索新世界', earth_controls:'旋转玻璃地球', rotate_left:'向左旋转', rotate_right:'向右旋转', hero_tagline:'开启全球贸易<br>开拓<br><strong>更多市场</strong>', loader:'正在准备地球', home_logo:'GlobalNavigator 首页', main_navigation:'主导航', home_nav:'首页', explore_nav:'世界资讯', start_exploring:'开始探索', back:'返回', login_intro:'登录后即可访问 GlobalNavigator 网站。', account:'账号', password:'密码', show_password:'显示密码', hide_password:'隐藏密码', login_submit:'登录', login_error:'账号或密码错误，请重试。', signed_in:'竞赛演示访客', return_home:'返回首页', agent_workflow:'智能体工作流架构', workspace:'工作空间', agent_name:'出海市场助手', agent_welcome_kicker:'GLOBALNAVIGATOR · AI', agent_welcome_title:'探索全球市场', agent_welcome_copy:'告诉我你的产品和目标市场，我会帮你梳理机会、准入规则与下一步行动。', agent_prompt_market:'帮我分析产品适合进入哪些海外市场', agent_prompt_compliance:'梳理目标市场的准入与合规要求', agent_prompt_localize:'为我的产品制定本地化营销方向', agent_prompt_compare:'比较不同市场的机会与风险', agent_you:'你', agent_assistant:'环球导航智能体', agent_avatar_dance:'点击机器人跳舞', agent_avatar_dancing:'正在跳舞', agent_empty_reply:'暂时没有收到回复，请重试。', agent_request_error:'暂时无法连接智能服务。', agent_proxy_needed:'自定义对话界面已就绪，安全服务端接入后即可开始 Dify 对话。', agent_proxy_ready:'智能服务由 Dify 提供', agent_proxy_status:'等待服务端接入', chat_send:'发送', agent_type:'AI 智能体 · Dify', agent_workflow_label:'智能体工作流', workflow_input:'产品资料输入', workflow_input_desc:'产品参数、目标市场与经营条件', workflow_search:'隐私过滤与实时检索', workflow_search_desc:'提取最小检索词，只搜索公开市场信息', workflow_market:'市场调研', workflow_market_desc:'逐市场分析，标注来源核验状态', workflow_content:'内容生产', workflow_content_desc:'生成符合语言与场景的营销文案', workflow_compliance:'合规检查', workflow_compliance_desc:'检查广告表达、文化与准入风险', workflow_decision:'业务决策与报告', workflow_decision_desc:'汇总市场进入建议并生成 Word', agent_chat:'智能体对话区', agent_tagline:'市场研究 · 合规评估 · 行动建议', dify_waiting:'正在连接智能服务', agent_footer:'智能服务由 Dify 提供', news_eyebrow:'世界探索 · 国际贸易', news_title:'国际贸易动态', news_description:'汇集中国新闻网与 CGTN 的全球市场资讯、商务部政策与海关总署统计', news_connecting:'正在连接新闻源…', news_hint:'悬停或聚焦主题模块，展开相关新闻', refresh_news:'立即刷新', refresh_cooldown:'{seconds} 秒后可刷新', refresh_loading:'正在刷新…', news_loading:'正在加载国际贸易新闻…', news_footer:'来源：中国新闻网与 CGTN 国际及区域新闻 · 商务部公告 · 海关统计 · 约每 30 分钟更新', news_updating:'正在更新…', news_unavailable:'新闻源暂时不可用，请点击“立即刷新”重试。', news_fetching:'正在获取相关新闻…', news_no_matches:'当前新闻源没有匹配到此主题。', news_enter:'进入此区域后将自动获取实时新闻。', news_updated:'新闻与官方数据 · 更新于', news_failed_cached:'刷新失败，显示上次获取的新闻', news_failed:'新闻源连接失败', story_fallback:'未命名新闻', open_original:'打开原文查看新闻详情。', official_trade_source:'中国新闻网 / CGTN / 商务部 / 海关', official_trade_no_results:'官方贸易信息暂不可用', policy:'贸易政策', policy_subtitle:'规则 · 协定 · 市场准入', tariff:'关税动态', tariff_subtitle:'关税 · 进出口 · 贸易救济', supply:'全球供应链', supply_subtitle:'供应链 · 物流 · 航运', news_count:'条相关资讯', news_empty_count:'暂无相关资讯', news_topic_word:'全球贸易', dify_setup_title:'智能体接入准备中', dify_wait_message:'Dify 工作流尚未发布。发布后在“访问入口 → Web 应用 → 嵌入网站”复制官方 iframe 地址，并填写页面 head 中 meta[name="dify-embed-url"] 的 content。请勿把 API 密钥放在网页代码中。', dify_wait_badge:'等待 Dify 发布', dify_url_http:'Dify 嵌入地址必须使用 HTTP 或 HTTPS。', dify_url_https:'HTTPS 网站必须连接 HTTPS 的 Dify 地址。', dify_configured_note:'智能服务已连接', dify_configured_badge:'智能服务在线', dify_error:'智能服务暂时无法加载，请检查网络后重试。', dify_error_badge:'服务暂不可用', chat_title:'环球导航智能体', chat_subtitle:'海外市场调研与决策助手', chat_started:'开始对话', chat_placeholder:'问点什么，一起探索…', chat_close:'关闭', chat_welcome:'你好，我是环球导航智能体。请提供产品名称与参数、目标国家/语言，以及已知售价成本、客户、渠道和试点计划；缺少项可写待确认。我将依次完成市场调研、内容本地化、合规筛查和出海决策。'
         },
         en: {
-          page_title:'GlobalNavigator — Explore New Worlds', earth_canvas:'Rotating glass globe. Drag to rotate.', hero_title:'Explore New Worlds', earth_controls:'Rotate the glass globe', rotate_left:'Rotate left', rotate_right:'Rotate right', hero_tagline:'Enable Global Trade<br>Expand<br><strong>Into More Markets</strong>', loader:'Preparing the Earth', home_logo:'GlobalNavigator home', main_navigation:'Main navigation', home_nav:'Home', explore_nav:'World Advisory', start_exploring:'Start Exploring', back:'Back', login_intro:'No sign-in is required for this demo. Continue to open the agent.', account:'Username', password:'Password', show_password:'Show password', hide_password:'Hide password', login_submit:'Enter demo', login_error:'Incorrect username or password. Please try again.', signed_in:'Contest demo visitor', return_home:'Return Home', agent_workflow:'AI agent workflow', workspace:'Workspace', agent_name:'Export Market Assistant', agent_welcome_kicker:'GLOBALNAVIGATOR · AI', agent_welcome_title:'Explore global markets', agent_welcome_copy:'Tell me about your product and target market. I’ll help map opportunities, market access, and practical next steps.', agent_prompt_market:'Find promising overseas markets for my product', agent_prompt_compliance:'Review market access and compliance requirements', agent_prompt_localize:'Suggest a localized marketing direction', agent_prompt_compare:'Compare opportunities and risks across markets', agent_you:'You', agent_assistant:'GlobalNavigator assistant', agent_avatar_dance:'Click the robot to dance', agent_avatar_dancing:'Dancing', agent_empty_reply:'No response received. Please try again.', agent_request_error:'Could not connect to the AI service.', agent_proxy_needed:'The custom chat is ready. Connect a secure server endpoint to start a Dify conversation.', agent_proxy_ready:'AI service provided by Dify', agent_proxy_status:'Waiting for server connection', chat_send:'Send', agent_type:'AI Agent · Dify', agent_workflow_label:'Agent Workflow', workflow_input:'Product Brief', workflow_input_desc:'Product details, markets, and business context', workflow_search:'Private Query & Live Search', workflow_search_desc:'Minimize the query; search public market sources', workflow_market:'Market Research', workflow_market_desc:'Analyze each market and mark source status', workflow_content:'Content Production', workflow_content_desc:'Localize marketing copy by language and use case', workflow_compliance:'Compliance Review', workflow_compliance_desc:'Check claims, culture, and market-entry risks', workflow_decision:'Decision & Report', workflow_decision_desc:'Summarize entry recommendations and generate Word', agent_chat:'AI agent chat', agent_tagline:'Market research · Compliance review · Action plan', dify_waiting:'Connecting to AI service', agent_footer:'AI service provided by Dify', news_eyebrow:'WORLD EXPLORATION · TRADE', news_title:'Global Trade News', news_description:'China News Service and CGTN global market coverage, MOFCOM policy, Customs statistics', news_connecting:'Connecting to news source…', news_hint:'Hover or focus a topic to expand related stories', refresh_news:'Refresh', refresh_cooldown:'Refresh in {seconds}s', refresh_loading:'Refreshing…', news_loading:'Loading global trade news…', news_footer:'Sources: China News Service, CGTN regional and business coverage, MOFCOM and Customs · Updated about every 30 minutes', news_updating:'Updating…', news_unavailable:'News source is temporarily unavailable. Select “Refresh” to try again.', news_fetching:'Loading related stories…', news_no_matches:'No stories match this topic in the current feed.', news_enter:'Live news loads when you open this section.', news_updated:'News and official data · Updated', news_failed_cached:'Refresh failed; showing previously loaded stories', news_failed:'Could not connect to the news source', story_fallback:'Untitled story', open_original:'Open the original article for details.', official_trade_source:'China News Service / CGTN / MOFCOM / Customs', official_trade_no_results:'No official trade updates are available', policy:'Trade Policy', policy_subtitle:'Rules · Agreements · Market Access', tariff:'Tariffs', tariff_subtitle:'Tariffs · Imports & Exports · Trade Remedies', supply:'Global Supply Chains', supply_subtitle:'Supply Chains · Logistics · Shipping', news_count:'related stories', news_empty_count:'No related stories', news_topic_word:'GLOBAL TRADE', dify_setup_title:'Connect your AI agent', dify_wait_message:'The Dify workflow is not published yet. After publishing, open Access Point → Web App → Embed into website, copy the official iframe URL, and add it to meta[name="dify-embed-url"] in the page head. Never put an API key in browser code.', dify_wait_badge:'Waiting for Dify publish', dify_url_http:'The Dify embed URL must use HTTP or HTTPS.', dify_url_https:'An HTTPS website must connect to an HTTPS Dify URL.', dify_configured_note:'AI service connected', dify_configured_badge:'AI service online', dify_error:'The AI service is unavailable. Check your connection and try again.', chat_title:'GlobalNavigator Agent', chat_subtitle:'Global market research and strategy assistant', chat_started:'Start chatting', chat_placeholder:'Ask anything about taking your product global…', chat_close:'Close', chat_welcome:'Hello, I’m the GlobalNavigator agent. Share product specifications, target countries and languages, plus known prices, costs, customer segments, channels, and pilot plan. Unknown items can be marked TBD. I will work through research, localization, compliance screening, and market-entry decisions.'
+          page_title:'GlobalNavigator — Explore New Worlds', earth_canvas:'Rotating glass globe. Drag to rotate.', hero_title:'Explore New Worlds', earth_controls:'Rotate the glass globe', rotate_left:'Rotate left', rotate_right:'Rotate right', hero_tagline:'Enable Global Trade<br>Expand<br><strong>Into More Markets</strong>', loader:'Preparing the Earth', home_logo:'GlobalNavigator home', main_navigation:'Main navigation', home_nav:'Home', explore_nav:'World Advisory', start_exploring:'Start Exploring', back:'Back', login_intro:'Sign in to access the GlobalNavigator website.', account:'Username', password:'Password', show_password:'Show password', hide_password:'Hide password', login_submit:'Sign in', login_error:'Incorrect username or password. Please try again.', signed_in:'Contest demo visitor', return_home:'Return Home', agent_workflow:'AI agent workflow', workspace:'Workspace', agent_name:'Export Market Assistant', agent_welcome_kicker:'GLOBALNAVIGATOR · AI', agent_welcome_title:'Explore global markets', agent_welcome_copy:'Tell me about your product and target market. I’ll help map opportunities, market access, and practical next steps.', agent_prompt_market:'Find promising overseas markets for my product', agent_prompt_compliance:'Review market access and compliance requirements', agent_prompt_localize:'Suggest a localized marketing direction', agent_prompt_compare:'Compare opportunities and risks across markets', agent_you:'You', agent_assistant:'GlobalNavigator assistant', agent_avatar_dance:'Click the robot to dance', agent_avatar_dancing:'Dancing', agent_empty_reply:'No response received. Please try again.', agent_request_error:'Could not connect to the AI service.', agent_proxy_needed:'The custom chat is ready. Connect a secure server endpoint to start a Dify conversation.', agent_proxy_ready:'AI service provided by Dify', agent_proxy_status:'Waiting for server connection', chat_send:'Send', agent_type:'AI Agent · Dify', agent_workflow_label:'Agent Workflow', workflow_input:'Product Brief', workflow_input_desc:'Product details, markets, and business context', workflow_search:'Private Query & Live Search', workflow_search_desc:'Minimize the query; search public market sources', workflow_market:'Market Research', workflow_market_desc:'Analyze each market and mark source status', workflow_content:'Content Production', workflow_content_desc:'Localize marketing copy by language and use case', workflow_compliance:'Compliance Review', workflow_compliance_desc:'Check claims, culture, and market-entry risks', workflow_decision:'Decision & Report', workflow_decision_desc:'Summarize entry recommendations and generate Word', agent_chat:'AI agent chat', agent_tagline:'Market research · Compliance review · Action plan', dify_waiting:'Connecting to AI service', agent_footer:'AI service provided by Dify', news_eyebrow:'WORLD EXPLORATION · TRADE', news_title:'Global Trade News', news_description:'China News Service and CGTN global market coverage, MOFCOM policy, Customs statistics', news_connecting:'Connecting to news source…', news_hint:'Hover or focus a topic to expand related stories', refresh_news:'Refresh', refresh_cooldown:'Refresh in {seconds}s', refresh_loading:'Refreshing…', news_loading:'Loading global trade news…', news_footer:'Sources: China News Service, CGTN regional and business coverage, MOFCOM and Customs · Updated about every 30 minutes', news_updating:'Updating…', news_unavailable:'News source is temporarily unavailable. Select “Refresh” to try again.', news_fetching:'Loading related stories…', news_no_matches:'No stories match this topic in the current feed.', news_enter:'Live news loads when you open this section.', news_updated:'News and official data · Updated', news_failed_cached:'Refresh failed; showing previously loaded stories', news_failed:'Could not connect to the news source', story_fallback:'Untitled story', open_original:'Open the original article for details.', official_trade_source:'China News Service / CGTN / MOFCOM / Customs', official_trade_no_results:'No official trade updates are available', policy:'Trade Policy', policy_subtitle:'Rules · Agreements · Market Access', tariff:'Tariffs', tariff_subtitle:'Tariffs · Imports & Exports · Trade Remedies', supply:'Global Supply Chains', supply_subtitle:'Supply Chains · Logistics · Shipping', news_count:'related stories', news_empty_count:'No related stories', news_topic_word:'GLOBAL TRADE', dify_setup_title:'Connect your AI agent', dify_wait_message:'The Dify workflow is not published yet. After publishing, open Access Point → Web App → Embed into website, copy the official iframe URL, and add it to meta[name="dify-embed-url"] in the page head. Never put an API key in browser code.', dify_wait_badge:'Waiting for Dify publish', dify_url_http:'The Dify embed URL must use HTTP or HTTPS.', dify_url_https:'An HTTPS website must connect to an HTTPS Dify URL.', dify_configured_note:'AI service connected', dify_configured_badge:'AI service online', dify_error:'The AI service is unavailable. Check your connection and try again.', chat_title:'GlobalNavigator Agent', chat_subtitle:'Global market research and strategy assistant', chat_started:'Start chatting', chat_placeholder:'Ask anything about taking your product global…', chat_close:'Close', chat_welcome:'Hello, I’m the GlobalNavigator agent. Share product specifications, target countries and languages, plus known prices, costs, customer segments, channels, and pilot plan. Unknown items can be marked TBD. I will work through research, localization, compliance screening, and market-entry decisions.'
         }
       };
       Object.assign(messages.zh,{topic_open:'查看主题新闻',topic_back:'返回国际贸易动态',topic_kicker:'主题新闻档案',topic_1m:'近一个月',topic_2m:'近两个月',topic_3m:'近三个月',topic_refresh:'重新检索',topic_results_heading:'按时间排列的相关新闻',topic_loading:'正在整理近三个月的相关贸易资讯…',topic_partial:'部分时间段暂时无法获取，以下为已取得的新闻。',topic_empty:'此时间范围内暂无相关新闻。',topic_error:'暂时无法获取相关新闻，请点击重新检索。',topic_retry:'重新检索',topic_prev:'上一页',topic_next:'下一页',topic_page_count:'第 {page} / {pages} 页 · {count} 条',topic_source_note:'来源：中国新闻网、CGTN、商务部与海关总署 · 原文标题 · 按时间从新到旧',topic_no_date:'时间未知',topic_range_label:'新闻时间范围',topic_pagination_label:'新闻分页'});
@@ -813,6 +831,23 @@
           });
         }
         document.dispatchEvent(new CustomEvent('site-language-updated', { detail:{ language:lang } }));
+      });
+      document.querySelector('#login-form')?.addEventListener('submit',event=>{
+        event.preventDefault();
+        const account=document.querySelector('#login-account')?.value.trim();
+        const password=document.querySelector('#login-password')?.value;
+        const error=document.querySelector('#login-error');
+        if(account!=='abc'||password!=='123456'){if(error)error.textContent=window.siteT('login_error');return;}
+        try{sessionStorage.setItem('globalNavigatorSiteAuth','1')}catch{}
+        document.documentElement.classList.remove('site-auth-locked');
+        const layer=document.querySelector('#login-layer');
+        layer.hidden=true;layer.setAttribute('aria-hidden','true');
+        event.currentTarget.reset();
+        requestAnimationFrame(()=>document.querySelector('#hero-agent-entry')?.focus({preventScroll:true}));
+      });
+      document.querySelector('#password-toggle')?.addEventListener('click',event=>{
+        const button=event.currentTarget,input=document.querySelector('#login-password');
+        const visible=input.type==='password';input.type=visible?'text':'password';button.setAttribute('aria-pressed',String(visible));button.setAttribute('aria-label',window.siteT(visible?'hide_password':'show_password'));
       });
       try { window.siteLanguage = localStorage.getItem('globalNavigatorLanguage') === 'en' ? 'en' : 'zh'; }
       catch { window.siteLanguage = 'zh'; }
@@ -893,26 +928,6 @@
       }
       document.addEventListener('site-language-updated', () => renderCount(target));
     })();
-    const heroAgentEntry=document.querySelector('.hero-action');
-    heroAgentEntry?.addEventListener('click',event=>{
-      event.preventDefault();
-      window.__globalNavigatorAgentEntryTrigger=event.currentTarget;
-      const layer=document.querySelector('#login-layer');
-      layer.inert=false;layer.hidden=false;layer.classList.add('is-opening');layer.setAttribute('aria-hidden','false');
-      document.querySelector('#login-submit')?.focus();
-    });
-    document.querySelector('#login-form')?.addEventListener('submit',event=>{
-      event.preventDefault();
-      window.__globalNavigatorAgentEntryPending=true;
-      window.__globalNavigatorEnterAgent?.();
-    });
-    document.querySelector('#login-back')?.addEventListener('click',()=>{
-      if(typeof window.__globalNavigatorEnterAgent==='function')return;
-      const layer=document.querySelector('#login-layer');
-      layer.hidden=true;layer.setAttribute('aria-hidden','true');layer.classList.remove('is-opening');
-      (window.__globalNavigatorAgentEntryTrigger||heroAgentEntry)?.focus({preventScroll:true});
-      window.__globalNavigatorAgentEntryTrigger=null;
-    });
   </script>
 <script type="module">
     import * as THREE from 'three';
@@ -1284,61 +1299,26 @@
     canvas.addEventListener('pointerup',release);canvas.addEventListener('pointercancel',release);canvas.addEventListener('lostpointercapture',()=>{dragging=false;canvas.classList.remove('dragging');});
     const requestTurn=direction=>{ remainingYaw+=direction*Math.PI/2; velocityX=velocityY=0;lastRelease=performance.now(); };
     document.querySelector('#prev').addEventListener('click',()=>requestTurn(-1));document.querySelector('#next').addEventListener('click',()=>requestTurn(1));
-    const hero=document.querySelector('.hero'),loginLayer=document.querySelector('#login-layer'),loginCard=document.querySelector('.login-card'),loginForm=document.querySelector('#login-form'),loginError=document.querySelector('#login-error'),mainPage=document.querySelector('#main-page'),worldPage=document.querySelector('#world-page'),topicPage=document.querySelector('#topic-page');
-    let loginReturnFocus=window.__globalNavigatorAgentEntryTrigger||null;
-    const openLogin=event=>{event.preventDefault();loginReturnFocus=event.currentTarget;const worldBounds=worldPage.getBoundingClientRect();if(event.currentTarget.id==='world-start-exploring'||(worldBounds.top<window.innerHeight*.65&&worldBounds.bottom>window.innerHeight*.35))worldPage.classList.add('is-leaving');loginLayer.classList.add('is-opening');loginLayer.inert=false;loginLayer.hidden=false;loginLayer.setAttribute('aria-hidden','false');if(loginError) loginError.textContent='';document.querySelector('#login-submit').focus();};
+    const hero=document.querySelector('.hero'),loginLayer=document.querySelector('#login-layer'),loginForm=document.querySelector('#login-form'),mainPage=document.querySelector('#main-page'),worldPage=document.querySelector('#world-page'),topicPage=document.querySelector('#topic-page');
     const showWorldPage=()=>{loginLayer.hidden=true;loginLayer.classList.remove('is-opening');loginLayer.setAttribute('aria-hidden','true');mainPage.hidden=true;topicPage.hidden=true;hero.hidden=false;worldPage.hidden=false;worldPage.classList.remove('is-leaving');history.replaceState(null,'','#world-page');worldPage.scrollIntoView({behavior:'smooth',block:'start'});window.dispatchEvent(new Event('world-page-open'));};
     const showHomePage=()=>{mainPage.hidden=true;mainPage.setAttribute('aria-hidden','true');mainPage.classList.remove('entering','is-revealing');topicPage.hidden=true;hero.hidden=false;worldPage.classList.remove('is-leaving');history.replaceState(null,'','#hero');window.scrollTo({top:0,behavior:'smooth'});requestAnimationFrame(()=>resize());};
-    const scatterLoginCard=()=>{
-      const rect=loginCard.getBoundingClientRect();
-      const layer=document.createElement('div');
-      layer.className='login-shatter-layer';
-      layer.setAttribute('aria-hidden','true');
-      const columns=9,rows=7,cellWidth=rect.width/columns,cellHeight=rect.height/rows;
-      for(let row=0;row<rows;row++) for(let column=0;column<columns;column++){
-        const left=column*cellWidth,top=row*cellHeight,width=column===columns-1?rect.width-left:cellWidth,height=row===rows-1?rect.height-top:cellHeight;
-        const fragment=document.createElement('div');
-        fragment.className='login-fragment';
-        fragment.style.left=`${rect.left+left}px`;fragment.style.top=`${rect.top+top}px`;fragment.style.width=`${width+1}px`;fragment.style.height=`${height+1}px`;
-        const angle=Math.atan2(top+height/2-rect.height/2,left+width/2-rect.width/2)+(Math.random()-.5)*.9;
-        const distance=110+Math.random()*300;
-        fragment.style.setProperty('--fly-x',`${Math.cos(angle)*distance}px`);
-        fragment.style.setProperty('--fly-y',`${Math.sin(angle)*distance}px`);
-        fragment.style.setProperty('--fly-z',`${Math.random()*180-90}px`);
-        fragment.style.setProperty('--fly-rotation',`${Math.random()*240-120}deg`);
-        fragment.style.animationDelay=`${Math.random()*150}ms`;
-        const surface=loginCard.cloneNode(true);
-        surface.classList.add('login-fragment-surface');
-        surface.removeAttribute('role');surface.removeAttribute('aria-modal');surface.removeAttribute('aria-labelledby');surface.setAttribute('aria-hidden','true');surface.inert=true;
-        surface.style.width=`${rect.width}px`;surface.style.height=`${rect.height}px`;surface.style.left=`${-left}px`;surface.style.top=`${-top}px`;
-        surface.querySelectorAll('[id]').forEach(node=>node.removeAttribute('id'));
-        surface.querySelectorAll('input,button').forEach(control=>{control.disabled=true;control.tabIndex=-1;});
-        fragment.append(surface);layer.append(fragment);
-      }
-      document.body.append(layer);
-      return layer;
-    };
     const enterMainPage=()=>{
       mainPage.hidden=false;mainPage.setAttribute('aria-hidden','true');mainPage.classList.remove('is-revealing');mainPage.classList.add('entering');
-      loginLayer.classList.add('shattering');loginLayer.inert=true;
-      const shatterLayer=scatterLoginCard();
       const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       setTimeout(()=>{
-        loginLayer.hidden=true;loginLayer.setAttribute('aria-hidden','true');loginLayer.classList.remove('shattering','is-opening');loginLayer.inert=false;loginForm.reset();
+        hero.hidden=true;
         mainPage.setAttribute('aria-hidden','false');mainPage.classList.remove('entering');mainPage.classList.add('is-revealing');
         requestAnimationFrame(()=>{window.playAgentAvatarGreeting?.();document.querySelector('#main-title').focus({preventScroll:true})});
-        setTimeout(()=>{shatterLayer.remove();mainPage.classList.remove('is-revealing');},reducedMotion?100:1500);
-      },reducedMotion?50:420);
+        setTimeout(()=>mainPage.classList.remove('is-revealing'),reducedMotion?100:1500);
+      },reducedMotion?30:260);
     };
-    window.__globalNavigatorEnterAgent=()=>{window.__globalNavigatorAgentEntryPending=false;hero.hidden=true;enterMainPage();};
-    if(window.__globalNavigatorAgentEntryPending)window.__globalNavigatorEnterAgent();
+    window.__globalNavigatorEnterAgent=()=>enterMainPage();
     document.querySelector('#explore-nav').addEventListener('click',event=>{event.preventDefault();showWorldPage();});
     document.querySelector('#home-nav').addEventListener('click',event=>{event.preventDefault();showHomePage();});
     document.querySelector('.logo').addEventListener('click',event=>{event.preventDefault();showHomePage();});
-    document.querySelector('.nav-cta').addEventListener('click',openLogin);
-    document.querySelector('#hero-agent-entry').addEventListener('click',openLogin);
-    document.querySelector('#world-start-exploring').addEventListener('click',openLogin);
-    document.querySelector('#login-back').addEventListener('click',()=>{loginLayer.hidden=true;loginLayer.classList.remove('is-opening');loginLayer.setAttribute('aria-hidden','true');worldPage.classList.remove('is-leaving');loginForm.reset();if(loginError) loginError.textContent='';const returnTarget=loginReturnFocus?.isConnected?loginReturnFocus:document.querySelector('.nav-cta');loginReturnFocus=null;window.__globalNavigatorAgentEntryTrigger=null;returnTarget.focus({preventScroll:true});});
+    document.querySelector('.nav-cta').addEventListener('click',openAgent);
+    document.querySelector('#hero-agent-entry').addEventListener('click',openAgent);
+    document.querySelector('#world-start-exploring').addEventListener('click',openAgent);
     
     document.querySelector('#main-return').addEventListener('click',()=>{mainPage.hidden=true;mainPage.setAttribute('aria-hidden','true');mainPage.classList.remove('entering','is-revealing');hero.hidden=false;worldPage.classList.remove('is-leaving');loginForm.reset();history.replaceState(null,'','#hero');window.scrollTo({top:0,behavior:'smooth'});requestAnimationFrame(()=>resize());});
     const frame=now=>{
