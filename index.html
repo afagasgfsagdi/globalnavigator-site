@@ -1313,6 +1313,7 @@
       },reducedMotion?30:260);
     };
     window.__globalNavigatorEnterAgent=()=>enterMainPage();
+    const openAgent=event=>{event.preventDefault();window.__globalNavigatorEnterAgent();};
     document.querySelector('#explore-nav').addEventListener('click',event=>{event.preventDefault();showWorldPage();});
     document.querySelector('#home-nav').addEventListener('click',event=>{event.preventDefault();showHomePage();});
     document.querySelector('.logo').addEventListener('click',event=>{event.preventDefault();showHomePage();});
