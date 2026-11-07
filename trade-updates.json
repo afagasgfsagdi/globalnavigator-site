@@ -1,7 +1,57 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-07T07:43:08.619007+00:00",
+  "updatedAt": "2026-11-07T08:30:00.330622+00:00",
   "items": [
+    {
+      "title": "（第九届进博会）普华永道：中国内地职场正从AI“工具引入期”稳步迈入“人机协同期”",
+      "description": "中新社上海11月7日电 (记者 姜煜)专业服务机构普华永道7日在第九届中国国际进口博览会现场发布《2026年期待与忐忑全球职场调研》中国内地报告。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-07/10727901.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-07T16:24:06+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "（第九届进博会）超188亿美元 第九届中国石油国际合作论坛暨签约仪式在沪举行",
+      "description": "中新网上海11月7日电 (狄权)第九届中国石油国际合作论坛暨签约仪式6日在上海举行。活动上，中国石油交易分团与35家合作伙伴签署采购协议38份，采购商品来源覆盖16个国家和地区，涉及油气资源、高端装备、绿色低碳等多个领域，采购签约金额超过188亿美元，较去年稳中有升。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-07/10727916.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-07T16:23:00+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "（第九届进博会）进博会展商办证、通行遇难题 上海警方联动服务解需求",
+      "description": "中新网上海11月7日电(记者 李姝徵)前一天下午提交办证材料，次日便拿到了第九届中国国际进口博览会(以下简称进博会)通行证件。记者7日从上海警方获悉，一家南美洲参展企业的负责人向上海警方国展中心“蓝鲸”护企工作点民警表示感谢：“太不可思议了，没想到这么快问题就得到了解决。”",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-07/10727917.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-07T16:22:52+08:00",
+      "category": "policy",
+      "continent": "south-america"
+    },
+    {
+      "title": "美企高管：开放的中国与世界共享机遇、共同发展",
+      "description": "人民网上海11月6日电 (记者张荣、张文捷)中国持续扩大对外开放，为跨国企业深耕中国市场、共享发展机遇创造了更广阔空间。近日，美国能源企业康菲公司副总裁兼康菲中国总裁胡凯诚在参加第九届中国国际进口博览会期间接受人民网采访时表示，他对中国市场发展前景充满信心，并高度评价与中国合作伙伴数十年来取得的合作成果。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-07/10727911.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-07T15:52:08+08:00",
+      "category": "policy",
+      "continent": "north-america"
+    },
+    {
+      "title": "四面八方话进博｜是什么让跨国企业如约而至？",
+      "description": "第九届中国国际进口博览会如约而至，再次成为全球企业展示创新成果、深化合作交流的重要舞台。来自多国企业的高管们纷纷表示，进博会不仅是中国规模最大的创新成果展示盛会，更是连接全球伙伴、共谋未来发展的重要桥梁。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-07/10727905.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-07T15:45:42+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
     {
       "title": "欧加隆携手京东健康 探索血脂健康管理创新实践",
       "description": "11月6日，在第九届中国国际进口博览会上，全球领先的医疗健康公司欧加隆与京东健康共同启动血脂健康管理创新项目。双方将结合欧加隆在心血管健康领域的专业积累与京东健康的数字化平台优势，探索在患者购药场景中融入更多血脂健康管理相关服务，帮助公众提升血脂健康认知和主动管理意识。",
@@ -179,15 +229,6 @@
       "pubDate": "2026-11-07T10:20:51+08:00",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "从“十五五”专项规划看以金融服务发展大局",
-      "description": "新华社北京11月6日电 题：不断提升服务实体经济质效——从“十五五”专项规划看以金融服务发展大局",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-07/10727779.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-07T09:58:23+08:00",
-      "category": "policy"
     },
     {
       "title": "历史新高！翻番增长！一组数据感受中国经济强劲脉动",
@@ -1286,26 +1327,6 @@
       "continent": "asia"
     },
     {
-      "title": "全球媒体聚焦｜品质与价格完美结合 中国产品引消费者共鸣",
-      "description": "彭博社11月3日发文称，许多商业帝国的建立都基于这样一个理念：信誉卓著的产品理应收取远高于生产成本的价格。然而，中国企业正在挑战“要质量就得花高价”的传统认知。如果它们能在海外市场取得成功，那些老牌竞争对手或许将无法再像过去那样理所当然地收取高价。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726707.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-05T16:46:22+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "中韩具身智能技术产业合作论坛在首尔举办",
-      "description": "中新网首尔11月5日电 (记者 金旭)当地时间11月3日，中韩具身智能技术产业合作论坛在首尔举办。本次论坛由中国驻韩国大使馆主办，韩中数字经济研究院、中关村企业驻韩国首尔服务代表处、中日韩创新合作中心承办。",
-      "link": "https://www.chinanews.com.cn/gj/2026/11-05/10726666.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-05T16:45:18+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
       "title": "Chancellor-led Austrian delegation seeks to boost exports to China",
       "link": "https://newseu.cgtn.com/news/2026-11-06/Chancellor-led-Austrian-delegation-seeks-to-boost-exports-to-China-1RPAUuDFP4k/p.html",
       "pubDate": "2026-11-05T16:42:13+00:00",
@@ -1324,16 +1345,6 @@
       "pubDate": "2026-11-05T16:28:35+08:00",
       "category": "policy",
       "continent": "north-america"
-    },
-    {
-      "title": "苏州发布开放兴市“1+9”系列行动计划",
-      "description": "中新网苏州11月5日电(记者 常慕城)苏州开放兴市大会4日下午在昆山举行。本次大会联动第九届中国国际进口博览会，现场启动国家服务贸易创新发展示范区建设，推出开放兴市“1+9”系列行动计划，面向全球释放苏州持续扩大高水平对外开放的鲜明信号，彰显深耕开放发展的坚定决心与坚实底气。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726665.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-05T16:12:14+08:00",
-      "category": "policy",
-      "continent": "asia"
     },
     {
       "title": "商务部回应欧盟对低价值进口商品叠加征收有关税费",
