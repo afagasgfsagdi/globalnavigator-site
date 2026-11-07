@@ -1,7 +1,17 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-07T14:26:07.669196+00:00",
+  "updatedAt": "2026-11-07T15:19:40.609180+00:00",
   "items": [
+    {
+      "title": "菲律宾9月失业人数升至286万 就业市场承压",
+      "description": "中新社马尼拉11月7日电 (记者 周璟)菲律宾统计局6日公布的数据显示，菲律宾9月失业人数升至286万，高于8月的277万和去年同期的196万。当月失业率为5.4%，高于8月的5.3%和去年同期的3.8%。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-07/10728178.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-07T23:04:58+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
     {
       "title": "（第九届进博会）华商侨企接入进博“引力场”：从商品贸易到生态共生",
       "description": "中新社上海11月7日电 (范宇斌)恰逢周末，第九届中国国际进口博览会7日迎来大客流，不少华商身影穿梭在展区之中。进博会已成为华商侨企联通中外、共享中国机遇的桥梁。",
@@ -279,15 +289,6 @@
       "category": "policy"
     },
     {
-      "title": "浙江省深海工程新材料和装备产业与技术创新联盟成立",
-      "description": "中新网杭州11月7日电(鲍梦妮)11月7日，第八届世界浙商大会专题活动——“逐梦深蓝 浙创未来”深海工程和深海新材料新装备产业技术对接交流活动在杭州举行。现场，浙江省深海工程新材料和装备产业与技术创新联盟正式成立。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-07/10728044.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-07T19:19:12+08:00",
-      "category": "policy"
-    },
-    {
       "title": "（第九届进博会）东方美谷国际化妆品大会“首秀”进博会：中法“双谷联动”十年迈向深度共生",
       "description": "中新网上海11月7日电(记者 陈静)2026东方美谷国际化妆品大会(下称：大会)7日首次在第九届中国国际进口博览会场馆举行。本次大会借力进博会平台，既是产业成果的集中展示，又是面向全球未来的战略谋篇。",
       "link": "https://www.chinanews.com.cn/cj/2026/11-07/10728024.shtml",
@@ -466,6 +467,16 @@
       "pubDate": "2026-11-07T15:45:42+08:00",
       "category": "policy",
       "continent": "asia"
+    },
+    {
+      "title": "Slovenian supplement maker eyes China through Shanghai import expo",
+      "link": "https://newseu.cgtn.com/news/2026-11-07/Slovenian-supplement-maker-eyes-China-through-Shanghai-import-expo-1RSI5oqIaYg/p.html",
+      "pubDate": "2026-11-07T14:49:53+00:00",
+      "description": "CGTN Europe · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "supply",
+      "continent": "europe"
     },
     {
       "title": "欧加隆携手京东健康 探索血脂健康管理创新实践",
@@ -1254,16 +1265,6 @@
       "pubDate": "2026-11-06T12:08:02+00:00",
       "category": "policy",
       "continent": "north-america"
-    },
-    {
-      "title": "规范机票退改签！京津冀三地消协组织敦促10家航司、5家平台限期整改",
-      "description": "中新网11月6日电 据“北京市场监管”微信公众号消息，为规范航空售票服务秩序，切实维护消费者合法权益，依据《中华人民共和国消费者权益保护法》《中华人民共和国消费者权益保护法实施条例》赋予的职责，11月6日，京津冀三地消协组织召开机票退改签调查结果通报会，中国国际航空、中国南方航空、中国东方航空、海南航空、厦门航空、四川航空、天津航空、吉祥航空、春秋航空、河北航空等10家航空公司，以及携程、去哪儿、飞猪、同程旅行、途牛等5家线上售票平台参会，京津冀三地消协组织敦促相关企业全面自查，于12月10日前反馈整改情况。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-06/10727161.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-06T12:00:31+08:00",
-      "category": "policy",
-      "continent": "asia"
     },
     {
       "title": "China urges US to meet it halfway for stable, improving trade ties",
