@@ -1,7 +1,36 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-10T17:51:25.842326+00:00",
+  "updatedAt": "2026-11-10T23:23:52.145124+00:00",
   "items": [
+    {
+      "title": "今年前10个月柬埔寨实现国际贸易总额突破634亿美元",
+      "description": "中新社金边11月10日电 (张堰林 杨强)柬埔寨海关总署当地时间10日发布的报告显示，今年前10个月该国实现货物进出口总额接近634.6亿美元，与上年同期相比增长20.9%。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-11/10729871.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-11T05:59:22+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "美国10月CPI环比上涨0.4%",
+      "description": "中新社华盛顿11月10日电 (记者 陈孟统)美国劳工部10日发布数据称，美国10月消费者价格指数(CPI)环比上涨0.4%，低于9月份0.6%的涨幅。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-11/10729875.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-11T05:57:44+08:00",
+      "category": "policy",
+      "continent": "north-america"
+    },
+    {
+      "title": "英国军方采购新一批水下智能装备",
+      "description": "中新社伦敦11月10日电 (记者 欧阳开宇)英国国防部10日宣布投入9000万英镑，采购一批新型无人潜航器、探测传感器以及配套人工智能监测系统，交由海军使用，用于北大西洋海域海底光缆、能源管线防护，同时开展水下目标搜寻。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-11/10729868.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-11T05:55:10+08:00",
+      "category": "policy",
+      "continent": "europe"
+    },
     {
       "title": "胡军：产业向新向绿让中国经济增长动能更加强劲",
       "description": "中新网安塔利亚11月10日电(记者 魏园 陈溯 徐峻杰)当地时间11月10日，在土耳其安塔利亚举行的《联合国气候变化框架公约》第三十一次缔约方大会(COP31)中国角主题边会上，习近平生态文明思想研究中心主任、生态环境部环境与经济政策研究中心主任胡军发布题为《“绿水青山就是金山银山”——中国绿色发展之路》的智库报告，并围绕中国绿色发展的理念、实践与世界意义展开探讨。",
@@ -30,6 +59,16 @@
       "sourceCountry": "中国新闻网",
       "pubDate": "2026-11-10T21:56:51+08:00",
       "category": "policy"
+    },
+    {
+      "title": "New China-Peru free trade agreement takes effect",
+      "link": "https://newsus.cgtn.com/news/2026-11-11/New-China-Peru-free-trade-agreement-takes-effect-1RYodgbHR6w/p.html",
+      "pubDate": "2026-11-10T21:56:11+00:00",
+      "description": "CGTN Americas · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "policy",
+      "continent": "south-america"
     },
     {
       "title": "重庆两江新区加快打造智能网联新能源汽车之都核心承载地",
@@ -3565,15 +3604,6 @@
       "sourceCountry": "CGTN",
       "category": "supply",
       "continent": "asia"
-    },
-    {
-      "title": "CCPIT: China-US summit brings greater certainty to trade and business",
-      "link": "https://news.cgtn.com/news/2026-09-29/CCPIT-China-US-summit-brings-greater-certainty-to-trade-and-business-1QPFuNSVXYk/p.html",
-      "pubDate": "2026-09-29T12:13:35+00:00",
-      "description": "CGTN Americas · International market and trade coverage.",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "category": "policy"
     },
     {
       "title": "The Takaichi Fallout: A 'high-pressure economy' is no fix for Japan",
