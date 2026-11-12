@@ -1,7 +1,46 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-11T18:42:32.991805+00:00",
+  "updatedAt": "2026-11-12T01:01:47.987944+00:00",
   "items": [
+    {
+      "title": "百亿级市场火爆！“超六成访客是老外” 有人当场下单",
+      "description": "脑机接口，是指通过在脑与机器之间建立信息通道，实现生物智能与机器智能的协同交互，是生命科学和信息科学融合发展的前沿技术，分为非侵入式、侵入式、半侵入式等多种类型。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-12/10730587.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-12T07:36:16+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "中国汽车工业协会：10月份新能源重卡渗透率突破50%",
+      "description": "中国汽车工业协会昨天发布数据，记者注意到，在10月份的数据中，我国新能源重卡单月渗透率突破50%，这标志着过去以能耗高为主要短板的重卡行业迈入电动化发展的新阶段。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-12/10730586.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-12T07:33:28+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "美国中央司令部发布声明：严格执行对伊朗海上封锁",
+      "description": "中新网11月12日电 当地时间11日，美国中央司令部在社交媒体上发布声明称，美军继续夜以继日地开展行动，以确保霍尔木兹海峡对商业航运保持开放。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-12/10730583.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-12T07:24:27+08:00",
+      "category": "supply",
+      "continent": "north-america"
+    },
+    {
+      "title": "报告显示多重挑战下在德中资企业短期投资意愿保持谨慎",
+      "description": "中新社柏林11月11日电 德国中国商会联合毕马威11日在法兰克福发布《2026年在德中资企业营商环境调查报告》。报告显示，面对地缘政治不确定性、成本高企等多重挑战，在德中资企业保持投资态势，但短期投资扩张意愿保持谨慎。德方通过优化营商环境，有望进一步拓展双方合作空间。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-12/10730568.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-12T06:02:51+08:00",
+      "category": "policy",
+      "continent": "europe"
+    },
     {
       "title": "德权威机构大幅上调2026年德国经济增长预期",
       "description": "中新社柏林11月11日电 (记者 马秀秀)德国经济专家委员会11日发布的报告预计，2026年德国经济将增长1.3%。若这一预测实现，德国经济将迎来自2022年以来首次较为明显的增长。",
@@ -11,6 +50,16 @@
       "pubDate": "2026-11-11T23:58:12+08:00",
       "category": "policy",
       "continent": "europe"
+    },
+    {
+      "title": "Live streams light up Double 11 sales in Brazil",
+      "link": "https://newsus.cgtn.com/news/2026-11-12/Live-streams-light-up-Double-11-sales-in-Brazil-1S03KLQ3l6M/p.html",
+      "pubDate": "2026-11-11T22:46:54+00:00",
+      "description": "CGTN Americas · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "policy",
+      "continent": "south-america"
     },
     {
       "title": "报告显示：中国旅游市场人气旺盛 “流量转化”考题待解",
@@ -185,24 +234,6 @@
       "category": "policy"
     },
     {
-      "title": "云南出台方案扩大消费 深耕旅居、赛事、低空、口岸四大场景",
-      "description": "中新网昆明11月11日电 (陆希成)云南省发展和改革委员会、云南省商务厅近日印发《云南省扩大消费实施方案》(以下简称《方案》)，提出深耕“旅居云南”消费、放大“滇超+”效应、打造“飞阅云南”低空旅游路线、布局口岸免税店等举措，到2030年形成更高水平、更具活力的云南消费市场。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-11/10730472.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-11T20:29:41+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "未来五年宁夏将培育百座智能工厂",
-      "description": "中新网银川11月11日电 (记者 李佩珊)宁夏工业和信息化厅副厅长何立颖11日在宁夏政府新闻办举行的新闻发布会上表示，未来五年，宁夏将把新一代智能制造作为推进新型工业化的重点方向，培育智能工厂100家、数字领航企业5家，让中卫等地的算力资源直连生产一线。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-11/10730455.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-11T20:28:07+08:00",
-      "category": "policy"
-    },
-    {
       "title": "韩国半导体出口持续增长 全年出口额有望首次突破1万亿美元",
       "description": "中新网首尔11月11日电(记者 金旭)韩国关税厅当地时间11日公布数据显示，11月1日至10日，韩国出口额为335亿美元(约合人民币2234.7亿元)，同比增长111.9%，创历年11月同期最高水平。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-11/10730432.shtml",
@@ -211,15 +242,6 @@
       "pubDate": "2026-11-11T20:28:05+08:00",
       "category": "tariff",
       "continent": "asia"
-    },
-    {
-      "title": "新疆塔城托里750千伏送出工程全线贯通",
-      "description": "中新网乌鲁木齐11月11日电 (马叶叶 高亮 姜勇 赵明)新疆塔城托里2×66万千瓦煤电项目750千伏送出工程10日实现全线贯通。这项工程为配套煤电项目按期投运创造条件，进一步提升新疆北部地区能源保供水平。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-11/10730461.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-11T20:27:41+08:00",
-      "category": "policy"
     },
     {
       "title": "联合国气候高官：中国的能源转型成就在全球是独一份的 | 新闻会客厅",
@@ -1289,16 +1311,6 @@
       "sourceCountry": "CGTN",
       "pubDate": "2026-11-09T10:33:00+00:00",
       "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "Beijing dismisses 'Chinese spy' claims over Nvidia CEO as smears",
-      "description": "The Chinese Foreign Ministry on Monday rejected recent reports by some media outlets peddling \"Chinese spy\" allegations tied to the Nvidia CEO saga.",
-      "link": "https://news.cgtn.com/news/2026-11-09/Beijing-dismisses-Chinese-spy-claims-over-Nvidia-saga-as-smears-1RVNrUyd0VW/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-09T09:52:21+00:00",
-      "category": "supply",
       "continent": "asia"
     },
     {
@@ -3562,15 +3574,6 @@
       "continent": "south-america"
     },
     {
-      "title": "China-US summit ends with numerous agreements including AI and trade",
-      "link": "https://newsus.cgtn.com/news/2026-09-30/China-US-summit-ends-with-numerous-agreements-including-AI-and-trade-1QOWYdK9uZa/p.html",
-      "pubDate": "2026-09-29T19:51:09+00:00",
-      "description": "CGTN Americas · International market and trade coverage.",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "category": "policy"
-    },
-    {
       "title": "Canada eyes $1 trillion in new investment over five years",
       "link": "https://newsus.cgtn.com/news/2026-09-30/Canada-eyes-1-trillion-in-new-investment-over-five-years-1QOU8m6opA4/p.html",
       "pubDate": "2026-09-29T19:50:45+00:00",
@@ -3619,16 +3622,6 @@
       "sourceCountry": "CGTN",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "Why is the Bab el-Mandeb Strait strategically important?",
-      "link": "https://newseu.cgtn.com/news/2026-09-28/Why-is-the-Bab-el-Mandeb-Strait-strategically-important--1QGi6LEtJ1m/p.html",
-      "pubDate": "2026-09-28T11:52:55+00:00",
-      "description": "CGTN Europe · International market and trade coverage.",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "category": "supply",
-      "continent": "europe"
     },
     {
       "title": "Moon festival showcases deep roots of Chinese customs in Peru",
