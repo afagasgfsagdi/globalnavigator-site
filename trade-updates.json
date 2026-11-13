@@ -1,6 +1,6 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-13T18:31:23.283762+00:00",
+  "updatedAt": "2026-11-13T23:53:48.296585+00:00",
   "items": [
     {
       "title": "“投资中国”比荷卢企业圆桌会在布鲁塞尔举行",
@@ -29,6 +29,15 @@
       "author": "中国新闻网",
       "sourceCountry": "中国新闻网",
       "pubDate": "2026-11-13T22:27:53+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "China’s drone economy delivers big in Shenzhen",
+      "link": "https://newsus.cgtn.com/news/2026-11-14/China-s-drone-economy-delivers-big-in-Shenzhen-1S3nYdJdJKw/p.html",
+      "pubDate": "2026-11-13T22:21:29+00:00",
+      "description": "CGTN Americas · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
       "category": "policy"
     },
     {
@@ -247,6 +256,16 @@
       "pubDate": "2026-11-13T18:37:18+08:00",
       "category": "policy",
       "continent": "asia"
+    },
+    {
+      "title": "Trump threatens to double tariffs on Mexico",
+      "link": "https://newsus.cgtn.com/news/2026-11-14/Trump-threatens-to-double-tariffs-on-Mexico-1S1EPXZraA8/p.html",
+      "pubDate": "2026-11-13T18:25:52+00:00",
+      "description": "CGTN Americas · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "tariff",
+      "continent": "north-america"
     },
     {
       "title": "中国牵头虚拟电厂国际标准立项 为电网装“减震器”",
