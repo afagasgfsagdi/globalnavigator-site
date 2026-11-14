@@ -1,7 +1,157 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-14T06:25:30.230947+00:00",
+  "updatedAt": "2026-11-14T13:49:32.563323+00:00",
   "items": [
+    {
+      "title": "“一张票”化身“一条消费链” 交通流量转化为文旅消费与区域经济增量‌",
+      "description": "央视网消息：记者11月14日从国铁集团获悉，2026年1至10月，全国铁路累计发送旅客41.3亿人次，同比增长4.7%。日均安排开行旅客列车11670列，同比增长5.0%，其中，10月1日发送旅客2520.4万人次、开行旅客列车14885列。前10个月，全国铁路累计旅客发送量、单日旅客发送量、单日客运能力投放等指标均创历史新高。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10732195.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T21:36:34+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "深圳通江达海的物流网如何昼夜运转？",
+      "description": "进入11月，深圳迎来一年当中最繁忙的季节。一大批工厂开足马力赶制海外订单。产品下线之后，如何快速分发到亚太乃至全球各地？一起走进深圳这张通江达海、链接全球的物流网络。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10732193.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T21:32:32+08:00",
+      "category": "supply"
+    },
+    {
+      "title": "2026企业科技创新发展论坛在天津举行 未来产业竞争转向转化效率",
+      "description": "中新网天津11月14日电 题：2026企业科技创新发展论坛在天津举行 未来产业竞争转向转化效率",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10732167.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T20:34:41+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "“中国财政赋能绿色低碳发展的实践与展望”主题边会举办",
+      "description": "中新网安塔利亚11月14日电 (记者 陈溯)《联合国气候变化框架公约》第三十一次缔约方大会(COP31)期间，中国清洁发展机制基金管理中心(以下简称中心)在“中国角”举办“中国财政赋能绿色低碳发展的实践与展望”主题边会。主题边会主要围绕财政助力绿色低碳发展、财政金融协同创新、多边气候投融资合作等重要议题展开深度交流，分享中国实践经验，共同探寻全球气候投融资高质量发展路径。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10732152.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T20:24:22+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "数说APEC 看双向奔赴的投资",
+      "description": "作为APEC经济体，中国既是双向投资的重要参与者，也是重要的贡献者。中国企业带着资本和技术走出去，亚太其他企业则带着信任和选择走进来。通过数据，来了解双向奔赴的投资。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10732140.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T19:53:03+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "从承诺到行动：COP31上的中国决心与中国行动",
+      "description": "中新社土耳其安塔利亚11月14日电 (记者 魏园 陈溯)《联合国气候变化框架公约》第三十一次缔约方大会(COP31)正在土耳其安塔利亚举行。联合国秘书长安东尼奥·古特雷斯在COP31新闻发布会上接受中国新闻社记者提问时，肯定中国在可再生能源领域付出的巨大努力及取得的进展，并呼吁各国落实气候承诺。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10732128.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T19:51:43+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "超级场景赋能“小金豆” 云南打造2000亿元精品咖啡产业链",
+      "description": "云南咖啡以其特有的品质享誉海内外。在国家发展改革委等部门近期联合发布首批136项标志性重大应用场景项目中，云南省咖啡全产业链创新集成场景就是其中之一。在一颗颗咖啡豆背后，是一条全产业链创新集成应用场景的有力支撑。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10732135.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T19:46:28+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "广西财政统筹资金91亿元 精准助力消费提质扩容",
+      "description": "中新网南宁11月14日电 (韦佳秀)广西壮族自治区财政厅近日发布消息称，今年以来，该厅会同发改、商务等部门建立促消费协同工作机制，构建“中央引导、自治区配套、市县联动”的多元投入体系，统筹各类资金91亿元(人民币，下同)，全力推动消费市场提质扩容。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10732126.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T19:43:30+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "从“草原云谷”迈向“Token之都” 乌兰察布算力产业加速跃升",
+      "description": "中新网乌兰察布11月14日电 (记者 张林虎)14日，以“高效、绿色、安全”为主题的2026链上乌兰察布思客会在内蒙古自治区乌兰察布市举办，会议通过项目推介、产业调研、圆桌对话等形式，集中展示当地算力、新能源、新材料等产业发展成效，促进创新链、产业链、资金链、人才链对接。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10732121.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T19:40:50+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "3.5米预制棒拉制2万公里光纤 以技术创新回应市场需求",
+      "description": "3.5米预制棒拉制2万公里光纤",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10732116.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T19:07:32+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "（深圳APEC）深圳成中国内地首个外贸进出口超5万亿元城市",
+      "description": "中新社深圳11月14日电 (记者 程景伟)2026年亚太经合组织领导人会议周新闻中心14日举行广东省、深圳市专场中外媒体吹风会。深圳市商务局局长张非梦介绍，根据最新数据，深圳外贸再攀新高，已成为中国内地首个外贸进出口超5万亿元(人民币，下同)的城市。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10732108.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T18:57:48+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "直播海报：国新办就2026年10月份国民经济运行情况举行新闻发布会",
+      "description": "中国新闻网·财经发布的国际市场与贸易资讯。打开原文查看详情。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10732085.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T18:17:20+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "（深圳APEC）当中国经济特区遇上APEC：探寻亚太经贸合作新路径",
+      "description": "中新社深圳11月14日电 (记者 刘文文)雪牛资本创始人、首席执行官泰勒·欧根(Taylor Ogan)几年前做了一个大胆的决定：把公司从波士顿搬到深圳。谈起缘由时他表示，很难再找到像深圳这样处处涌动着创新活力的地方，“深圳有非常成功的科技公司，完整的供应链，在一小时车程之内几乎能买到所有的零部件，这太厉害了！”",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10732078.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T18:11:35+08:00",
+      "category": "supply",
+      "continent": "asia"
+    },
+    {
+      "title": "甘肃白龙江畔橄榄油飘香韩国",
+      "description": "中新网兰州11月14日电 (郑雪眉)来自白龙江畔的甘肃省陇南市文县的3.5吨特级初榨橄榄油，近日启运发往韩国。这是2026年文县特级初榨橄榄油对韩国的首批出口。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10732061.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T17:56:38+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "青海东部山区“小酸果”发展“甜产业”促民增收",
+      "description": "中新网西宁11月14日电 题：青海东部山区“小酸果”发展“甜产业”促民增收",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10732044.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T17:08:58+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "（深圳APEC）外媒聚焦深圳APEC会议周：共识为桥 务实为要",
+      "description": "中新社北京11月14日电 综合消息：亚太经合组织(APEC)第三十三次领导人非正式会议将于11月18日至19日在深圳举行。多家外媒报道指出，APEC深圳会议为不同规模的经济体在分歧中寻求共识提供机会，各方期待借此进一步接入区域贸易与投资议程，拓展务实合作空间。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-14/10732023.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-14T16:05:50+08:00",
+      "category": "policy"
+    },
     {
       "title": "今年前10个月社会融资规模新增28.61万亿元",
       "description": "央视网消息(新闻联播)：中国人民银行11月13日公布的数据显示，10月末，广义货币(M2)余额359.06万亿元，同比增长7.1%；社会融资规模存量469.16万亿元，同比增长7.2%。1—10月，社会融资规模增量为28.61万亿元。我国金融总量合理增长，为经济持续向新向优向好发展创造适宜的货币金融环境。",
@@ -33,15 +183,6 @@
       "continent": "asia"
     },
     {
-      "title": "顺着汽车产业链“长”出机器人 重庆探路“车—机同源”",
-      "description": "中新网重庆11月14日电 题：顺着汽车产业链“长”出机器人 重庆探路“车—机同源”",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10731960.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-14T13:31:04+08:00",
-      "category": "policy"
-    },
-    {
       "title": "四川首票进口南非油桃抵达成都",
       "description": "中新网成都11月14日电 (记者 张浪)一批重约1556千克的南非油桃搭乘ET636航班13日飞抵成都天府国际机场，经成都海关所属双流机场海关监管验放后顺利通关。这是四川首票进口南非油桃。",
       "link": "https://www.chinanews.com.cn/cj/2026/11-14/10731922.shtml",
@@ -50,24 +191,6 @@
       "pubDate": "2026-11-14T12:17:30+08:00",
       "category": "policy",
       "continent": "africa"
-    },
-    {
-      "title": "宁夏前十月外贸额超222亿元 规模超去年全年",
-      "description": "中新网银川11月14日电 (记者 李佩珊)记者14日从银川海关获悉，今年前10个月，宁夏外贸总值222.1亿元，同比增长27.5%，增速高出全国7.5个百分点，在全国排名第七。目前，宁夏外贸规模已达到2025年全年的105.8%，提前两个月超越去年全年水平，整体呈现逐季抬升、年末加速向好的走势。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10731920.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-14T12:17:02+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "国家统计局：11月上旬16种产品价格上涨，生猪价格环比下降6.5%",
-      "description": "中新网11月14日电 国家统计局11月14日在其官网发布2026年11月上旬流通领域重要生产资料市场价格变动情况。据对全国流通领域9大类50种重要生产资料市场价格的监测显示，2026年11月上旬与10月下旬相比，16种产品价格上涨，32种下降，2种持平。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10731905.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-14T10:07:49+08:00",
-      "category": "policy"
     },
     {
       "title": "预计到2030年 我国新增清洁能源电量将覆盖新增用电量",
@@ -80,23 +203,24 @@
       "continent": "asia"
     },
     {
-      "title": "从汽车大国到汽车强国 底气藏在超级工厂看不见的硬功夫里",
-      "description": "在重庆两江新区的一座超级工厂里，如果一颗螺丝没拧到位，整条产线就会立刻“刹车”，保障生产过程中汽车质量过关。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-14/10731884.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-14T09:06:48+08:00",
-      "category": "policy"
-    },
-    {
       "title": "全球脱碳如何提速？国际环保组织负责人看到了“中国机遇”｜新闻会客厅",
-      "description": "中新网安塔利亚11月14日电(王高飞 刘牧奇)近日，在土耳其安塔利亚举行的《联合国气候变化框架公约》第三十一次缔约方大会(COP31)中国角主题边会期间，克莱恩斯欧洲环保协会(ClientEarth)首席执行官劳拉·克拉克(Laura Clarke)接受中国新闻社“新闻会客厅”栏目采访时表示，中国是可再生能源的重要生产国，这类技术为世界各国带来了真正的机遇，也有助于加速全球脱碳进程。",
+      "description": "中新网安塔利亚11月14日电(王高飞 刘牧奇 徐峻杰)近日，在土耳其安塔利亚举行的《联合国气候变化框架公约》第三十一次缔约方大会(COP31)中国角主题边会期间，克莱恩斯欧洲环保协会(ClientEarth)首席执行官劳拉·克拉克(Laura Clarke)接受中国新闻社“新闻会客厅”栏目采访时表示，中国是可再生能源的重要生产国，这类技术为世界各国带来了真正的机遇，也有助于加速全球脱碳进程。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-14/10731876.shtml",
       "author": "中国新闻网",
       "sourceCountry": "中国新闻网",
       "pubDate": "2026-11-14T08:31:34+08:00",
       "category": "policy",
       "continent": "europe"
+    },
+    {
+      "title": "Premier Li says China ready to deepen economic exchanges with Thailand",
+      "link": "https://news.cgtn.com/news/2026-11-14/Premier-Li-urges-stronger-China-Thailand-cooperation-in-emerging-areas-1S3Y77VWMYo/p.html",
+      "pubDate": "2026-11-14T06:55:11+00:00",
+      "description": "CGTN Asia Pacific · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "policy",
+      "continent": "asia"
     },
     {
       "title": "Venezuela says its economy is recovering but pensioners are struggling",
@@ -139,48 +263,12 @@
       "continent": "asia"
     },
     {
-      "title": "全球首座半潜式风电制氢平台拖航启程",
-      "description": "中新社广东江门11月13日电 (记者 郭军)江门海事局13日完成全球首座半潜式风电制氢平台“申海氢能1号”离开广东江门新会水域的拖带护航任务，有力保障了这一国家级海洋新能源重大装备的安全离港。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-13/10731848.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T22:27:53+08:00",
-      "category": "policy"
-    },
-    {
       "title": "China’s drone economy delivers big in Shenzhen",
       "link": "https://newsus.cgtn.com/news/2026-11-14/China-s-drone-economy-delivers-big-in-Shenzhen-1S3nYdJdJKw/p.html",
       "pubDate": "2026-11-13T22:21:29+00:00",
       "description": "CGTN Americas · International market and trade coverage.",
       "author": "CGTN",
       "sourceCountry": "CGTN",
-      "category": "policy"
-    },
-    {
-      "title": "海南首票“两头在外”保税航空煤油适用国际标准检验业务落地",
-      "description": "中新网海南洋浦11月13日电 (周爱玉)11月13日，在海口海关所属洋浦海关监管保障下，装载3.25万吨境外航空煤油的丽池轮顺利靠泊中石化(香港)海南石油有限公司成品油码头，海关按照相关国际标准实施检验通关。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-13/10731838.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T21:55:21+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "引来全国新材料创新资源 广东茂名首届新材料创新创业大赛落幕",
-      "description": "中新网茂名11月13日电 (梁盛 周俊文)13日，广东茂名首届新材料创新创业大赛举行决赛，以赛引智、聚资、促落地，围绕化工新材料、金属新材料、电池新材料、电子化学品、合成生物及生物基材料五大赛道开展项目遴选、产研对接与招商引资，最终决出一等奖5名、二等奖6名、三等奖10名、最佳产业匹配奖5名。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-13/10731834.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T21:54:53+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "浙江：到2030年全域旅游综合收入达1.5万亿元",
-      "description": "中新网杭州11月13日电(孙琳茹)浙江省“十五五”旅游业发展规划新闻发布会13日在杭州举行。浙江省文化广电和旅游厅党组书记、厅长陈广胜介绍，到“十五五”期末即2030年，浙江全省旅游产业增加值占GDP比重达7%左右，全域旅游人数达10亿人次，过夜游客人数达5.5亿人次，全域旅游综合收入达1.5万亿元。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-13/10731822.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T21:42:30+08:00",
       "category": "policy"
     },
     {
@@ -202,60 +290,6 @@
       "pubDate": "2026-11-13T21:41:36+08:00",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "湖南推进海峡两岸产业合作区建设",
-      "description": "中新社长沙11月13日电 (付敬懿) 到2030年，海峡两岸产业合作区(湖南)台资企业增资扩产、产业集聚成效明显，将吸引台资及关联企业超100家，培育省级以上产业集群1至2个，举办和参加两岸交流活动30场次以上，吸引超1000名台湾同胞到合作区交流实习、就业创业，湘台产业链供应链合作迈上更高水平。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-13/10731820.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T21:40:42+08:00",
-      "category": "supply"
-    },
-    {
-      "title": "“十五五”时期 浙江旅游业如何激发消费活力？",
-      "description": "中新网杭州11月13日电(林波 孙琳茹)“旅游业已从‘看风景’转向‘品生活’。”11月13日，浙江省文化广电和旅游厅党组书记、厅长陈广胜在浙江省“十五五”旅游业发展规划新闻发布会上表示，“十五五”期间浙江将以文旅深度融合工程为主抓手，着力扩大优质供给、激发旅游消费活力。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-13/10731747.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T21:40:04+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "青海沙棘产业：“生态树”结“惠民果” 精深加工求突破",
-      "description": "中新网西宁11月13日电 (记者 潘雨洁)一簇簇酸甜饱满的金黄小果从枝头摘下，经冷链锁鲜压榨成果汁、原浆，或精深加工制成健康食品。眼下，青海东部河湟地区沙棘采摘加工正当时。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-13/10731752.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T21:39:56+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "广旅养老集团揭牌成立 聚力打造广西养老第一品牌",
-      "description": "中新网南宁11月13日电 (张广权 陈家怡)11月13日，广西旅发养老集团有限公司(以下简称：广旅养老集团)在南宁揭牌，标志着广西首家自治区级国有专业化养老平台正式成立，广西养老产业规模化、专业化、品牌化发展迈上新台阶。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-13/10731768.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T21:39:38+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "湖南江永瑶乡花卉线上走俏 直播点亮 “美丽经济”",
-      "description": "中新网永州11月13日电 (田海忠 谢文彬)眼下，湖南江永县千家峒瑶族乡杉木源村的兰花种植大棚绿意氤氲、兰香悠悠。种植户化身田间主播，对着镜头展示兰花品相、讲解养护知识，直播间订单不断，兰花线上销售进入秋冬旺季。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-13/10731765.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T21:39:24+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "浙江上线农业农村招商引资服务平台",
-      "description": "中新网杭州11月13日电(记者 王逸飞)13日，2026浙江农业博览会在杭州开幕。在博览会期间举办的2026年浙江省农业农村重大项目招商大会上，浙江省农业农村招商引资服务平台正式上线。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-13/10731817.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T21:38:34+08:00",
-      "category": "policy"
     },
     {
       "title": "追“光”聚能跨洲“通电” 中非共绘新能源合作新篇章",
@@ -1293,66 +1327,6 @@
       "author": "中国新闻网",
       "sourceCountry": "中国新闻网",
       "pubDate": "2026-11-11T16:55:12+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "高技术产品成出口新名片 中国外贸的APEC底色更浓",
-      "description": "11月18日至19日，亚太经合组织(APEC)第三十三次领导人非正式会议将在中国深圳举行。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-11/10730267.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-11T16:33:42+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "中国新能源汽车出口占比连续五个月超过50%",
-      "description": "中新社北京11月11日电 (记者 刘文文)中国新能源汽车出口占比已连续五个月超过50%。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-11/10730233.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-11T16:08:45+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "贵州：2025年企业研发投入总量首次突破200亿元 增幅居中国第3",
-      "description": "中新网贵阳11月11日电 (记者 张伟)记者11日从贵州省政府新闻办召开的新闻发布会获悉，2025年贵州企业研发投入总量首次突破200亿元(人民币，下同)，占贵州省全社会研发经费投入76.8%，支撑全社会研发投入增长13.8%，增幅居中国全国第3；促进科技创新对经济增长贡献率达到29.8%。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-11/10730242.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-11T16:08:07+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "外媒聚焦：从“展品”到“商机”，进博会拓展全球企业发展空间",
-      "description": "中新网11月11日电 第九届中国国际进口博览会11月10日在上海闭幕，本届进博会按一年计意向成交额达854.5亿美元，创历史新高。",
-      "link": "https://www.chinanews.com.cn/gj/2026/11-11/10730244.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-11T16:07:03+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "报告：中国租车市场加速年轻化 “90后”租户占比近五成",
-      "description": "中新网银川11月11日电 (记者 李佩珊)11月11日，2026旅游出行大会在银川举行，会上发布的《中国旅游租赁行业发展报告(2025-2026)》(下称《报告》)显示，2025年，中国“90后”租户规模持续扩大、占比接近五成，“00后”订单量同比增长近40%，刚满18岁的新增用户大量涌入租车市场。租车消费群体正加速年轻化。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-11/10730238.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-11T16:05:57+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "2026年前三季度青海加大重点领域金融供给",
-      "description": "中新网西宁11月11日电(李隽)中国人民银行青海省分行2026年第4次例行新闻发布会11日发布，前三季度，该行持续引导金融机构加大对重大战略、重点领域和薄弱环节的金融供给，助力青海省经济社会高质量发展。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-11/10730226.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-11T16:04:19+08:00",
       "category": "policy",
       "continent": "asia"
     },
