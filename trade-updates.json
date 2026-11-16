@@ -1,7 +1,274 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-16T09:45:39.532079+00:00",
+  "updatedAt": "2026-11-16T19:53:52.286680+00:00",
   "items": [
+    {
+      "title": "亚太工商界看好APEC机遇：深化开放合作，共享发展红利",
+      "description": "中新网深圳11月17日电(记者 张东方 宫宏宇 黄方 张楠)亚太经合组织(APEC)第三十三次领导人非正式会议将于11月18日至19日在广东深圳举行。会议前夕，多位外国工商界人士接受记者采访时表示，期待亚太各经济体通过APEC加强政策沟通，进一步减少贸易壁垒、深化创新合作。他们也看好与中国在清洁能源、人工智能等领域的合作前景。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-17/10733159.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-17T00:30:52+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "（深圳APEC）AI上APEC：从共识到场景 企业出海赋能亚太数智协作生态",
+      "description": "中新社深圳11月16日电 题：AI上APEC：从共识到场景 企业出海赋能亚太数智协作生态",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10733148.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T22:59:34+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "日本2026年三季度GDP再现负增长",
+      "description": "中新社东京11月16日电 (记者 朱晨曦)日本内阁府16日发表的初步统计结果显示，受个人消费下滑影响，扣除物价变动因素，日本2026年第三季度实际国内生产总值(GDP)环比基本持平，按年率计算萎缩0.1%，自2025年第三季度以来再次出现负增长。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-16/10733142.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T22:34:29+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "北京大学张海滨：中国日益成为全球气候治理引领者",
+      "description": "中新网土耳其安塔利亚11月16日电 (记者 魏园 陈溯)《联合国气候变化框架公约》第三十一次缔约方大会(COP31)正在土耳其安塔利亚举行。北京大学碳中和研究院副院长、北大博雅特聘教授、国家气候变化专家委员会委员张海滨在大会期间表示，中国正日益成为全球气候治理中积极而重要的参与者、贡献者和引领者，在国内引领可再生能源转型的同时，积极推动面向全球南方的国际合作，并将持续为世界提供更多全球公共产品。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10733120.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T22:07:27+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "伊朗外长呼吁建立区域主导的独立安全框架和可靠能源机制",
+      "description": "中新社北京11月16日电 综合消息：伊朗外交部长阿拉格齐16日呼吁，迫切需要通过区域性对话，建立区域主导的独立安全框架和可靠能源机制，以保障能源流通和稳定供应，减少外部脆弱性。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-16/10733084.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T22:03:07+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "国际计划全球气候中心负责人：女性主导的气候行动实践值得被投资",
+      "description": "中新网土耳其安塔利亚11月16日电 (记者 魏园 王高飞 陈溯)《联合国气候变化框架公约》第三十一次缔约方大会(COP31)正在土耳其安塔利亚举行。国际计划全球气候中心负责人斯图·所罗门(Stu Solomon)当地时间16日表示，不能把妇女和女童仅仅看作气候危机的受害者，她们是设计、领导和提供本土解决方案的关键力量；在中国，人们已经看到了女性主导的气候行动范例，这些实践值得被看见、被投资，应成为全球气候治理的重要组成部分。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-16/10733059.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T22:02:09+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "泰国普吉一商业楼火灾致11人遇难",
+      "description": "中新社曼谷11月16日电 (梁峻祥 李映民)泰国南部旅游胜地普吉府芭东地区16日凌晨发生一起火灾，造成11人遇难、多人受伤。当地政府已组织救援和善后工作，并对火灾原因展开调查。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-16/10733058.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T22:01:27+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "中新网评：企业宣传莫拿争议换流量",
+      "description": "中新网北京11月16日电(记者 查志远)一句“趁男朋友不在”，代价80万。今年七夕期间，快手“德芙官方旗舰店”发布了一条带货视频，女主角跟男朋友要了很久的七彩礼盒没要到，于是“趁男朋友不在”，收下了暧昧对象驾车两小时送来的同款巧克力，配文“很甜”。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10733114.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T22:00:41+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "怎样看待当前消费形势（每周经济评论）",
+      "description": "刘志成",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10733105.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T21:50:02+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "福建泉州口岸前10个月原油进口超1500万吨",
+      "description": "中新社泉州11月16日电 (郑江洛 朱炳杰)长达330米、载有27.469万吨原油的利比里亚籍“凯景”轮16日缓缓驶入福建泉州斗尾港区。据肖厝边检站统计，今年1至10月，该站累计查验原油进口船舶67艘次，服务泉州口岸原油进口总量突破1500万吨，持续筑牢东南沿海石化产业原料保供基础。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10733102.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T21:49:04+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "广西来宾开启2026/2027榨季 预计进厂糖料蔗超千万吨",
+      "description": "中新网广西来宾11月16日电 (韦鑫 王明三)11月16日，走进广西来宾东糖迁江有限公司，清甜的蔗香扑鼻而来。厂区内运蔗车辆往来不息，过磅、卸蔗等流程顺畅有序，车间内机器轰鸣，工人们熟练操控设备，智能化生产线高效运转，压榨、澄清、蒸发、结晶等工序依次展开，一片繁忙景象。这标志着来宾市进入2026/2027年榨季。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10733100.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T21:47:52+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "宠物消费市场稳步扩容 专家共话规范产业发展新路径",
+      "description": "中新网北京11月16日电 (邸子瀛)宠物市场与产业发展研讨会暨《中国宠物产业发展观察与研究(2026)》研究成果交流会16日在京举行。该会议由全国城市工业品贸易中心联合会宠物产业工作委员会主办，与会者围绕宠物产业发展趋势、消费需求变化、供给质量等议题进行深入交流。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10733089.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T21:27:13+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "四川新能源汽车及动力电池产业链前三季度营收超5000亿元",
+      "description": "中新网成都11月16日电 (王利文)四川省新能源汽车及动力电池产业链供需对接活动新闻通气会16日在四川省经济和信息化厅举行。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10733078.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T21:11:24+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "前三季度四川社会消费品零售总额达2.15万亿元",
+      "description": "中新网成都11月16日电 (单鹏)四川省政府新闻办16日在成都举行“万千气象看四川·开局向新见行动”系列主题新闻发布会(第一场)。四川省商务厅副厅长郑戈表示，前三季度四川社会消费品零售总额2.15万亿元，同比增长1.6%、高于全国0.5个百分点、增速居前十个经济大省第3位。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10733074.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T21:03:42+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "（深圳APEC）今年中国与APEC经济体已达成近50项经贸领域务实成果",
+      "description": "中新社深圳11月16日电 (记者 尹倩芸)中华人民共和国国际贸易谈判代表兼商务部副部长李成钢16日在深圳表示，今年中国与亚太经合组织(APEC)经济体已达成近50项经贸领域务实成果。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10733052.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T20:57:16+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "2026脑机接口大会将于11月19日在北京昌平启幕",
+      "description": "中新网北京11月16日电(记者 陈杭)2026脑机接口大会将于11月19日至22日在北京昌平区举办。大会以“脑智芯联 机遇昌平”为主题，遵循“以会聚智、以赛育才、以展赋能、以产落地”思路，打造集赛事、论坛、成果展览于一体的国家级产业交流平台，助力北京昌平建设全球脑机接口创新高地。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10733036.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T20:41:01+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "IPCC副主席：中国研究与技术创新为全球气候治理贡献关键力量",
+      "description": "中新网土耳其安塔利亚11月16日电 (记者 魏园 王高飞 陈溯)《联合国气候变化框架公约》第三十一次缔约方大会(COP31)正在土耳其安塔利亚举行。联合国政府间气候变化专门委员会(IPCC)副主席戴安娜·尤尔格-沃萨茨(Diana Urge-Vorsatz)当地时间16日在中国角“和谐共生·多元包容：全球治理与绿色可持续”特色活动上表示，中国学者发布的气候与性别研究新著是中国研究的重要里程碑，中国在可再生能源、电动汽车、储能等领域的持续突破，正为全球走向气候中性作出巨大贡献。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-16/10733048.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T20:40:25+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "中国提出到2030年基本形成全球领先的轻工业标准体系",
+      "description": "中新社北京11月16日电 (记者 刘亮)中国工信部、国家市场监管总局16日联合发布的《以标准提升引领轻工业优化升级实施方案》提出目标：到2030年，中国基本形成全球领先的轻工业标准体系。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10733024.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T20:32:44+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "近半席位来自浑南 沈阳“AI+制造”集群领跑全省",
+      "description": "中新网沈阳11月16日电 (记者 赵桂华)一份省级名单，让沈阳市浑南区的“智造家底”再次走到聚光灯下。11月16日记者由沈阳市获悉，辽宁省工业和信息化厅近日公布了2026年辽宁省“人工智能+制造”典型应用案例名单，沈阳市27个案例入选，仅浑南区就独占13席——占比近半数。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732998.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T20:12:41+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "中船大连造船单日连交两船",
+      "description": "中新网大连11月16日电 (记者 杨毅)中船大连造船联合中船贸易为CIDO航运公司建造的30.7万吨原油船“雅望”轮16日在大连命名交付，该轮较合同期提前77天交付。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732996.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T20:10:01+08:00",
+      "category": "supply"
+    },
+    {
+      "title": "市场监管总局通报41批次食品抽检不合格情况",
+      "description": "记者今天了解到，市场监管总局近期组织食品安全监督抽检1459批次样品，检出41批次样品不合格。对抽检发现的不合格食品，有关省级市场监管部门已组织开展核查处置。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732989.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T19:41:47+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "第十四届中国中部投资贸易博览会将在郑州举行",
+      "description": "中新社北京11月16日电 (记者 王梦瑶)中国商务部副部长兼中华人民共和国国际贸易谈判副代表凌激16日在北京表示，第十四届中国中部投资贸易博览会(下称“中博会”)将于11月21日至23日在河南省郑州市举行，主题为“共建三基地一枢纽，推动中部地区加快崛起”。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732972.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T19:22:26+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "中国官方将对应付账款规模大、故意拉长账期车企开展约谈",
+      "description": "中新社北京11月16日电 (记者 刘亮)中国工信部相关负责人16日表示，对应付账款规模大、故意拉长账期或投诉较多的汽车企业，工信部将联合相关部门开展约谈并督促整改。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732970.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T19:18:58+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "忙于“甩锅”？美交通部长拒绝为全美航班停飞事件道歉",
+      "description": "中新网11月16日电 据美国全国广播公司(NBC)报道，当地时间15日，美国交通部长达菲拒绝为13日发生的全美航班地面停飞事件道歉。他把问题推给前任和往届政府，指责其对空中交通管制系统投资不足。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-16/10732977.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T19:14:40+08:00",
+      "category": "policy",
+      "continent": "north-america"
+    },
+    {
+      "title": "（深圳APEC）2026年亚太经合组织工商咨询理事会第四次会议闭幕",
+      "description": "中新网深圳11月16日电 (记者 刘文文)11月14日至16日，由中国贸促会主办的2026年亚太经合组织(APEC)工商咨询理事会(ABAC)第四次会议在深圳举行。中国贸促会会长、2026年APEC工商领导人峰会主席任鸿斌出席闭幕全会并致辞，2026年APEC高官会主席陈旭与会并介绍2026年APEC合作情况，2026年ABAC主席、中国中化董事长李凡荣主持会议，来自21个APEC经济体的ABAC代表、候任代表、专家等超过200人参会。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732966.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T19:13:30+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "（乡村行·看振兴）织密共富网，浙江南浔乡土好物“链”上生金",
+      "description": "中新网湖州11月16日电(黄彦君 高杨晔)一头羊、一条鱼，看似寻常的乡土物产，如何通过产业链重塑焕发“新生”？",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732963.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T19:08:44+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "重庆沙坪坝区将构建具有辨识度的现代化产业体系",
+      "description": "中新网重庆11月16日电 (记者 钟旖)世界上每五台笔记本电脑就有一台是“沙坪坝造”，知名企业赛力斯更是在沙坪坝区成长壮大。面向“十五五”，当地将如何统筹用好特色资源，加快塑造辨识度鲜明的现代化产业体系？16日在重庆市举行的“开局起步十五五·建设现代化新重庆”系列主题新闻发布会上，重庆市沙坪坝区委书记林旭阳作出解答。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732962.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T19:08:14+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "韩国2026年家庭越冬辛奇制作成本回落",
+      "description": "中新网首尔11月16日电 (金旭 林珺)当地时间16日，据韩国专业价格调查机构公布的一项数据显示，以11种主要食材计算，2026年韩国四口之家在传统市场购买腌制越冬辛奇(韩国泡菜，Kimchi)所需食材的费用为28.85万韩元(约合人民币1442.5元)，按大型超市价格计算的费用为36.034万韩元，较2025年分别下降14.8%和10.9%。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-16/10732926.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-16T18:09:27+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
     {
       "title": "涉17家重点车企 供应商账款支付情况调研评估将进行",
       "description": "记者今天(16日)从中国汽车工业协会获悉，协会将对17家重点汽车企业的供应商账款支付情况开展调研评估，推动汽车企业规范供应商账款支付。",
@@ -11,24 +278,6 @@
       "pubDate": "2026-11-16T17:20:44+08:00",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "重庆沙坪坝多举措提升开放型经济发展质效",
-      "description": "中新网重庆11月16日电 (记者 钟旖)作为重庆市的开放大区，沙坪坝区“通道+口岸+综保”三重优势叠加，发展开放型经济具备得天独厚的条件。重庆市沙坪坝区委书记林旭阳16日在当地召开的新闻发布会上表示，“十五五”期间，该区将积极融入、主动服务西部陆海新通道国家战略，围绕重庆物流枢纽经济区建设，坚持“产业+贸易”双向赋能，全面提升开放型经济发展质效。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732887.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-16T17:14:54+08:00",
-      "category": "supply"
-    },
-    {
-      "title": "三重解码剑南春：天猫双11的领先样本",
-      "description": "行业深度调整期，线上竞争日趋激烈。日前，剑南春获天猫双11白酒行业交易总量第一名，收获市场认可与消费者口碑。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732890.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-16T17:10:45+08:00",
-      "category": "policy"
     },
     {
       "title": "瓦莱丽·希基：中国绿色财税金融经验可为其他发展中国家提供借鉴",
@@ -61,15 +310,6 @@
       "continent": "asia"
     },
     {
-      "title": "严防虚假宣传陷阱 市场监管总局发布选购特殊医学用途配方食品消费提示",
-      "description": "中新网11月16日电 据“市说新语”微信公众号消息，特殊医学用途配方食品是为了满足进食受限、消化吸收障碍、代谢紊乱或者特定疾病状态人群对营养素或者膳食的特殊需要，专门加工配制而成的配方食品，对特定人群起着重要的营养支持作用。近日，市场监管总局发布消费提示，帮助消费者科学选购和使用特殊医学用途配方食品，合理消费。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732860.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-16T16:34:43+08:00",
-      "category": "policy"
-    },
-    {
       "title": "中国石化宣布乌兰察布绿氢及输氢管道项目正式启动，发布五大城市群氢能交通建设倡议",
       "description": "11月14日，由中国石化主办的氢能应用现代产业链共链行动大会暨氢能产业高质量发展推进会在北京举办。会议以“氢领未来绿燃新篇”为主题，聚焦氢能产业高质量发展关键议题，汇聚行业力量，共商发展路径。会议宣布乌兰察布绿氢及输氢管道项目正式启动，发布氢能供需对接清单，并与中国一汽、东风汽车、东方电气、北汽福田、上海重塑等企业共同发布五大城市群氢能交通建设倡议，为打通产业链堵点、强化协同合作注入动力，助力我国氢能产业加速迈向规模化、规范化发展新阶段。",
       "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732848.shtml",
@@ -90,15 +330,6 @@
       "continent": "asia"
     },
     {
-      "title": "北京市消协对80款冲锋衣开展比较试验：需关注耐久表现",
-      "description": "中新网北京11月16日电 (记者 吕少威 杜燕)随着户外运动与城市通勤场景日益融合，冲锋衣已成为秋冬出行常见选择。近期，北京市消费者协会对市场上常见的50个品牌80款冲锋衣开展比较试验。结果显示，80款样品耐磨性、化学安全、纤维含量等指标整体表现稳定，但部分产品的防水性能在多次洗涤后出现不同程度下降，消费者选购时应重点关注产品的耐久表现。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732812.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-16T16:16:46+08:00",
-      "category": "policy"
-    },
-    {
       "title": "10月中国原油生产增速加快",
       "description": "中新社北京11月16日电 (记者 王梦瑶)中国国家统计局16日公布，10月份，中国规模以上工业(以下简称规上工业)原油生产增速加快，天然气生产由降转增，电力生产有所下降。",
       "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732805.shtml",
@@ -107,42 +338,6 @@
       "pubDate": "2026-11-16T15:55:01+08:00",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "11月16日“农产品批发价格200指数”比上周五下降0.04个点",
-      "description": "中新网11月16日电 据农业农村部网站消息，据农业农村部监测，11月16日“农产品批发价格200指数”为111.18，比上周五下降0.04个点，“菜篮子”产品批发价格指数为110.68，比上周五下降0.03个点。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732806.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-16T15:51:47+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "新版移动式空调器国家标准发布",
-      "description": "中新网11月16日电 据“市说新语”微信公众号消息，移动式空调器凭借可移位、即插即用等特点，应用场景丰富，市场规模稳步扩张。近日，市场监管总局(国家标准委)修订发布《移动式空调器》(GB/T 22257—2026)国家标准。该标准明确移动式空调器的性能与质量相关要求，将有力促进行业技术升级，持续改善消费者使用体验。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732757.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-16T15:51:37+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "重庆沙坪坝区：力争2030年地区生产总值突破1700亿元",
-      "description": "中新网重庆11月16日电 (记者 钟旖)重庆市沙坪坝区委书记林旭阳16日在当地召开的新闻发布会上介绍，面向“十五五”，当地将加快建设成渝地区双城经济圈主阵地，争当高质量发展、高品质生活、高效能治理示范区，争当创新驱动排头兵，争当内陆开放领头雁，坚持立足禀赋、特色发展，力争到2030年，地区生产总值突破1700亿元、年均增速达5.1%以上，人均GDP增速高于全市平均水平。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732799.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-16T15:50:13+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "八项化工产品碳足迹量化国家标准发布",
-      "description": "记者今天了解到，市场监管总局批准发布《温室气体 产品碳足迹量化方法与要求 尿素》《温室气体 产品碳足迹量化方法与要求 精己二酸》《温室气体 产品碳足迹量化方法与要求 钴盐》《温室气体 产品碳足迹量化方法与要求 锰盐》《温室气体 产品碳足迹量化方法与要求 工业硫酸》《温室气体 产品碳足迹量化方法与要求 磷酸和磷酸盐》《温室气体 产品碳足迹量化方法与要求 无机硅化合物》《温室气体 产品碳足迹量化方法与要求 轮胎》等8项碳足迹量化标准。该批标准聚焦化肥、基础化工原料、新能源材料及橡胶制品等关键领域，为尿素、钴盐、锰盐、工业硫酸、磷酸及磷酸盐、无机硅化合物等化工产品建立统一的产品碳足迹量化规则，填补了多个化工细分品类碳足迹核算标准的空白。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732818.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-16T15:48:29+08:00",
-      "category": "policy"
     },
     {
       "title": "第十四届中国中部投资贸易博览会将于本月21日至23日举行",
@@ -163,15 +358,6 @@
       "pubDate": "2026-11-16T15:16:51+08:00",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "四川扩投资提速：前10月省重点项目完成投资超8000亿元",
-      "description": "中新网成都11月16日电 (单鹏)四川省发展改革委副主任、新闻发言人陶剑锋16日在成都表示，今年以来，四川坚持以项目为牵引组织经济工作，推动省重点项目建设跑出“加速度”。1至10月，四川840个省重点项目完成投资超过8000亿元，年度投资完成率超过100%。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732775.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-16T15:04:27+08:00",
-      "category": "policy"
     },
     {
       "title": "中国国家统计局：实现全年经济发展预期目标有支撑有条件",
@@ -204,13 +390,14 @@
       "continent": "asia"
     },
     {
-      "title": "新达人、新品牌在电商平台长出产业新链路",
-      "description": "店主杨慧芝在薯田中 11月13日，抖音电商发布“双十一”收官数据报告。报告显示，10月15日至11月11日大促期间，超2万中小商家在平台消费券带动下，成交额突破百万元；超3万新商家成交额破百万元，超330个产业带成交额过亿元。平台通过消费券、商家分层扶持等多项举措，帮助品牌商家、中小商家和达人获得更多实实在在的好生意，让线上生意的增长带动线下生产和经营，为实体经济带来新增量。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-16/10732763.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-16T14:39:09+08:00",
-      "category": "policy"
+      "title": "Electric motorbikes open up Rwanda’s taxi industry to women",
+      "link": "https://newsaf.cgtn.com/news/2026-11-16/Electric-motorbikes-open-up-Rwanda-s-taxi-industry-to-women-1S6sFMYrCWQ/p.html",
+      "pubDate": "2026-11-16T11:33:07+00:00",
+      "description": "CGTN Africa · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "policy",
+      "continent": "africa"
     },
     {
       "title": "11月16日人民币对美元中间价报6.7141 上调11个基点",
@@ -259,15 +446,6 @@
       "pubDate": "2026-11-15T22:45:23+08:00",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "第20届法语国家组织峰会在柬埔寨举办",
-      "description": "中新社金边11月15日电(张安琪 张堰林 杨强)第20届法语国家组织峰会当地时间15日在柬埔寨首都金边开幕。峰会以“重新投资和平，促进共同繁荣与可持续稳定”为主题，数十位各国领导人及国际组织负责人出席。",
-      "link": "https://www.chinanews.com.cn/gj/2026/11-15/10732469.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-15T20:36:42+08:00",
-      "category": "policy"
     },
     {
       "title": "宁夏贺兰山东麓葡萄酒亮相青田侨博会 借侨为桥开拓海外市场",
@@ -1128,56 +1306,6 @@
       "continent": "asia"
     },
     {
-      "title": "人民银行三季度货政报告拆解“钱去哪了”",
-      "description": "北京商报讯(记者 廖蒙)关于存款结构的变化，人民银行最新说明。11月11日，人民银行发布《2026年第三季度中国货币政策执行报告》(以下简称《报告》)。《报告》首个专栏聚焦“我国银行存款结构的变化特征”，以近十年数据说明，在利率下行与融资结构变化之下，银行存款的持有主体、来源和期限正在同时改写，我国存款结构变化呈现新特征。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-13/10731349.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T10:34:12+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "（深圳APEC）澳大利亚政商界人士：期待借APEC会议拓展对华合作",
-      "description": "中新社悉尼11月13日电 (记者 薄雯雯)亚太经合组织(APEC)第三十三次领导人非正式会议将于本月在中国深圳举行。多位澳大利亚政商界人士近日在悉尼接受中新社记者采访时表示，期待以此次会议为契机，拓展澳中两国在绿色能源、科技创新等领域合作。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-13/10731278.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T09:57:16+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "11月13日人民币对美元中间价报6.7152 上调22个基点",
-      "description": "中新网11月13日电 据中国外汇交易中心网站消息，中国人民银行授权中国外汇交易中心公布，2026年11月13日银行间外汇市场人民币汇率中间价为：1美元对人民币6.7152元，上调22个基点。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-13/10731286.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T09:21:46+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "三座城看二十五年蝶变： APEC见证中国从“融入亚太”到“领航亚太”",
-      "description": "11月18日至19日，亚太经济合作组织(APEC)第三十三次领导人非正式会议将在中国深圳举行。这是中国继2001年、2014年之后，第三次担任APEC东道主。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-13/10731269.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T08:45:02+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "854.5亿美元背后 中国交通正驶向“无限可能”",
-      "description": "11月10日下午，第九届中国国际进口博览会(以下简称“进博会”)闭幕前的最后几个小时。国家会展中心(上海)汽车及智慧出行展区里，人还没有散。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-13/10731268.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T08:40:00+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
       "title": "What global brands can learn from China's fast-moving market",
       "description": "What global brands can learn from China's fast-moving market",
       "link": "https://news.cgtn.com/news/2026-11-13/What-global-brands-can-learn-from-China-s-fast-moving-market-1RQUbxDdGgg/p.html",
@@ -1244,16 +1372,6 @@
       "sourceCountry": "CGTN",
       "pubDate": "2026-11-13T05:42:30+00:00",
       "category": "supply",
-      "continent": "asia"
-    },
-    {
-      "title": "菲律宾多个政府部门遭网络攻击 总统府称已做好应对准备",
-      "description": "中新社马尼拉11月13日电 (记者 周璟)菲律宾总统府12日表示，政府已做好应对针对政府机构网络攻击的准备。此前，菲律宾国家隐私委员会确认，已收到至少10个政府部门遭遇网络攻击并发生数据泄露的报告，大量企业和个人隐私数据遭泄露。",
-      "link": "https://www.chinanews.com.cn/gj/2026/11-13/10731240.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-13T04:48:25+08:00",
-      "category": "policy",
       "continent": "asia"
     },
     {
@@ -3651,26 +3769,6 @@
       "sourceCountry": "CGTN",
       "category": "policy",
       "continent": "africa"
-    },
-    {
-      "title": "Houthis warn airlines to avoid Saudi airports after deadly strike",
-      "link": "https://newseu.cgtn.com/news/2026-10-11/Houthis-warn-airlines-to-avoid-Saudi-airports-after-deadly-strike-1R9OwrB3g8U/p.html",
-      "pubDate": "2026-10-11T12:53:23+00:00",
-      "description": "CGTN Europe · International market and trade coverage.",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "category": "supply",
-      "continent": "europe"
-    },
-    {
-      "title": "How the Slovenian port of Koper became the Gateway to Europe",
-      "link": "https://newseu.cgtn.com/news/2026-10-11/How-the-Slovenian-port-of-Koper-became-the-Gateway-to-Europe-1R8sY7WsHrG/p.html",
-      "pubDate": "2026-10-11T12:50:54+00:00",
-      "description": "CGTN Europe · International market and trade coverage.",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "category": "supply",
-      "continent": "europe"
     },
     {
       "title": "EgyptAir suspends flights to Riyadh after airport attack",
