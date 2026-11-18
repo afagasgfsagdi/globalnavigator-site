@@ -1,7 +1,134 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-18T11:43:18.418466+00:00",
+  "updatedAt": "2026-11-18T19:37:30.552273+00:00",
   "items": [
+    {
+      "title": "英国10月通胀率升至一年来新高",
+      "description": "中新社伦敦11月18日电 (记者 欧阳开宇)英国官方18日公布的数据显示，英国10月消费者价格指数(CPI)同比上涨3.6%，较9月3.5%的涨幅小幅抬升，创下一年以来通胀率最高水平。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-18/10734425.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-18T23:32:15+08:00",
+      "category": "policy",
+      "continent": "europe"
+    },
+    {
+      "title": "商务部国际司负责人就实质性完成中韩自贸协定第二阶段谈判有关情况答记者问",
+      "description": "问：中韩自贸协定第二阶段谈判经历了怎样的历程？",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734424.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-18T23:18:41+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "“国常会上有人表态不会再频繁救市了”系谣言",
+      "description": "中新社北京11月18日电 (记者 陈康亮)中国资本市场辟谣平台18日发布消息称，近日，互联网上传播关于“国常会(国务院常务会议)上有人表态不会再频繁救市了”相关信息。经核查，该信息为谣言。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734213.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-18T22:54:03+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "从“买卖全球”到共创共享 浙江诠释对外开放新内涵",
+      "description": "中新网杭州11月18日电(蓝伊旎)第九届中国国际进口博览会(下称“进博会”)在上海落幕后，有多场展会“接棒”登场的浙江变得更加热闹了。不少跨国企业代表、海外客商转场而来，看展洽谈、走访企业、对接项目，在面对面交流中续写新的合作故事。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734418.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-18T22:32:40+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "中外企业奏响产业创新协奏曲",
+      "description": "多普勒激光测振系统、3D蓝光扫描系统、可控与随机跌落装置……这些苹果公司研发体系的尖端设备，不在美国加州库比蒂诺，而在深圳河套。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734399.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-18T22:02:59+08:00",
+      "category": "policy",
+      "continent": "north-america"
+    },
+    {
+      "title": "“中国发展论坛·2026”聚焦现代化产业体系",
+      "description": "中新社辽宁葫芦岛11月18日电 (姜月恒 罗鲁峤)“中国发展论坛·2026”18日在辽宁葫芦岛举行，围绕“构建以先进制造业为骨干的现代化产业体系”主题开展研讨。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734397.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-18T21:58:24+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "浙江金华：铁路物流如何护航“纸通天下”？",
+      "description": "中新网金华11月18日电(董易鑫)11月18日，四趟满载卷纸的集装箱班列抵达位于浙江的金华南站，货物来自江苏、山东、湖北、湖南等地。值得一提的是，这是中国国家铁路集团有限公司物流中心在全国范围内首次组织纸品集结班列。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734310.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-18T21:39:35+08:00",
+      "category": "supply",
+      "continent": "asia"
+    },
+    {
+      "title": "云南两地地标品牌亮相上海 供应链重构破解区域农产品瓶颈",
+      "description": "中新网上海11月18日电 (杨硕)16日至18日，由中国连锁经营协会主办的2026CCFA零售创新大会在上海举行，大会以“零售能力的重构”为主题。来自云南的镇雄县“赤水源品”和昭通市“昭通天麻”两大区域公用品牌携方竹、二荆条辣椒、高山魔芋、赤水香猪以及乌天麻等特色农产品亮相会场，以供应链重构破解“大产业、小品牌”的行业共性难题。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734372.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-18T21:34:13+08:00",
+      "category": "supply",
+      "continent": "asia"
+    },
+    {
+      "title": "中国算力产业高速增长 赋能人工智能发展",
+      "description": "中新社武汉11月18日电 (记者 梁婷)2026算力互联网大会18日在武汉开幕，中国工业和信息化部信息通信科技委常务副主任兼秘书长韩夏介绍，中国算力产业呈高速增长态势，截至今年9月底，国家算力互联网服务平台已面向全国分配算力标识1198万条，汇聚资源362EFLOPS(每秒进行百亿亿次浮点运算，下同)，赋能人工智能发展。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734384.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-18T21:33:51+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "宁夏优化新能源用地保障结构 要素供给向储能配套倾斜",
+      "description": "中新网银川11月18日电 (记者 于晶)18日，记者从宁夏回族自治区自然资源厅获悉，今年以来，宁夏依托国土空间规划精准配置土地要素，保障光伏、风电、新型储能等新能源项目落地，用地保障重心逐步向储能等产业链关键环节转移，助力新型能源体系建设。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734351.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-18T21:13:00+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "国开行宁夏分行投放1.07亿元信贷 保障老年慢病用药稳产",
+      "description": "中新网银川11月18日电 (记者 于晶)18日，记者从国家开发银行宁夏分行获悉，该行聚焦老年慢性病用药保供与医药研发创新，累计为宁夏本土老年药品生产企业授信1.8亿元、发放贷款1.07亿元，精准支持区内药企稳产扩产，持续提升宁夏老年慢病用药本土供给能力。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734348.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-18T21:12:48+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "AI赋能+外商直采 浙江拱墅激活专业市场外贸新动能",
+      "description": "中新网杭州11月18日电(奚金燕 李旻煜 魏涛)11月18日，第五届中非经贸西湖大会五金机电专场活动在浙江杭州拱墅区启幕。来自非洲以及共建“一带一路”国家的30余位海外采购商走进浙江建华五金机电市场，与参展商和市场商户面对面洽谈，共探合作新蓝海。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734311.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-18T20:39:56+08:00",
+      "category": "policy",
+      "continent": "africa"
+    },
+    {
+      "title": "中国将围绕降本增效进一步为企业“减负”",
+      "description": "中新社北京11月18日电 (记者 刘亮)记者18日自中国工信部获悉，国务院减轻企业负担部际联席会议办公室负责人表示，联席会议明年将围绕降本增效，进一步完善惠企减负政策运行机制。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734279.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-18T20:25:11+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
     {
       "title": "澳大利亚总理：中国是澳方最大贸易伙伴，期待在深圳为澳企创造更多机遇",
       "description": "中新网11月18日电 综合报道，澳大利亚总理阿尔巴尼斯18日在社交媒体发文称，中国是澳大利亚最大的贸易伙伴，他期待在深圳为澳企创造更多机遇。",
@@ -154,24 +281,6 @@
       "continent": "asia"
     },
     {
-      "title": "2026年前10个月我与APEC其他经济体进出口占我总值达60.4%",
-      "description": "据海关统计，2026年前10个月，我对APEC其他经济体进出口27.08万亿元，同比(下同)增长25.4%，高出我进出口整体增速5.4个百分点，占我进出口总值的60.4%，较去年同期提升2.6个百分点。其中，我对APEC其他经济体出口增长22.6%，我自APEC其他经济体进口增长29.1%，高于出口6.5个百分点。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734155.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-18T16:36:45+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "从“旧厂房”中寻到天津城市更新“新路子”",
-      "description": "实施城市更新行动，是建设宜居、韧性、智慧城市的重要举措。作为一座拥有大量工业遗存的城市，天津没有忽视它们的改造，而是推动老旧厂区从工业“锈带”焕新为生活“秀带”，城市载体功能明显增强，焕发出经济发展与人居环境改善的生机与活力。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734151.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-18T16:30:33+08:00",
-      "category": "policy"
-    },
-    {
       "title": "中国与加拿大签署《中加金融工作组工作规范》",
       "description": "中新社北京11月18日电 据中国央行18日消息，近期，中国央行行长潘功胜与加拿大财政部长商鹏飞、加拿大央行行长麦克勒姆共同签署了《中加金融工作组工作规范》。",
       "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734122.shtml",
@@ -212,15 +321,6 @@
       "continent": "asia"
     },
     {
-      "title": "北上追雪、南下向暖 为冬季户外消费注入新增量",
-      "description": "近年来，随着户外运动的蓬勃发展，我国户外运动参与人数已超过5亿。以往冬季是户外运动开展较少的时间，如今北方主要冰雪目的地冰雪季陆续开启，南方游客北上参与冰雪运动，为冬季户外消费注入新增量。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734135.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-18T16:15:06+08:00",
-      "category": "policy"
-    },
-    {
       "title": "从新产品到新场景，首发经济不止于开店",
       "description": "原标题：中国经济看“新”｜从新产品到新场景，首发经济不止于开店",
       "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734128.shtml",
@@ -229,6 +329,16 @@
       "pubDate": "2026-11-18T16:08:37+08:00",
       "category": "policy",
       "continent": "asia"
+    },
+    {
+      "title": "Zambia breaks ground on its first vaccine manufacturing plant",
+      "link": "https://newsaf.cgtn.com/news/2026-11-19/Zambia-breaks-ground-on-its-first-vaccine-manufacturing-plant--1SaLKklAbja/p.html",
+      "pubDate": "2026-11-18T16:03:44+00:00",
+      "description": "CGTN Africa · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "policy",
+      "continent": "africa"
     },
     {
       "title": "挪威礼诺航运COO：不能简单把中国AI发展定义为威胁",
@@ -241,22 +351,14 @@
       "continent": "europe"
     },
     {
-      "title": "吉林TIR跨境货运增长迅猛 前十月货值突破50亿元",
-      "description": "中新网长春11月18日电 (记者 郭佳)记者18日从长春海关获悉，今年1月至10月，吉林省国际公路运输(TIR)进出境达1470车次，货值达到50.3亿元，同比分别增长415.8%和389%，业务车次、货值规模持续位居全国前列。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734097.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-18T15:34:46+08:00",
-      "category": "supply"
-    },
-    {
-      "title": "前10个月深圳对APEC其他经济体进出口增长超四成",
-      "description": "记者从深圳海关获悉，今年前10个月，深圳对APEC其他成员经济体进出口总值居全国内地城市首位。深圳与亚太经济体经贸往来紧密，区域产业互补优势持续凸显。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-18/10734093.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-18T15:10:34+08:00",
-      "category": "policy"
+      "title": "Shenzhen-made electronics find growing market in Kenya",
+      "link": "https://newsaf.cgtn.com/news/2026-11-18/Shenzhen-made-electronics-find-growing-market-in-Kenya-1SaPmtO48Lu/p.html",
+      "pubDate": "2026-11-18T13:47:31+00:00",
+      "description": "CGTN Africa · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "policy",
+      "continent": "africa"
     },
     {
       "title": "多国工商界人士：期待APEC各经济体加强合作 创造繁荣",
@@ -721,6 +823,15 @@
       "pubDate": "2026-11-17T00:30:52+08:00",
       "category": "policy",
       "continent": "asia"
+    },
+    {
+      "title": "关于2027年度符合申领汽车、摩托车、非公路用两轮摩托车和全地形车出口许可证条件企业名单的公示",
+      "description": "商务部外贸政策公告。请查看官方文件原文，核对适用范围与实施时间。",
+      "link": "https://wms.mofcom.gov.cn/zcfb/wmgl/art/2026/art_9823a241bff442cea855b026dafbe04d.html",
+      "author": "商务部",
+      "sourceCountry": "China",
+      "pubDate": "2026-11-17T00:00:00+08:00",
+      "category": "policy"
     },
     {
       "title": "日本2026年三季度GDP再现负增长",
@@ -1251,26 +1362,6 @@
       "continent": "asia"
     },
     {
-      "title": "1至10月份中国国家铁路发送货物34.2亿吨",
-      "description": "中新社北京11月15日电 中国国家铁路集团有限公司(简称“国铁集团”)15日发布的数据显示，今年1至10月份，国家铁路累计发送货物34.2亿吨，日均装车18.92万车，同比分别增长1.1%、1.8%，为降低全社会物流成本、保障国民经济平稳运行提供了可靠运输支撑。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-15/10732295.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-15T12:03:30+08:00",
-      "category": "supply",
-      "continent": "asia"
-    },
-    {
-      "title": "小辣椒大前景 “中国辣椒之乡”会龙把“椒”傲种进富民路",
-      "description": "中新网安徽阜阳11月15日电 (游蕾)伴随着淮河琴书《辣椒棚里笑声甜》等文艺节目的精彩上演，“椒香会龙迎丰收·产业富民助振兴”阜南辣椒丰收季活动14日在安徽省阜阳市阜南县会龙镇拉开帷幕。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-15/10732293.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-15T12:03:26+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
       "title": "ABAC Members: China key to Asia-Pacific economic integration",
       "description": "ABAC Members: China key to Asia-Pacific economic integration",
       "link": "https://news.cgtn.com/news/2026-11-15/ABAC-Members-China-key-to-Asia-Pacific-economic-integration-1S5UH2on7Ve/p.html",
@@ -1299,26 +1390,6 @@
       "pubDate": "2026-11-15T09:24:15+08:00",
       "category": "policy",
       "continent": "africa"
-    },
-    {
-      "title": "金融机构外汇存款准备金率今起提高至6%",
-      "description": "今天，中国人民银行上调金融机构外汇存款准备金率正式生效，外汇存款准备金率由现行的4%提高到6%。本次上调有助于促进外汇市场供求平衡，打破人民币升值预期的自我实现。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-15/10732240.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-15T09:18:01+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "1至10月份国家铁路发送货物34.2亿吨",
-      "description": "中新网11月15日电 据“中国铁路”微信公众号消息，今年1至10月份，国家铁路累计发送货物34.2亿吨，日均装车18.92万车，同比分别增长1.1%、1.8%，为降低全社会物流成本、保障国民经济平稳运行提供了可靠运输支撑，“中国铁路物流”的品牌影响力、市场竞争力和客户满意度持续提升。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-15/10732221.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-15T09:02:18+08:00",
-      "category": "supply",
-      "continent": "asia"
     },
     {
       "title": "China-Germany animation 'Panda and Gummy Bear' launches in Berlin",
@@ -3877,16 +3948,6 @@
       "continent": "africa"
     },
     {
-      "title": "China details consensus with EU on hybrid, EV trade",
-      "link": "https://news.cgtn.com/news/2026-10-12/China-details-consensus-with-EU-on-hybrid-EV-trade-1RbmjrGxTH2/p.html",
-      "pubDate": "2026-10-12T11:24:42+00:00",
-      "description": "CGTN Europe · International market and trade coverage.",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "category": "policy",
-      "continent": "europe"
-    },
-    {
       "title": "Namibia reports foot-and-mouth disease in second region",
       "link": "https://newsaf.cgtn.com/news/2026-10-12/Namibia-reports-foot-and-mouth-disease-in-second-region-1Rbq53fzS1O/p.html",
       "pubDate": "2026-10-12T11:13:14+00:00",
@@ -4189,15 +4250,6 @@
       "sourceCountry": "CGTN",
       "category": "policy",
       "continent": "south-america"
-    },
-    {
-      "title": "关于公示2026年食糖进口关税配额再分配拟分配企业名单的通知",
-      "description": "商务部外贸政策公告。请查看官方文件原文，核对适用范围与实施时间。",
-      "link": "https://wms.mofcom.gov.cn/zcfb/wmgl/art/2026/art_5449046a55104740b5bdc7e4b60501b9.html",
-      "author": "商务部",
-      "sourceCountry": "China",
-      "pubDate": "2026-09-24T00:00:00+08:00",
-      "category": "tariff"
     },
     {
       "title": "Reporter's Diary: Kenyan urbanites brace for El Niño",
