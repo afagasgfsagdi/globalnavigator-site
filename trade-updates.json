@@ -1,7 +1,73 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-19T18:41:15.987659+00:00",
+  "updatedAt": "2026-11-20T00:56:36.704993+00:00",
   "items": [
+    {
+      "title": "产销、改装、回收，汽车消费全链条发力",
+      "description": "《扩大消费“十五五”规划》提出“扩大汽车消费，推进汽车流通消费领域全链条创新发展，促进二手车流通，拓展汽车改装、租赁、赛事及房车露营等汽车后市场消费”。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-20/10735005.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-20T07:45:47+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "国际能源署：中东冲突很可能对能源市场构成持久影响",
+      "description": "中新社巴黎11月19日电 （记者 李洋）国际能源署当地时间19日发布《2026年世界能源展望》报告，警告中东冲突很可能对能源市场构成持久影响。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-20/10734995.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-20T07:39:17+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "Anthropic上市 创史上最大IPO融资纪录",
+      "description": "中新社纽约11月19日电 (记者 王帆)美国人工智能公司Anthropic当地时间19日在纽约纳斯达克证券交易所上市，其首次公开募股(IPO)融资总额超过813亿美元，创下美股史上最大IPO融资规模纪录。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-20/10734997.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-20T07:36:17+08:00",
+      "category": "policy",
+      "continent": "north-america"
+    },
+    {
+      "title": "钱凯港运营两周年 为中秘双边贸易带来哪些改变？",
+      "description": "钱凯港，是2024年11月中秘共建“一带一路”的重点项目。“从钱凯到上海”是钱凯港极具代表性的发展标识。历经两年运营，这座现代化港口建设运营成效如何？为中秘双边贸易带来哪些改变？",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-20/10734988.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-20T06:06:26+08:00",
+      "category": "supply"
+    },
+    {
+      "title": "普京：克里米亚大桥遭袭后 不再讨论海上停火",
+      "description": "新华社莫斯科11月19日电 俄罗斯总统普京19日表示，在克里米亚大桥遭袭后，俄方不会就海上停火或停止攻击能源设施与有关方面进行谈判。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-20/10734987.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-20T06:05:38+08:00",
+      "category": "policy",
+      "continent": "europe"
+    },
+    {
+      "title": "Tariff disputes on hold, but unresolved as APEC meeting gets underway",
+      "link": "https://newsus.cgtn.com/news/2026-11-20/Tariff-disputes-on-hold-but-unresolved-as-APEC-meeting-gets-underway-1SduogRwLKg/p.html",
+      "pubDate": "2026-11-20T00:05:44+00:00",
+      "description": "CGTN Americas · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "tariff"
+    },
+    {
+      "title": "Mexico diversifies agriculture for new markets",
+      "link": "https://newsus.cgtn.com/news/2026-11-20/Mexico-diversifies-agriculture-for-new-markets-1SdtAUAoFvq/p.html",
+      "pubDate": "2026-11-20T00:05:09+00:00",
+      "description": "CGTN Americas · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "policy",
+      "continent": "north-america"
+    },
     {
       "title": "（深圳APEC）外媒聚焦APEC：开放合作为亚太发展凝聚共识",
       "description": "中新社北京11月19日电 综合消息：亚太经合组织(APEC)第三十三次领导人非正式会议18日至19日在中国深圳举行。多家外媒聚焦深圳科技创新与城市发展，关注会议释放的开放合作信号，认为维护贸易开放、深化区域合作、推动创新发展，仍是亚太经济体的共同关切。",
@@ -11,6 +77,34 @@
       "pubDate": "2026-11-19T23:45:35+08:00",
       "category": "policy",
       "continent": "asia"
+    },
+    {
+      "title": "Mexico sees opportunities for business at APEC in Shenzhen",
+      "link": "https://newsus.cgtn.com/news/2026-11-20/Mexico-sees-opportunities-for-business-at-APEC-in-Shenzhen-1Sdk1deFshW/p.html",
+      "pubDate": "2026-11-19T23:09:28+00:00",
+      "description": "CGTN Americas · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "supply",
+      "continent": "north-america"
+    },
+    {
+      "title": "Chancay megaport celebrates two years of operation",
+      "link": "https://newsus.cgtn.com/news/2026-11-20/Chancay-megaport-celebrates-two-years-of-operation-1Sdk9Lpo304/p.html",
+      "pubDate": "2026-11-19T23:09:13+00:00",
+      "description": "CGTN Americas · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "supply"
+    },
+    {
+      "title": "US companies form the largest overseas contingent at APEC CEO Summit",
+      "link": "https://newsus.cgtn.com/news/2026-11-20/US-companies-form-the-largest-overseas-contingent-at-APEC-CEO-Summit-1SdktPJajeM/p.html",
+      "pubDate": "2026-11-19T23:09:01+00:00",
+      "description": "CGTN Americas · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "policy"
     },
     {
       "title": "数字种业“突围” 广西大石山区蹚出数字乡村新路",
@@ -3702,16 +3796,6 @@
       "sourceCountry": "CGTN",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "China-Europe freight train trips on eastern corridor hit record high",
-      "description": "The number of China-Europe freight train trips through the network's eastern corridor reached a record high so far this year, while the range of goods transported has increasingly shifted toward higher-value, technology-intensive products.",
-      "link": "https://news.cgtn.com/news/2026-10-24/China-Europe-freight-train-trips-on-eastern-corridor-hit-record-high-1RuVWtuSDFC/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-10-24T06:08:46+00:00",
-      "category": "supply",
-      "continent": "europe"
     },
     {
       "title": "Chinese carmakers drive surge in robots on Brazilian factory floors",
