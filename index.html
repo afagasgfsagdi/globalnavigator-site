@@ -2452,6 +2452,51 @@
       });
     })();
   </script>
+  <script>
+    // Keep the news/home routes usable even if the 3D module fails to load.
+    (() => {
+      const hero = document.querySelector('#hero');
+      const mainPage = document.querySelector('#main-page');
+      const worldPage = document.querySelector('#world-page');
+      const topicPage = document.querySelector('#topic-page');
+      const loginLayer = document.querySelector('#login-layer');
+      const openNews = () => {
+        if (loginLayer) { loginLayer.hidden = true; loginLayer.setAttribute('aria-hidden', 'true'); }
+        if (hero) hero.hidden = true;
+        if (mainPage) { mainPage.hidden = true; mainPage.setAttribute('aria-hidden', 'true'); mainPage.classList.remove('entering', 'is-revealing', 'is-report-workspace', 'is-report-generating'); }
+        if (topicPage) topicPage.hidden = true;
+        if (worldPage) { worldPage.hidden = false; worldPage.classList.remove('is-leaving'); }
+        window.scrollTo({ top: 0, behavior: 'auto' });
+        window.dispatchEvent(new Event('world-page-open'));
+      };
+      const openHome = () => {
+        if (hero) hero.hidden = false;
+        if (mainPage) { mainPage.hidden = true; mainPage.setAttribute('aria-hidden', 'true'); mainPage.classList.remove('entering', 'is-revealing', 'is-report-workspace', 'is-report-generating'); }
+        if (worldPage) worldPage.hidden = true;
+        if (topicPage) topicPage.hidden = true;
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      };
+      document.querySelector('#explore-nav')?.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        history.replaceState(null, '', '#world-page');
+        openNews();
+      }, true);
+      document.querySelector('#home-nav')?.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        history.replaceState(null, '', '#hero');
+        openHome();
+      }, true);
+      document.querySelector('.logo')?.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        history.replaceState(null, '', '#hero');
+        openHome();
+      }, true);
+      if (location.hash === '#world-page') openNews();
+    })();
+  </script>
 </body>
 </html>
 
