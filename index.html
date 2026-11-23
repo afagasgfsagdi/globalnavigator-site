@@ -2405,6 +2405,42 @@ Total output lines: 2476
     const initialTopic=location.hash.match(/^#topic-(policy|tariff|supply)(?:\?region=([a-z-]+))?$/);
     if(initialTopic) showTopicPage(categories.find(category=>category.id===initialTopic[1]),{pushHistory:false,regionId:initialTopic[2] || null});
   </script>
+  <script>
+    // Restore the public demo sign-in behavior. The GitHub Pages copy was missing this listener.
+    (() => {
+      const form = document.querySelector('#login-form');
+      if (!form || form.dataset.authWired === '1') return;
+      form.dataset.authWired = '1';
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const account = document.querySelector('#login-account')?.value.trim();
+        const password = document.querySelector('#login-password')?.value;
+        const error = document.querySelector('#login-error');
+        if (account !== 'abc' || password !== '123456') {
+          if (error) error.textContent = '账号或密码错误，请重试。';
+          return;
+        }
+        try { sessionStorage.setItem('globalNavigatorSiteAuth', '1'); } catch {}
+        document.documentElement.classList.remove('site-auth-locked');
+        const layer = document.querySelector('#login-layer');
+        if (layer) {
+          layer.hidden = true;
+          layer.setAttribute('aria-hidden', 'true');
+        }
+        form.reset();
+        requestAnimationFrame(() => document.querySelector('#hero-agent-entry')?.focus({ preventScroll: true }));
+      });
+      document.querySelector('#password-toggle')?.addEventListener('click', event => {
+        const button = event.currentTarget;
+        const input = document.querySelector('#login-password');
+        if (!input) return;
+        const visible = input.type === 'password';
+        input.type = visible ? 'text' : 'password';
+        button.setAttribute('aria-pressed', String(visible));
+        button.setAttribute('aria-label', visible ? '隐藏密码' : '显示密码');
+      });
+    })();
+  </script>
 </body>
 </html>
 
