@@ -1675,27 +1675,19 @@
     const normalizeQuickChartUrl=(rawUrl)=>{
       try{
         const url=new URL(rawUrl);
+        if(url.hostname!=='quickchart.io'||url.pathname!=='/chart')return rawUrl;
         const key=['c','chart','config'].find(name=>url.searchParams.has(name));
         if(!key)return url.href;
         const raw=url.searchParams.get(key)||'';
-        const candidates=[raw.trim().replace(/;\\s*$/,'')];
-        try{const decoded=decodeURIComponent(raw);if(decoded!==raw)candidates.push(decoded.trim().replace(/;\\s*$/,''))}catch{}
-        for(let candidate of candidates){
-          const first=candidate.indexOf('{'),last=candidate.lastIndexOf('}');
-          if(first>=0&&last>first)candidate=candidate.slice(first,last+1);
-          try{
-            const config=JSON.parse(candidate);
-            url.searchParams.set(key,JSON.stringify(config));
-            break;
-          }catch{}
-        }
+        const cleaned=raw.trim().replace(/;+\s*$/,'');
+        if(cleaned!==raw.trim())url.searchParams.set(key,cleaned);
         return url.href;
       }catch{return rawUrl}
     };
     const normalizeChartMarkdown=(markdown)=>{
-      let text=String(markdown||'').replace(/\\r/g,'');
+      let text=String(markdown||'').replace(/\r/g,'');
       for(let i=0;i<12;i++){
-        const joined=text.replace(/(https:\/\/quickchart\.io\/chart\?[^\s)]*)\\n(?=%[0-9a-f]{2})/gi,'$1');
+        const joined=text.replace(/(https:\/\/quickchart\.io\/chart\?[^\s)]*)\n(?=%[0-9a-f]{2})/gi,'$1');
         if(joined===text)break;
         text=joined;
       }
