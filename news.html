@@ -2507,6 +2507,28 @@
       if (location.hash === '#world-page') openNews();
     })();
   </script>
+  <script id="standalone-news-force-route">
+    (() => {
+      const revealNews = () => {
+        if (document.documentElement.classList.contains('site-auth-locked')) return;
+        document.querySelector('#hero')?.remove();
+        document.querySelector('#main-page')?.remove();
+        document.querySelector('#topic-page')?.remove();
+        const page = document.querySelector('#world-page');
+        if (!page) return;
+        page.hidden = false;
+        page.removeAttribute('hidden');
+        page.classList.add('is-active');
+        page.style.setProperty('display', 'flex', 'important');
+        page.style.setProperty('min-height', '100vh');
+        page.style.setProperty('min-height', '100svh');
+        window.scrollTo({ top: 0, behavior: 'auto' });
+        window.dispatchEvent(new Event('world-page-open'));
+      };
+      revealNews();
+      new MutationObserver(revealNews).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    })();
+  </script>
 </body>
 </html>
 
