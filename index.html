@@ -63,6 +63,8 @@
     .cta-line { flex:1;height:1.5px;background:rgba(255,255,255,.8);min-width:40px }
     .login-layer { position:fixed;inset:0;z-index:5;display:grid;place-items:center;padding:24px;background:rgba(0,0,0,.48);backdrop-filter:blur(10px) saturate(125%);-webkit-backdrop-filter:blur(10px) saturate(125%) }
     .login-layer[hidden],.main-page[hidden],.world-page[hidden],.topic-page[hidden],.hero[hidden] { display:none }
+    body:has(#world-page:target) #hero,body:has(#world-page:target) #main-page,body:has(#world-page:target) #topic-page { display:none!important }
+    body:has(#world-page:target) #world-page { display:flex!important }
     .login-layer.is-opening { animation:login-layer-arrive .42s ease-out both }
     .login-layer.shattering { background:rgba(0,0,0,0);backdrop-filter:blur(0) saturate(100%);-webkit-backdrop-filter:blur(0) saturate(100%);transition:background .45s ease,backdrop-filter .45s ease,-webkit-backdrop-filter .45s ease }
     .login-layer.shattering .login-card { opacity:0;transition:opacity .12s ease }
