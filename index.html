@@ -1310,8 +1310,8 @@
     const requestTurn=direction=>{ remainingYaw+=direction*Math.PI/2; velocityX=velocityY=0;lastRelease=performance.now(); };
     document.querySelector('#prev').addEventListener('click',()=>requestTurn(-1));document.querySelector('#next').addEventListener('click',()=>requestTurn(1));
     const hero=document.querySelector('.hero'),loginLayer=document.querySelector('#login-layer'),loginForm=document.querySelector('#login-form'),mainPage=document.querySelector('#main-page'),worldPage=document.querySelector('#world-page'),topicPage=document.querySelector('#topic-page');
-    const showWorldPage=()=>{loginLayer.hidden=true;loginLayer.classList.remove('is-opening');loginLayer.setAttribute('aria-hidden','true');mainPage.hidden=true;topicPage.hidden=true;hero.hidden=false;worldPage.hidden=false;worldPage.classList.remove('is-leaving');history.replaceState(null,'','#world-page');worldPage.scrollIntoView({behavior:'smooth',block:'start'});window.dispatchEvent(new Event('world-page-open'));};
-    const showHomePage=()=>{mainPage.hidden=true;mainPage.setAttribute('aria-hidden','true');mainPage.classList.remove('entering','is-revealing');topicPage.hidden=true;hero.hidden=false;worldPage.classList.remove('is-leaving');history.replaceState(null,'','#hero');window.scrollTo({top:0,behavior:'smooth'});requestAnimationFrame(()=>resize());};
+    const showWorldPage=()=>{loginLayer.hidden=true;loginLayer.classList.remove('is-opening');loginLayer.setAttribute('aria-hidden','true');mainPage.hidden=true;mainPage.setAttribute('aria-hidden','true');mainPage.classList.remove('entering','is-revealing','is-report-workspace','is-report-generating');topicPage.hidden=true;hero.hidden=true;worldPage.hidden=false;worldPage.classList.remove('is-leaving');history.replaceState(null,'','#world-page');window.scrollTo({top:0,behavior:'auto'});window.dispatchEvent(new Event('world-page-open'));};
+    const showHomePage=()=>{mainPage.hidden=true;mainPage.setAttribute('aria-hidden','true');mainPage.classList.remove('entering','is-revealing','is-report-workspace','is-report-generating');topicPage.hidden=true;worldPage.hidden=true;hero.hidden=false;worldPage.classList.remove('is-leaving');history.replaceState(null,'','#hero');window.scrollTo({top:0,behavior:'auto'});requestAnimationFrame(()=>resize());};
     const enterMainPage=()=>{
       mainPage.hidden=false;mainPage.setAttribute('aria-hidden','true');mainPage.classList.remove('is-revealing');mainPage.classList.add('entering');
       const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1970,9 +1970,9 @@
       } finally { if(token === topicRequestToken) topicResults.setAttribute('aria-busy','false'); }
     };
     const returnToWorld = ({ replace = true } = {}) => {
-      topicRequestToken++; activeTopic=null; activeTopicRegion=null; topicPage.hidden=true; document.querySelector('#hero').hidden=false; worldPage.hidden=false;
+      topicRequestToken++; activeTopic=null; activeTopicRegion=null; topicPage.hidden=true; document.querySelector('#hero').hidden=true; worldPage.hidden=false;
       if (replace) history.replaceState(null,'','#world-page');
-      worldPage.scrollIntoView({behavior:'smooth',block:'start'});
+      window.scrollTo({top:0,behavior:'auto'});
       window.dispatchEvent(new Event('world-page-open'));
     };
     document.querySelector('#topic-back').addEventListener('click',()=>returnToWorld());
