@@ -762,12 +762,21 @@
   </style>
   <style>
     html.site-auth-locked,html.site-auth-locked body { overflow:hidden!important }
-    html.site-auth-locked body > :not(#login-layer) { visibility:hidden!important;pointer-events:none!important }
+    html.site-auth-locked:not(.site-auth-unlocking) body > :not(#login-layer) { visibility:hidden!important;pointer-events:none!important }
+    html.site-auth-locked.site-auth-unlocking body > :not(#login-layer) { visibility:visible!important;pointer-events:none!important }
     html.site-auth-locked #login-layer { display:grid!important;place-items:center;position:fixed;inset:0;z-index:2147483000;visibility:visible!important;pointer-events:auto!important;overflow:hidden;isolation:isolate;background:linear-gradient(145deg,#030813 0%,#07182a 48%,#030a16 100%) }
     html.site-auth-locked #login-layer::before,html.site-auth-locked #login-layer::after { content:"";position:absolute;inset:-12%;z-index:0;pointer-events:none }
     html.site-auth-locked #login-layer::before { inset:-9%;background:linear-gradient(180deg,rgba(1,8,21,.08),rgba(2,5,18,.24)),radial-gradient(ellipse 42% 28% at 18% 38%,rgba(0,206,255,.12),transparent 74%),radial-gradient(ellipse 45% 30% at 80% 61%,rgba(224,55,255,.14),transparent 74%),url("./assets/login-aurora.svg") center/cover no-repeat;opacity:.98;transform:translate3d(-1.2%,-.5%,0) scale(1.04);will-change:transform;animation:login-aurora-flow 22s ease-in-out infinite alternate }
     html.site-auth-locked #login-layer::after { inset:-40%;background-image:radial-gradient(circle,rgba(190,232,255,.78) 0 1px,transparent 1.6px),radial-gradient(circle,rgba(127,203,240,.62) 0 .8px,transparent 1.5px),radial-gradient(circle,rgba(220,238,255,.48) 0 .7px,transparent 1.4px);background-size:173px 157px,229px 211px,311px 263px;background-position:14px 28px,91px 76px,153px 19px;opacity:.24;animation:login-particles-drift 72s linear infinite }
     @keyframes login-aurora-flow { 0% { transform:translate3d(-1.2%,-.5%,0) scale(1.04) } 50% { transform:translate3d(.35%,.2%,0) scale(1.09) } 100% { transform:translate3d(1.2%,.5%,0) scale(1.04) } }
+    html.site-auth-locked.site-auth-unlocking #login-layer { animation:login-veil-reveal 1.05s cubic-bezier(.55,.05,.85,.3) both;pointer-events:none!important }
+    html.site-auth-locked.site-auth-unlocking #login-layer .login-card { animation:login-card-recede .68s cubic-bezier(.2,.72,.24,1) both }
+    html.site-auth-locked.site-auth-unlocking #hero { animation:home-reveal 1.05s cubic-bezier(.16,.74,.2,1) both }
+    html.site-auth-locked.site-auth-unlocking #hero .hero-copy { animation:home-copy-arrive .78s .12s cubic-bezier(.2,.72,.24,1) both }
+    @keyframes login-veil-reveal { 0% { opacity:1;backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%) } 100% { opacity:0;backdrop-filter:blur(0) saturate(100%);-webkit-backdrop-filter:blur(0) saturate(100%) } }
+    @keyframes login-card-recede { 0% { opacity:1;transform:translateY(0) scale(1);filter:blur(0) } 100% { opacity:0;transform:translateY(-12px) scale(.96);filter:blur(8px) } }
+    @keyframes home-reveal { 0% { opacity:0;transform:scale(1.035);filter:blur(12px) } 58% { opacity:.82;filter:blur(3px) } 100% { opacity:1;transform:scale(1);filter:blur(0) } }
+    @keyframes home-copy-arrive { 0% { opacity:0;transform:translateY(16px) } 100% { opacity:1;transform:translateY(0) } }
     @keyframes login-nebula-drift { from { transform:translate3d(-2%,-1%,0) scale(1) } to { transform:translate3d(2%,1.5%,0) scale(1.08) } }
     @keyframes login-particles-drift { from { transform:translate3d(-1.2%,-1%,0) } to { transform:translate3d(1.2%,1%,0) } }
     .login-card { position:relative;z-index:1;width:min(calc(100% - 36px),560px);padding:clamp(30px,4.2vw,52px);border:1px solid transparent;border-radius:22px;background:linear-gradient(145deg,rgba(5,16,35,.8),rgba(10,15,40,.74)) padding-box,linear-gradient(135deg,rgba(82,220,255,.88),rgba(132,119,255,.48) 48%,rgba(242,93,255,.78)) border-box;box-shadow:0 30px 100px rgba(0,0,0,.48),0 0 58px rgba(73,184,221,.15),0 0 64px rgba(206,77,255,.1),inset 0 1px 0 rgba(222,248,255,.18);backdrop-filter:blur(28px) saturate(150%);-webkit-backdrop-filter:blur(28px) saturate(150%) }
@@ -912,19 +921,34 @@
         }
         document.dispatchEvent(new CustomEvent('site-language-updated', { detail:{ language:lang } }));
       });
-      document.querySelector('#login-form')?.addEventListener('submit',event=>{
-        event.preventDefault();
-        const account=document.querySelector('#login-account')?.value.trim();
-        const password=document.querySelector('#login-password')?.value;
-        const error=document.querySelector('#login-error');
-        if(account!=='abc'||password!=='123456'){if(error)error.textContent=window.siteT('login_error');return;}
-        try{sessionStorage.setItem('globalNavigatorSiteAuth','1')}catch{}
-        document.documentElement.classList.remove('site-auth-locked');
-        const layer=document.querySelector('#login-layer');
-        layer.hidden=true;layer.setAttribute('aria-hidden','true');
-        event.currentTarget.reset();
-        requestAnimationFrame(()=>document.querySelector('#hero-agent-entry')?.focus({preventScroll:true}));
-      });
+      const siteLoginForm=document.querySelector('#login-form');
+      if(siteLoginForm&&siteLoginForm.dataset.authWired!=='1'){
+        siteLoginForm.dataset.authWired='1';
+        siteLoginForm.addEventListener('submit',event=>{
+          event.preventDefault();
+          const form=event.currentTarget;
+          const account=document.querySelector('#login-account')?.value.trim();
+          const password=document.querySelector('#login-password')?.value;
+          const error=document.querySelector('#login-error');
+          if(account!=='abc'||password!=='123456'){if(error)error.textContent=window.siteT('login_error');return;}
+          const root=document.documentElement;
+          const layer=document.querySelector('#login-layer');
+          const submit=form.querySelector('#login-submit');
+          const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if(error)error.textContent='';
+          try{sessionStorage.setItem('globalNavigatorSiteAuth','1')}catch{}
+          root.classList.add('site-auth-unlocking');
+          if(layer)layer.setAttribute('aria-busy','true');
+          if(submit)submit.disabled=true;
+          window.setTimeout(()=>{
+            root.classList.remove('site-auth-locked','site-auth-unlocking');
+            if(layer){layer.hidden=true;layer.setAttribute('aria-hidden','true');layer.removeAttribute('aria-busy');}
+            form.reset();
+            if(submit)submit.disabled=false;
+            requestAnimationFrame(()=>document.querySelector('#hero-agent-entry')?.focus({preventScroll:true}));
+          },reducedMotion?80:1050);
+        });
+      }
       document.querySelector('#password-toggle')?.addEventListener('click',event=>{
         const button=event.currentTarget,input=document.querySelector('#login-password');
         const visible=input.type==='password';input.type=visible?'text':'password';button.setAttribute('aria-pressed',String(visible));button.setAttribute('aria-label',window.siteT(visible?'hide_password':'show_password'));
