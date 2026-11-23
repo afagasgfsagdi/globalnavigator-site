@@ -690,6 +690,45 @@
     .agent-conversation > .agent-composer { flex:none;margin:12px auto 0 }
     .agent-conversation > .agent-config-note { flex:none }
     .agent-chat-foot { display:none }
+    .report-workspace { display:flex;min-width:0;min-height:calc(100svh - 112px);flex-direction:column;overflow:hidden;padding:clamp(18px,2.4vw,30px);border-color:rgba(129,195,217,.22);background:linear-gradient(145deg,rgba(13,31,45,.96),rgba(6,17,27,.96));box-shadow:0 24px 70px rgba(0,0,0,.3),inset 0 1px 0 rgba(229,248,255,.07) }
+    .report-workspace-head { flex:none;margin:0 0 18px;padding:0 0 16px;border-bottom:1px solid rgba(165,204,218,.13) }
+    .report-workspace-kicker { margin:0 0 7px;color:#8ed9e8;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase }
+    .report-workspace-title { margin:0;color:#f3f8fb;font-size:clamp(21px,2.1vw,28px);font-weight:550;letter-spacing:-.035em }
+    .report-workspace-subtitle { margin:8px 0 0;color:rgba(205,225,234,.62);font-size:13px;line-height:1.65 }
+    .report-workspace-content { flex:1;min-width:0;min-height:0;overflow:auto;scrollbar-width:thin;scrollbar-color:rgba(138,192,210,.32) transparent }
+    .report-workspace-content > .agent-report { min-height:100%;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none }
+    .report-workspace-content .agent-report-summary { margin-top:0 }
+    .agent-report-loading { min-height:clamp(300px,52vh,560px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;padding:26px;text-align:center }
+    .agent-report-loading[hidden] { display:none }
+    .agent-report-spinner { width:42px;height:42px;border:2px solid rgba(136,204,220,.17);border-top-color:#83d9e8;border-right-color:rgba(131,217,232,.58);border-radius:50%;animation:report-spinner .9s linear infinite;box-shadow:0 0 26px rgba(90,192,214,.1) }
+    .agent-report-loading-copy { min-height:27px;margin:0;color:#eaf7fa;font-size:17px;font-weight:550;letter-spacing:.01em;transition:opacity .2s,transform .2s }
+    .agent-report-loading-note { max-width:360px;margin:0;color:rgba(195,220,230,.58);font-size:12px;line-height:1.75 }
+    @keyframes report-spinner { to { transform:rotate(360deg) } }
+    .main-page.is-report-workspace .agent-layout { display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,350px);gap:clamp(16px,2vw,28px);align-items:stretch }
+    .main-page.is-report-workspace .agent-chat { width:auto;min-width:0;min-height:calc(100svh - 112px);padding:14px;border:1px solid rgba(143,194,220,.2);border-radius:19px;background:linear-gradient(150deg,rgba(10,23,34,.96),rgba(7,17,27,.96));box-shadow:0 22px 62px rgba(0,0,0,.28) }
+    .main-page.is-report-workspace .agent-chat-head { flex:none;display:flex;min-height:52px;padding:2px 2px 12px }
+    .main-page.is-report-workspace .agent-chat-title h1 { font-size:14px }
+    .main-page.is-report-workspace .agent-chat-title p { display:none }
+    .main-page.is-report-workspace .connection-state { max-width:120px;overflow:hidden;text-overflow:ellipsis;font-size:10px }
+    .main-page.is-report-workspace .agent-chat-body { flex:1;min-height:0 }
+    .main-page.is-report-workspace .agent-chat-scroll,.main-page.is-report-workspace .agent-chat-scroll[data-has-messages="true"] { padding:8px 2px 16px }
+    .main-page.is-report-workspace .agent-messages { width:100%;gap:16px }
+    .main-page.is-report-workspace .agent-message { max-width:100%;gap:6px }
+    .main-page.is-report-workspace .agent-message-label { font-size:9px }
+    .main-page.is-report-workspace .agent-message-content { padding:10px 12px;font-size:12px;line-height:1.7 }
+    .main-page.is-report-workspace .agent-message.assistant .agent-message-content { font-size:12px }
+    .main-page.is-report-workspace .agent-conversation > .agent-composer { width:100%;min-height:86px;margin:8px auto 0;padding:10px 10px 8px 13px;border-radius:16px }
+    .main-page.is-report-workspace .agent-composer textarea { min-height:48px;font-size:13px }
+    .main-page.is-report-workspace .agent-composer .agent-send { width:38px;height:38px }
+    .main-page.is-report-workspace .agent-config-note { padding:4px 0 0;font-size:9px }
+    .main-page.is-report-workspace .agent-avatar-stage.is-chat-buddy { display:none }
+    @media(max-width:760px) {
+      .main-page.is-report-workspace .agent-layout { display:flex;flex-direction:column;gap:14px;min-height:auto }
+      .main-page.is-report-workspace .report-workspace { min-height:58svh;padding:16px }
+      .main-page.is-report-workspace .agent-report-loading { min-height:280px }
+      .main-page.is-report-workspace .agent-chat { min-height:44svh }
+    }
+    @media(prefers-reduced-motion:reduce) { .agent-report-spinner { animation-duration:2.4s } }
     @media(max-width:620px) {
       .main-page { gap:0;padding:12px 16px 16px }
       .main-topbar { min-height:42px;margin-bottom:0 }
@@ -1405,6 +1444,9 @@
     let conversationId = '';
     let isSending = false;
     let pendingHumanInput = null;
+    let reportWorkspace = null;
+    let reportProgressTimer = null;
+    let reportProgressIndex = 0;
     let userId = sessionStorage.getItem(userIdKey);
     if (!userId) { userId = `gn-${crypto.randomUUID()}`; sessionStorage.setItem(userIdKey,userId); }
     const t = (key) => window.siteT?.(key) || key;
@@ -1448,7 +1490,7 @@
       const form = await fetchHumanInputForm(formToken);
       const actions = Array.isArray(form.user_actions) ? form.user_actions : [];
       if (!actions.length) throw new Error('Dify 确认表单没有可用操作按钮。');
-      pendingHumanInput = { formToken, workflowRunId, actions };
+      pendingHumanInput = { formToken, workflowRunId, actions, reportConfirmation:true };
       target.body.classList.remove('agent-message-pending');
       target.body.textContent = form.form_content || payload.form_content || '请确认是否继续生成报告。';
       renderAgentAnswer(target.body, target.body.textContent);
@@ -1470,19 +1512,62 @@
     const consumeStream = async (response, target, { resumed = false } = {}) => {
       if (!response.ok) { const detail=await response.text().catch(()=> ''); throw new Error(detail || `HTTP ${response.status}`); }
       if (!response.body) throw new Error('No response stream');
-      const reader=response.body.getReader(),decoder=new TextDecoder();let buffer='',paused=false,resumedText='',messageEventSeen=false;
-      while(true){const {value,done}=await reader.read();if(done)break;buffer+=decoder.decode(value,{stream:true});const events=buffer.split(/\r?\n\r?\n/);buffer=events.pop()||'';for(const block of events){for(const line of block.split(/\r?\n/)){if(!line.startsWith('data:'))continue;const raw=line.slice(5).trim();if(!raw||raw==='[DONE]')continue;let data;try{data=JSON.parse(raw)}catch{continue}if(data.event==='human_input_required'){const payload=data.data&&typeof data.data==='object'?data.data:data;if(payload.form_token||data.form_token){await renderHumanInput(target,data);paused=true;break}}else if(data.event==='workflow_paused'){const pauseData=data.data&&typeof data.data==='object'?data.data:{};const hasHumanInput=(Array.isArray(pauseData.reasons)?pauseData.reasons:[]).some((reason)=>String(reason?.TYPE||reason?.type||'').toLowerCase().replace(/[-_]/g,'').includes('humaninputrequired'));if(hasHumanInput){await renderHumanInput(target,data);paused=true;break}else{const outputs=pauseData.outputs||{};const outputText=outputs.answer||outputs.text||outputs.result||outputs.response;if(outputText){target.body.textContent=String(outputText);messageEventSeen=true}}}else if(data.event==='message'||data.event==='agent_message'){if(resumed&&!messageEventSeen)target.body.textContent='';messageEventSeen=true;target.body.textContent+=data.answer||'';if(data.conversation_id)conversationId=data.conversation_id;scrollArea.scrollTop=scrollArea.scrollHeight}else if(data.event==='text_chunk'&&resumed){resumedText+=data.data?.text||data.text||''}else if(data.event==='message_file'){addReportDownloadLink(target,{...data,filename:data.filename||data.name})}else if(data.event==='workflow_finished'){const outputs=data.data?.outputs||{};const outputText=outputs.answer||outputs.text||outputs.result||outputs.response;if(outputText&&!messageEventSeen)target.body.textContent=String(outputText);const files=outputs.files;if(Array.isArray(files))files.forEach(file=>addReportDownloadLink(target,file))}else if(data.event==='message_end'&&data.conversation_id){conversationId=data.conversation_id}else if(data.event==='error'){throw new Error(data.message||data.code||'Dify error')}}if(paused)break}if(paused)break}
+      const reader=response.body.getReader(),decoder=new TextDecoder();let buffer='',paused=false,resumedText='',reportText='',messageEventSeen=false;
+      const reportMode=()=>Boolean(reportWorkspace&&document.querySelector('#main-page')?.classList.contains('is-report-workspace'));
+      const setChatProgress=()=>{target.body.textContent='报告正在生成，进度会显示在左侧工作区。';target.body.classList.add('agent-message-pending')};
+      const handleEvent=async data=>{
+        if(data.event==='human_input_required'){
+          const payload=data.data&&typeof data.data==='object'?data.data:data;
+          if(payload.form_token||data.form_token){await renderHumanInput(target,data);paused=true}
+        }else if(data.event==='workflow_paused'){
+          const pauseData=data.data&&typeof data.data==='object'?data.data:{};
+          const hasHumanInput=(Array.isArray(pauseData.reasons)?pauseData.reasons:[]).some(reason=>String(reason?.TYPE||reason?.type||'').toLowerCase().replace(/[-_]/g,'').includes('humaninputrequired'));
+          if(hasHumanInput){await renderHumanInput(target,data);paused=true}
+          else{const outputs=pauseData.outputs||{};const outputText=outputs.answer||outputs.text||outputs.result||outputs.response;if(outputText){if(reportMode())reportText=String(outputText);else target.body.textContent=String(outputText);messageEventSeen=true}}
+        }else if(data.event==='message'||data.event==='agent_message'){
+          const fragment=String(data.answer||''),firstMessage=!messageEventSeen;messageEventSeen=true;
+          if(reportMode()){reportText+=fragment;setChatProgress()}
+          else{if(resumed&&firstMessage&&target.body.classList.contains('agent-message-pending'))target.body.textContent='';target.body.textContent+=fragment}
+          if(data.conversation_id)conversationId=data.conversation_id;scrollArea.scrollTop=scrollArea.scrollHeight;
+        }else if(data.event==='text_chunk'&&resumed){resumedText+=data.data?.text||data.text||''}
+        else if(data.event==='message_file'){addReportDownloadLink(target,{...data,filename:data.filename||data.name})}
+        else if(data.event==='workflow_finished'){
+          const outputs=data.data?.outputs||{},outputText=outputs.answer||outputs.text||outputs.result||outputs.response;
+          if(outputText){if(reportMode())reportText=String(outputText);else if(!messageEventSeen)target.body.textContent=String(outputText)}
+          const files=outputs.files;if(Array.isArray(files))files.forEach(file=>addReportDownloadLink(target,file));
+        }else if(data.event==='message_end'&&data.conversation_id){conversationId=data.conversation_id}
+        else if(data.event==='error'){throw new Error(data.message||data.code||'Dify error')}
+      };
+      while(true){
+        const {value,done}=await reader.read();if(done)break;
+        buffer+=decoder.decode(value,{stream:true});const blocks=buffer.split(/\r?\n\r?\n/);buffer=blocks.pop()||'';
+        for(const block of blocks){for(const line of block.split(/\r?\n/)){
+          if(!line.startsWith('data:'))continue;const raw=line.slice(5).trim();if(!raw||raw==='[DONE]')continue;
+          let data;try{data=JSON.parse(raw)}catch{continue}await handleEvent(data);if(paused)break;
+        }if(paused)break}if(paused)break;
+      }
       if(paused){await reader.cancel().catch(()=>{});return {paused:true};}
-      if(resumed&&!messageEventSeen&&resumedText.trim())target.body.textContent=resumedText.trim();
-      if(!target.body.textContent.trim())target.body.textContent=t('agent_empty_reply');
-      renderAgentAnswer(target.body,target.body.textContent);
+      const finalText=reportText.trim()||(resumedText.trim()&&!messageEventSeen?resumedText.trim():'');
+      if(reportMode()){
+        if(!completeReportWorkspace(target,finalText)){
+          failReportWorkspace('收到回复，但暂未识别到四部分报告结构。');
+          if(finalText){target.body.classList.remove('agent-message-pending');target.body.textContent=finalText;renderAgentAnswer(target.body,finalText)}
+          else{target.body.classList.remove('agent-message-pending');target.body.textContent='报告流程已结束，但没有收到可展示的完整内容。'}
+        }
+      }else{
+        if(resumed&&!messageEventSeen&&resumedText.trim())target.body.textContent=resumedText.trim();
+        if(!target.body.textContent.trim())target.body.textContent=t('agent_empty_reply');
+        renderAgentAnswer(target.body,target.body.textContent);
+      }
       return {paused:false};
     };
     const submitHumanInput = async (action, target, selectedButton) => {
       if (!pendingHumanInput || isSending) return;
-      const { formToken, workflowRunId } = pendingHumanInput;
+      const { formToken, workflowRunId, reportConfirmation } = pendingHumanInput;
       const actionGroup = target.article.querySelector('.agent-human-actions');
+      const isReportConfirmation=reportConfirmation||/生成报告|确认生成/.test(String(action.title||''));
       actionGroup?.querySelectorAll('button').forEach(button => button.disabled = true);
+      if(isReportConfirmation)startReportWorkspace();
       isSending = true;
       setComposerLocked(true);
       target.body.classList.add('agent-message-pending');
@@ -1496,13 +1581,14 @@
         appendMessage('user', actionLabel);
         actionGroup?.remove();
         target.body.classList.add('agent-message-pending');
-        target.body.textContent = '已确认，正在继续研究并生成报告…';
+        target.body.textContent = isReportConfirmation?'报告工作区已就绪，正在生成内容…':'已确认，正在继续处理…';
         pendingHumanInput = null;
         const eventsUrl = new URL(proxyRoute(`events/${encodeURIComponent(workflowRunId)}`));
         eventsUrl.searchParams.set('user', userId);
         const eventsResponse = await fetch(eventsUrl, { headers: { Accept: 'text/event-stream' } });
         await consumeStream(eventsResponse, target, { resumed: true });
       } catch (error) {
+        if(isReportConfirmation)failReportWorkspace('连接遇到问题，正在等待服务恢复。');
         target.body.classList.remove('agent-message-pending');
         target.article.classList.add('error');
         target.body.textContent = `确认已提交，但继续读取报告失败：${error.message||''}`.trim();
@@ -1566,32 +1652,93 @@
       }
       flushParagraph();flushList();container.replaceChildren(fragment);
     };
+    const normalizeReportHeading=(line)=>String(line||'').trim().replace(/^#{1,6}\s*/,'').replace(/^\*\*(.*?)\*\*$/,'$1').replace(/^\*(.*?)\*$/,'$1').replace(/^第\s*[一二三四1-4]\s*部分[：:、.．)）\s]*/,'').replace(/^[一二三四1-4][、.．)）]\s*/,'').replace(/^\d+[.、．)）]\s*/,'').replace(/^\*\s*/,'').trim();
     const reportSectionForHeading=(line)=>{
-      const title=line.trim().replace(/^#{1,4}\s*/,'').replace(/^[一二三四1-4][、.．)]\s*/,'').trim();
-      if(/^(市场研究与来源检验|市场研究与来源核验|市场调研与来源检验|市场调研与来源核验|市场调研|市场研究)/.test(title))return 'market';
-      if(/^(广告内容生产|内容生产)/.test(title))return 'content';
-      if(/^(文化与广告合规检查|合规检查)/.test(title))return 'compliance';
-      if(/^(出海可行性与业务决策|出海可行性|业务决策)/.test(title))return 'decision';
+      const title=normalizeReportHeading(line).replace(/[：:].*$/,'').replace(/[（(].*$/,'').trim();
+      if(/^(市场研究(?:与来源(?:检验|核验))?|市场调研(?:与来源(?:检验|核验))?)/.test(title))return 'market';
+      if(/^(广告内容生产|内容生产|营销内容生产)/.test(title))return 'content';
+      if(/^(文化与广告合规检查|文化合规检查|广告合规检查|合规检查)/.test(title))return 'compliance';
+      if(/^(出海可行性(?:与业务决策)?|业务决策|出海决策建议)/.test(title))return 'decision';
       return '';
     };
     const renderReportTabs=(container,markdown)=>{
-      const lines=String(markdown||'').replace(/\r/g,'').split('\n');const sectionStarts=[];
-      lines.forEach((line,index)=>{if(/^\s{0,3}#{0,4}\s*(?:[一二三四1-4][、.．)]\s*)?(?:市场研究与来源检验|市场研究与来源核验|市场调研与来源检验|市场调研与来源核验|市场调研|市场研究|广告内容生产|内容生产|文化与广告合规检查|合规检查|出海可行性与业务决策|出海可行性|业务决策)/.test(line.trim())){const key=reportSectionForHeading(line);if(key&&!sectionStarts.some(item=>item.key===key))sectionStarts.push({key,index})}});
-      const keys=['market','content','compliance','decision'];if(!keys.every(key=>sectionStarts.some(item=>item.key===key)))return false;
-      sectionStarts.sort((a,b)=>a.index-b.index);const first=sectionStarts[0].index;const labels={market:'市场研究与来源检验',content:'广告内容生产',compliance:'文化与广告合规检查',decision:'出海可行性与业务决策'};
+      const lines=String(markdown||'').replace(/\r/g,'').split('\n'),keys=['market','content','compliance','decision'];
+      const sectionStarts=[];
+      lines.forEach((line,index)=>{const key=reportSectionForHeading(line);if(key&&!sectionStarts.some(item=>item.key===key))sectionStarts.push({key,index})});
+      sectionStarts.sort((a,b)=>a.index-b.index);
+      const first=sectionStarts[0]?.index??0,labels=reportSectionLabels;
       const root=document.createElement('section');root.className='agent-report';root.setAttribute('aria-label','出海分析报告');
       const intro=lines.slice(0,first).join('\n').trim();if(intro){const summary=document.createElement('div');summary.className='agent-report-summary';renderAgentMarkdown(summary,intro);root.append(summary)}
       const tablist=document.createElement('div');tablist.className='agent-report-tabs';tablist.setAttribute('role','tablist');tablist.setAttribute('aria-label','报告四部分');
-      const tabPanels=[];const uid=`report-${crypto.randomUUID()}`;
-      sectionStarts.forEach((item,index)=>{const end=sectionStarts[index+1]?.index??lines.length;const panel=document.createElement('section');panel.className='agent-report-panel';panel.id=`${uid}-${item.key}-panel`;panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby',`${uid}-${item.key}-tab`);panel.hidden=index!==0;renderAgentMarkdown(panel,lines.slice(item.index,end).join('\n'));
-        const button=document.createElement('button');button.type='button';button.className='agent-report-tab';button.id=`${uid}-${item.key}-tab`;button.setAttribute('role','tab');button.setAttribute('aria-controls',panel.id);button.setAttribute('aria-selected',String(index===0));button.tabIndex=index===0?0:-1;button.textContent=labels[item.key];
-        button.addEventListener('click',()=>{tabPanels.forEach(entry=>{const active=entry.button===button;entry.button.setAttribute('aria-selected',String(active));entry.button.tabIndex=active?0:-1;entry.panel.hidden=!active});});
-        button.addEventListener('keydown',(event)=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const tabs=[...tablist.querySelectorAll('[role="tab"]')];const at=tabs.indexOf(button);const next=event.key==='Home'?0:event.key==='End'?tabs.length-1:event.key==='ArrowRight'?(at+1)%tabs.length:(at-1+tabs.length)%tabs.length;tabs[next].focus();tabs[next].click()});
+      const tabPanels=[],uid=`report-${crypto.randomUUID()}`;
+      keys.forEach((key,index)=>{
+        const start=sectionStarts.find(item=>item.key===key);
+        const next=start?sectionStarts.find(item=>item.index>start.index):null;
+        const panel=document.createElement('section');panel.className='agent-report-panel';panel.id=`${uid}-${key}-panel`;panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby',`${uid}-${key}-tab`);panel.hidden=index!==0;
+        const sectionText=start?lines.slice(start.index,next?.index??lines.length).join('\n').trim():(sectionStarts.length?`本部分内容暂未从回复中识别到，将在完整报告中核对。`:index===0?String(markdown||'').trim():'');
+        if(sectionText)renderAgentMarkdown(panel,sectionText);else{const note=document.createElement('p');note.className='agent-report-note';note.textContent='该部分内容暂未返回。';panel.append(note)}
+        const button=document.createElement('button');button.type='button';button.className='agent-report-tab';button.id=`${uid}-${key}-tab`;button.setAttribute('role','tab');button.setAttribute('aria-controls',panel.id);button.setAttribute('aria-selected',String(index===0));button.tabIndex=index===0?0:-1;button.textContent=labels[key];
+        button.addEventListener('click',()=>{tabPanels.forEach(entry=>{const active=entry.button===button;entry.button.setAttribute('aria-selected',String(active));entry.button.tabIndex=active?0:-1;entry.panel.hidden=!active})});
+        button.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const tabs=[...tablist.querySelectorAll('[role="tab"]')];const at=tabs.indexOf(button);const nextIndex=event.key==='Home'?0:event.key==='End'?tabs.length-1:event.key==='ArrowRight'?(at+1)%tabs.length:(at-1+tabs.length)%tabs.length;tabs[nextIndex].focus();tabs[nextIndex].click()});
         tablist.append(button);tabPanels.push({button,panel});
       });
       root.append(tablist,...tabPanels.map(item=>item.panel));container.replaceChildren(root);return true;
     };
     const renderAgentAnswer=(container,markdown)=>{if(!renderReportTabs(container,markdown))renderAgentMarkdown(container,markdown)};
+    const reportSectionLabels={market:'市场研究与来源检验',content:'广告内容生产',compliance:'文化与广告合规检查',decision:'出海可行性与业务决策'};
+    const reportProgressMessages=['正在搜寻资料','正在核验来源','正在分析市场数据','正在检查合规要点','正在编辑本地化内容','正在整理业务建议'];
+    const stopReportProgress=()=>{if(reportProgressTimer){clearInterval(reportProgressTimer);reportProgressTimer=null}};
+    const setReportProgressMessage=()=>{
+      if(!reportWorkspace)return;
+      const message=reportProgressMessages[reportProgressIndex%reportProgressMessages.length];
+      reportWorkspace.statusCopies.forEach(copy=>{copy.textContent=message;copy.classList.remove('is-changing');requestAnimationFrame(()=>copy.classList.add('is-changing'))});
+    };
+    const buildReportLoadingShell=()=>{
+      const root=document.createElement('section');root.className='agent-report';root.setAttribute('aria-label','出海分析报告');
+      const tablist=document.createElement('div');tablist.className='agent-report-tabs';tablist.setAttribute('role','tablist');tablist.setAttribute('aria-label','报告四部分');
+      const panels=[],buttons=[],statusCopies=[];const uid=`report-loading-${crypto.randomUUID()}`;
+      Object.entries(reportSectionLabels).forEach(([key,label],index)=>{
+        const panel=document.createElement('section');panel.className='agent-report-panel';panel.id=`${uid}-${key}-panel`;panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby',`${uid}-${key}-tab`);panel.hidden=index!==0;
+        const loading=document.createElement('div');loading.className='agent-report-loading';loading.setAttribute('role','status');loading.setAttribute('aria-live',index===0?'polite':'off');
+        const spinner=document.createElement('span');spinner.className='agent-report-spinner';spinner.setAttribute('aria-hidden','true');
+        const copy=document.createElement('p');copy.className='agent-report-loading-copy';copy.textContent=reportProgressMessages[0];statusCopies.push(copy);
+        const note=document.createElement('p');note.className='agent-report-loading-note';note.textContent='智能体正在分阶段整理证据与分析内容，完成后会显示在这里。';
+        loading.append(spinner,copy,note);panel.append(loading);
+        const button=document.createElement('button');button.type='button';button.className='agent-report-tab';button.id=`${uid}-${key}-tab`;button.setAttribute('role','tab');button.setAttribute('aria-controls',panel.id);button.setAttribute('aria-selected',String(index===0));button.tabIndex=index===0?0:-1;button.textContent=label;
+        button.addEventListener('click',()=>{panels.forEach(item=>{const active=item.button===button;item.button.setAttribute('aria-selected',String(active));item.button.tabIndex=active?0:-1;item.panel.hidden=!active;item.panel.querySelector('[role="status"]')?.setAttribute('aria-live',active?'polite':'off')})});
+        button.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const at=buttons.indexOf(button);const next=event.key==='Home'?0:event.key==='End'?buttons.length-1:event.key==='ArrowRight'?(at+1)%buttons.length:(at-1+buttons.length)%buttons.length;buttons[next].focus();buttons[next].click()});
+        buttons.push(button);panels.push({button,panel});tablist.append(button);
+      });
+      root.append(tablist,...panels.map(item=>item.panel));return {root,panels,buttons,statusCopies};
+    };
+    const startReportWorkspace=()=>{
+      stopReportProgress();
+      const page=document.querySelector('#main-page'),layout=document.querySelector('.agent-layout'),chat=document.querySelector('.agent-chat');
+      page.classList.add('is-report-workspace');
+      if(!reportWorkspace){
+        const root=document.createElement('section');root.className='report-workspace glass-panel';root.setAttribute('aria-label','出海报告工作区');
+        const head=document.createElement('header');head.className='report-workspace-head';
+        const kicker=document.createElement('p');kicker.className='report-workspace-kicker';kicker.textContent='GLOBALNAVIGATOR · REPORT';
+        const title=document.createElement('h2');title.className='report-workspace-title';title.textContent='出海分析报告';
+        const subtitle=document.createElement('p');subtitle.className='report-workspace-subtitle';subtitle.textContent='研究、内容、合规与业务决策将在此分栏呈现。';head.append(kicker,title,subtitle);
+        const content=document.createElement('div');content.className='report-workspace-content';root.append(head,content);layout.insertBefore(root,chat);
+        reportWorkspace={root,content,statusCopies:[]};
+      }
+      const shell=buildReportLoadingShell();reportWorkspace.content.replaceChildren(shell.root);reportWorkspace.statusCopies=shell.statusCopies;reportWorkspace.root.dataset.state='loading';
+      reportProgressIndex=0;setReportProgressMessage();
+      reportProgressTimer=setInterval(()=>{reportProgressIndex=(reportProgressIndex+1)%reportProgressMessages.length;setReportProgressMessage()},2300);
+    };
+    const completeReportWorkspace=(target,markdown)=>{
+      if(!reportWorkspace||!document.querySelector('#main-page')?.classList.contains('is-report-workspace'))return false;
+      const staging=document.createElement('div');if(!renderReportTabs(staging,markdown))return false;
+      stopReportProgress();reportWorkspace.content.replaceChildren(staging.firstElementChild);reportWorkspace.root.dataset.state='complete';
+      target.body.classList.remove('agent-message-pending');target.body.textContent='报告已生成，四个部分已显示在左侧。';
+      return true;
+    };
+    const failReportWorkspace=(message)=>{
+      stopReportProgress();if(!reportWorkspace)return;
+      reportWorkspace.root.dataset.state='error';reportWorkspace.statusCopies.forEach(copy=>copy.textContent=message||'生成暂时中断，请查看右侧对话提示。');
+    };
     const addReportDownloadLink = (target,file) => {
       const fileId=String(file?.id||file?.file_id||file?.message_file_id||file?.upload_file_id||'').trim();
       if(!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(fileId)) return false;
