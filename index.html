@@ -724,7 +724,10 @@ Total output lines: 2476
     .main-page.is-report-workspace .agent-composer textarea { min-height:48px;font-size:13px }
     .main-page.is-report-workspace .agent-composer .agent-send { width:38px;height:38px }
     .main-page.is-report-workspace .agent-config-note { padding:4px 0 0;font-size:9px }
-    .main-page.is-report-workspace .agent-avatar-stage.is-chat-buddy { display:none }
+    .main-page.is-report-generating .agent-avatar-stage.is-chat-buddy { position:fixed;left:clamp(8px,1.2vw,20px);right:auto;top:50%;bottom:auto;width:clamp(88px,11vw,142px);height:clamp(122px,17vw,184px);transform:translateY(-50%);display:grid;z-index:12;opacity:1;pointer-events:none }
+    .main-page.is-report-generating .agent-avatar-stage.is-chat-buddy::before { animation:agent-avatar-aura 1.15s ease-in-out infinite alternate;background:radial-gradient(ellipse,rgba(87,205,222,.36),rgba(44,125,155,.2) 46%,transparent 74%) }
+    .agent-avatar-stage.is-thinking canvas { filter:drop-shadow(0 0 12px rgba(99,220,232,.3)) }
+    .agent-report-loading-time-note { margin:9px 0 0;color:rgba(214,231,239,.72);font-size:12px;line-height:1.7;text-align:center }
     @media(max-width:760px) {
       .main-page.is-report-workspace .agent-layout { display:flex;flex-direction:column;gap:14px;min-height:auto }
       .main-page.is-report-workspace .report-workspace { min-height:58svh;padding:16px }
@@ -1397,7 +1400,11 @@ Total output lines: 2476
     let wordGenerationMode = false;
     let userId = sessionStorage.getItem(userIdKey);
     if (!userId) { userId = `gn-${crypto.randomUUID()}`; sessionStorage.setItem(userIdKey,userId); }
-    const t = (key) => window.siteT?.(key) || key;
+    const agentFallbackMessages = {
+      zh: { agent_you:'你', agent_assistant:'环球导航智能体', dify_configured_badge:'智能服务在线', agent_proxy_status:'等待服务接入', agent_proxy_ready:'智能服务已连接', agent_proxy_needed:'智能服务暂不可用', agent_avatar_dance:'点击机器人跳舞', agent_avatar_dancing:'正在跳舞', agent_empty_reply:'暂时没有收到回复，请重试。', agent_request_error:'暂时无法连接智能服务。' },
+      en: { agent_you:'You', agent_assistant:'GlobalNavigator Agent', dify_configured_badge:'AI service online', agent_proxy_status:'Waiting for service', agent_proxy_ready:'AI service connected', agent_proxy_needed:'AI service is unavailable', agent_avatar_dance:'Click the robot to dance', agent_avatar_dancing:'Dancing', agent_empty_reply:'No reply received. Please try again.', agent_request_error:'Unable to connect to the AI service.' }
+    };
+    const t = (key) => window.siteT?.(key) || agentFallbackMessages[window.siteLanguage === 'en' ? 'en' : 'zh'][key] || key;
     const updateConnection = () => {
       const connected = Boolean(proxyUrl);
       badge.textContent = t(connected ? 'dify_configured_badge' : 'agent_proxy_status');
@@ -1466,7 +1473,7 @@ Total output lines: 2476
       if (!response.body) throw new Error('No response stream');
       const reader=response.body.getReader(),decoder=new TextDecoder();let buffer='',paused=false,resumedText='',reportText='',messageEventSeen=false;
       const reportMode=()=>Boolean(reportWorkspace&&document.querySelector('#main-page')?.classList.contains('is-report-workspace'));
-      const setChatProgress=()=>{target.body.textContent='报告正在生成，进度会显示在左侧工作区。';target.body.classList.add('agent-message-pending')};
+      const setChatProgress=()=>{target.body.textContent='正在生成报告';target.body.classList.add('agent-message-pending')};
       const handleEvent=async data=>{
         if(data.event==='human_input_required'){
           const payload=data.data&&typeof data.data==='object'?data.data:data;
@@ -1541,7 +1548,7 @@ Total output lines: 2476
         appendMessage('user', actionLabel);
         actionGroup?.remove();
         target.body.classList.add('agent-message-pending');
-        target.body.textContent = wordConfirmation?'正在生成 Word 报告…':isReportConfirmation?'报告工作区已就绪，正在生成内容…':'已确认，正在继续处理…';
+        target.body.textContent = wordConfirmation?'正在生成 Word 报告…':isReportConfirmation?'正在生成报告':'已确认，正在继续处理…';
         pendingHumanInput = null;
         const eventsUrl = new URL(proxyRoute(`events/${encodeURIComponent(workflowRunId)}`));
         eventsUrl.searchParams.set('user', userId);
@@ -1657,7 +1664,7 @@ Total output lines: 2476
       });
       root.append(tablist);if(summary)root.append(summary);root.append(...tabPanels.map(item=>item.panel));container.replaceChildren(root);return true;
     };
-    const renderAgentAnswer=(container,markdown)=>{if(!renderReportTabs(container,markdown))renderAgentMarkdown(container,markdown)};
+    const renderAgentAnswer=(container,markdown)=>renderAgentMarkdown(container,markdown);
     const reportSectionLabels={market:'市场研究与来源检验',content:'广告内容生产',compliance:'文化与广告合规检查',decision:'出海可行性与业务决策'};
     const reportProgressMessages=['正在搜寻资料','正在思考问题','正在核验来源','正在分析数据','正在检查合规要点','正在编辑页面','正在整理本地化内容','正在形成业务建议'];
     const stopReportProgress=()=>{if(reportProgressTimer){clearInterval(reportProgressTimer);reportProgressTimer=null}};
@@ -1676,7 +1683,8 @@ Total output lines: 2476
         const spinner=document.createElement('span');spinner.className='agent-report-spinner';spinner.setAttribute('aria-hidden','true');
         const copy=document.createElement('p');copy.className='agent-report-loading-copy';copy.textContent=reportProgressMessages[0];statusCopies.push(copy);
         const note=document.createElement('p');note.className='agent-report-loading-note';note.textContent='智能体正在分阶段整理证据与分析内容，完成后会显示在这里。';
-        loading.append(spinner,copy,note);panel.append(loading);
+        const timeNote=document.createElement('p');timeNote.className='agent-report-loading-time-note';timeNote.textContent='过程工作量过大，这个过程可能需要几分钟的时间，请耐心等待';
+        loading.append(spinner,copy,note,timeNote);panel.append(loading);
         const button=document.createElement('button');button.type='button';button.className='agent-report-tab';button.id=`${uid}-${key}-tab`;button.setAttribute('role','tab');button.setAttribute('aria-controls',panel.id);button.setAttribute('aria-selected',String(index===0));button.tabIndex=index===0?0:-1;button.textContent=label;
         button.addEventListener('click',()=>{panels.forEach(item=>{const active=item.button===button;item.button.setAttribute('aria-selected',String(active));item.button.tabIndex=active?0:-1;item.panel.hidden=!active;item.panel.querySelector('[role="status"]')?.setAttribute('aria-live',active?'polite':'off')})});
         button.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const at=buttons.indexOf(button);const next=event.key==='Home'?0:event.key==='End'?buttons.length-1:event.key==='ArrowRight'?(at+1)%buttons.length:(at-1+buttons.length)%buttons.length;buttons[next].focus();buttons[next].click()});
@@ -1688,7 +1696,8 @@ Total output lines: 2476
       stopReportProgress();
       reportReady=false;wordGenerationMode=false;
       const page=document.querySelector('#main-page'),layout=document.querySelector('.agent-layout'),chat=document.querySelector('.agent-chat');
-      page.classList.add('is-report-workspace');
+      page.classList.add('is-report-workspace','is-report-generating');
+      window.setAgentReportThinking?.(true);
       if(!reportWorkspace){
         const root=document.createElement('section');root.className='report-workspace glass-panel';root.setAttribute('aria-label','出海报告工作区');
         const head=document.createElement('header');head.className='report-workspace-head';
@@ -1706,11 +1715,13 @@ Total output lines: 2476
       if(!reportWorkspace||!document.querySelector('#main-page')?.classList.contains('is-report-workspace'))return false;
       const staging=document.createElement('div');if(!renderReportTabs(staging,markdown))return false;
       stopReportProgress();reportWorkspace.content.replaceChildren(staging.firstElementChild);reportWorkspace.root.dataset.state='complete';reportReady=true;
+      document.querySelector('#main-page')?.classList.remove('is-report-generating');window.setAgentReportThinking?.(false);
       target.body.classList.remove('agent-message-pending');target.body.textContent='报告已生成，四个部分已显示在左侧。';
       return true;
     };
     const failReportWorkspace=(message)=>{
       stopReportProgress();if(!reportWorkspace)return;
+      document.querySelector('#main-page')?.classList.remove('is-report-generating');window.setAgentReportThinking?.(false);
       reportWorkspace.root.dataset.state='error';reportWorkspace.statusCopies.forEach(copy=>copy.textContent=message||'生成暂时中断，请查看右侧对话提示。');
     };
     const addReportDownloadLink = (target,file) => {
@@ -1757,18 +1768,21 @@ Total output lines: 2476
       const fill=new THREE.PointLight(0x54d5e7,10,8,2);fill.position.set(2,1.2,2.6);scene.add(fill);
       const rim=new THREE.DirectionalLight(0x348db4,2);rim.position.set(2,-1,1);scene.add(rim);
       const modelRoot=new THREE.Group();scene.add(modelRoot);
-      let mixer=null,model=null,lastTime=0,elapsed=0,avatarIdleAction=null,avatarGreetingAction=null,avatarNodAction=null,avatarDanceAction=null,activeAvatarAction=null,greetingRequested=false,nodRequested=false,danceRequested=false,avatarCameraTargetZ=3.35;
+      let mixer=null,model=null,lastTime=0,elapsed=0,avatarIdleAction=null,avatarGreetingAction=null,avatarNodAction=null,avatarDanceAction=null,activeAvatarAction=null,greetingRequested=false,nodRequested=false,danceRequested=false,thinkingRequested=false,avatarCameraTargetZ=3.35;
       const setAvatarDanceLabel=key=>{const label=window.siteT?.(key)||'点击机器人跳舞';stage.setAttribute('aria-label',label);stage.setAttribute('title',label);stage.dataset.danceLabel=label};
-      const restoreAvatarIdle=event=>{if(event?.action!==activeAvatarAction)return;mixer?.removeEventListener('finished',restoreAvatarIdle);activeAvatarAction?.fadeOut(.22);activeAvatarAction=null;stage.classList.remove('is-dancing');avatarCameraTargetZ=3.35;setAvatarDanceLabel('agent_avatar_dance');avatarIdleAction?.reset().fadeIn(.22).play()};
+      const restoreAvatarIdle=event=>{if(event?.action!==activeAvatarAction)return;mixer?.removeEventListener('finished',restoreAvatarIdle);activeAvatarAction?.fadeOut(.22);activeAvatarAction=null;stage.classList.remove('is-dancing','is-thinking');avatarCameraTargetZ=3.35;setAvatarDanceLabel('agent_avatar_dance');avatarIdleAction?.reset().fadeIn(.22).play()};
       const playAvatarAction=(action,repetitions=1)=>{if(!mixer||!action)return false;mixer.removeEventListener('finished',restoreAvatarIdle);activeAvatarAction?.fadeOut(.16);activeAvatarAction=action;avatarIdleAction?.fadeOut(.18);action.setLoop(repetitions>1?THREE.LoopRepeat:THREE.LoopOnce,repetitions);action.clampWhenFinished=true;action.reset().setEffectiveTimeScale(1).setEffectiveWeight(1).fadeIn(.18).play();mixer.addEventListener('finished',restoreAvatarIdle);return true};
       const playAvatarGreeting=()=>{if(!mixer||!avatarGreetingAction){greetingRequested=true;return}greetingRequested=false;nodRequested=false;stage.classList.remove('is-dancing');avatarCameraTargetZ=3.35;playAvatarAction(avatarGreetingAction,1)};
-      const playAvatarNod=()=>{if(!mixer||!avatarNodAction){nodRequested=true;return}nodRequested=false;greetingRequested=false;stage.classList.remove('is-dancing');avatarCameraTargetZ=3.35;playAvatarAction(avatarNodAction,1)};
-      const playAvatarDance=()=>{if(!stage.classList.contains('is-chat-buddy'))return;if(!mixer||!avatarDanceAction){danceRequested=true;return}danceRequested=false;stage.classList.add('is-dancing');avatarCameraTargetZ=4.05;setAvatarDanceLabel('agent_avatar_dancing');playAvatarAction(avatarDanceAction,2)};
+      const playAvatarNod=()=>{if(!mixer||!avatarNodAction){nodRequested=true;return}nodRequested=false;thinkingRequested=false;greetingRequested=false;stage.classList.remove('is-dancing','is-thinking');avatarCameraTargetZ=3.35;playAvatarAction(avatarNodAction,1)};
+      const playAvatarThinking=()=>{if(!mixer||!avatarNodAction){thinkingRequested=true;return}thinkingRequested=false;greetingRequested=false;nodRequested=false;danceRequested=false;stage.classList.remove('is-dancing');stage.classList.add('is-thinking');avatarCameraTargetZ=3.35;playAvatarAction(avatarNodAction,Infinity);activeAvatarAction?.setEffectiveTimeScale(.58)};
+      const playAvatarIdle=()=>{thinkingRequested=false;greetingRequested=false;nodRequested=false;mixer?.removeEventListener('finished',restoreAvatarIdle);activeAvatarAction?.fadeOut(.18);activeAvatarAction=null;stage.classList.remove('is-dancing','is-thinking');avatarCameraTargetZ=3.35;avatarIdleAction?.reset().setLoop(THREE.LoopRepeat,Infinity).fadeIn(.22).play()};
+      const playAvatarDance=()=>{if(!stage.classList.contains('is-chat-buddy'))return;if(!mixer||!avatarDanceAction){danceRequested=true;return}danceRequested=false;thinkingRequested=false;stage.classList.remove('is-thinking');stage.classList.add('is-dancing');avatarCameraTargetZ=4.05;setAvatarDanceLabel('agent_avatar_dancing');playAvatarAction(avatarDanceAction,2)};
       stage.addEventListener('click',event=>{if(event.target.closest('a'))return;playAvatarDance()});
       stage.addEventListener('keydown',event=>{if((event.key==='Enter'||event.key===' ')&&stage.classList.contains('is-chat-buddy')){event.preventDefault();playAvatarDance()}});
       window.addEventListener('site-language-change',()=>{if(stage.classList.contains('is-chat-buddy'))setAvatarDanceLabel(stage.classList.contains('is-dancing')?'agent_avatar_dancing':'agent_avatar_dance')});
       window.playAgentAvatarGreeting=playAvatarGreeting;
       window.playAgentAvatarNod=playAvatarNod;
+      window.setAgentReportThinking=active=>{if(active){stage.classList.add('is-thinking');playAvatarThinking()}else playAvatarIdle()};
       const resize=()=>{const w=Math.max(1,stage.clientWidth),h=Math.max(1,stage.clientHeight);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()};
       new ResizeObserver(resize).observe(stage);resize();
       new GLTFLoader().load('./assets/agent/RobotExpressive.glb',gltf=>{
@@ -1777,7 +1791,7 @@ Total output lines: 2476
         const fitScale=1.36/Math.max(size.y,.001);model.scale.setScalar(fitScale);model.position.copy(center).multiplyScalar(-fitScale);
         model.traverse(object=>{if(!object.isMesh)return;object.castShadow=false;object.receiveShadow=false;const mats=Array.isArray(object.material)?object.material:[object.material];mats.forEach(mat=>{if(mat.isMeshStandardMaterial||mat.isMeshPhysicalMaterial){mat.roughness=Math.max(.34,mat.roughness||0);mat.envMapIntensity=.62;mat.needsUpdate=true}})});
         modelRoot.add(model);
-        if(gltf.animations.length){const idle=gltf.animations.find(clip=>/^idle$/i.test(clip.name))||gltf.animations[0];mixer=new THREE.AnimationMixer(model);gltf.animations.forEach(clip=>{const action=mixer.clipAction(clip);if(/^wave$/i.test(clip.name))avatarGreetingAction=action;if(/^yes$/i.test(clip.name))avatarNodAction=action;if(/^dance$/i.test(clip.name))avatarDanceAction=action});avatarIdleAction=mixer.clipAction(idle);avatarIdleAction.play();if(nodRequested)playAvatarNod();else if(greetingRequested)playAvatarGreeting();if(danceRequested)playAvatarDance()}
+        if(gltf.animations.length){const idle=gltf.animations.find(clip=>/^idle$/i.test(clip.name))||gltf.animations[0];mixer=new THREE.AnimationMixer(model);gltf.animations.forEach(clip=>{const action=mixer.clipAction(clip);if(/^wave$/i.test(clip.name))avatarGreetingAction=action;if(/^yes$/i.test(clip.name))avatarNodAction=action;if(/^dance$/i.test(clip.name))avatarDanceAction=action});avatarIdleAction=mixer.clipAction(idle);avatarIdleAction.play();if(thinkingRequested)playAvatarThinking();else if(nodRequested)playAvatarNod();else if(greetingRequested)playAvatarGreeting();if(danceRequested)playAvatarDance()}
         canvas.setAttribute('aria-label','GlobalNavigator 三维智能体形象');
       },undefined,error=>{console.error('3D agent avatar failed to load:',error);stage.hidden=true});
       const page=document.querySelector('#main-page');
