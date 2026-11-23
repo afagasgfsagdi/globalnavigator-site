@@ -1672,10 +1672,30 @@
       }
       parent.append(document.createTextNode(text.slice(cursor)));
     };
+    const normalizeQuickChartUrl=(rawUrl)=>{
+      try{
+        const url=new URL(rawUrl);
+        const key=['c','chart','config'].find(name=>url.searchParams.has(name));
+        if(!key)return url.href;
+        const raw=url.searchParams.get(key)||'';
+        const candidates=[raw.trim().replace(/;\\s*$/,'')];
+        try{const decoded=decodeURIComponent(raw);if(decoded!==raw)candidates.push(decoded.trim().replace(/;\\s*$/,''))}catch{}
+        for(let candidate of candidates){
+          const first=candidate.indexOf('{'),last=candidate.lastIndexOf('}');
+          if(first>=0&&last>first)candidate=candidate.slice(first,last+1);
+          try{
+            const config=JSON.parse(candidate);
+            url.searchParams.set(key,JSON.stringify(config));
+            break;
+          }catch{}
+        }
+        return url.href;
+      }catch{return rawUrl}
+    };
     const normalizeChartMarkdown=(markdown)=>{
-      let text=String(markdown||'').replace(/\r/g,'');
+      let text=String(markdown||'').replace(/\\r/g,'');
       for(let i=0;i<12;i++){
-        const joined=text.replace(/(https:\/\/quickchart\.io\/chart\?[^\s)]*)\n(?=%[0-9a-f]{2})/gi,'$1');
+        const joined=text.replace(/(https:\/\/quickchart\.io\/chart\?[^\s)]*)\\n(?=%[0-9a-f]{2})/gi,'$1');
         if(joined===text)break;
         text=joined;
       }
@@ -1711,7 +1731,8 @@
         if(image){
           try{const url=new URL(image[2]);if(url.protocol==='https:'&&url.hostname==='quickchart.io'&&url.pathname==='/chart'){
             flushParagraph();flushList();const figure=document.createElement('figure');figure.className='agent-chart-figure';
-            const img=document.createElement('img');img.src=url.href;img.alt=image[1]||'报告图表';img.loading='lazy';img.referrerPolicy='no-referrer';
+            const img=document.createElement('img');img.src=normalizeQuickChartUrl(url.href);img.alt=image[1]||'报告图表';img.loading='lazy';img.referrerPolicy='no-referrer';
+            img.addEventListener('error',()=>{img.hidden=true;const note=document.createElement('p');note.className='agent-chart-fallback';note.textContent='图表暂时无法加载，请参考下方标注的数据来源与口径。';figure.append(note)},{once:true});
             const caption=document.createElement('figcaption');caption.textContent=image[1]||'数据图表';figure.append(img,caption);fragment.append(figure);continue;
           }}catch{}
         }
