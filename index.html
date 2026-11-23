@@ -1686,7 +1686,7 @@
     };
     const renderAgentAnswer=(container,markdown)=>{if(!renderReportTabs(container,markdown))renderAgentMarkdown(container,markdown)};
     const reportSectionLabels={market:'市场研究与来源检验',content:'广告内容生产',compliance:'文化与广告合规检查',decision:'出海可行性与业务决策'};
-    const reportProgressMessages=['正在搜寻资料','正在核验来源','正在分析市场数据','正在检查合规要点','正在编辑本地化内容','正在整理业务建议'];
+    const reportProgressMessages=['正在搜寻资料','正在思考问题','正在核验来源','正在分析数据','正在检查合规要点','正在编辑页面','正在整理本地化内容','正在形成业务建议'];
     const stopReportProgress=()=>{if(reportProgressTimer){clearInterval(reportProgressTimer);reportProgressTimer=null}};
     const setReportProgressMessage=()=>{
       if(!reportWorkspace)return;
