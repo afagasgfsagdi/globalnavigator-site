@@ -763,10 +763,11 @@
   <style>
     html.site-auth-locked,html.site-auth-locked body { overflow:hidden!important }
     html.site-auth-locked body > :not(#login-layer) { visibility:hidden!important;pointer-events:none!important }
-    html.site-auth-locked #login-layer { display:grid!important;place-items:center;position:fixed;inset:0;z-index:2147483000;visibility:visible!important;pointer-events:auto!important;overflow:hidden;isolation:isolate;background:linear-gradient(180deg,rgba(2,7,20,.18),rgba(3,7,18,.26)),url("./assets/login-aurora.svg") center/cover no-repeat }
+    html.site-auth-locked #login-layer { display:grid!important;place-items:center;position:fixed;inset:0;z-index:2147483000;visibility:visible!important;pointer-events:auto!important;overflow:hidden;isolation:isolate;background:linear-gradient(180deg,rgba(2,7,20,.18),rgba(3,7,18,.26)),url("./assets/login-aurora.svg") center/cover no-repeat;background-position:50% 50%,48% 50%;animation:login-aurora-flow 42s ease-in-out infinite alternate }
     html.site-auth-locked #login-layer::before,html.site-auth-locked #login-layer::after { content:"";position:absolute;inset:-12%;z-index:-1;pointer-events:none }
     html.site-auth-locked #login-layer::before { background:radial-gradient(ellipse 42% 28% at 18% 38%,rgba(0,206,255,.16),transparent 74%),radial-gradient(ellipse 45% 30% at 80% 61%,rgba(224,55,255,.17),transparent 74%);filter:blur(34px);opacity:.76;animation:login-nebula-drift 28s ease-in-out infinite alternate }
     html.site-auth-locked #login-layer::after { inset:-40%;background-image:radial-gradient(circle,rgba(190,232,255,.78) 0 1px,transparent 1.6px),radial-gradient(circle,rgba(127,203,240,.62) 0 .8px,transparent 1.5px),radial-gradient(circle,rgba(220,238,255,.48) 0 .7px,transparent 1.4px);background-size:173px 157px,229px 211px,311px 263px;background-position:14px 28px,91px 76px,153px 19px;opacity:.24;animation:login-particles-drift 72s linear infinite }
+    @keyframes login-aurora-flow { from { background-position:50% 50%,46% 50% } to { background-position:50% 50%,54% 50% } }
     @keyframes login-nebula-drift { from { transform:translate3d(-2%,-1%,0) scale(1) } to { transform:translate3d(2%,1.5%,0) scale(1.08) } }
     @keyframes login-particles-drift { from { transform:translate3d(-1.2%,-1%,0) } to { transform:translate3d(1.2%,1%,0) } }
     .login-card { position:relative;z-index:1;width:min(calc(100% - 36px),420px);padding:clamp(26px,6vw,42px);border:1px solid transparent;border-radius:22px;background:linear-gradient(145deg,rgba(5,16,35,.8),rgba(10,15,40,.74)) padding-box,linear-gradient(135deg,rgba(82,220,255,.88),rgba(132,119,255,.48) 48%,rgba(242,93,255,.78)) border-box;box-shadow:0 30px 100px rgba(0,0,0,.48),0 0 58px rgba(73,184,221,.15),0 0 64px rgba(206,77,255,.1),inset 0 1px 0 rgba(222,248,255,.18);backdrop-filter:blur(28px) saturate(150%);-webkit-backdrop-filter:blur(28px) saturate(150%) }
@@ -782,7 +783,7 @@
     .login-submit:hover::before { left:115% }
     .login-submit:focus-visible { outline:2px solid #7fe5ff;outline-offset:4px }
     @media(max-width:520px) { .login-layer { padding:20px }.login-card { border-radius:19px } }
-    @media(prefers-reduced-motion:reduce) { html.site-auth-locked #login-layer::before,html.site-auth-locked #login-layer::after { animation:none!important }.login-form input,.login-submit { transition:none!important } }
+    @media(prefers-reduced-motion:reduce) { html.site-auth-locked #login-layer { animation:none!important } html.site-auth-locked #login-layer::before,html.site-auth-locked #login-layer::after { animation:none!important }.login-form input,.login-submit { transition:none!important } }
   </style>
   <!-- Dify embed URL is filled from Access Point after the app is published. Never put API keys in this page. -->
   <meta name="dify-api-proxy" content="https://1519601269-hr78yzjbtr.ap-guangzhou.tencentscf.com/chat">
