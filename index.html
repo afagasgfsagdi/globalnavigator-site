@@ -159,6 +159,31 @@
     .agent-answer-list li::marker { color:#7edbbf }
     .agent-answer-content strong { color:#f6fbff;font-weight:600 }
     .agent-answer-content code { padding:2px 5px;border:1px solid rgba(166,204,223,.14);border-radius:5px;background:rgba(255,255,255,.055);color:#aee9dc;font-size:.92em }
+    .agent-message.assistant:has(.agent-report) { width:100%;max-width:100% }
+    .agent-report { width:100%;min-width:0;padding:18px;border:1px solid rgba(135,197,215,.2);border-radius:16px;background:linear-gradient(145deg,rgba(11,30,43,.82),rgba(6,19,29,.78));box-shadow:0 16px 38px rgba(0,0,0,.16) }
+    .agent-report-summary { margin:0 0 18px;padding:16px 18px;border:1px solid rgba(126,227,181,.18);border-radius:12px;background:linear-gradient(120deg,rgba(21,75,77,.28),rgba(15,39,53,.38));color:rgba(239,248,250,.9) }
+    .agent-report-summary .agent-answer-heading { margin:0 0 8px;font-size:16px }
+    .agent-report-tabs { display:flex;gap:8px;overflow-x:auto;padding:0 0 12px;border-bottom:1px solid rgba(165,204,218,.13);scrollbar-width:thin }
+    .agent-report-tab { flex:1 0 auto;min-height:42px;padding:9px 14px;border:1px solid rgba(154,199,215,.16);border-radius:10px;background:rgba(255,255,255,.035);color:rgba(218,236,242,.72);font:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:background .18s,border-color .18s,color .18s }
+    .agent-report-tab[aria-selected="true"] { border-color:rgba(104,220,208,.48);background:linear-gradient(135deg,rgba(33,123,124,.32),rgba(21,65,77,.5));color:#d6fff5;box-shadow:inset 0 1px 0 rgba(255,255,255,.06) }
+    .agent-report-tab:focus-visible { outline:2px solid #78d9d4;outline-offset:2px }
+    .agent-report-panel { min-width:0;padding:20px 2px 4px }
+    .agent-report-panel[hidden] { display:none }
+    .agent-report-panel > .agent-answer-heading:first-child { margin-top:0 }
+    .agent-report-panel .agent-answer-heading { margin-top:24px;padding-bottom:7px;border-bottom:1px solid rgba(161,203,216,.13) }
+    .agent-table-wrap { max-width:100%;margin:14px 0 20px;overflow:auto;border:1px solid rgba(155,197,212,.16);border-radius:11px;background:rgba(3,14,22,.36) }
+    .agent-report-table { width:100%;border-collapse:collapse;color:rgba(232,243,247,.88);font-size:13px;line-height:1.65 }
+    .agent-report-table th,.agent-report-table td { min-width:110px;padding:11px 13px;border-bottom:1px solid rgba(155,197,212,.12);border-right:1px solid rgba(155,197,212,.1);vertical-align:top;text-align:left }
+    .agent-report-table th { background:rgba(70,146,153,.17);color:#c8f4e9;font-weight:650;white-space:nowrap }
+    .agent-report-table tr:last-child td { border-bottom:0 }
+    .agent-report-table th:last-child,.agent-report-table td:last-child { border-right:0 }
+    .agent-chart-figure { max-width:100%;margin:16px 0 20px;padding:14px;border:1px solid rgba(151,199,218,.16);border-radius:12px;background:rgba(2,13,22,.52) }
+    .agent-chart-figure img { display:block;width:min(100%,760px);height:auto;margin:0 auto;border-radius:7px;background:#fff }
+    .agent-chart-figure figcaption { margin-top:9px;color:rgba(205,228,236,.62);font-size:12px;line-height:1.6;text-align:center }
+    .agent-report-note { color:rgba(210,229,236,.62);font-size:12px }
+    .agent-download-button { display:inline-flex;align-items:center;justify-content:center;min-height:42px;margin-top:14px;padding:10px 16px;border:1px solid rgba(126,227,181,.38);border-radius:10px;background:linear-gradient(135deg,rgba(28,102,91,.48),rgba(14,63,68,.64));color:#d1fff0;text-decoration:none;font-size:13px;font-weight:650;transition:transform .18s,border-color .18s,background .18s }
+    .agent-download-button:hover { transform:translateY(-1px);border-color:rgba(126,227,181,.68);background:linear-gradient(135deg,rgba(34,124,107,.58),rgba(18,77,80,.72)) }
+    @media(max-width:620px) { .agent-report { padding:12px;border-radius:13px }.agent-report-panel { padding-top:15px }.agent-report-table { font-size:12px }.agent-report-table th,.agent-report-table td { min-width:100px;padding:9px 10px }.agent-report-tab { min-height:40px;padding:8px 11px;font-size:12px } }
     .agent-attachment { max-width:100%;padding:8px 11px;border:1px solid rgba(126,227,181,.2);border-radius:9px;background:rgba(126,227,181,.06);color:#b9f0df;font-size:11px;text-decoration:none }
     .agent-attachment:hover { border-color:rgba(126,227,181,.45);background:rgba(126,227,181,.1) }
     .agent-message.error .agent-message-content { border-color:rgba(255,145,145,.24);color:#ffb4b4 }
@@ -1502,34 +1527,83 @@
       }
       parent.append(document.createTextNode(text.slice(cursor)));
     };
-    const renderAgentAnswer = (container,markdown) => {
+    const renderAgentMarkdown = (container,markdown) => {
       const fragment=document.createDocumentFragment();
-      const lines=markdown.replace(/\r/g,'').split('\n');
+      const lines=String(markdown||'').replace(/\r/g,'').split('\n');
       let paragraph=[],list=null,listType='';
       const flushParagraph=()=>{if(!paragraph.length)return;const p=document.createElement('p');p.className='agent-answer-paragraph';paragraph.forEach((line,index)=>{if(index)p.append(document.createElement('br'));renderAgentInline(p,line)});fragment.append(p);paragraph=[]};
       const flushList=()=>{if(list){fragment.append(list);list=null;listType=''}};
-      for(const rawLine of lines){
-        const line=rawLine.trim();
+      const cells=(line)=>line.trim().replace(/^\|/,'').replace(/\|$/,'').split('|').map(cell=>cell.trim().replace(/\\\|/g,'|'));
+      const isTableRule=(line)=>/^\|?\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)+\|?$/.test(line.trim());
+      const appendTable=(rows)=>{
+        const wrap=document.createElement('div');wrap.className='agent-table-wrap';wrap.setAttribute('role','region');wrap.setAttribute('aria-label','报告数据表格');wrap.tabIndex=0;
+        const table=document.createElement('table');table.className='agent-report-table';const head=document.createElement('thead');const tr=document.createElement('tr');
+        cells(rows[0]).forEach(value=>{const th=document.createElement('th');th.scope='col';renderAgentInline(th,value);tr.append(th)});head.append(tr);table.append(head);
+        const body=document.createElement('tbody');rows.slice(2).forEach(row=>{const values=cells(row),rowEl=document.createElement('tr');cells(rows[0]).forEach((_,index)=>{const td=document.createElement('td');renderAgentInline(td,values[index]||'');rowEl.append(td)});body.append(rowEl)});table.append(body);wrap.append(table);fragment.append(wrap);
+      };
+      for(let i=0;i<lines.length;i++){
+        const line=lines[i].trim();
         if(!line){flushParagraph();flushList();continue}
         const heading=line.match(/^#{1,3}\s+(.+)$/);
         const bullet=line.match(/^[-*•]\s+(.+)$/);
         const ordered=line.match(/^\d+[.)]\s+(.+)$/);
+        if(i+1<lines.length&&line.startsWith('|')&&isTableRule(lines[i+1])){
+          flushParagraph();flushList();const rows=[line,lines[i+1].trim()];i+=2;
+          while(i<lines.length&&lines[i].trim().startsWith('|')){rows.push(lines[i].trim());i++}
+          i--;appendTable(rows);continue;
+        }
+        const image=line.match(/^!\[([^\]]*)\]\((https:\/\/[^\s)]+)\)$/);
+        if(image){
+          try{const url=new URL(image[2]);if(url.protocol==='https:'&&url.hostname==='quickchart.io'&&url.pathname==='/chart'){
+            flushParagraph();flushList();const figure=document.createElement('figure');figure.className='agent-chart-figure';
+            const img=document.createElement('img');img.src=url.href;img.alt=image[1]||'报告图表';img.loading='lazy';img.referrerPolicy='no-referrer';
+            const caption=document.createElement('figcaption');caption.textContent=image[1]||'数据图表';figure.append(img,caption);fragment.append(figure);continue;
+          }}catch{}
+        }
         if(heading){flushParagraph();flushList();const h=document.createElement('h3');h.className='agent-answer-heading';renderAgentInline(h,heading[1]);fragment.append(h);continue}
         if(bullet||ordered){flushParagraph();const nextType=ordered?'ol':'ul';if(!list||listType!==nextType){flushList();list=document.createElement(nextType);list.className='agent-answer-list';listType=nextType}const li=document.createElement('li');renderAgentInline(li,(bullet||ordered)[1]);list.append(li);continue}
         flushList();paragraph.push(line);
       }
       flushParagraph();flushList();container.replaceChildren(fragment);
     };
+    const reportSectionForHeading=(line)=>{
+      const title=line.trim().replace(/^#{1,4}\s*/,'').replace(/^[一二三四1-4][、.．)]\s*/,'').trim();
+      if(/^(市场研究与来源检验|市场研究与来源核验|市场调研与来源检验|市场调研与来源核验|市场调研|市场研究)/.test(title))return 'market';
+      if(/^(广告内容生产|内容生产)/.test(title))return 'content';
+      if(/^(文化与广告合规检查|合规检查)/.test(title))return 'compliance';
+      if(/^(出海可行性与业务决策|出海可行性|业务决策)/.test(title))return 'decision';
+      return '';
+    };
+    const renderReportTabs=(container,markdown)=>{
+      const lines=String(markdown||'').replace(/\r/g,'').split('\n');const sectionStarts=[];
+      lines.forEach((line,index)=>{if(/^\s{0,3}#{0,4}\s*(?:[一二三四1-4][、.．)]\s*)?(?:市场研究与来源检验|市场研究与来源核验|市场调研与来源检验|市场调研与来源核验|市场调研|市场研究|广告内容生产|内容生产|文化与广告合规检查|合规检查|出海可行性与业务决策|出海可行性|业务决策)/.test(line.trim())){const key=reportSectionForHeading(line);if(key&&!sectionStarts.some(item=>item.key===key))sectionStarts.push({key,index})}});
+      const keys=['market','content','compliance','decision'];if(!keys.every(key=>sectionStarts.some(item=>item.key===key)))return false;
+      sectionStarts.sort((a,b)=>a.index-b.index);const first=sectionStarts[0].index;const labels={market:'市场研究与来源检验',content:'广告内容生产',compliance:'文化与广告合规检查',decision:'出海可行性与业务决策'};
+      const root=document.createElement('section');root.className='agent-report';root.setAttribute('aria-label','出海分析报告');
+      const intro=lines.slice(0,first).join('\n').trim();if(intro){const summary=document.createElement('div');summary.className='agent-report-summary';renderAgentMarkdown(summary,intro);root.append(summary)}
+      const tablist=document.createElement('div');tablist.className='agent-report-tabs';tablist.setAttribute('role','tablist');tablist.setAttribute('aria-label','报告四部分');
+      const tabPanels=[];const uid=`report-${crypto.randomUUID()}`;
+      sectionStarts.forEach((item,index)=>{const end=sectionStarts[index+1]?.index??lines.length;const panel=document.createElement('section');panel.className='agent-report-panel';panel.id=`${uid}-${item.key}-panel`;panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby',`${uid}-${item.key}-tab`);panel.hidden=index!==0;renderAgentMarkdown(panel,lines.slice(item.index,end).join('\n'));
+        const button=document.createElement('button');button.type='button';button.className='agent-report-tab';button.id=`${uid}-${item.key}-tab`;button.setAttribute('role','tab');button.setAttribute('aria-controls',panel.id);button.setAttribute('aria-selected',String(index===0));button.tabIndex=index===0?0:-1;button.textContent=labels[item.key];
+        button.addEventListener('click',()=>{tabPanels.forEach(entry=>{const active=entry.button===button;entry.button.setAttribute('aria-selected',String(active));entry.button.tabIndex=active?0:-1;entry.panel.hidden=!active});});
+        button.addEventListener('keydown',(event)=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const tabs=[...tablist.querySelectorAll('[role="tab"]')];const at=tabs.indexOf(button);const next=event.key==='Home'?0:event.key==='End'?tabs.length-1:event.key==='ArrowRight'?(at+1)%tabs.length:(at-1+tabs.length)%tabs.length;tabs[next].focus();tabs[next].click()});
+        tablist.append(button);tabPanels.push({button,panel});
+      });
+      root.append(tablist,...tabPanels.map(item=>item.panel));container.replaceChildren(root);return true;
+    };
+    const renderAgentAnswer=(container,markdown)=>{if(!renderReportTabs(container,markdown))renderAgentMarkdown(container,markdown)};
     const addReportDownloadLink = (target,file) => {
       const fileId=String(file?.id||file?.file_id||file?.message_file_id||file?.upload_file_id||'').trim();
       if(!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(fileId)) return false;
       const endpoint=new URL(proxyRoute(`download/${encodeURIComponent(fileId)}`));
       endpoint.searchParams.set('user',userId);
       const link=document.createElement('a');
-      link.className='agent-attachment';
+      link.className='agent-attachment agent-download-button';
       link.href=endpoint.toString();
       link.download=String(file?.filename||file?.name||'出海市场报告.docx');
-      link.textContent=`↧ ${file?.filename||file?.name||t('agent_download')}`;
+      link.setAttribute('aria-label','下载完整 Word 报告');
+      link.title=String(file?.filename||file?.name||'出海市场报告.docx');
+      link.textContent='下载完整 Word 报告';
       target.article.append(link);
       return true;
     };
@@ -2212,6 +2286,7 @@
   </script>
 </body>
 </html>
+
 
 
 
