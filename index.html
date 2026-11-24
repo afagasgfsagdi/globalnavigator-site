@@ -183,8 +183,6 @@
     .agent-chart-figure img { display:block;width:min(100%,760px);height:auto;margin:0 auto;border-radius:7px;background:#07111b;filter:invert(.96) hue-rotate(180deg) saturate(.94) }
     .agent-chart-figure svg { display:block;width:min(100%,760px);height:auto;margin:0 auto;overflow:visible }
     .agent-chart-local-fallback { background:linear-gradient(145deg,rgba(11,30,42,.94),rgba(5,17,26,.96)) }
-    .agent-chart-figure svg { display:block;width:min(100%,760px);height:auto;margin:0 auto;overflow:visible }
-    .agent-chart-local-fallback { background:linear-gradient(145deg,rgba(11,30,42,.94),rgba(5,17,26,.96)) }
     .agent-chart-figure figcaption { margin-top:9px;color:rgba(205,228,236,.62);font-size:12px;line-height:1.6;text-align:center }
     .agent-report-note { color:rgba(210,229,236,.62);font-size:12px }
     .agent-download-button { display:inline-flex;align-items:center;justify-content:center;min-height:42px;margin-top:14px;padding:10px 16px;border:1px solid rgba(126,227,181,.38);border-radius:10px;background:linear-gradient(135deg,rgba(28,102,91,.48),rgba(14,63,68,.64));color:#d1fff0;text-decoration:none;font-size:13px;font-weight:650;transition:transform .18s,border-color .18s,background .18s }
@@ -1733,51 +1731,6 @@
       const points=series.map((item,index)=>x(index)+','+y(item.value)).join(' ');
       add('polyline',{points,fill:'none',stroke:'#70d6d2','stroke-width':3,'stroke-linecap':'round','stroke-linejoin':'round'});
       series.forEach((item,index)=>{
-        const px=x(index),py=y(item.value);
-        const circle=add('circle',{cx:px,cy:py,r:4.5,fill:'#a4f0df',stroke:'#0b2833','stroke-width':2});
-        const title=document.createElementNS(ns,'title');title.textContent=item.year+': '+item.value.toLocaleString('en-US');circle.append(title);
-        add('text',{x:px,y:height-14,fill:'rgba(220,237,244,.78)','font-size':11,'text-anchor':'middle','font-family':'Arial,sans-serif'},String(item.year));
-      });
-      const old=figure.querySelector('img');
-      if(old)old.replaceWith(svg);else figure.prepend(svg);
-      figure.classList.add('agent-chart-local-fallback');
-    };
-    const extractNearbyYearSeries=(lines,index)=>{
-      const sample=lines.slice(index+1,index+12).join(' ');
-      const matches=sample.matchAll(/(?:^|[^\d])((?:19|20)\d{2})\s*(?:年|:|：)?\s*([0-9][0-9,]*(?:\.\d+)?)/g);
-      const values=new Map();
-      for(const match of matches){
-        const year=Number(match[1]),value=Number(match[2].replace(/,/g,''));
-        if(value>=1900&&value<=2100)continue;
-        if(Number.isFinite(value)&&!values.has(year))values.set(year,value);
-      }
-      return Array.from(values,([year,value])=>({year,value})).sort((a,b)=>a.year-b.year);
-    };
-    const renderLocalLineChart=(figure,caption,series)=>{
-      const ns='http://www.w3.org/2000/svg',width=760,height=280,left=76,right=22,top=22,bottom=42;
-      const svg=document.createElementNS(ns,'svg');
-      svg.setAttribute('viewBox','0 0 '+width+' '+height);svg.setAttribute('role','img');svg.setAttribute('aria-label',caption+'，根据报告原始数据绘制');
-      const add=(tag,attrs,text)=>{
-        const element=document.createElementNS(ns,tag);
-        Object.entries(attrs||{}).forEach(([key,value])=>element.setAttribute(key,String(value)));
-        if(text!==undefined)element.textContent=text;
-        svg.append(element);return element;
-      };
-      const values=series.map(item=>item.value),min=Math.min(...values),max=Math.max(...values),spread=max-min||Math.max(max,1);
-      const low=Math.max(0,min-spread*.12),high=max+spread*.12,plotWidth=width-left-right,plotHeight=height-top-bottom;
-      const x=index=>left+(series.length===1?plotWidth/2:index*plotWidth/(series.length-1));
-      const y=value=>top+(high-value)/(high-low||1)*plotHeight;
-      for(let tick=0;tick<=4;tick++){
-        const value=high-(high-low)*tick/4,py=top+plotHeight*tick/4;
-        add('line',{x1:left,y1:py,x2:width-right,y2:py,stroke:'rgba(178,207,220,.16)','stroke-width':1});
-        const label=value>=1000000?(value/1000000).toFixed(1)+'M':value>=1000?(value/1000).toFixed(1)+'K':Math.round(value).toLocaleString('en-US');
-        add('text',{x:left-11,y:py+4,fill:'rgba(205,225,235,.68)','font-size':11,'text-anchor':'end','font-family':'Arial,sans-serif'},label);
-      }
-      add('line',{x1:left,y1:top,x2:left,y2:top+plotHeight,stroke:'rgba(178,207,220,.34)','stroke-width':1});
-      add('line',{x1:left,y1:top+plotHeight,x2:width-right,y2:top+plotHeight,stroke:'rgba(178,207,220,.34)','stroke-width':1});
-      const points=series.map((item,index)=>x(index)+','+y(item.value)).join(' ');
-      add('polyline',{points,fill:'none',stroke:'#70d6d2','stroke-width':3,'stroke-linecap':'round','stroke-linejoin':'round'});
-      series.forEach((item,index)=>{
         const px=x(index),py=y(item.value),circle=add('circle',{cx:px,cy:py,r:4.5,fill:'#a4f0df',stroke:'#0b2833','stroke-width':2});
         const title=document.createElementNS(ns,'title');title.textContent=item.year+': '+item.value.toLocaleString('en-US');circle.append(title);
         add('text',{x:px,y:height-14,fill:'rgba(220,237,244,.78)','font-size':11,'text-anchor':'middle','font-family':'Arial,sans-serif'},String(item.year));
@@ -1785,8 +1738,7 @@
       const old=figure.querySelector('img');
       if(old)old.replaceWith(svg);else figure.prepend(svg);
       figure.classList.add('agent-chart-local-fallback');
-    };
-    const renderAgentMarkdown = (container,markdown) => {
+    };    const renderAgentMarkdown = (container,markdown) => {
       const fragment=document.createDocumentFragment();
       const normalized=normalizeChartMarkdown(markdown);
       const lines=normalized.split('\n');
@@ -1818,13 +1770,6 @@
             flushParagraph();flushList();const figure=document.createElement('figure');figure.className='agent-chart-figure';
             const img=document.createElement('img');img.src=normalizeQuickChartUrl(url.href);img.alt=image[1]||'报告图表';img.loading='lazy';img.referrerPolicy='no-referrer';
             img.addEventListener('error',()=>{img.hidden=true;const note=document.createElement('p');note.className='agent-chart-fallback';note.textContent='图表暂时无法加载，请参考下方标注的数据来源与口径。';figure.append(note)},{once:true});
-            img.addEventListener('load',()=>{
-              if(img.naturalHeight<100||img.naturalWidth/img.naturalHeight>10){
-                const series=extractNearbyYearSeries(lines,i);
-                if(series.length>=2)renderLocalLineChart(figure,image[1]||'报告趋势图',series);
-                else{img.hidden=true;const note=document.createElement('p');note.className='agent-chart-fallback';note.textContent='图表配置无法解析，且未找到可重绘的年度数据；请核对下方来源与原始数据。';figure.append(note)}
-              }
-            },{once:true});
             img.addEventListener('load',()=>{
               if(img.naturalHeight<100||img.naturalWidth/img.naturalHeight>10){
                 const series=extractNearbyYearSeries(lines,i);
@@ -2713,6 +2658,7 @@
   </script>
 </body>
 </html>
+
 
 
 
