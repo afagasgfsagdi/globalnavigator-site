@@ -1,7 +1,84 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-24T17:47:03.767010+00:00",
+  "updatedAt": "2026-11-25T01:38:45.147187+00:00",
   "items": [
+    {
+      "title": "化妆品监管改革持续落地 “美妆消费”解锁哪些新机会",
+      "description": "化妆品监管改革持续落地",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-25/10737315.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-25T09:00:50+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "欧盟“点名”5个成员国存在经济失衡风险",
+      "description": "中新社布鲁塞尔11月24日电 (记者 德永健)欧盟24日依据“欧洲学期”机制发布成员国宏观经济预警报告，认定意大利、匈牙利、斯洛伐克、罗马尼亚和保加利亚存在经济失衡风险，将于2027年上半年对5国进行深入审查。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-25/10737298.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-25T08:30:20+08:00",
+      "category": "policy",
+      "continent": "europe"
+    },
+    {
+      "title": "美国11月消费者信心指数升至近两年来最高值",
+      "description": "中新社华盛顿11月24日电 (记者 沙晗汀)世界大型企业联合会当地时间24日公布数据显示，美国11月消费者信心指数升至103.3，是自2025年1月以来的最高值，高于市场预期。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-25/10737297.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-25T08:30:16+08:00",
+      "category": "policy",
+      "continent": "north-america"
+    },
+    {
+      "title": "泰国举办泰国—经合组织议会论坛 推动国内改革与国际接轨",
+      "description": "中新社曼谷11月24日电 (梁峻祥 李映民)泰国—经济合作与发展组织(经合组织)议会论坛24日在泰国国会大厦举行。来自泰国议会、经合组织、外交使团、国际组织及相关机构的460余名代表出席，围绕泰国加入经合组织进程、法律改革及借鉴国际经验等议题展开交流。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-25/10737295.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-25T08:28:28+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "投资金条为何受热捧",
+      "description": "问：近期，黄金价格走势持续引人关注。近日，伦敦现货黄金盘中下探到每盎司3700美元附近，较年内高点明显回落。与此同时，“金价下跌为何金店反而没货可卖”等话题引发热议，多地金店的投资金条出现脱销情况。今年金价为何回落？本轮购金需求有何不同？",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-25/10737289.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-25T07:37:03+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "俄“进步MS-36”货运飞船发射升空前往国际空间站",
+      "description": "中新社莫斯科11月24日电 俄罗斯国家航天集团24日表示，“进步MS-36”货运飞船当天从位于哈萨克斯坦境内的拜科努尔航天发射场发射升空，前往国际空间站。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-25/10737279.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-25T06:23:35+08:00",
+      "category": "supply",
+      "continent": "europe"
+    },
+    {
+      "title": "普京：乌方袭击俄能源设施必招致俄方回应",
+      "description": "中新社莫斯科11月24日电 俄罗斯总统普京24日主持召开能源发展战略和环境安全委员会会议时表示，针对乌克兰对俄能源基础设施的袭击，俄方必然作出回应。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-25/10737277.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-25T06:17:29+08:00",
+      "category": "policy",
+      "continent": "europe"
+    },
+    {
+      "title": "Chinese automakers look to make impact in US despite tariffs, barriers",
+      "link": "https://newsus.cgtn.com/news/2026-11-25/Chinese-automakers-look-to-make-impact-in-US-despite-tariffs-barriers-1SlHRShpNxS/p.html",
+      "pubDate": "2026-11-24T22:54:27+00:00",
+      "description": "CGTN Americas · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "tariff"
+    },
     {
       "title": "我国牵头推动全球首个生成式人工智能治理国际标准提案",
       "description": "中新网北京11月24日(记者 左雨晴) 24日，记者从市场监管总局专题新闻发布会上了解到，我国正深度参与国际标准体系建设，聚焦数据治理、人机交互、安全可信等关键领域，组织头部企业、领先科研机构，牵头29项基础共性国际标准研制；围绕智慧城市、智能制造等重点行业，统筹15个标准技术机构牵头推动49项行业应用国际标准研制，形成协同推进、相互支撑的良好格局。",
@@ -196,24 +273,6 @@
       "continent": "asia"
     },
     {
-      "title": "宁夏隆德：小小帮扶车间 托起稳稳致富路",
-      "description": "中新网宁夏隆德11月24日电 (记者 李佩珊)缝纫机哒哒作响，流水线上服装成型，六盘山下的固原市隆德县城关镇红崖社区服装生产车间里，裁剪、缝制、熨烫、打包工序有条不紊，留守妇女坐在工位上，指尖忙碌，在家门口赚取收入。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737080.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-24T17:39:23+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "山东国企依托主业场景加快布局人工智能新赛道",
-      "description": "中新网济南11月24日电 (周艺伟)从矿山井下的智能“安全员”到露天矿场的无人推土机，从政务、工业领域的行业大模型到高铁线路的智能精调机器人……近日，记者走访多家山东省属国企发现，各企业依托各自的主业场景，将人工智能融入能源、重工制造、信息科技、铁路交通等领域的生产经营一线，把AI技术转化为提质增效、安全管控的现实生产力。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737079.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-24T17:37:31+08:00",
-      "category": "policy"
-    },
-    {
       "title": "印度知名瓶装水品牌曝出安全问题",
       "description": "中新网11月24日电 据路透社23日报道，印度食品安全与标准局在印度知名瓶装饮用水生产商比斯莱里国际公司的产品样本中检出不符合安全标准的物质，将对这家公司启动法律程序并扩大抽检范围。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-24/10737070.shtml",
@@ -280,15 +339,6 @@
       "pubDate": "2026-11-24T11:38:32+08:00",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "国际最新研发出用植物生产抗癌药紫杉醇的新方式",
-      "description": "中新网北京11月24日电 (记者 孙自法)施普林格·自然旗下专业学术期刊《自然-化学生物学》最新发表一项生物技术论文称，研究人员已在烟草的一种近缘植物——本氏烟草中成功生产出重要的化疗药物紫杉醇。基于这一研究成果，未来或将开发出一种成本更低、更可持续的紫杉醇生产方式。",
-      "link": "https://www.chinanews.com.cn/gj/2026/11-24/10736829.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-24T11:19:15+08:00",
-      "category": "policy"
     },
     {
       "title": "“湘”约非洲：跨境金融合作助力湖南企业深耕非洲市场",
@@ -1507,16 +1557,6 @@
       "sourceCountry": "中国新闻网",
       "pubDate": "2026-11-19T21:01:02+08:00",
       "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "联合国工发组织副总干事：中国推进绿氢等经验可向全球南方推广",
-      "description": "中新网土耳其安塔利亚11月19日电 (记者 魏园 陈溯)《联合国气候变化框架公约》第三十一次缔约方大会(COP31)正在土耳其安塔利亚举行。联合国工业发展组织副总干事兼技术合作和可持续工业发展总司执行干事邹刺勇在大会期间表示，工发组织正与中国携手推进绿氢、绿色航运等合作项目，把可再生能源制氢与难减排行业的绿色燃料需求直接连接，相关项目经验可向全球南方推广。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-19/10734888.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-19T20:45:41+08:00",
-      "category": "supply",
       "continent": "asia"
     },
     {
@@ -3869,16 +3909,6 @@
       "continent": "africa"
     },
     {
-      "title": "俄乌相互袭击对方能源设施",
-      "description": "中新社莫斯科11月3日电 俄罗斯国防部3日通报说，俄军当天凌晨对乌克兰多个能源基础设施目标实施密集打击，击中乌境内4座发电厂和2座变电站。俄罗斯雅罗斯拉夫尔州州长表示，该州一座炼油厂遭乌克兰无人机袭击受损起火。",
-      "link": "https://www.chinanews.com.cn/gj/2026/11-03/10725394.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-03T17:30:11+08:00",
-      "category": "policy",
-      "continent": "europe"
-    },
-    {
       "title": "Wang Yi reaffirms China's support for Myanmar's development",
       "link": "https://news.cgtn.com/news/2026-11-03/Wang-Yi-reaffirms-China-s-support-for-Myanmar-s-development-1RMeXHkibNC/p.html",
       "pubDate": "2026-11-03T14:44:07+00:00",
@@ -3929,16 +3959,6 @@
       "continent": "north-america"
     },
     {
-      "title": "英国假冒美妆流通加剧 官方启动集中整治",
-      "description": "中新网伦敦11月3日电 (记者 欧阳开宇)英国知识产权办公室2日消息称，英国年轻消费者购买假冒美妆产品的比例近年快速攀升，带动市面有毒伪劣美妆流通加剧，公共健康风险持续走高。为此，官方已启动专项行动，集中整治假冒化妆品乱象。",
-      "link": "https://www.chinanews.com.cn/gj/2026/11-03/10725181.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-03T02:35:03.000Z",
-      "category": "policy",
-      "continent": "europe"
-    },
-    {
       "title": "US to mediate Ukraine-Russia talks in Abu Dhabi, US envoy says",
       "description": "The United States will bring together delegations from Ukraine and Russia in Abu Dhabi on November 10-11 to discuss ending Russia's conflict with Ukraine, post-conflict security agreements and de-escalation, US envoy Steve Witkoff said on Monday.",
       "link": "https://news.cgtn.com/news/2026-11-03/news-1RLcuhqzYmk/p.html",
@@ -3967,16 +3987,6 @@
       "pubDate": "2026-11-02T02:44:22+00:00",
       "category": "policy",
       "continent": "north-america"
-    },
-    {
-      "title": "Chinese, German auto companies boost cooperation amid industry shift",
-      "description": "Chinese and German auto companies on Friday explored ways to boost cooperation amid profound global transformation and fierce industry competition.",
-      "link": "https://news.cgtn.com/news/2026-11-01/Chinese-German-auto-companies-boost-cooperation-amid-industry-shift-1RIJ83dHRZe/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-01T13:52:33+00:00",
-      "category": "policy",
-      "continent": "europe"
     },
     {
       "title": "Xi's special envoy attends opening ceremony of 4th Youth Olympic Games",
