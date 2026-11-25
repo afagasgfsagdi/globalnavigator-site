@@ -709,7 +709,7 @@
     .report-tool-button[aria-pressed="true"] { border-color:rgba(112,214,210,.62);background:linear-gradient(145deg,rgba(37,129,131,.35),rgba(20,68,81,.4));color:#cffff4;box-shadow:inset 0 1px 0 rgba(235,255,252,.08),0 0 18px rgba(73,188,188,.1) }
     .report-tool-button:disabled { opacity:.42;cursor:not-allowed;transform:none }
     .report-toolbar-status { position:absolute;left:calc(100% + 12px);top:50%;width:max-content;max-width:min(280px,55vw);transform:translateY(-50%);padding:8px 11px;border:1px solid rgba(139,197,215,.2);border-radius:9px;background:rgba(6,18,28,.96);color:rgba(224,240,246,.84);font-size:11px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .15s }
-    .report-workspace-toolbar:focus-within .report-toolbar-status,.report-workspace-toolbar:hover .report-toolbar-status { opacity:1 }
+    .report-toolbar-status.is-visible,.report-workspace-toolbar:focus-within .report-toolbar-status,.report-workspace-toolbar:hover .report-toolbar-status { opacity:1 }
     .report-emphasis-underline { color:#e2fff6;text-decoration-line:underline;text-decoration-color:#71dbd4;text-decoration-thickness:2px;text-underline-offset:3px;background:rgba(63,156,159,.1);border-radius:2px }
     @media(max-width:1180px) { .report-workspace-content { margin-left:0 }.report-workspace-toolbar { position:static;align-self:flex-start;transform:none;flex-direction:row;width:max-content;max-width:100%;margin:0 0 12px;gap:8px;padding:6px }.report-tool-button { width:44px;height:44px }.report-toolbar-status { left:0;top:calc(100% + 8px);transform:none;max-width:calc(100vw - 48px) } }
     @media(max-width:620px) { .report-workspace-toolbar { gap:6px }.report-tool-button { width:42px;height:42px;border-radius:10px } }
@@ -1509,6 +1509,7 @@
     let latestReportDownloadLink = null;
     let downloadRequested = false;
     let reportToolbarStatus = null;
+    let reportToolbarStatusTimer = null;
     let reportToolbarButtons = {};
     let userId = sessionStorage.getItem(userIdKey);
     if (!userId) { userId = `gn-${crypto.randomUUID()}`; sessionStorage.setItem(userIdKey,userId); }
@@ -1853,9 +1854,16 @@
       const message=reportProgressMessages[reportProgressIndex%reportProgressMessages.length];
       reportWorkspace.statusCopies.forEach(copy=>{copy.textContent=message;copy.classList.remove('is-changing');requestAnimationFrame(()=>copy.classList.add('is-changing'))});
     };
-    const setReportToolbarStatus=(message)=>{if(reportToolbarStatus)reportToolbarStatus.textContent=message||'选择报告中的文字可进行标注或提问。'};
+    const setReportToolbarStatus=(message)=>{
+      if(!reportToolbarStatus)return;
+      reportToolbarStatus.textContent=message||'选择报告中的文字可进行标注或提问。';
+      reportToolbarStatus.classList.add('is-visible');
+      if(reportToolbarStatusTimer)clearTimeout(reportToolbarStatusTimer);
+      reportToolbarStatusTimer=setTimeout(()=>reportToolbarStatus?.classList.remove('is-visible'),5200);
+    };
     const setReportToolMode=(mode,message)=>{
       reportToolMode=mode;
+      if(reportWorkspace?.root)reportWorkspace.root.dataset.toolMode=mode;
       reportToolbarButtons.browse?.setAttribute('aria-pressed',String(mode==='browse'));
       reportToolbarButtons.annotate?.setAttribute('aria-pressed',String(mode==='underline'));
       reportToolbarButtons.ask?.setAttribute('aria-pressed',String(mode==='question'));
@@ -1864,12 +1872,14 @@
     const getReportSelection=()=>{
       const selection=window.getSelection();
       if(!reportWorkspace?.content)return null;
-      const range=selection&&!selection.isCollapsed?selection.getRangeAt(0):reportSelectionRange;
-      if(!range)return null;
       const panelFor=node=>{const element=node?.nodeType===Node.ELEMENT_NODE?node:node?.parentElement;return element?.closest('.agent-report-panel')||null};
-      const startPanel=panelFor(range.startContainer),endPanel=panelFor(range.endContainer);
-      if(!startPanel||startPanel!==endPanel||!reportWorkspace.content.contains(startPanel))return null;
-      return {range, text:range.toString().trim(), panel:startPanel};
+      const toSelection=range=>{
+        if(!range)return null;
+        const startPanel=panelFor(range.startContainer),endPanel=panelFor(range.endContainer);
+        if(!startPanel||startPanel!==endPanel||!reportWorkspace.content.contains(startPanel))return null;
+        const text=range.toString().trim();return text?{range,text,panel:startPanel}:null;
+      };
+      return toSelection(selection&&!selection.isCollapsed?selection.getRangeAt(0):null)||toSelection(reportSelectionRange);
     };
     const underlineReportSelection=()=>{
       const selected=getReportSelection();if(!selected?.text)return false;
@@ -1905,7 +1915,6 @@
       const ask=makeButton('ask','选择内容并向智能体提问','<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H7l-3 2v-5.5A7.5 7.5 0 1 1 20 11.5Z"/><path d="M10 9a2 2 0 1 1 3.5 1.3c-.8.8-1.5 1-1.5 2.2"/><path d="M12 15.5h.01"/></svg>');
       const download=makeButton('download','下载 Word 报告','<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11"/><path d="m7.5 10 4.5 4.5 4.5-4.5"/><path d="M4 16.5v3A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5v-3"/></svg>');
       const status=document.createElement('span');status.className='report-toolbar-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.textContent='选择报告中的文字可进行标注或提问。';toolbar.append(status);reportToolbarStatus=status;
-      toolbar.querySelectorAll('button').forEach(button=>button.addEventListener('mousedown',event=>event.preventDefault()));
       browse.addEventListener('click',()=>{window.getSelection()?.removeAllRanges();reportSelectionText='';reportSelectionRange=null;setReportToolMode('browse','已切换到浏览模式。')});
       annotate.addEventListener('click',()=>{if(underlineReportSelection())return;setReportToolMode(reportToolMode==='underline'?'browse':'underline',reportToolMode==='underline'?'已退出标注模式，请继续浏览报告。':'请在报告中拖选要加下划线的内容。')});
       ask.addEventListener('click',()=>{if(reportSelectionText){sendReportQuestion(reportSelectionText);return}setReportToolMode(reportToolMode==='question'?'browse':'question',reportToolMode==='question'?'已退出提问选择模式。':'请在报告中拖选一段内容，选中后会发送给智能体解释。')});
@@ -1917,7 +1926,7 @@
         downloadRequested=true;setReportToolbarStatus('正在请求生成 Word 报告…');send('请根据当前已生成的网页报告生成 Word 文档，并提供下载文件。');
       });
       const cacheSelection=()=>{const selected=getReportSelection();if(!selected?.text)return;reportSelectionText=selected.text;reportSelectionRange=selected.range.cloneRange();if(reportToolMode==='underline')underlineReportSelection();else if(reportToolMode==='question')sendReportQuestion(reportSelectionText)};
-      reportWorkspace.content.addEventListener('mouseup',cacheSelection);
+      reportWorkspace.content.addEventListener('pointerup',cacheSelection);
       reportWorkspace.content.addEventListener('keyup',cacheSelection);
       setReportToolMode('browse','选择报告中的文字可进行标注或提问。');
       return toolbar;
