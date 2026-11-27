@@ -1,7 +1,204 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-26T21:57:08.463283+00:00",
+  "updatedAt": "2026-11-27T04:16:22.002528+00:00",
   "items": [
+    {
+      "title": "黑龙江哈尔滨：寒地算力蓄势腾飞 东北智算新引擎",
+      "description": "中新网哈尔滨11月27日电 (记者 田德雨)11月25日，黑龙江省“给力！新引擎”数字经济篇主题采访活动走进哈尔滨算力中心。展示厅内，智慧农业、智慧工业、智慧教育、算力中心等沙盘模型，直观呈现算力赋能各行业数字化应用图景。不远处的机房内，一组组机柜整齐排列，服务器稳定运转。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738635.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T11:55:08+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "陕西谋划“十五五”县域发展 2030年培育30个县域特色产业集群",
+      "description": "中新网西安11月27日电 (记者 杨英琦)记者27日从陕西省发展改革委获悉，“十五五”时期，陕西将持续延链补链强链，到2030年形成苹果种植及深加工、整车及零部件制造、文化旅游等30个左右县域特色产业集群，支撑县域地区生产总值突破2.2万亿元(人民币，下同)。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738633.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T11:49:44+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "美国大幅上修GDP至4.3%，特朗普“炮轰”商务部",
+      "description": "美国大幅上修GDP至4.3%，特朗普“炮轰”商务部：为什么不早说？这是一个“创纪录的重大错误”",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-27/10738625.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T11:25:55+08:00",
+      "category": "policy",
+      "continent": "north-america"
+    },
+    {
+      "title": "两项自行车国家标准将实施",
+      "description": "中新网11月27日电 据“市说新语”微信公众号消息，自12月1日起，市场监管总局修订发布的《自行车装配要求》(GB/T 3566—2026)、《自行车通用技术要求》(GB/T 19994—2026)国家标准将正式实施。两项标准紧扣自行车产品特性和民众骑行消费需求，分别从整车技术性能、装配工艺层面搭建规范体系，为产品设计、生产制造、检验检测提供统一技术依据，引导企业依规组织生产，持续提升自行车产品供给质量。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738620.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T11:20:50+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "今年三季度欧盟货物贸易进口总额7300亿欧元 中国为最大进口来源国",
+      "description": "中新网布鲁塞尔11月27日电(记者 德永健)欧盟统计局26日公布今年三季度欧盟货物贸易进出口数据，显示今年三季度欧盟货物贸易进口总额7300亿欧元，中国为欧盟货物贸易最大进口来源国。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-27/10738559.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T10:55:33+08:00",
+      "category": "policy",
+      "continent": "europe"
+    },
+    {
+      "title": "信息无障碍国家标准修订发布",
+      "description": "中新网11月27日电 据“市说新语”微信公众号消息，近期，市场监管总局(国家标准委)修订发布《信息技术 互联网内容无障碍可访问性技术要求与测试方法》国家标准，该标准将于2027年2月1日起正式实施。本次修订充分适配数字产业新形态、新场景，引领我国信息无障碍建设迈向精细化、体系化、国际化发展新阶段。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738594.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T10:40:30+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "我国加速推进“人工智能+制造”专项行动",
+      "description": "央视网消息(新闻联播)：今年以来，我国启动实施“人工智能+制造”专项行动，在应用层面，人工智能已经基本贯穿研发设计、生产制造、质检运维等全链条。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738600.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T10:37:22+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "从世界经济版图看中国经济之韧",
+      "description": "点“经”之笔丨从世界经济版图看中国经济之韧",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738598.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T10:36:24+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "黑龙江大庆：以数据为新引擎 打造资源型城市数字化转型样板",
+      "description": "中新网大庆11月27日电 (记者 田德雨)11月26日，由黑龙江省委宣传部组织的“给力！新引擎”数字经济篇主题采访活动走进大庆。作为典型资源型城市，大庆六十余年油气开发积累了丰厚的数据资源。当地抢抓数字经济机遇，以数字产业化、产业数字化双轮驱动，大庆市入选国家级数据产业集聚区建设试点、智慧能源领域国家数据标注先行先试城市，走出资源型城市实数融合转型之路。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738574.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T10:07:48+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "从一颗传感器到整条产业链 高交会解码AI落地深圳答案",
+      "description": "中新网深圳11月27日电 题：从一颗传感器到整条产业链 高交会解码AI落地深圳答案",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738551.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T09:56:00+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "国家统计局：1-10月份规模以上工业企业利润保持较快增长",
+      "description": "中新网11月27日电 据国家统计局网站消息，国家统计局工业司首席统计师于卫宁就2026年1—10月份工业企业利润数据进行解读。于卫宁表示，1—10月份，全国工业生产总体平稳，新动能快速成长，带动规模以上工业企业利润同比增长16.0%，较1—9月份加快0.5个百分点，今年以来继续保持两位数增长。从三大门类看，采矿业利润增长38.8%，制造业利润增长17.5%，电力、热力、燃气及水生产和供应业利润下降14.8%。10月份，全国规模以上工业企业利润同比增长20.1%，较9月份加快5.7个百分点。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738543.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T09:52:00+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "国家统计局：1-10月份全国规模以上工业企业利润增长16.0%",
+      "description": "中新网11月27日电 据国家统计局网站消息，1—10月份，全国规模以上工业企业实现利润总额67373.6亿元，同比增长16.0%(按可比口径计算)。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738531.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T09:32:41+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "A股开盘：超3300只个股飘红，三大指数集体高开",
+      "description": "A股开盘：超3300只个股飘红，三大指数集体高开；半导体、贵金属、保险等上涨；农业、办公用品、零售等下跌",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738530.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T09:31:44+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "11月27日人民币对美元中间价报6.7075 上调21个基点",
+      "description": "中新网11月27日电 据中国外汇交易中心网站消息，中国人民银行授权中国外汇交易中心公布，2026年11月27日银行间外汇市场人民币汇率中间价为：1美元对人民币6.7075元，上调21个基点。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738519.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T09:23:22+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "超6000亿元就位 回购增持再贷款如何构建资本市场“缓冲垫”？",
+      "description": "股票回购增持再贷款，是中国人民银行联合金融监管总局、中国证监会推出的支持资本市场的货币政策工具。本月初，这一政策由阶段性安排转为长期制度性安排，再贷款利率由1.25%进一步降至1%，支持对象覆盖21家全国性银行和5家系统重要性城商行。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738514.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T09:11:45+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "从非洲南部到南美高原，中国能源方案跨越山海走向世界",
+      "description": "第四届“一带一路”能源部长会议于2026年11月25日至27日在山东青岛举办。会场内，“共享创新成果，共促能源转型，共筑安全未来”的蓝图正在共商共绘；会场外，从非洲大陆到南美高原，中国能源方案正沿着“一带一路”走向世界。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738497.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T08:19:05+08:00",
+      "category": "policy",
+      "continent": "south-america"
+    },
+    {
+      "title": "主打潜江小龙虾、岳阳烧烤、柳州螺蛳粉 “风味”学院 对味产业",
+      "description": "主打潜江小龙虾、岳阳烧烤、柳州螺蛳粉",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738488.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T07:45:19+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "“开”出百亿级大市场！义乌仿真花热销全球",
+      "description": "不用浇水，不会凋零，如今仿真花让人们“但愿花常在”的美好愿望轻松成为日常。临近年底，海外节庆与软装需求集中释放，仿真花迎来一年中忙碌的出口时段。从单枝花销售到成套花艺方案出口，义乌已成为全球主要的仿真花生产和出口中心之一。数据显示，2025年国内仿真花行业市场规模约169亿元，出口量超50万吨，出口金额达41.9亿美元。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738481.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T07:23:30+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "未来五年，我国服务贸易将迎来哪些新机遇？",
+      "description": "新闻1+1丨未来五年，我国服务贸易将迎来哪些新机遇？",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738480.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T07:06:51+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "巴西副总统：美国对巴西加征新关税完全不合理",
+      "description": "当地时间11月26日，巴西副总统阿尔克明表示，美国提出对巴西加征的新关税完全不合理，巴西政府将尽全力扭转这一局面。阿尔克明强调，世界上不存在航空领域的关税，航空这样具有战略意义的领域不征收关税是传统。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-27/10738476.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T06:57:06+08:00",
+      "category": "tariff",
+      "continent": "north-america"
+    },
+    {
+      "title": "Chinese spokesperson says Japan disrupts peace in Asia-Pacific",
+      "description": "Japan's moves to expand its military presence in the South China Sea and deepen military cooperation with regional countries are undermining regional peace and stability, a Chinese Defense Ministry spokesperson said on Thursday.",
+      "link": "https://news.cgtn.com/news/2026-11-27/Chinese-spokesperson-says-Japan-disrupts-peace-in-Asia-Pacific-1Sp9gszJIZ2/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-27T01:03:29+00:00",
+      "category": "policy",
+      "continent": "asia"
+    },
     {
       "title": "英国斥资80亿英镑提升核潜艇战备水平",
       "description": "中新社伦敦11月26日电 (记者 欧阳开宇)英国国防部26日宣布，已与本国企业巴布科克签署为期五年、总额80亿英镑的合作协议，用于升级英国海军核潜艇的维护保障体系，提升核潜艇战备水平。",
@@ -71,15 +268,6 @@
       "continent": "asia"
     },
     {
-      "title": "深圳市机器人开放创新中心揭牌",
-      "description": "中新网深圳11月26日电 (记者 王坚)深圳市机器人开放创新中心(下称“中心”)26日在第二十八届高交会“深港科技金融论坛——科学家、企业家、金融家的跨界对话”上正式揭牌。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738420.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-26T21:26:45+08:00",
-      "category": "policy"
-    },
-    {
       "title": "第十二届巴伐利亚中国日在因戈尔施塔特市举办",
       "description": "中新网柏林11月26日电 第十二届巴伐利亚中国日近日在德国因戈尔施塔特市举办，中国驻慕尼黑总领事邱学军、因市市长科恩出席并致辞，商务部投资促进事务局局长刘民强视频致辞，来自中德两国工商学界代表100余人参加。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-26/10738417.shtml",
@@ -98,33 +286,6 @@
       "pubDate": "2026-11-26T21:25:21+08:00",
       "category": "supply",
       "continent": "asia"
-    },
-    {
-      "title": "上海将促进专利产业化与国际化落地",
-      "description": "中新网上海11月26日电 (记者 陈静)上海市知识产权局党组成员、副局长卫岚26日指出，新兴领域知识产权保护要靠制度供给跟上技术迭代。据悉，后续上海将健全新兴领域保护制度，强化跨部门与涉外知识产权保护，促进专利产业化与国际化落地。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738404.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-26T21:08:44+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "粤港澳大湾区首批用水器具水效标准亮相鹏城",
-      "description": "中新网深圳11月26日电 (记者 王坚)粤港澳大湾区首批用水器具水效“湾区标准”26日在深圳举行的第三届节水产业创新发展成果展上面向公众及媒体宣传推介。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738408.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-26T21:07:26+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "聚焦规模化量产与产业生态共建：2026增材制造大会在泸州开幕",
-      "description": "中新网泸州11月26日电 (单鹏)以“增材启新 智造未来”为主题的2026增材制造大会26日在四川泸州开幕。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738374.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-26T21:01:01+08:00",
-      "category": "policy"
     },
     {
       "title": "百事集团投资3.1亿元启动山东生产基地二期项目 持续加码中国市场 以数智化升级赋能食品制造高质量发展",
@@ -157,33 +318,6 @@
       "continent": "asia"
     },
     {
-      "title": "河南“十五五”打造更高水平“中原粮仓”",
-      "description": "中新社郑州11月26日电 (记者 王宇)河南省农业农村厅厅长孙巍峰26日在河南省政府新闻办召开的《河南省加快农业农村现代化“十五五”规划》新闻发布会上通报，“十五五”期间，该省将打造更高水平“中原粮仓”。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738345.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-26T20:01:16+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "广州跨境电商进出口规模十年增长近14倍",
-      "description": "中新社广州11月26日电 (王华 潘俊林)由广州市政府主办的2026跨境电商大会26日在广州举行。其间，广州市商务局公布的数据显示，广州跨境电商实现跨越式发展，进出口规模十年增长近14倍。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738342.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-26T20:00:36+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "前10月河源签发输APEC其他经济体原产地证书金额近10亿元",
-      "description": "中新网河源11月26日电 (张璐 周东城)记者26日从广州海关所属河源海关(简称“河源海关”)获悉，今年1月至10月，河源海关签发输APEC其他经济体原产地证书5264份，同比增长16.3%，签证金额近10亿元(人民币，下同)，为企业在进口国享受关税优惠约8600万元。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738336.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-26T19:52:48+08:00",
-      "category": "tariff"
-    },
-    {
       "title": "小农户参与探索气候适应型农业 两年建17个示范点",
       "description": "中新网福州11月26日电 (钟欣)“助力中国农食系统应对气候变化”(CRAFSN)项目结项活动26日至27日在福建福州举行。该项目在福建、云南、四川、广西建立17个试验示范点，累计开展保护性耕作农民培训51次，覆盖906户农村家庭，探索出一条小农户参与气候适应的可行路径。",
       "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738332.shtml",
@@ -192,24 +326,6 @@
       "pubDate": "2026-11-26T19:49:00+08:00",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "第二届全球技术创新大赛收官 浙江开启赛后“陪跑”",
-      "description": "中新网杭州11月26日电(蓝伊旎)11月26日，第二届全球技术创新大赛颁奖仪式暨项目对接活动在杭州举办。经过层层角逐，人工智能、生物制造、AI+光电融合、石墨烯新材料、AI+医疗、眼脑健康、具身智能、航空航天八大赛道最终共决出一等奖8项、二等奖16项、三等奖24项。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738330.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-26T19:47:51+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "规范二氧化碳培养箱、压力波治疗仪计量 两项国家计量技术规范将实施",
-      "description": "记者今天了解到，市场监管总局发布《二氧化碳培养箱校准规范》《气压弹道式体外压力波治疗仪校准规范》两项国家计量技术规范，将于12月25日起正式实施。二氧化碳培养箱广泛用于免疫学、遗传学、药物学等实验室，通过模拟生物体内环境培养细胞、组织，计量性能直接关系细胞培养质量和检验诊断结果；气压弹道式体外压力波治疗仪直接作用于人体，广泛用于康复科、骨科、疼痛科和中医理疗，输出参数准确与否关系患者诊疗安全。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738317.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-26T19:13:04+08:00",
-      "category": "policy"
     },
     {
       "title": "中上协：截至10月底境内股票市场共有上市公司5583家",
@@ -282,6 +398,16 @@
       "continent": "europe"
     },
     {
+      "title": "China ready to strengthen cooperation with ADB on regional development",
+      "description": "China stands ready to work with the Asian Development Bank (ADB) to strengthen cooperation in areas such as regional integration, connectivity and emerging industries, and jointly promote regional development and prosperity, Chinese Premier Li Qiang said on Thursday.",
+      "link": "https://news.cgtn.com/news/2026-11-26/China-ready-to-strengthen-cooperation-with-ADB-on-regional-development-1SoqWyLNWvK/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-26T15:04:47+00:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
       "title": "“喀什—第比利斯—达曼”货运航线开通",
       "description": "中新社乌鲁木齐11月26日电 (记者 苟继鹏)一架装载44吨出口货物的全货机25日从新疆喀什徕宁国际机场起飞，经停格鲁吉亚第比利斯后飞往2800公里外的沙特阿拉伯达曼法赫德国王国际机场，标志着“喀什—第比利斯—达曼”货运航线正式开通，这是喀什航空口岸向中东方向拓展的又一重要通道。据悉，该货运航线26日再执行一班。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-26/10738044.shtml",
@@ -310,15 +436,6 @@
       "pubDate": "2026-11-26T11:38:31+08:00",
       "category": "supply",
       "continent": "asia"
-    },
-    {
-      "title": "金正恩视察朝鲜核物质生产及核武器研究部门",
-      "description": "中新网11月26日电 据朝中社26日报道，朝鲜劳动党总书记、国务委员长金正恩25日视察朝鲜核物质生产及核武器研究部门工作。",
-      "link": "https://www.chinanews.com.cn/gj/2026/11-26/10737979.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-26T11:02:25+08:00",
-      "category": "policy"
     },
     {
       "title": "巴西回应美国拟加征新关税：不可接受，不会屈服",
@@ -381,6 +498,16 @@
       "continent": "north-america"
     },
     {
+      "title": "China firmly opposes US's additional tariffs on China, other economies",
+      "description": "China firmly opposes the imposition of additional Section 301 tariffs by the United States on China and other economies, a Ministry of Commerce spokesperson said on Thursday.",
+      "link": "https://news.cgtn.com/news/2026-11-26/China-firmly-opposes-US-s-additional-tariffs-on-China-other-economies-1SnZ0kfFYI0/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-26T08:23:43+00:00",
+      "category": "tariff",
+      "continent": "north-america"
+    },
+    {
       "title": "美国第三季度经济增长率上修至4.3% 好于市场预期",
       "description": "中新社华盛顿11月25日电(记者 沙晗汀)美国商务部当地时间25日公布的修正数据显示，今年第三季度美国实际国内生产总值(GDP)环比按年率计算增长4.3%，较首次预估数据上修0.9个百分点，好于市场普遍预期。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-26/10737875.shtml",
@@ -391,12 +518,72 @@
       "continent": "north-america"
     },
     {
-      "title": "Top DPRK leader inspects nuclear materials production sites: KCNA",
-      "link": "https://news.cgtn.com/news/2026-11-26/Top-DPRK-leader-inspects-nuclear-materials-production-sites-KCNA-1SnVIAmkEaQ/p.html",
-      "pubDate": "2026-11-26T07:50:45+00:00",
-      "description": "CGTN Asia Pacific · International market and trade coverage.",
+      "title": "Fresh round of US tariffs draws pushback from trade partners",
+      "description": "US President Donald Trump on Wednesday unveiled a new round of tariffs of up to 20% targeting 14 major trading partners, including China, the European Union, India and Japan. The move drew strong opposition from several affected economies and rattled financial markets.",
+      "link": "https://news.cgtn.com/news/2026-11-26/Fresh-round-of-US-tariffs-draws-pushback-from-trade-partners-1SnSfxdPgxG/p.html",
       "author": "CGTN",
       "sourceCountry": "CGTN",
+      "pubDate": "2026-11-26T08:00:03+00:00",
+      "category": "tariff",
+      "continent": "europe"
+    },
+    {
+      "title": "Top DPRK leader inspects nuclear materials production sites: KCNA",
+      "description": "The top leader of the Democratic People's Republic of Korea (DPRK) inspected nuclear materials production sites and a nuclear weapons research facility on Wednesday, state media said on Thursday.",
+      "link": "https://news.cgtn.com/news/2026-11-26/Top-DPRK-leader-inspects-nuclear-materials-production-sites-KCNA-1SnVIAmkEaQ/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-26T07:50:45+00:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "China reaffirms commitment to WTO-centered multilateral trading system",
+      "description": "Multilateralism is the key to addressing the challenges facing the world, Li Chenggang, China international trade representative and vice minister of commerce, said on Wednesday at a high-level dialogue marking the 25th anniversary of China's accession to the World Trade Organization (WTO).",
+      "link": "https://news.cgtn.com/news/2026-11-26/China-reaffirms-commitment-to-WTO-centered-multilateral-trading-system-1SnUCxpsnV6/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-26T07:44:17+00:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "Israel kills Hamas official overseeing economy, education",
+      "description": "Israel kills Hamas official overseeing economy, education",
+      "link": "https://news.cgtn.com/news/2026-11-26/news-1SnTCsxOXcI/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-26T06:32:57+00:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "China welcomes EU removal of Yusha Group from sanctions list",
+      "description": "China welcomes the European Union's (EU) decision to remove the Yusha Group from its Russia-related sanctions list and hopes Europe will remove more Chinese companies from the list, China's Ministry of Commerce said in a statement on Thursday.",
+      "link": "https://news.cgtn.com/news/2026-11-26/China-welcomes-EU-removal-of-Yusha-Group-from-sanctions-list-1SnPb4P54d2/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-26T06:01:44+00:00",
+      "category": "policy",
+      "continent": "europe"
+    },
+    {
+      "title": "China unveils services trade plan to boost global competitiveness",
+      "description": "China has unveiled a new plan to expand services trade over the next five years, with a focus on emerging AI services, greater market openness and easier cross-border flows of capital, talent, technology and data.",
+      "link": "https://news.cgtn.com/news/2026-11-26/China-unveils-services-trade-plan-to-boost-global-competitiveness-1SnKpdHkHg4/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-26T05:59:13+00:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "Hormuz tensions rise as US-Iran standoff deepens",
+      "description": "Iran's military said on Wednesday that several oil tankers and a liquefied natural gas (LNG) carrier had caught fire after striking naval mines in waters east of the Strait of Hormuz and off its southern coast.",
+      "link": "https://news.cgtn.com/news/2026-11-26/Hormuz-tensions-rise-as-US-Iran-standoff-deepens-1SnAD635EaI/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-26T03:12:46+00:00",
       "category": "policy",
       "continent": "asia"
     },
@@ -409,6 +596,16 @@
       "pubDate": "2026-11-25T23:27:15+08:00",
       "category": "policy",
       "continent": "europe"
+    },
+    {
+      "title": "US deploys new F-15EX fighter jets to Okinawa amid local concerns",
+      "description": "The US military has begun deploying its new F-15EX fighter jets at Kadena Air Base in Okinawa Prefecture, southwestern Japan, to replace the base's aging F-15C/D fleet, Kyodo News reported on Wednesday.",
+      "link": "https://news.cgtn.com/news/2026-11-26/news-1SnoAljZKaQ/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-25T23:18:40+00:00",
+      "category": "supply",
+      "continent": "asia"
     },
     {
       "title": "中外旅行商携手开发内蒙古冰雪旅游市场",
@@ -511,21 +708,12 @@
       "continent": "asia"
     },
     {
-      "title": "Guterres condemns a future with 'killer robots'",
-      "description": "AI capabilities are increasingly accessible to both state and non-state armed groups, Guterres said at the Security Council meeting this week. “The concentration of power in a handful of countries and companies should worry us all,” he said.",
-      "link": "https://newsus.cgtn.com/news/2026-11-26/Guterres-condemns-a-future-with-killer-robots--1Sn9I7Y6Zsk/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-25T20:00:22+00:00",
-      "category": "policy"
-    },
-    {
       "title": "Kenya sets foundation for commercialization of oil sector",
-      "description": "The discovery of commercially viable oil in Turkana County, located in northwestern Kenya in March 2012 marked a major milestone in Kenya's petroleum sector. The oil discovery at Ngamia-1, positioning Turkana at the centre of the country's ambitions to become an oil-producing nation.",
       "link": "https://newsaf.cgtn.com/news/2026-11-26/Kenya-sets-foundation-for-commercialization-of-oil-sector-1SmPxcLsOCQ/p.html",
+      "pubDate": "2026-11-25T18:32:39+00:00",
+      "description": "CGTN Africa · International market and trade coverage.",
       "author": "CGTN",
       "sourceCountry": "CGTN",
-      "pubDate": "2026-11-25T18:32:39+00:00",
       "category": "policy",
       "continent": "africa"
     },
@@ -571,11 +759,11 @@
     },
     {
       "title": "South Africa's Ramaphosa wins court bid to overturn impeachment report",
-      "description": "The case relates to a February 2020 burglary at his Phala Phala game farm in Limpopo province, during which about $580,000 in cash was stolen from furniture where it had been hidden.",
       "link": "https://newsaf.cgtn.com/news/2026-11-26/South-Africa-s-Ramaphosa-wins-court-bid-to-overturn-impeachment-report-1SmLZUMGAqQ/p.html",
+      "pubDate": "2026-11-25T16:38:23+00:00",
+      "description": "CGTN Africa · International market and trade coverage.",
       "author": "CGTN",
       "sourceCountry": "CGTN",
-      "pubDate": "2026-11-25T16:38:23+00:00",
       "category": "supply",
       "continent": "africa"
     },
@@ -720,15 +908,6 @@
       "continent": "asia"
     },
     {
-      "title": "Huawei reports over 8,000 AI patents by end-2025",
-      "description": "Huawei reports over 8,000 AI patents by end-2025",
-      "link": "https://news.cgtn.com/news/2026-11-25/Huawei-reports-over-8-000-AI-patents-by-end-2025-1SmjZqYbu6I/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-25T09:06:40+00:00",
-      "category": "supply"
-    },
-    {
       "title": "欧盟“点名”5个成员国存在经济失衡风险",
       "description": "中新社布鲁塞尔11月24日电 (记者 德永健)欧盟24日依据“欧洲学期”机制发布成员国宏观经济预警报告，认定意大利、匈牙利、斯洛伐克、罗马尼亚和保加利亚存在经济失衡风险，将于2027年上半年对5国进行深入审查。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-25/10737298.shtml",
@@ -787,6 +966,15 @@
       "pubDate": "2026-11-25T06:17:29+08:00",
       "category": "policy",
       "continent": "europe"
+    },
+    {
+      "title": "Trade disruptions could put food aid for 7.3 million people at risk",
+      "description": "Disruptions to three key global trade routes could put food assistance for an additional 7.3 million people at risk by mid-2027, as rising food, fuel and transportation costs deepen the global hunger crisis, the United Nations World Food Programme (WFP) warned on Monday.",
+      "link": "https://news.cgtn.com/news/2026-11-25/Trade-disruptions-could-put-food-aid-for-7-3-million-people-at-risk-1SlTVTPjSUw/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-25T01:56:18+00:00",
+      "category": "supply"
     },
     {
       "title": "The Call of the Silk Road | How China Engages",
@@ -958,6 +1146,24 @@
       "continent": "europe"
     },
     {
+      "title": "CGTN Poll: Energy transition must balance climate goals and realities",
+      "description": "CGTN Poll: Energy transition must balance climate goals and realities",
+      "link": "https://news.cgtn.com/news/2026-11-24/CGTN-Poll-Energy-transition-must-balance-climate-goals-and-realities-1Sl4L0pU86s/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-24T14:12:36+00:00",
+      "category": "policy"
+    },
+    {
+      "title": "Innovating together for new opportunities",
+      "description": "Innovating together for new opportunities",
+      "link": "https://news.cgtn.com/news/2026-11-24/Innovating-together-for-new-opportunities-1SkI0MrYisw/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-24T13:58:43+00:00",
+      "category": "supply"
+    },
+    {
       "title": "报告称创新AI工具可帮助中国品牌高效联接全球各地多元化的消费者",
       "description": "中新网上海11月24日电 (高志苗)24日，营销传播咨询公司罗德集团(Ruder Finn)，联合全球市场研究咨询公司英敏特及全球媒体与社媒数据分析公司融文(Meltwater)发布《中国品牌全球化2027增长展望》。报告称创新AI工具可帮助中国品牌高效、精准联接全球各地多元化的消费者。",
       "link": "https://www.chinanews.com.cn/cj/2026/11-24/10736892.shtml",
@@ -1078,6 +1284,15 @@
       "continent": "europe"
     },
     {
+      "title": "WHO disappointed by failed climate talks",
+      "description": "The World Health Organization (WHO) Director-General Tedros Adhanom Ghebreyesus has criticized the failure of the COP31 climate summit to reach an agreement, warning that the deadlock leaves vulnerable communities exposed to worsening health impacts of climate change.",
+      "link": "https://newsaf.cgtn.com/news/2026-11-24/WHO-disappointed-by-failed-climate-talks-1SkFFp9T7CU/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-24T08:50:59+00:00",
+      "category": "policy"
+    },
+    {
       "title": "How Shenzhen turns Asia-Pacific's shared vision into common interests",
       "description": "On November 18 and 19, the Economic Leaders of the Asia-Pacific Economic Cooperation (APEC) gathered in Shenzhen and adopted the Shenzhen Outlook under the theme \"Building an Asia-Pacific Community to Prosper Together.\"",
       "link": "https://news.cgtn.com/news/2026-11-24/How-Shenzhen-turns-Asia-Pacific-s-shared-vision-into-common-interests-1SkEoh6FJdK/p.html",
@@ -1129,22 +1344,22 @@
     },
     {
       "title": "Reporter's Diary: My day in Moyale, where refugees found sanctuary",
+      "description": "We drove 770 km from Nairobi to this northern frontier, which has now become a safe haven for tens of thousands of refugees fleeing conflict on the Ethiopian side of the border. Holale is one of seven temporary camps hosting an estimated 58,000 displaced persons, according to the Kenya Red Cross.",
       "link": "https://newsaf.cgtn.com/news/2026-11-24/Reporter-s-Diary-My-day-in-Moyale-where-refugees-found-sanctuary-1SjpkFvAhJC/p.html",
-      "pubDate": "2026-11-24T07:54:55+00:00",
-      "description": "CGTN Africa · International market and trade coverage.",
       "author": "CGTN",
       "sourceCountry": "CGTN",
+      "pubDate": "2026-11-24T07:54:55+00:00",
       "category": "supply",
       "continent": "africa"
     },
     {
       "title": "Kenyan soapstone artisans aim for a bigger share of the global market",
+      "description": "Kenyan soapstone artisans are striving for greater access to international markets, with industry leaders advocating for stronger partnerships, increased investment, and opportunities to showcase locally crafted pieces beyond Kenya's borders.",
       "link": "https://newsaf.cgtn.com/news/2026-11-24/Kenyan-soapstone-artisans-aim-for-a-bigger-share-of-the-global-market-1SjBwZq43FC/p.html",
-      "pubDate": "2026-11-24T07:51:35+00:00",
-      "description": "CGTN Africa · International market and trade coverage.",
       "author": "CGTN",
       "sourceCountry": "CGTN",
-      "category": "policy",
+      "pubDate": "2026-11-24T07:51:35+00:00",
+      "category": "supply",
       "continent": "africa"
     },
     {
@@ -1308,15 +1523,6 @@
       "continent": "africa"
     },
     {
-      "title": "How did the anti-corruption campaign cultivate the 'soft power'?",
-      "description": "Regarding investment attraction, corporate considerations in site selection have undergone profound changes amid high-quality development: Rather than securing short-term policy incentives, companies pay closer attention to whether the development environment is stable and predictable, whether the local political ecosystem is clean, and whether the exercise of power is properly regulated. At the stage of high-quality development, regional competition for investment no longer hinges on the generosity of short-term policy incentives but on the stability of the business environment and the fairness of the market. Improving conduct, enforcing discipline, and combating corruption are not constraints on economic development, but rather institutional safeguards that uphold market order and fair competition.",
-      "link": "https://news.cgtn.com/news/2026-11-23/How-did-the-anti-corruption-campaign-cultivate-the-soft-power--1Sj2VPduFDG/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-23T12:17:56+00:00",
-      "category": "policy"
-    },
-    {
       "title": "China to boost digital economy, AI, green cooperation with Singapore",
       "description": "China is willing to work with Singapore to upgrade cooperation in traditional fields and expand cooperation in emerging fields such as technological innovation, the digital economy, artificial intelligence (AI), and green industries, Chinese Vice Premier Ding Xuexiang said on Monday.",
       "link": "https://news.cgtn.com/news/2026-11-23/China-to-boost-digital-economy-AI-green-cooperation-with-Singapore-1SjagJyyVDW/p.html",
@@ -1355,15 +1561,6 @@
       "pubDate": "2026-11-23T06:54:22+00:00",
       "category": "supply",
       "continent": "asia"
-    },
-    {
-      "title": "Landmine blast kills 5 children in northwest Syria",
-      "description": "A landmine explosion has killed five children and wounded one other in northwest Syria, state media reported on Sunday.",
-      "link": "https://news.cgtn.com/news/2026-11-23/Landmine-blast-kills-5-children-in-northwest-Syria-1SiEQpK0Zq0/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-23T03:23:54+00:00",
-      "category": "supply"
     },
     {
       "title": "Iran reports downing US drones, Netanyahu weighs solo strike",
@@ -1426,36 +1623,6 @@
       "continent": "asia"
     },
     {
-      "title": "沪深北交易所调整融资保证金比例",
-      "description": "2026年11月22日，经中国证监会批准，沪深北交易所发布通知调整融资保证金比例，将投资者融资买入证券的最低保证金比例由100%调低至80%，相关规则调整自2026年11月30日起施行。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-22/10736138.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-22T18:37:58+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "中国第二艘国产大型邮轮广州首航 边检启用扫码通关",
-      "description": "中新社广州11月22日电 (方伟彬 李宇岳)中国第二艘国产大型邮轮“爱达·花城号”22日从广州南沙国际邮轮母港启航，搭载近4000名宾客开启6天5晚商业首航，航线途经中国香港、越南顺化。广州边检总站南沙边检站配合落实“一船一策”保障方案，制定大客流通关专项勤务方案全程护航，首日通关安全、有序。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-22/10736127.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-22T18:33:15+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "专家学者齐聚福建永春共谋柑橘产业高质量发展",
-      "description": "中新网福建永春11月22日电 (记者 孙虹)以“功夫永春·柑甜两岸”为主题，2026中国柑橘产业年会暨永春芦柑品牌文化推介活动22日在福建永春启动，汇聚全国柑橘主产区代表、高校专家学者、两岸客商与种植大户等500余名各界代表，以果为媒，共谋柑橘产业高质量发展。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-22/10736085.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-22T16:44:13+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
       "title": "从“走出去”到“扎下根”：中国新能源汽车企业的“欧洲经”",
       "description": "中新社奥斯陆11月21日电 (记者 马秀秀)初冬的奥斯陆，寒意已至。位于卡尔约翰大街的NIO House里，人头攒动，好不热闹。在近日举行的中国新能源汽车品牌蔚来进入挪威市场五周年特别活动上，当地官员、用户以及合作伙伴等齐聚一堂，共话这一中国汽车品牌在挪威的发展实践。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-22/10736083.shtml",
@@ -1466,26 +1633,6 @@
       "continent": "europe"
     },
     {
-      "title": "中国超大规模“试验场” 助全球技术迭代 创新优势赋能亚太共同发展",
-      "description": "2026年APEC领导人会议周刚刚落下帷幕，“打造创新支柱”被列为携手搭建亚太共同体的“四梁八柱”之一，会议上的共识，正为亚太乃至全球企业凝聚起创新力量。 中国超大规模的创新试验场，也加速向世界敞开，让更多前沿技术在这里迭代打磨、加快发展。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-22/10736072.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-22T15:36:52+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "“中国服务”迈上新台阶——中国经济三季报亮点解析",
-      "description": "今年前三季度，我国服务进出口总额57687.7亿元，同比增长8.5%。其中，出口22714亿元，增长14.8%；进口34973.7亿元，增长4.8%。服务贸易逆差12259.7亿元，同比缩小1326.6亿元。从知识密集型服务出口占比过半，到运输、旅行服务多点开花，我国服务贸易在总量稳步扩张的基础上保持韧性增长，“中国服务”的国际供给能力和品牌影响力迈上新的台阶。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-22/10736066.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-22T15:28:51+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
       "title": "Ethiopia clashes disrupt cross-border trade and transport in Moyale",
       "link": "https://newsaf.cgtn.com/news/2026-11-22/Ethiopia-clashes-disrupt-cross-border-trade-and-transport-in-Moyale-1ShIW6ibZcs/p.html",
       "pubDate": "2026-11-22T14:36:51+00:00",
@@ -1494,16 +1641,6 @@
       "sourceCountry": "CGTN",
       "category": "supply",
       "continent": "africa"
-    },
-    {
-      "title": "Asia-Pacific voices: Openness and connectivity for shared growth",
-      "description": "Former international officials and regional scholars have underscored the importance of openness, trade and connectivity in driving Asia-Pacific growth amid rising protectionist trends.",
-      "link": "https://news.cgtn.com/news/2026-11-22/Asia-Pacific-voices-Openness-and-connectivity-for-shared-growth-1ShFqI2YlVu/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-22T14:20:33+00:00",
-      "category": "supply",
-      "continent": "asia"
     },
     {
       "title": "Nigeria State oil company says major pipelines fully restored",
@@ -1566,16 +1703,6 @@
       "continent": "north-america"
     },
     {
-      "title": "Indonesia candy factory fire not fully extinguished, about 50 missing",
-      "description": "Indonesian police said Sunday that a fire that broke out at a candy factory in Banten province on Saturday night had not been fully extinguished, with seven body bags recovered and about 50 people still unaccounted for.",
-      "link": "https://news.cgtn.com/news/2026-11-22/news-1ShqqiAfYhG/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-22T08:58:45+00:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
       "title": "英国国防大臣访基辅重申长期援乌承诺",
       "description": "中新社伦敦11月21日电 (记者 欧阳开宇)当地时间11月21日，英国国防大臣斯特里廷到访乌克兰首都基辅，先后会见乌总统泽连斯基、国防部长赫马拉，围绕防务工业协作、冬季防务支持等议题磋商，推进乌方自研攻击无人机在英国投产相关安排，进一步夯实双方战时装备供应链。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-22/10735938.shtml",
@@ -1584,16 +1711,6 @@
       "pubDate": "2026-11-22T06:35:31+08:00",
       "category": "supply",
       "continent": "europe"
-    },
-    {
-      "title": "Rescuers say 3 killed, dozens missing after Indonesia factory fire",
-      "description": "Rescuers say 3 killed, dozens missing after Indonesia factory fire",
-      "link": "https://news.cgtn.com/news/2026-11-22/news-1Sh1Lh8OCHK/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-22T03:13:39+00:00",
-      "category": "policy",
-      "continent": "asia"
     },
     {
       "title": "外籍来华消费有多便利？美国博主：来了就知道",
@@ -1616,15 +1733,6 @@
       "continent": "africa"
     },
     {
-      "title": "Why are global business leaders impressed by Shenzhen?",
-      "description": "Why are global business leaders impressed by Shenzhen?",
-      "link": "https://news.cgtn.com/news/2026-11-21/Why-are-global-business-leaders-impressed-by-Shenzhen--1SfPUg2VZD2/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-21T11:35:38+00:00",
-      "category": "policy"
-    },
-    {
       "title": "Russian cargo ship on fire in Gulf of Finland, border guard says",
       "description": "Russian cargo ship on fire in Gulf of Finland, border guard says",
       "link": "https://news.cgtn.com/news/2026-11-21/news-1SfVsM5rxQI/p.html",
@@ -1643,25 +1751,6 @@
       "pubDate": "2026-11-21T09:41:18+00:00",
       "category": "supply",
       "continent": "europe"
-    },
-    {
-      "title": "AI fears deepen sell-off as US indexes enter correction territory",
-      "description": "US stocks fell sharply on Friday as concerns about artificial intelligence continued to weigh on markets, pushing all three major indexes into correction territory. Several firms have warned that selling pressure may persist. Risk aversion also spread to commodities.",
-      "link": "https://news.cgtn.com/news/2026-11-21/AI-fears-deepen-sell-off-as-US-indexes-enter-correction-territory-1SfE80h3hIs/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-21T07:55:56+00:00",
-      "category": "policy"
-    },
-    {
-      "title": "Bay areas cooperation: Complementary partnerships, broader opening up",
-      "description": "The Asia-Pacific region is home to some of the world's most important bay areas. Bay area economies are characterized by distinctive openness, strong synergy, and significant spillover effects. As global industrial and supply chains are reconfigured at an accelerated pace and regional economic integration deepens, Shenzhen-Hong Kong cooperation should move beyond its traditional focus on coordination within the Greater Bay Area and expand its role in supporting China's high-standard opening up and helping enterprises build their global presence.",
-      "link": "https://news.cgtn.com/news/2026-11-21/Bay-areas-cooperation-Complementary-partnerships-broader-opening-up-1SfmJyPMHrq/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-21T07:17:25+00:00",
-      "category": "supply",
-      "continent": "asia"
     },
     {
       "title": "特朗普：中俄美元首会晤“史无前例”“意义重大”",
@@ -1694,15 +1783,6 @@
       "continent": "north-america"
     },
     {
-      "title": "LA families await end of neighborhood oil drilling",
-      "link": "https://newsus.cgtn.com/news/2026-11-21/LA-families-await-end-of-neighborhood-oil-drilling-1Sf1qxgVfAQ/p.html",
-      "pubDate": "2026-11-20T22:38:18+00:00",
-      "description": "CGTN Americas · International market and trade coverage.",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "category": "policy"
-    },
-    {
       "title": "克里米亚大桥遭袭 普京发声",
       "description": "中新网11月20日电 综合俄媒报道，俄罗斯总统普京19日表示，俄方此前曾评估与有关方面就海上停火及停止攻击能源设施举行谈判的可能性，但克里米亚大桥再次遭袭后，俄方不会就此进行谈判。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-20/10735429.shtml",
@@ -1731,6 +1811,16 @@
       "pubDate": "2026-11-20T14:13:04+08:00",
       "category": "policy",
       "continent": "south-america"
+    },
+    {
+      "title": "China proposes global bay areas association to expand trade",
+      "description": "China has proposed creating a global economic cooperation association linking major bay areas.",
+      "link": "https://news.cgtn.com/news/2026-11-20/China-proposes-global-bay-areas-association-to-expand-trade-1Se7PwJX2UM/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-20T11:25:00+00:00",
+      "category": "policy",
+      "continent": "asia"
     },
     {
       "title": "（投资中国）DHL高管：对中国市场长期增长前景保持信心",
@@ -1763,6 +1853,25 @@
       "continent": "south-america"
     },
     {
+      "title": "COP31 puts global climate promises to the delivery test",
+      "description": "At COP31 in Antalya, debates on electrification, climate finance and a just transition converge on one question: how to turn targets into action countries can afford and deliver. A fair transition, built into budgets and benefit sharing, decides whether climate policy endures.",
+      "link": "https://news.cgtn.com/news/2026-11-20/COP31-puts-global-climate-promises-to-the-delivery-test-1SdZEkGFnSU/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-20T09:29:34+00:00",
+      "category": "policy"
+    },
+    {
+      "title": "What does the world say about China at APEC?",
+      "description": "Following the APEC Economic Leaders' Meeting in Shenzhen, international guests share their views on China's economy, regional cooperation, and future opportunities.",
+      "link": "https://news.cgtn.com/news/2026-11-20/What-does-the-world-say-about-China-at-APEC--1Se5jBYqsgw/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-20T08:56:52+00:00",
+      "category": "supply",
+      "continent": "asia"
+    },
+    {
       "title": "Anthropic上市 创史上最大IPO融资纪录",
       "description": "中新社纽约11月19日电 (记者 王帆)美国人工智能公司Anthropic当地时间19日在纽约纳斯达克证券交易所上市，其首次公开募股(IPO)融资总额超过813亿美元，创下美股史上最大IPO融资规模纪录。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-20/10734997.shtml",
@@ -1771,6 +1880,15 @@
       "pubDate": "2026-11-20T07:36:17+08:00",
       "category": "policy",
       "continent": "north-america"
+    },
+    {
+      "title": "Full text: APEC Trade Digitalization Cooperation Framework (2027-2030)",
+      "description": "Full text: APEC Trade Digitalization Cooperation Framework (2027-2030)",
+      "link": "https://news.cgtn.com/news/2026-11-20/Full-text-APEC-Trade-Digitalization-Cooperation-Framework-2027-2030--1SdVk7mWOKA/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-20T07:18:47+00:00",
+      "category": "policy"
     },
     {
       "title": "普京：克里米亚大桥遭袭后 不再讨论海上停火",
@@ -1840,16 +1958,6 @@
       "continent": "north-america"
     },
     {
-      "title": "Full text: APEC Connectivity Blueprint",
-      "description": "The 33rd Asia-Pacific Economic Cooperation (APEC) Economic Leaders' Meeting adopted the APEC Connectivity Blueprint on Thursday.",
-      "link": "https://news.cgtn.com/news/2026-11-19/APEC-releases-a-connectivity-blueprint-1ScRrQaSt8I/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-19T15:21:42+00:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
       "title": "马斯克盛赞深圳：“我是中国的粉丝，总是鼓励人们来中国走走看看”",
       "description": "中新网11月19日电 综合报道，2026年APEC会议期间，美国企业家马斯克随美方团队到访中国深圳。马斯克远程连线参加了在美国得克萨斯州奥斯汀举行的一场会议活动(TomorrowX Summit)，并谈到了自己的访华经历。马斯克表示，“我是中国的粉丝，我总是鼓励人们来中国走走，亲眼看看。”",
       "link": "https://www.chinanews.com.cn/gj/2026/11-19/10734638.shtml",
@@ -1858,16 +1966,6 @@
       "pubDate": "2026-11-19T15:14:33+08:00",
       "category": "policy",
       "continent": "north-america"
-    },
-    {
-      "title": "10,000 trains: Chinese-made cars speed to global markets",
-      "description": "10,000 trains: Chinese-made cars speed to global markets",
-      "link": "https://news.cgtn.com/news/2026-11-19/10-000-trains-Chinese-made-cars-speed-to-global-markets-1ScFHgf3Mmk/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-19T12:40:56+00:00",
-      "category": "policy",
-      "continent": "asia"
     },
     {
       "title": "深耕中国、看好深圳：美国工商界人士期待借APEC深化中美经贸合作",
@@ -1900,16 +1998,6 @@
       "continent": "africa"
     },
     {
-      "title": "Global investors take long-term view of Chinese assets, executives say",
-      "description": "Global investors are increasingly treating Chinese assets as long-term portfolio holdings rather than short-term trading opportunities.",
-      "link": "https://news.cgtn.com/news/2026-11-19/Global-investors-take-long-term-view-of-Chinese-assets-executives-say-1ScsW09Ury8/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-19T10:19:51+00:00",
-      "category": "supply",
-      "continent": "asia"
-    },
-    {
       "title": "Bridging via APEC: The cooperation blueprint for the 'Mexico Plan'",
       "description": "The possibility of more diversified investment and technological cooperation between Mexico and Asia could strengthen the position of Mexico in North America and at the same time, amplify APEC's future development prospects. In that sense, this visit represents a milestone in the Mexico-Asia relationship.",
       "link": "https://news.cgtn.com/news/2026-11-19/Bridging-via-APEC-The-cooperation-blueprint-for-the-Mexico-Plan--1Scri6P5wek/p.html",
@@ -1938,16 +2026,6 @@
       "pubDate": "2026-11-19T08:24:43+08:00",
       "category": "policy",
       "continent": "north-america"
-    },
-    {
-      "title": "APEC China 2026 – Unlocking new opportunities for Asia-Pacific",
-      "description": "APEC China 2026 – Unlocking new opportunities for Asia-Pacific",
-      "link": "https://news.cgtn.com/news/2026-11-19/APEC-China-2026-Unlocking-new-opportunities-for-Asia-Pacific-1ScdTYPNsOc/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-19T07:50:49+00:00",
-      "category": "supply",
-      "continent": "asia"
     },
     {
       "title": "南非10月通胀率升至5.2% 创近两年半新高",
@@ -1980,12 +2058,22 @@
       "continent": "europe"
     },
     {
-      "title": "Phase two of China-ROK free trade agreement negotiations concluded",
-      "link": "https://news.cgtn.com/news/2026-11-19/Phase-two-of-China-ROK-free-trade-agreement-negotiations-concluded-1SbN7PRe1Hi/p.html",
-      "pubDate": "2026-11-19T00:09:28+00:00",
-      "description": "CGTN Asia Pacific · International market and trade coverage.",
+      "title": "Graphics: The numbers behind China-US bilateral trade",
+      "description": "Graphics: The numbers behind China-US bilateral trade",
+      "link": "https://news.cgtn.com/news/2026-11-19/Graphics-The-numbers-behind-China-US-bilateral-trade-1SbQBvb408w/p.html",
       "author": "CGTN",
       "sourceCountry": "CGTN",
+      "pubDate": "2026-11-19T01:34:21+00:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "Phase two of China-ROK free trade agreement negotiations concluded",
+      "description": "China and the Republic of Korea (ROK) have substantially concluded the second phase of negotiations on the China-ROK Free Trade Agreement (FTA), China's Ministry of Commerce said on Wednesday.",
+      "link": "https://news.cgtn.com/news/2026-11-19/Phase-two-of-China-ROK-free-trade-agreement-negotiations-concluded-1SbN7PRe1Hi/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-19T00:09:28+00:00",
       "category": "policy",
       "continent": "asia"
     },
@@ -2051,13 +2139,43 @@
     },
     {
       "title": "Shenzhen-made electronics find growing market in Kenya",
+      "description": "From household blenders to smart televisions, phones and other electronic gadgets, products manufactured in China's southern city of Shenzhen are finding a growing market in Kenya, driven largely by affordability and product variety.",
       "link": "https://newsaf.cgtn.com/news/2026-11-18/Shenzhen-made-electronics-find-growing-market-in-Kenya-1SaPmtO48Lu/p.html",
-      "pubDate": "2026-11-18T13:47:31+00:00",
-      "description": "CGTN Africa · International market and trade coverage.",
       "author": "CGTN",
       "sourceCountry": "CGTN",
+      "pubDate": "2026-11-18T13:47:31+00:00",
       "category": "policy",
       "continent": "africa"
+    },
+    {
+      "title": "China's capital market reform charts a new course",
+      "description": "China's capital market is facing both new opportunities and challenges as the global economic and financial landscape is changing significantly. Officials and global experts spoke earlier in Shanghai about the new priorities for the next stage of Chinese capital market reform.",
+      "link": "https://news.cgtn.com/news/2026-11-18/China-s-capital-market-reform-charts-a-new-course-1SaMi7OqLiU/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-18T13:42:44+00:00",
+      "category": "supply",
+      "continent": "asia"
+    },
+    {
+      "title": "How China is creating new opportunities for an Asia-Pacific community",
+      "description": "Chinese President Xi Jinping on Wednesday delivered a keynote speech at the opening ceremony of the Asia-Pacific Economic Cooperation (APEC) CEO Summit 2026 in Shenzhen, south China's Guangdong Province.",
+      "link": "https://news.cgtn.com/news/2026-11-18/How-China-is-creating-new-opportunities-for-an-Asia-Pacific-community-1SaEt6x1CO4/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-18T13:23:28+00:00",
+      "category": "supply",
+      "continent": "asia"
+    },
+    {
+      "title": "Global bay-area cooperation can drive new growth across Asia-Pacific",
+      "description": "The proposed global association offers an opportunity to strengthen its international connections at a challenging time for the world economy. Its success will depend not on the prominence of its launch but on whether it can make cross-border cooperation easier and more sustainable.",
+      "link": "https://news.cgtn.com/news/2026-11-18/Global-bay-area-cooperation-can-drive-new-growth-across-Asia-Pacific-1SaIxt4Uisg/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-18T12:39:25+00:00",
+      "category": "supply",
+      "continent": "asia"
     },
     {
       "title": "China, Canada sign terms of reference for financial working group",
@@ -2068,6 +2186,26 @@
       "pubDate": "2026-11-18T12:24:48+00:00",
       "category": "policy",
       "continent": "north-america"
+    },
+    {
+      "title": "Visa: Asia-Pacific leads the world in digital commerce opportunities",
+      "description": "Greater opportunities exist in the Asia-Pacific than in many other parts of the world, especially in digital commerce, Visa CEO Ryan McInerney told CGTN's Michael Wang in an exclusive interview in Shenzhen.",
+      "link": "https://news.cgtn.com/news/2026-11-18/Visa-Asia-Pacific-leads-the-world-in-digital-commerce-opportunities-1SaWNX0Qza8/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-18T11:30:41+00:00",
+      "category": "supply",
+      "continent": "asia"
+    },
+    {
+      "title": "Citibank: China-Southeast Asia ties have evolved beyond trade",
+      "description": "China-Southeast Asia ties have evolved from a relationship centered primarily on trade into a more integrated partnership spanning investment, manufacturing and supply chains, said Simon Yuan, Citibank's head of China Investment Banking, in an interview with CGTN's Vivienne Nunis.",
+      "link": "https://news.cgtn.com/news/2026-11-18/Citibank-China-Southeast-Asia-ties-have-evolved-beyond-trade-1SaLLquJopq/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-18T10:03:59+00:00",
+      "category": "supply",
+      "continent": "asia"
     },
     {
       "title": "Leaders of China, Russia, US will discuss issues on world peace",
@@ -2108,16 +2246,6 @@
       "pubDate": "2026-11-18T00:39:25+00:00",
       "category": "policy",
       "continent": "europe"
-    },
-    {
-      "title": "APEC Secretariat on free trade in the Asia Pacific",
-      "description": "APEC Secretariat on free trade in the Asia Pacific",
-      "link": "https://newsus.cgtn.com/news/2026-11-18/APEC-Secretariat-on-free-trade-in-the-Asia-Pacific--1Sa1FX9208M/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-17T22:00:11+00:00",
-      "category": "policy",
-      "continent": "asia"
     },
     {
       "title": "欧盟称今年前三季度经济增长好于预期",
@@ -2179,16 +2307,6 @@
       "continent": "north-america"
     },
     {
-      "title": "AmCham Shanghai president hails Chinese market as the major league",
-      "description": "AmCham Shanghai president hails Chinese market as the major league",
-      "link": "https://news.cgtn.com/news/2026-11-17/AmCham-Shanghai-president-hails-Chinese-market-as-the-major-league-1S9po8nsBYk/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-17T14:29:31+00:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
       "title": "加总理卡尼：加拿大或寻求与中国等车企合作",
       "description": "中新网11月17日电 据美联社报道，当地时间16日，加拿大总理卡尼表示，如果与美国总统特朗普的贸易谈判未能保住北美一体化汽车产业，加拿大可能转向中国汽车制造商寻求合作。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-17/10733390.shtml",
@@ -2197,25 +2315,6 @@
       "pubDate": "2026-11-17T14:14:45+08:00",
       "category": "policy",
       "continent": "north-america"
-    },
-    {
-      "title": "BYD: APEC guests amazed by Shenzhen's remarkable transformation",
-      "description": "BYD Executive Vice President Stella Li told CGTN that global business leaders in Shenzhen are amazed by the city's remarkable transformation.",
-      "link": "https://news.cgtn.com/news/2026-11-17/BYD-APEC-guests-amazed-by-Shenzhen-s-remarkable-transformation-1S9lGbq0pP2/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-17T12:41:41+00:00",
-      "category": "policy"
-    },
-    {
-      "title": "From Antalya to Shenzhen: China promotes greener cooperation",
-      "description": "The 33rd APEC Economic Leaders' Meeting and the 31st Session of the Conference of the Parties to the United Nations Framework Convention on Climate Change both explore turning climate goals into investment. High-quality carbon credits should complement rather than replace domestic emission cuts. Enhanced verification, capacity-building for the Global South and responsible buying can help unlock inclusive green development.",
-      "link": "https://news.cgtn.com/news/2026-11-17/From-Antalya-to-Shenzhen-China-promotes-greener-cooperation-1S9elOQlQ3u/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-17T12:07:59+00:00",
-      "category": "policy",
-      "continent": "asia"
     },
     {
       "title": "Global lawmakers gather in Kenya's Nairobi to tackle hunger",
@@ -2228,65 +2327,6 @@
       "continent": "africa"
     },
     {
-      "title": "China-ASEAN cooperation injects new momentum into regional economy",
-      "description": "Amid rising global uncertainty, China and ASEAN are stabilizing expectations through institutional opening-up, lowering costs through rule coordination, and cultivating new drivers through innovation. Bilateral cooperation will surely inject lasting momentum into an open, inclusive, stable, and smoothly functioning regional economy, contributing to global economic growth.",
-      "link": "https://news.cgtn.com/news/2026-11-17/China-ASEAN-cooperation-injects-new-momentum-into-regional-economy-1S96dy0OkHm/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-17T09:59:48+00:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "Why is Unitree looking overseas?",
-      "description": "Unitree founder Wang Xingxing shared his insights on overseas markets and future commercial opportunities for robotics in an interview with CGTN's Wang Tianyu during the 2026 APEC Economic Leaders' Meeting in Shenzhen.",
-      "link": "https://news.cgtn.com/news/2026-11-17/Why-is-Unitree-looking-overseas--1S98NJFut6o/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-17T09:44:45+00:00",
-      "category": "supply"
-    },
-    {
-      "title": "APEC CEO Summit 2026 kicks off in Shenzhen",
-      "description": "The Asia-Pacific Economic Cooperation (APEC) CEO Summit 2026 opened Tuesday in Shenzhen, south China's Guangdong Province, bringing together business and political leaders from across the Asia-Pacific and beyond to discuss regional economic cooperation and future development.",
-      "link": "https://news.cgtn.com/news/2026-11-17/APEC-CEO-Summit-2026-kicks-off-in-Shenzhen-1S98HnL56OA/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-17T09:43:55+00:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "Beyond the numbers: What's keeping China's economy resilient?",
-      "description": "What does the latest data for October tell us about the resilience of China's economy? CGTN's Aaron Liu explains.",
-      "link": "https://news.cgtn.com/news/2026-11-17/Beyond-the-numbers-What-s-keeping-China-s-economy-resilient--1S98ppZVSRG/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-17T09:34:12+00:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "PwC China: Asia-Pacific is now a hub for R&D and innovation ecosystems",
-      "description": "Asia-Pacific's rich resources, active capital markets and availability of talent are making it a prime destination for companies' R&D hubs and innovation ecosystems, PwC China's Vice Chair Zhou Xing told CGTN reporter Wang Tianyu at APEC meeting in Shenzhen.",
-      "link": "https://news.cgtn.com/news/2026-11-17/PwC-China-Asia-Pacific-is-now-a-hub-for-R-D-and-innovation-ecosystems-1S96LaGkM48/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-17T09:17:13+00:00",
-      "category": "supply",
-      "continent": "asia"
-    },
-    {
-      "title": "Writing a new chapter of openness through power partnerships",
-      "description": "Huaneng Power International is advancing its presence in Singapore through openness, innovation and cooperation, with Tuas Power serving as a platform for reliable power supply, green energy transition and local development. Looking ahead to APEC 2026, the company aims to deepen regional partnerships and promote shared growth across the Asia-Pacific.",
-      "link": "https://news.cgtn.com/news/2026-11-17/Writing-a-new-chapter-of-openness-through-power-partnerships-1S8YyPm1S6Y/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-17T09:06:29+00:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
       "title": "2026年欧元金融周“中国日”活动在法兰克福举行",
       "description": "中新社法兰克福11月16日电 (记者 马秀秀)2026年欧元金融周“中国日”活动16日在德国法兰克福举行。来自中欧双方政治、经济、金融等各界代表与会，围绕进一步加强中德、中欧经济金融合作等议题展开探讨。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-17/10733173.shtml",
@@ -2295,15 +2335,6 @@
       "pubDate": "2026-11-17T07:38:33+08:00",
       "category": "policy",
       "continent": "europe"
-    },
-    {
-      "title": "JPMorgan software bug triggers banking delays across US",
-      "description": "JPMorgan software bug triggers banking delays across US",
-      "link": "https://news.cgtn.com/news/2026-11-17/JPMorgan-software-bug-triggers-banking-delays-across-US-1S8UFoz92bC/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-17T06:16:56+00:00",
-      "category": "policy"
     },
     {
       "title": "From the lab to the last mile: How Chinese medical AI is going global",
@@ -2355,6 +2386,54 @@
       "continent": "africa"
     },
     {
+      "title": "BizPodcast: What does it take to build a business in Shenzhen?",
+      "description": "Two entrepreneurs share their insights on Shenzhen's opportunities and offer advice to young founders: stay curious, embrace AI and explore new possibilities!",
+      "link": "https://news.cgtn.com/news/2026-11-16/BizPodcast-What-does-it-take-to-build-a-business-in-Shenzhen--1S7x5dQGmiY/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-16T10:46:52+00:00",
+      "category": "supply"
+    },
+    {
+      "title": "BizPodcast: First impressions of Shenzhen's Huaqiangbei",
+      "description": "Huaqiangbei – a place where technology, products and supply chains come together.",
+      "link": "https://news.cgtn.com/news/2026-11-16/BizPodcast-First-impressions-of-Shenzhen-s-Huaqiangbei-1S7xbv9xfJS/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-16T10:46:04+00:00",
+      "category": "supply"
+    },
+    {
+      "title": "China-ASEAN FTA 3.0 upgrade protocol to take effect on Dec. 1",
+      "description": "The China-ASEAN Free Trade Area (CAFTA) 3.0 upgrade protocol will officially enter into force on December 1, 2026, leaders from both sides announced on November 16 at the China-ASEAN leaders' meeting in Manila, the Philippines, a senior official with the Department of International Trade and Economic Affairs of China's Ministry of Commerce said.",
+      "link": "https://news.cgtn.com/news/2026-11-16/China-ASEAN-FTA-3-0-upgrade-protocol-to-take-effect-on-Dec-1-1S7uvBqOK1q/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-16T10:43:49+00:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "2026: China, APEC members reach nearly 50 economic, trade outcomes",
+      "description": "China has reached nearly 50 practical economic and trade outcomes with fellow Asia-Pacific Economic Cooperation (APEC) member economies so far this year, International Trade Representative Li Chenggang said on Monday.",
+      "link": "https://news.cgtn.com/news/2026-11-16/2026-China-APEC-members-reach-nearly-50-economic-trade-outcomes-1S7yulma60U/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-16T10:40:33+00:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "Why are global entrepreneurs choosing Shenzhen?",
+      "description": "What makes Shenzhen such an attractive place to launch a business? With the 2026 APEC Economic Leaders' Meeting approaching, all eyes are on this innovation-driven city in China.",
+      "link": "https://news.cgtn.com/news/2026-11-16/Why-are-global-entrepreneurs-choosing-Shenzhen--1S7jiG2CqRi/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-16T07:06:08+00:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
       "title": "Crimean Bridge attacked as Russia reports massive drone strikes",
       "description": "The Crimean Bridge came under attack with traffic restrictions expected to remain in place until around midday on Monday, Russian media reported.",
       "link": "https://news.cgtn.com/news/2026-11-16/news-1S7hKwQqaPe/p.html",
@@ -2365,6 +2444,16 @@
       "continent": "europe"
     },
     {
+      "title": "China's Jan.-Oct. economy remains stable, says NBS",
+      "description": "China's key economic indicators remained generally stable in the January-October period, with new growth drivers gaining momentum and the economic structure continuing to improve, data from the National Bureau of Statistics (NBS) showed on Monday.",
+      "link": "https://news.cgtn.com/news/2026-11-16/China-s-Jan-Oct-economy-remains-stable-says-NBS-1S748VZIZ8c/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-16T05:34:31+00:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
       "title": "COP31: Former Chilean minister: Open markets key to green transition",
       "description": "COP31: Former Chilean minister: Open markets key to green transition",
       "link": "https://news.cgtn.com/news/2026-11-16/COP31-Former-Chilean-minister-Open-markets-key-to-green-transition-1S76uW3L0yc/p.html",
@@ -2373,6 +2462,16 @@
       "pubDate": "2026-11-16T04:39:51+00:00",
       "category": "policy",
       "continent": "south-america"
+    },
+    {
+      "title": "COP31: S-Curve Economics on China's next big move in green energy",
+      "description": "COP31: S-Curve Economics on China's next big move in green energy",
+      "link": "https://news.cgtn.com/news/2026-11-16/COP31-S-Curve-Economics-on-China-s-next-big-move-in-green-energy-1S75E7koxuo/p.html",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "pubDate": "2026-11-16T04:39:37+00:00",
+      "category": "policy",
+      "continent": "asia"
     },
     {
       "title": "Mexican president arrives in Shenzhen for 33rd APEC Economic Leaders' Meeting",
@@ -2405,22 +2504,12 @@
       "continent": "africa"
     },
     {
-      "title": "ABAC Members: China key to Asia-Pacific economic integration",
-      "description": "ABAC Members: China key to Asia-Pacific economic integration",
-      "link": "https://news.cgtn.com/news/2026-11-15/ABAC-Members-China-key-to-Asia-Pacific-economic-integration-1S5UH2on7Ve/p.html",
+      "title": "Twenty-three years of shared prosperity in Vietnam",
+      "description": "As the 33rd APEC Economic Leaders' Meeting approaches, the theme \"Building an Asia-Pacific Community to Prosper Together\" resonates across the Asia-Pacific region. As general director of VCP Pharmaceutical Joint Stock Company, I have walked through our pharmaceutical workshops in Hanoi countless times. Whenever I see boxes of powder antibiotics for injection bearing the Sinopharm logo roll off the production line and make their way to more than 20,000 retail pharmacies across Vietnam, I am reminded of something: The 23-year journey of a Chinese pharmaceutical company can also serve as a vivid testament to the mutual benefit and shared prosperity that define cooperation across the Asia-Pacific region.",
+      "link": "https://news.cgtn.com/news/2026-11-15/Twenty-three-years-of-shared-prosperity-in-Vietnam-1S5Jvfnh53G/p.html",
       "author": "CGTN",
       "sourceCountry": "CGTN",
-      "pubDate": "2026-11-15T11:12:29+00:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "AmCham China president: Why stability matters for US-China business",
-      "description": "AmCham China president: Why stability matters for US-China business",
-      "link": "https://news.cgtn.com/news/2026-11-15/AmCham-China-president-Why-stability-matters-for-US-China-business-1S5axIt6vyE/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-15T10:54:55+00:00",
+      "pubDate": "2026-11-15T12:04:46+00:00",
       "category": "policy",
       "continent": "asia"
     },
@@ -2463,16 +2552,6 @@
       "pubDate": "2026-11-15T05:55:42+00:00",
       "category": "policy",
       "continent": "europe"
-    },
-    {
-      "title": "Twelve APEC leaders to attend CEO Summit in Shenzhen",
-      "description": "Twelve leaders from Asia-Pacific Economic Cooperation (APEC) member economies will attend the 2026 APEC CEO Summit in Shenzhen, a Chinese trade official said on Sunday.",
-      "link": "https://news.cgtn.com/news/2026-11-15/Twelve-APEC-leaders-to-attend-CEO-Summit-in-Shenzhen-1S5mNgHhkKA/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-15T04:00:35+00:00",
-      "category": "policy",
-      "continent": "asia"
     },
     {
       "title": "Starship achieves first catch by mechanical arms in 15th flight test",
@@ -2544,12 +2623,12 @@
       "continent": "north-america"
     },
     {
-      "title": "The Jensen Huang affair must not become another \"balloon incident\"",
-      "description": "Nvidia CEO Jensen Huang resigned on November 12, 2026, after admitting an extramarital affair, wiping $180 billion off its market value.",
-      "link": "https://news.cgtn.com/news/2026-11-14/The-Jensen-Huang-affair-must-not-become-another-balloon-incident--1S3SCgegGac/p.html",
+      "title": "APEC Business Advisory Council opened in Shenzhen",
+      "description": "APEC Business Advisory Council opened in Shenzhen",
+      "link": "https://news.cgtn.com/news/2026-11-14/APEC-Business-Advisory-Council-opened-in-Shenzhen-1S4fVmAYByg/p.html",
       "author": "CGTN",
       "sourceCountry": "CGTN",
-      "pubDate": "2026-11-14T09:37:10+00:00",
+      "pubDate": "2026-11-14T10:55:52+00:00",
       "category": "policy"
     },
     {
@@ -2634,11 +2713,11 @@
     },
     {
       "title": "Ghana unveils $10 billion 'New Economy' plan in 2027 budget",
-      "description": "The programme will focus on eight pillars: commercial agriculture, energy infrastructure, critical minerals value addition, tourism and creative arts, textiles and garments, pharmaceuticals and biomanufacturing, the technology economy, and macroeconomic stability with affordable finance.",
       "link": "https://newsaf.cgtn.com/news/2026-11-13/Ghana-unveils-10-billion-New-Economy-plan-in-2027-budget-1S2MOEosAq4/p.html",
+      "pubDate": "2026-11-13T14:13:28+00:00",
+      "description": "CGTN Africa · International market and trade coverage.",
       "author": "CGTN",
       "sourceCountry": "CGTN",
-      "pubDate": "2026-11-13T14:13:28+00:00",
       "category": "policy",
       "continent": "africa"
     },
@@ -3819,16 +3898,6 @@
       "continent": "north-america"
     },
     {
-      "title": "商务部回应欧盟对低价值进口商品叠加征收有关税费",
-      "description": "中新网11月5日电 在商务部5日下午召开的例行新闻发布会上，有记者问，欧盟自11月1日起对低价值进口商品征收2欧元手续费，此前已于7月开始征收3欧元关税。商务部如何评估这两项叠加措施对中国跨境电商出口企业的影响？中方是否已就此向欧方表达关切？",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726648.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-05T15:52:51+08:00",
-      "category": "tariff",
-      "continent": "europe"
-    },
-    {
       "title": "商务部回应扩大自美采购农产品：持开放态度 对等降税落地是前提",
       "description": "中新网11月5日电 商务部5日下午召开例行新闻发布会，商务部新闻发言人黄玲在回答有关进口美国农产品的提问时表示，中美农产品贸易是双边经贸合作的重要组成部分。扩大两国在农业贸易领域合作，既可以丰富两国民众的餐桌，也能给两国企业和农民提供稳定的经济收入，为双方带来实实在在的好处。",
       "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726623.shtml",
@@ -3837,16 +3906,6 @@
       "pubDate": "2026-11-05T15:34:48+08:00",
       "category": "policy",
       "continent": "north-america"
-    },
-    {
-      "title": "商务部回应欧盟对低价值进口商品叠加征收有关税费",
-      "description": "新华社北京11月5日电(记者谢希瑶、魏玉坤)欧盟自11月1日起对低价值进口商品征收2欧元手续费，此前已于7月开始征收3欧元关税。商务部新闻发言人黄玲在5日举行的例行新闻发布会上对此表示，中方高度关注欧方有关新规。跨境电商作为国际贸易的新业态、新模式，为全球企业和消费者提供了多元化选择。希望欧方审慎评估相关政策影响，为中欧在电商等领域合作创造有利条件。(完)",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726614.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-05T15:15:53+08:00",
-      "category": "tariff",
-      "continent": "europe"
     },
     {
       "title": "Israel's Arab parties working out how to support anti-Netanyahu bloc",
@@ -4009,16 +4068,6 @@
       "continent": "asia"
     },
     {
-      "title": "特朗普称愿“预防性”赦免马斯克 以防民主党中期选举获胜后展开调查",
-      "description": "中新网11月3日电 据美国《纽约时报》报道，美国总统特朗普当地时间2日表示，如果民主党赢得足够多的席位掌控国会众议院和参议院，并发起广泛的调查和潜在的起诉，他将愿意对包括美国企业家马斯克在内的盟友和助手签发“预防性”赦免。",
-      "link": "https://www.chinanews.com.cn/gj/2026/11-03/10725224.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-03T13:35:32+08:00",
-      "category": "policy",
-      "continent": "north-america"
-    },
-    {
       "title": "IMF projects 4.5% growth for sub-Saharan Africa amid rising risks",
       "link": "https://newsaf.cgtn.com/news/2026-11-03/IMF-projects-4-5-growth-for-sub-Saharan-Africa-amid-rising-risks-1RLVa7aqkQE/p.html",
       "pubDate": "2026-11-03T11:54:19+00:00",
@@ -4027,26 +4076,6 @@
       "sourceCountry": "CGTN",
       "category": "policy",
       "continent": "africa"
-    },
-    {
-      "title": "Chinese Ambassador to Canada: CIIE to boost China-Canada trade ties",
-      "description": "Canada is the Guest Country of Honor at the China International Import Expo (CIIE 2026) that will be held in Shanghai from Nov. 5-10. This reflects Canada's strong interest in exploring the Chinese market, said Wang Di, China's ambassador to Canada, who added that China's growing demand for high-quality products and Canada's push for trade diversification offer new opportunities for bilateral cooperation.",
-      "link": "https://news.cgtn.com/news/2026-11-03/Chinese-Ambassador-to-Canada-CIIE-to-boost-China-Canada-trade-ties-1RLU0xQ3tfy/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-03T10:35:33+00:00",
-      "category": "supply",
-      "continent": "north-america"
-    },
-    {
-      "title": "Senior DPRK official slams US for defamation over Binance heist",
-      "description": "A senior official of the Democratic People's Republic of Korea (DPRK) has condemned the United States for linking a recent cryptocurrency heist involving billions of US dollars at Binance to a hacking group allegedly \"supported\" by the DPRK, state media reported Tuesday.",
-      "link": "https://news.cgtn.com/news/2026-11-03/Senior-DPRK-official-slams-US-for-defamation-over-Binance-heist-1RLFAvA5V6M/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-03T06:38:38+00:00",
-      "category": "supply",
-      "continent": "north-america"
     },
     {
       "title": "Chinese technology powers Kenya's packaging industry",
