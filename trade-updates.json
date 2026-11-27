@@ -1,24 +1,206 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-27T04:16:22.002528+00:00",
+  "updatedAt": "2026-11-27T13:58:41.848198+00:00",
   "items": [
     {
-      "title": "黑龙江哈尔滨：寒地算力蓄势腾飞 东北智算新引擎",
-      "description": "中新网哈尔滨11月27日电 (记者 田德雨)11月25日，黑龙江省“给力！新引擎”数字经济篇主题采访活动走进哈尔滨算力中心。展示厅内，智慧农业、智慧工业、智慧教育、算力中心等沙盘模型，直观呈现算力赋能各行业数字化应用图景。不远处的机房内，一组组机柜整齐排列，服务器稳定运转。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738635.shtml",
+      "title": "宁夏前十月国内游客接待量突破1亿人次",
+      "description": "中新网银川11月27日电(记者 于晶)27日，记者从宁夏回族自治区文化和旅游厅获悉，今年1至10月，宁夏累计接待国内游客突破1亿人次。持续深化的政策引导、不断焕新的文旅业态与线上流量赋能，共同推动宁夏文旅市场稳步升温。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10739066.shtml",
       "author": "中国新闻网",
       "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-27T11:55:08+08:00",
+      "pubDate": "2026-11-27T21:53:21+08:00",
       "category": "policy"
     },
     {
-      "title": "陕西谋划“十五五”县域发展 2030年培育30个县域特色产业集群",
-      "description": "中新网西安11月27日电 (记者 杨英琦)记者27日从陕西省发展改革委获悉，“十五五”时期，陕西将持续延链补链强链，到2030年形成苹果种植及深加工、整车及零部件制造、文化旅游等30个左右县域特色产业集群，支撑县域地区生产总值突破2.2万亿元(人民币，下同)。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738633.shtml",
+      "title": "推动贸易升级 海南洋浦柴油保税仓库与出口监管仓库实现功能整合",
+      "description": "中新网海南洋浦11月27日电(刘文哲 郑巍)海口海关27日介绍，中国石化海南炼油化工有限公司一票1.26万吨的出口柴油，于26日顺利注入“两仓功能叠加”专用储罐，标志着洋浦经济开发区柴油保税仓库与出口监管仓库实现功能整合后首单业务落地。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10739080.shtml",
       "author": "中国新闻网",
       "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-27T11:49:44+08:00",
+      "pubDate": "2026-11-27T21:51:02+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "专线送绿电算力通澜湄 云南首个绿电直连算力中心开工建设",
+      "description": "中新网云南玉溪11月27日电 (时文枝)云南省玉溪市红塔区委宣传部27日消息，云南首个绿电直连算力中心——玉溪市智算中心项目于近日在该区开工建设，计划2027年3月底建成投产，建成后将成为云南首个实现绿电直连与算电协同的智算项目，为跨境电商、文旅及外贸企业等提供绿色算力服务。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10739050.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T21:50:58+08:00",
       "category": "policy"
+    },
+    {
+      "title": "兴安盟特色农畜产品走进广州 深化粤蒙两地经贸交流合作",
+      "description": "中新网广州11月27日电 (记者 王坚)以“兴安臻品粤遇草原”为主题的兴安盟特色农畜产品进广州合作交流对接会27日在广州举办。对接会搭建兴安盟与广州企业的对接桥梁，拓宽兴安盟特色农畜产品在粤港澳大湾区的销售渠道，促进两地的产销对接、文旅互融与招商引资协同发展。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10739047.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T21:48:34+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "中国有望建成全球首个核聚变能源工程供热示范堆先导堆型",
+      "description": "中新网成都11月27日电 (王利文)27日在成都召开的“Z箍缩聚变裂变混合堆供热示范堆(ZFFR-Dt)工程专家会”透露，该工程倡议分两阶段实施：第一阶段为2026年至2030年，完成聚变点火验证及核心工艺验证；第二阶段为2031年至2035年建造示范堆，设计聚变功率200兆瓦、热功率大于2000兆瓦，有望成为全球首个核聚变能源工程供热示范堆先导堆型。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10739040.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T21:41:06+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "浙江将推进6G创新发展部省协同试点 筑牢产业数智化底座",
+      "description": "中新网杭州11月27日电(蓝伊旎)浙江省“十五五”推进新型工业化和数字经济高质量发展新闻发布会27日在杭州召开。会上浙江省经信厅党组书记、厅长赵海滨介绍，今年1月至10月，浙江规上工业增加值、数字经济核心产业制造业增加值同比分别增长7.6%、15.9%，呈现良好发展态势。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10739051.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T21:24:49+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "瞄准新一代智能制造 浙江推动算力普惠“数”尽其用",
+      "description": "中新网杭州11月27日电(蓝伊旎)浙江省“十五五”推进新型工业化和数字经济高质量发展新闻发布会27日在杭州召开。面向“十五五”，浙江将推动产业向新、创新向好、融合向深、生态向优、算网融合，以新一代智能制造为主攻方向，推动人工智能赋能传统产业焕新升级、新兴产业发展壮大、未来产业科学布局。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10739053.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T21:22:09+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "中国央行将大额存单认购起点金额下调一半",
+      "description": "中新社北京11月27日电 (陶思阅)中国央行27日发布《大额存单管理办法》(下称“办法”)，对市场反映集中的条款作出调整，包括大额存单认购起点金额下调一半，即个人投资人认购起点金额由不低于20万元(人民币，下同)降至不低于10万元，机构投资人由不低于1000万元降至不低于500万元。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10739059.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T21:15:06+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "中国证监会：持续完善资本市场稳市机制",
+      "description": "中新社北京11月27日电 (记者 陈康亮)中国证监会主席吴清27日主持召开党委(扩大)会议(下称“证监会会议”)，传达学习国务院常务会议精神，研究部署贯彻落实举措。会议提出，持续完善资本市场稳市机制。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10739057.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T21:12:34+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "儿童书包的拉链头增塑剂超标68倍，品牌旗舰店客服回应",
+      "description": "中新网北京11月27日电(李雅祺) 中国消费者协会近日发布25款儿童书包比较试验结果。结果显示，一款标称品牌为“自然鱼”的书包样品可触及塑料件中邻苯二甲酸酯类增塑剂含量不符合国家标准：拉链头检测值达68771.7毫克/千克，约为限值的69倍，即超标约68倍；同一样品粉色塑料轮检测值为1362.9毫克/千克，超出限值约36%。按照相关规定，可触及的塑料件中邻苯二甲酸酯增塑剂的含量应≤1000mg/kg。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10739012.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T20:49:13+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "2026年辽宁省文旅融合发展消费新场景交流活动在大连举行",
+      "description": "中新网大连11月27日电 (记者 宫旭 杨毅)由辽宁省文化和旅游厅主办、大连市文化和旅游局承办的2026年辽宁省文旅融合发展消费新场景交流活动27日在大连国际会议中心举行。活动以“山海启新·辽韵华章”为主题，与会嘉宾围绕消费新场景培育、文旅项目运营和产业合作展开交流。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10739008.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T20:46:31+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "四川推动软件信息与文旅产业双向赋能",
+      "description": "中新网成都11月27日电(单鹏)由四川省经济和信息化厅、四川省文化和旅游厅联合主办的“软件信息+文化旅游双链协同(人工智能+软件)供需对接会”27日在成都举行。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10739003.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T20:45:09+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "汕头举行无人驾驶产业场景对接大会 推动智慧运力规模化建设",
+      "description": "中新社广东汕头11月27日电 (李怡青 林大森)汕头市无人驾驶产业场景对接大会暨2026(第六届)低速无人驾驶行业发展年会27日在广东汕头举行。300多名与会行业专家、科研学者、头部企业代表，围绕低速无人驾驶技术迭代、政策体系构建、商业模式创新开展深度研讨。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738986.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T20:12:47+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "北京立法促进民营经济发展壮大",
+      "description": "中新社北京11月27日电 (记者 陈杭)北京市十六届人大常委会第二十七次会议27日表决通过《北京市民营经济促进条例》(下称条例)，自2027年1月1日起施行。条例坚持平等对待、公平竞争、同等保护、共同发展，促进民营经济发展壮大。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738995.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T20:09:43+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "证监会严肃查处两起编造传播证券市场误导性信息案件",
+      "description": "中新网北京11月27日电 (记者 陈康亮)据中国证监会27日消息，近日，证监会对安某、乔某涉嫌编造传播证券市场误导性信息依法做出行政处罚。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738960.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T19:46:32+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "2026年互联网营销师职业技能竞赛在四川巴中举办",
+      "description": "中新网北京11月27日电 (记者 余湛奕)11月25日至27日，2026年互联网营销师职业技能竞赛决赛在四川巴中举办，来自全国各地的220名选手参赛，在技能比拼的同时开展专场直播带货，以产业场景检验技能水平、以实战竞技赋能地方发展。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738955.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T19:43:50+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "全国首批挪威棕色奶酪抵沪通关",
+      "description": "中新网上海11月27日电 (记者 姜煜)全国首批共计3.3吨挪威棕色奶酪经上海海关所属松江海关监管验放，顺利通关进入国内市场，标志着这款挪威传统特色乳制品正式从进博会展台走上中国民众餐桌。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738939.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T19:06:03+08:00",
+      "category": "policy",
+      "continent": "europe"
+    },
+    {
+      "title": "第141届广交会印尼推介会在雅加达举行",
+      "description": "中新网雅加达11月27日电 (李志全 魏之强)第141届广交会印度尼西亚推介会26日在雅加达举行。此次活动由中国对外贸易中心和中国驻印尼使馆联合主办，印尼中华总商会和印中商务理事会承办。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-27/10738781.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T16:25:57+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "中国驻哈萨克斯坦大使：中哈合作持续向新领域拓展",
+      "description": "中新社阿斯塔纳11月27日电 (记者 单璐)中国驻哈萨克斯坦大使馆26日在阿斯塔纳举行2026年中哈媒体吹风会。在近两小时的交流中，中国驻哈萨克斯坦大使韩春霖就中哈产业、交通、能源、科技和人文等领域合作回答中哈两国记者提问。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-27/10738750.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T16:20:49+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "菲律宾10月贸易逆差创历史新高",
+      "description": "中新社马尼拉11月27日电 (记者 周璟)菲律宾统计局27日公布的数据显示，菲律宾10月贸易逆差扩大至69.5亿美元，创历史新高。当月进出口同比增速均为五年多来最高水平。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-27/10738680.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T15:27:36+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
+    {
+      "title": "GDP上修，特朗普“上火”",
+      "description": "中新网11月27日电(魏晨曦)据路透社和美联社报道，美国总统特朗普当地时间26日要求立即调查美国商务部，指责有关部门在中期选举前发布了错误的经济增长数据。",
+      "link": "https://www.chinanews.com.cn/gj/2026/11-27/10738738.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T15:18:37+08:00",
+      "category": "policy",
+      "continent": "north-america"
     },
     {
       "title": "美国大幅上修GDP至4.3%，特朗普“炮轰”商务部",
@@ -31,15 +213,6 @@
       "continent": "north-america"
     },
     {
-      "title": "两项自行车国家标准将实施",
-      "description": "中新网11月27日电 据“市说新语”微信公众号消息，自12月1日起，市场监管总局修订发布的《自行车装配要求》(GB/T 3566—2026)、《自行车通用技术要求》(GB/T 19994—2026)国家标准将正式实施。两项标准紧扣自行车产品特性和民众骑行消费需求，分别从整车技术性能、装配工艺层面搭建规范体系，为产品设计、生产制造、检验检测提供统一技术依据，引导企业依规组织生产，持续提升自行车产品供给质量。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738620.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-27T11:20:50+08:00",
-      "category": "policy"
-    },
-    {
       "title": "今年三季度欧盟货物贸易进口总额7300亿欧元 中国为最大进口来源国",
       "description": "中新网布鲁塞尔11月27日电(记者 德永健)欧盟统计局26日公布今年三季度欧盟货物贸易进出口数据，显示今年三季度欧盟货物贸易进口总额7300亿欧元，中国为欧盟货物贸易最大进口来源国。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-27/10738559.shtml",
@@ -50,24 +223,6 @@
       "continent": "europe"
     },
     {
-      "title": "信息无障碍国家标准修订发布",
-      "description": "中新网11月27日电 据“市说新语”微信公众号消息，近期，市场监管总局(国家标准委)修订发布《信息技术 互联网内容无障碍可访问性技术要求与测试方法》国家标准，该标准将于2027年2月1日起正式实施。本次修订充分适配数字产业新形态、新场景，引领我国信息无障碍建设迈向精细化、体系化、国际化发展新阶段。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738594.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-27T10:40:30+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "我国加速推进“人工智能+制造”专项行动",
-      "description": "央视网消息(新闻联播)：今年以来，我国启动实施“人工智能+制造”专项行动，在应用层面，人工智能已经基本贯穿研发设计、生产制造、质检运维等全链条。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738600.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-27T10:37:22+08:00",
-      "category": "policy"
-    },
-    {
       "title": "从世界经济版图看中国经济之韧",
       "description": "点“经”之笔丨从世界经济版图看中国经济之韧",
       "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738598.shtml",
@@ -76,51 +231,6 @@
       "pubDate": "2026-11-27T10:36:24+08:00",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "黑龙江大庆：以数据为新引擎 打造资源型城市数字化转型样板",
-      "description": "中新网大庆11月27日电 (记者 田德雨)11月26日，由黑龙江省委宣传部组织的“给力！新引擎”数字经济篇主题采访活动走进大庆。作为典型资源型城市，大庆六十余年油气开发积累了丰厚的数据资源。当地抢抓数字经济机遇，以数字产业化、产业数字化双轮驱动，大庆市入选国家级数据产业集聚区建设试点、智慧能源领域国家数据标注先行先试城市，走出资源型城市实数融合转型之路。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738574.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-27T10:07:48+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "从一颗传感器到整条产业链 高交会解码AI落地深圳答案",
-      "description": "中新网深圳11月27日电 题：从一颗传感器到整条产业链 高交会解码AI落地深圳答案",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738551.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-27T09:56:00+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "国家统计局：1-10月份规模以上工业企业利润保持较快增长",
-      "description": "中新网11月27日电 据国家统计局网站消息，国家统计局工业司首席统计师于卫宁就2026年1—10月份工业企业利润数据进行解读。于卫宁表示，1—10月份，全国工业生产总体平稳，新动能快速成长，带动规模以上工业企业利润同比增长16.0%，较1—9月份加快0.5个百分点，今年以来继续保持两位数增长。从三大门类看，采矿业利润增长38.8%，制造业利润增长17.5%，电力、热力、燃气及水生产和供应业利润下降14.8%。10月份，全国规模以上工业企业利润同比增长20.1%，较9月份加快5.7个百分点。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738543.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-27T09:52:00+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "国家统计局：1-10月份全国规模以上工业企业利润增长16.0%",
-      "description": "中新网11月27日电 据国家统计局网站消息，1—10月份，全国规模以上工业企业实现利润总额67373.6亿元，同比增长16.0%(按可比口径计算)。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738531.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-27T09:32:41+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "A股开盘：超3300只个股飘红，三大指数集体高开",
-      "description": "A股开盘：超3300只个股飘红，三大指数集体高开；半导体、贵金属、保险等上涨；农业、办公用品、零售等下跌",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738530.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-27T09:31:44+08:00",
-      "category": "policy"
     },
     {
       "title": "11月27日人民币对美元中间价报6.7075 上调21个基点",
@@ -151,33 +261,6 @@
       "pubDate": "2026-11-27T08:19:05+08:00",
       "category": "policy",
       "continent": "south-america"
-    },
-    {
-      "title": "主打潜江小龙虾、岳阳烧烤、柳州螺蛳粉 “风味”学院 对味产业",
-      "description": "主打潜江小龙虾、岳阳烧烤、柳州螺蛳粉",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738488.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-27T07:45:19+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "“开”出百亿级大市场！义乌仿真花热销全球",
-      "description": "不用浇水，不会凋零，如今仿真花让人们“但愿花常在”的美好愿望轻松成为日常。临近年底，海外节庆与软装需求集中释放，仿真花迎来一年中忙碌的出口时段。从单枝花销售到成套花艺方案出口，义乌已成为全球主要的仿真花生产和出口中心之一。数据显示，2025年国内仿真花行业市场规模约169亿元，出口量超50万吨，出口金额达41.9亿美元。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738481.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-27T07:23:30+08:00",
-      "category": "policy"
-    },
-    {
-      "title": "未来五年，我国服务贸易将迎来哪些新机遇？",
-      "description": "新闻1+1丨未来五年，我国服务贸易将迎来哪些新机遇？",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738480.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-27T07:06:51+08:00",
-      "category": "policy"
     },
     {
       "title": "巴西副总统：美国对巴西加征新关税完全不合理",
@@ -230,15 +313,6 @@
       "continent": "asia"
     },
     {
-      "title": "北京支持创新医药发展 医企合作持续深化",
-      "description": "中新网北京11月26日电 (记者 徐婧)北京拥有密集的医疗机构和丰富的临床资源，全市获批国家医学中心12类、国家临床医学研究中心23个。北京市卫生健康委副主任陈航在26日举行的新闻发布会上介绍，该委员会2024年以来累计推动33家重点医药企业签约落地北京，今年以来新增7对医企结对合作。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738448.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-26T21:56:06+08:00",
-      "category": "policy"
-    },
-    {
       "title": "马来西亚诈骗受害者人均损失首次位列亚洲前七",
       "description": "中新网吉隆坡11月26日电 (记者 刘育英)据马新社26日报道，全球反诈骗联盟(GASA)透露，马来西亚首次被列入亚洲诈骗受害者平均经济损失最高的七个经济体之列，与日本、韩国、新加坡、中国香港及中国台湾等经济体同列。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-26/10738451.shtml",
@@ -247,15 +321,6 @@
       "pubDate": "2026-11-26T21:52:36+08:00",
       "category": "policy",
       "continent": "asia"
-    },
-    {
-      "title": "用电量背后的产业升级逻辑（经济时评）",
-      "description": "新业态用电量的快速攀升，正是新兴产业拔节生长、新动能加快成势的生动写照。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738445.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-26T21:40:06+08:00",
-      "category": "policy"
     },
     {
       "title": "共建“一带一路”国家新能源累计装机容量十年内翻两番",
@@ -1503,16 +1568,6 @@
       "continent": "asia"
     },
     {
-      "title": "云深处有大咖，瑞幸“中国咖啡云南季”溯源一杯云南好风味",
-      "description": "一方好风土，化作杯中好风味。云南高山之间，独特风土孕育咖啡醇香。近日，瑞幸咖啡以“深的工夫云南功夫中国咖啡云南季”为主题，推出中国云南单一产地SOE咖啡豆为特色的深烘系列新品。新品采用原创双烘焙曲线的差异化工艺，呈现云南高山产区的独特风土，带来浓而不苦、醇厚有回甘的口感，让全国消费者在门店的每一杯日常咖啡中，都能品味云南咖啡的卓越风味。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-23/10736451.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-23T15:28:06+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
       "title": "At least 35 Fulani killed in revenge attacks in Central Nigeria",
       "description": "At least 35 members of the Fulani ethnic group were killed in retaliatory attacks in central Nigeria following a deadly raid by suspected bandits that left 11 residents dead, according to a security report and local sources cited on Sunday.",
       "link": "https://newsaf.cgtn.com/news/2026-11-23/At-least-35-Fulani-killed-in-revenge-attacks-in-Central-Nigeria-1SiXPuOYbBu/p.html",
@@ -1521,26 +1576,6 @@
       "pubDate": "2026-11-23T13:00:10+00:00",
       "category": "supply",
       "continent": "africa"
-    },
-    {
-      "title": "China to boost digital economy, AI, green cooperation with Singapore",
-      "description": "China is willing to work with Singapore to upgrade cooperation in traditional fields and expand cooperation in emerging fields such as technological innovation, the digital economy, artificial intelligence (AI), and green industries, Chinese Vice Premier Ding Xuexiang said on Monday.",
-      "link": "https://news.cgtn.com/news/2026-11-23/China-to-boost-digital-economy-AI-green-cooperation-with-Singapore-1SjagJyyVDW/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-23T11:53:09+00:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "11月23日人民币对美元中间价报6.7120 上调11个基点",
-      "description": "中新网11月23日电 据中国外汇交易中心网站消息，中国人民银行授权中国外汇交易中心公布，2026年11月23日银行间外汇市场人民币汇率中间价为：1美元对人民币6.7120元，上调11个基点。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-23/10736257.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-23T09:28:05+08:00",
-      "category": "policy",
-      "continent": "asia"
     },
     {
       "title": "Canadian journalist: Chinese modernization benefits the world",
@@ -1553,46 +1588,6 @@
       "continent": "north-america"
     },
     {
-      "title": "Global voices: China's initiatives boost multilateral cooperation",
-      "description": "Former international officials and scholars have highlighted the importance of China's global initiatives in addressing challenges to the international order, strengthening multilateral cooperation and promoting world peace.",
-      "link": "https://news.cgtn.com/news/2026-11-23/Global-voices-China-s-initiatives-boost-multilateral-cooperation-1SizTEH5VXa/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-23T06:54:22+00:00",
-      "category": "supply",
-      "continent": "asia"
-    },
-    {
-      "title": "Iran reports downing US drones, Netanyahu weighs solo strike",
-      "description": "Tensions in the Middle East continued to escalate on Sunday as Iran reported shooting down another US military drone, while two oil tankers caught fire after hitting mines near the Strait of Hormuz. Meanwhile, attacks on Bahrain and growing uncertainty over US-Iran negotiations have renewed concerns about a wider regional conflict.",
-      "link": "https://news.cgtn.com/news/2026-11-23/Iran-reports-downing-US-drones-Netanyahu-weighs-solo-strike-1SiCeMiYYeI/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-23T03:22:56+00:00",
-      "category": "supply",
-      "continent": "asia"
-    },
-    {
-      "title": "中国经济看“新”丨从“尝鲜”到“潮流”，智能穿戴打开消费新空间",
-      "description": "新华社北京11月22日电 题：从“尝鲜”到“潮流”，智能穿戴打开消费新空间",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-22/10736203.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-22T21:52:36+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "中国最大盐湖持续保障新能源原料绿色供给",
-      "description": "中新网青海格尔木11月22日电 (李隽)中国最大盐湖企业青海盐湖工业股份有限公司22日消息，该公司锂电科技分公司4万吨碳酸锂项目自2025年9月28日投料投产以来，累计产出电池级碳酸锂超4万吨，可满足约80万台新能源汽车电池用料需求。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-22/10736161.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-22T19:41:21+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
       "title": "特朗普点赞中俄美元首会晤气氛“热烈”，是“多年来最具重大意义”的国际会晤之一",
       "description": "中新网11月22日电 综合外媒报道，当地时间20日，美国总统特朗普在白宫举行的新闻发布会上表示，日前在中国深圳举行的亚太经合组织领导人非正式会议是一场非常成功的经济会议，美国、中国和俄罗斯三国领导人还举行了首次三方会晤，这是“多年来最具重大意义”的国际会晤之一。",
       "link": "https://www.chinanews.com.cn/gj/2026/11-22/10736151.shtml",
@@ -1601,26 +1596,6 @@
       "pubDate": "2026-11-22T19:12:46+08:00",
       "category": "policy",
       "continent": "north-america"
-    },
-    {
-      "title": "沪深交易所、中国结算推出一揽子降费措施",
-      "description": "新华社北京11月22日电(记者刘慧)记者11月22日从中国证监会了解到，沪深交易所推出新一批降费措施，包括免收交易单元使用费等，并将今年年初已实施的免收上市费、债券交易经手费等措施有效期再延长两年至2028年。中国结算明确，自2027年1月1日起至2028年12月31日，继续暂免收取绿色公司债券、科技创新公司债券和民营企业公司债券(不含可转换公司债券)发行人服务费及债券结算费。(完)",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-22/10736145.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-22T18:43:50+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "沪深北交易所降低融资保证金比例下限至80%",
-      "description": "新华社北京11月22日电(记者刘慧)记者11月22日从中国证监会了解到，经证监会批准，沪深北交易所将融资保证金比例下限从100%降低至80%，此次调整将自2026年11月30日起实施。据测算，此次调整理论上可带来增量资金近4000亿元。(完)",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-22/10736144.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-22T18:42:30+08:00",
-      "category": "policy",
-      "continent": "asia"
     },
     {
       "title": "从“走出去”到“扎下根”：中国新能源汽车企业的“欧洲经”",
@@ -3868,16 +3843,6 @@
       "continent": "north-america"
     },
     {
-      "title": "商务部：中国和瑞士将积极深化数字贸易等新兴领域的合作",
-      "description": "中新网11月5日电 在商务部5日下午召开的例行新闻发布会上，商务部新闻发言人黄玲表示，10月30日，中国和瑞士在北京签署自贸协定升级议定书。下一步，双方将分别履行各自国内程序，推动议定书早日生效实施。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-05/10726709.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-05T16:55:53+08:00",
-      "category": "policy",
-      "continent": "europe"
-    },
-    {
       "title": "Chancellor-led Austrian delegation seeks to boost exports to China",
       "link": "https://newseu.cgtn.com/news/2026-11-06/Chancellor-led-Austrian-delegation-seeks-to-boost-exports-to-China-1RPAUuDFP4k/p.html",
       "pubDate": "2026-11-05T16:42:13+00:00",
@@ -4015,16 +3980,6 @@
       "sourceCountry": "中国新闻网",
       "pubDate": "2026-11-04T06:51:45+08:00",
       "category": "policy",
-      "continent": "north-america"
-    },
-    {
-      "title": "FCC: CIIE offers valuable platform for Canadian seafood producers",
-      "description": "The China International Import Expo (CIIE) offers a valuable platform for Canadian seafood producers, said Jason McLinton, president of Fisheries Council of Canada, during an interview with CGTN. He added that the expo helps connect Canadian harvesters and processors with Chinese buyers for win-win cooperation.",
-      "link": "https://news.cgtn.com/news/2026-11-04/FCC-CIIE-offers-valuable-platform-for-Canadian-seafood-producers--1RM62FrD0Pe/p.html",
-      "author": "CGTN",
-      "sourceCountry": "CGTN",
-      "pubDate": "2026-11-04T04:29:37+00:00",
-      "category": "supply",
       "continent": "north-america"
     },
     {
