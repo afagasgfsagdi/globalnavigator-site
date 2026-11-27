@@ -1,7 +1,26 @@
 {
   "source": "中国新闻网 · CGTN（世界、财经及六大洲区域资讯）· 商务部 · 海关总署",
-  "updatedAt": "2026-11-27T13:58:41.848198+00:00",
+  "updatedAt": "2026-11-27T22:43:22.887930+00:00",
   "items": [
+    {
+      "title": "聚焦“人工智能+能源” 2026兴隆湖能源电力创新发展大会在蓉举行",
+      "description": "中新网成都11月27日电 (单鹏)随着人工智能技术加速发展并与能源深度融合，能源电力行业正迎来新一轮技术变革。27日，由清华四川能源互联网研究院、四川省电力行业协会联合主办的2026兴隆湖能源电力创新发展大会在成都举行。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10739072.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T21:57:23+08:00",
+      "category": "policy"
+    },
+    {
+      "title": "新能源装机容量十年翻两番 “一带一路”绿色能源合作跑出加速度",
+      "description": "中新网青岛11月27日电(记者 张尼)11月26日，第四届“一带一路”能源部长会议在山东青岛举办。中国国家能源局局长王宏志在会上表示，过去10年共建“一带一路”国家新能源累计装机容量增至600GW以上，翻了两番。",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10739074.shtml",
+      "author": "中国新闻网",
+      "sourceCountry": "中国新闻网",
+      "pubDate": "2026-11-27T21:55:43+08:00",
+      "category": "policy",
+      "continent": "asia"
+    },
     {
       "title": "宁夏前十月国内游客接待量突破1亿人次",
       "description": "中新网银川11月27日电(记者 于晶)27日，记者从宁夏回族自治区文化和旅游厅获悉，今年1至10月，宁夏累计接待国内游客突破1亿人次。持续深化的政策引导、不断焕新的文旅业态与线上流量赋能，共同推动宁夏文旅市场稳步升温。",
@@ -161,6 +180,16 @@
       "pubDate": "2026-11-27T19:06:03+08:00",
       "category": "policy",
       "continent": "europe"
+    },
+    {
+      "title": "Chinese donations brighten learning opportunities for Kenyan students",
+      "link": "https://newsaf.cgtn.com/news/2026-11-28/Chinese-donations-brighten-learning-opportunities-for-Kenyan-students-1Sq9hGH9foc/p.html",
+      "pubDate": "2026-11-27T17:29:51+00:00",
+      "description": "CGTN Africa · International market and trade coverage.",
+      "author": "CGTN",
+      "sourceCountry": "CGTN",
+      "category": "supply",
+      "continent": "africa"
     },
     {
       "title": "第141届广交会印尼推介会在雅加达举行",
@@ -1554,16 +1583,6 @@
       "author": "中国新闻网",
       "sourceCountry": "中国新闻网",
       "pubDate": "2026-11-23T16:11:28+08:00",
-      "category": "policy",
-      "continent": "asia"
-    },
-    {
-      "title": "海南澄迈：足不出岛闯全球 自贸港政策激活游戏产业新活力",
-      "description": "中新网澄迈11月23日电(黄嘉雯)11月22日，“红星照耀中国·从琼崖烽火到开放自贸港”网络主题宣传活动采访团走进澄迈老城科技新城海南游戏出海众创空间，探访全国首个聚焦游戏出海全链条的公共服务平台。",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-23/10736478.shtml",
-      "author": "中国新闻网",
-      "sourceCountry": "中国新闻网",
-      "pubDate": "2026-11-23T15:45:43+08:00",
       "category": "policy",
       "continent": "asia"
     },
